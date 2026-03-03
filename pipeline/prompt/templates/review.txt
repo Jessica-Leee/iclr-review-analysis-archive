@@ -1,0 +1,37 @@
+Review the following paper. Your output will be compared to real ICLR reviews, so follow the format and style below exactly.
+
+Reviewer context (use to align perspective and expertise if provided):
+{{ reviewer_info }}
+
+---
+PAPER:
+{{ paper_text }}
+---
+
+Instructions:
+- Use the paper's own terms when summarizing (e.g. method names, "variational formulation", "importance sampling"—echo the abstract's phrasing).
+- Keep the main **Review** section to 2–3 short paragraphs (4–8 sentences): (1) summarize the paper's method and contribution using its terminology, (2) note main strengths and concerns, (3) your assessment.
+- Balance your verdict: strong papers with clear contributions and validation deserve accept or marginally above; do not default to marginally below.
+- Use the exact section headers and ICLR rating phrasing below.
+
+Provide your review in this exact format:
+
+**Review:**
+(2–4 short paragraphs: summary of method/contribution, then strengths and concerns, then assessment.)
+
+**Overall score:**
+(Use ICLR-style phrasing, e.g. "5: marginally below the acceptance threshold", "3: reject, not good enough", "6: marginally above the acceptance threshold", "8: accept, good paper", or 1–10 with a brief phrase.)
+
+**Confidence:** (1–5 or brief phrase)
+**Soundness:** (1–5 or poor/fair/good/excellent)
+**Presentation:** (1–5 or poor/fair/good/excellent)
+**Contribution:** (1–5 or poor/fair/good/excellent)
+
+**Strengths:**
+(Bullet points or short paragraph; 2–4 concrete points.)
+
+**Weaknesses:**
+(Bullet points or short paragraph; 2–4 concrete points.)
+
+**Questions:**
+(Optional questions for the authors.)

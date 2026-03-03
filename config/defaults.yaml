@@ -1,0 +1,16 @@
+pipeline:
+  backend: "ollama"
+  model_endpoint: ""
+  model_name: "llama3.2"
+
+prompt:
+  system_template: "pipeline/prompt/templates/system.txt"
+  review_template: "pipeline/prompt/templates/review.txt"
+
+evaluate:
+  method: "tfidf_cosine"
+
+output:
+  out_dir: "out"
+  save_review: true
+  save_metrics: true
