@@ -1,0 +1,18 @@
+{
+  "paper_id": "zRMXQMyyM8",
+  "review_id": "c41S0EvfhG",
+  "year": 2024,
+  "line": 220,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The idea of individual instead of population based rule generation is interesting. According to the experiments, the generated rules are indeed effective and explainable. Also, the reinforcement learning based solution seems reasonable and elegant.\n2. The proposed methods can work on complicated data such as images and text and generate interesting rules.\n3. The paper is overall well-written and easy to follow. The presentation of the proposed approach is excellent. The discussions in main papers and appendix are detailed and informative.",
+  "human_weaknesses": "",
+  "human_review_text": "The authors propose DISCRET, an interpretable framework for individual treatment effect estimation (ITE) via reinforcement learning. Different from previous works finding rules by segmenting populations, DISCRET directly generates explainable rules for each individual. The generated rules are then used to identify similar samples across treatment and control groups for estimating ITE. In the experiments, the authors show that DISCRET can achieve comparable performance with state-of-the-art black-box model and can also generate rules for tabular, image and text data.",
+  "human_questions": "1. Following weakness 1, what would be the reason that DISCRET can outperform decision-tree based methods? If the reason is that DISCRET generates more effective rules, I am wondering why the decision-tree based methods fail to find those rules?\n2. When training DISCRET, do we need to fix the number of rules and literals in advance?\n3. Although non-emptiness is encouraged by the desgined reward function, is it 100% guaranteed that emptiness does not happen after training?\n4. If we retrain DISCRET, will the generated rule set be mostly similar?",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

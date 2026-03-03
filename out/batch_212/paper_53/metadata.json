@@ -1,0 +1,18 @@
+{
+  "paper_id": "zSN6mXz6VF",
+  "review_id": "oblBWlcZeD",
+  "year": 2024,
+  "line": 210,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The main contribution is a new framework consisting of two key components:\n1. Task-irrelevant data-Guided Modality Bridging (TGMB) module, which leverages unlabeled paired data from both modalities to translate the target data into source-like data.\n2. Task-irrelevant data-Guided Knowledge Transfer (TGKT) module, which transfers knowledge from the source model to the target model using the task-irrelevant paired data.\n3. The authors evaluate the effectiveness proposed method on two cross-modal knowledge transfer tasks with three benchmark datasets: SUN RGB-D, DIML RGB-D), and RGB-NIR. The method achieves a performance improvement of +9.81% on the DIML RGB-D dataset and +3.50% on the RGB-NIR dataset, surpassing the state-of-the-art methods.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper addresses the novel and practical problem of source-free cross-modal knowledge transfer, and proposes two main modules Task-irrelevant data-Guided Modality Bridging (TGMB) module and Task-irrelevant data-Guided Modality Bridging (TGMB) module to achieve source-free cross-modal knowledge transfer. Extensive experiments show that the method proposed by paper achieves the state-of-the-art performance on three datasets (RGB-to-depth and RGB-to-infrared).",
+  "human_questions": "Please check the weakness comments above.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

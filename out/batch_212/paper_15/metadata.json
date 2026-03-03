@@ -1,0 +1,18 @@
+{
+  "paper_id": "zrCybZXxC8",
+  "review_id": "OdegpP8MYH",
+  "year": 2024,
+  "line": 58,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The motivation for E-MCTS is well-articulated, and the papers makes it clear what gap E-MCTS intends to fill.\n\nThe method itself appears to be sound, makes algorithmic sense, and seems to also be a good solution to the identified problem.\n\nThe presentation of the paper is good: it is well-written.\n\nThe paper convincingly shows the effectiveness of their method on a deep exploration task.",
+  "human_weaknesses": "",
+  "human_review_text": "Monte Carlo Tree Search (MCTS) as used in AlphaZero and MuZero implicitly reduces aleatoric uncertainty through its rollouts, but does not traditionally account for epistemic uncertainty, which can hinder exploration/\n\nThis paper introduces Epistemic MCTS (E-MCTS), that extends standard MCTS to utilize epistemic uncertainty (uncertainty in estimates that are reducible with more observations) to guide rollouts and decisions, which benefits exploration. E-MCTS allows the agent to pe\n\nE-MCTS is tested on a variety of configurations of the DeepSea environment in the Behavior Suite, which is a hard exploration task. \nThey find that their variant of E-MCTS is able to achieve a high return faster than baselines, and is able to discover states more quickly than the baselines. Additionally, they find that the benefits (in terms of regret) of E-MCTS scale with the environment size.",
+  "human_questions": "1. In figure 2, why 3 seeds for the 30x30 domain on the right, but 5 seeds on the left (where presumably the 30x30 domain is ran?)\n2. How might exploration be balanced, tuned, or annealed over time in environments where deep exploration is not required?",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "paper_id": "zIJFG7wW2d",
+  "review_id": "L6zz0nqKPD",
+  "year": 2024,
+  "line": 268,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- The paper demonstrates the effectiveness of their approach on a fairly exhaustive evaluation. The approach is evaluated on 29 datasets spanning generation, classification and reasoning. The evaluation is run using three LLM baselines.\n- The authors provide exhaustive details about the prompts, evaluation dataset and experiments in the supplementary for easily replicating their experimental setup. The authors also provide code to run the experiments done in the paper.\n- The authors also attempt to do error analysis to better understand failure modes of their approach. I specially enjoyed reading Section 3.6 and Appendix C.1",
+  "human_weaknesses": "",
+  "human_review_text": "The paper presents a method to improve the zero-shot performance of LLMs on language tasks. The proposed approach involves automatically generating task-specific instructions (using an LLM based agent) that are provided to the reasoning LLM to improve its performance. The task-specific instructions might include steps to break down the task into simpler steps, information about the format of the expected answer. To generate these task-specific instructions, the agent takes as input information about the dataset (sourced from the web) and a few examples from that task. Using this extra context, the authors show that LLMs can reason better about the task and show improvement across several generation and classification based benchmarks. On average they show 6.5% improvement over a chain-of-thought baseline, and 17.5% average improvement over state-of-the-art LLMs like Vicuna, LLaMa2, and GPT-3.5-Turbo.",
+  "human_questions": "Related to points raised in the weaknesses section: \n\n- How will the approach work in-the-wild, when the source of task is not known apriori. That is we don\u2019t know which dataset does the task belong to, or if the task belongs to any dataset at all.\n- What is the cost of creating the task-specific instruction. Can you add a column to Figure 6, which adds this cost multiplied by number of instances in the dataset plus the additional cost of reasoning using GPT-3.5 Turbo?\n- I also didn\u2019t understand the point of experiments in Section 3.3? What is the insight from that experiment?\n- I also didn\u2019t fully understand how the agent uses the question-answering API (Section A.3.1) to add context about the task? I think it\u2019s one of the most crucial steps of the pipeline, and it\u2019d be great to explain how it\u2019s implemented in more detail (and perhaps in the main manuscript). Concretely, how are the retrieved documents to generate the instruction? Are the retrieved documents added as prompt to the agent to generate task-specific instruction? Is that in addition to the name of the dataset, task information and few input examples? Why are they added to a vector database?",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

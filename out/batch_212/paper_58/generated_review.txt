@@ -1,0 +1,38 @@
+**Review:**
+
+This paper addresses 3D pose transfer by proposing a method that combines adversarial learning with a novel 3D Pose Masked Autoencoder (3D-PoseMAE) to improve robustness to noisy inputs and eliminate the need for cumbersome pre-processing pipelines. The core contribution is twofold: (1) introducing adversarial samples during training to enhance model robustness, and (2) a customized MAE architecture with multi-scale masking that learns 3D extrinsic pose representations directly from raw, noisy inputs. The authors claim their approach generalizes across various poses, domains, and even raw scans without intermediate processing.
+
+**Strengths:**
+- The motivation is well-articulated: removing dependence on clean parametric models or skeletal joint annotations is a practical goal that could enable real-time applications.
+- The combination of adversarial training with masked autoencoding for pose learning is a reasonable and somewhat novel approach to the robustness problem.
+- The paper claims strong generalizability across domains and demonstrates applicability to raw point clouds/scans, which would be valuable if validated rigorously.
+- The observation that adversarial samples can attack existing pose transfer models provides useful insights for the community.
+
+**Weaknesses:**
+- The abstract lacks sufficient technical detail about the 3D-PoseMAE architecture, the multi-scale masking strategy, and how adversarial samples are specifically generated and integrated into training. The mechanism by which masking "simultaneously generates adversarial samples" is unclear.
+- No quantitative metrics, datasets, or baseline comparisons are mentioned in the abstract. Claims about "much better quality" and "strong generalizability" cannot be evaluated without concrete numbers, experimental setup, or reference to standard benchmarks.
+- The paper does not clarify what "extrinsic presentations" means in the context of pose, nor does it explain why a masked autoencoder is the appropriate choice over other self-supervised or adversarial learning frameworks.
+- The abstract provides no discussion of limitations, failure cases, or computational costs, making it difficult to assess practical feasibility.
+
+**Questions:**
+- How exactly does the multi-scale masking strategy generate adversarial samples? Is this a form of data augmentation, or does it involve explicit adversarial perturbations?
+- What are the specific quantitative improvements over existing methods (e.g., on standard benchmarks like AMASS or CAPE)?
+- How does performance degrade as input noise increases, and what is the noise tolerance threshold?
+- What is the computational overhead of adversarial training compared to standard pose transfer baselines?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper tackles a relevant problem and proposes a reasonable combination of techniques, but the abstract is too vague to assess the actual technical contribution and empirical validation. The lack of concrete experimental details, quantitative results, and clear technical exposition makes it impossible to evaluate whether the claimed improvements are significant or whether the method is truly novel. A full paper with detailed methodology, comprehensive experiments, and ablation studies would be needed to properly assess this work.
+
+**Confidence:**
+2 (Low—based only on abstract; full paper evaluation would be more reliable)
+
+**Soundness:**
+2 (Fair—the intuition is reasonable, but technical clarity and experimental validation are absent from the abstract)
+
+**Presentation:**
+2 (Fair—the abstract is somewhat vague on key technical details and lacks concrete experimental grounding)
+
+**Contribution:**
+2 (Fair—while combining adversarial learning with MAE for pose transfer has potential, the novelty and significance cannot be determined from the abstract alone)

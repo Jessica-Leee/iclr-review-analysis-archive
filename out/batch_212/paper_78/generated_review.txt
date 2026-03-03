@@ -1,0 +1,54 @@
+**Review:**
+
+This paper addresses a practical problem in generative models: handling partial tokens during text completion. The authors propose token alignment, a technique that backtracks to the last complete token and constrains the model's generation to align with the partial prompt via character matching. The method is motivated by the observation that partial tokens fall out of distribution during inference, leading to degraded outputs. The approach is evaluated on partial token scenarios including space-prefix and partial indentation cases, showing improvements with only minor computational overhead.
+
+**Strengths:**
+
+- **Practical relevance**: The paper tackles a genuine issue in deployed systems (code completion, text autocompletion) where users often type partial tokens. This is a real-world problem that affects user experience.
+- **Simplicity and efficiency**: The token alignment method appears straightforward to implement—backtracking to complete tokens and enforcing character-level alignment—with reported minor time overhead, making it practical for deployment.
+- **Comprehensive scenario coverage**: The paper considers nuanced cases (space-prefix, partial indentation) beyond naive partial token scenarios, suggesting thoughtful problem formulation.
+
+**Weaknesses:**
+
+- **Insufficient methodological detail**: The abstract provides only a high-level description of "backtracking to the last complete tokens" and "ensuring alignment." Critical details are missing: How exactly is character matching enforced? Is this a decoding-time constraint, a masking strategy, or a reranking approach? Without the full paper, it is impossible to assess technical soundness.
+- **Lack of empirical validation details**: The abstract mentions "marked improvement across many partial token scenarios" but provides no quantitative results, baselines, datasets, or statistical significance testing. No concrete metrics (e.g., exact match, BLEU, success rate) are reported.
+- **Unclear novelty and scope**: The contribution feels incremental—constraining generation to match a prefix is not new in the literature (e.g., constrained decoding, prefix constraints). The paper does not clearly articulate what is novel beyond applying this idea to partial tokens.
+- **Missing related work and comparisons**: No discussion of related approaches (e.g., constrained beam search, trie-based decoding, or other prefix-matching techniques) or comparison to baselines is evident from the abstract.
+
+**Questions:**
+
+- How does token alignment compare quantitatively to simpler baselines, such as greedy decoding with forced prefix matching or standard constrained decoding methods?
+- What is the computational overhead in practice, and how does it scale with prompt length and model size?
+- How does the method perform on models with different tokenization schemes (BPE, WordPiece, SentencePiece)?
+- Are there failure cases or scenarios where token alignment degrades performance relative to unconstrained generation?
+
+**Overall score:**
+3: Reject, not good enough.
+
+The paper addresses a practical problem, but the abstract lacks sufficient technical depth, empirical validation, and novelty justification to warrant acceptance at a top venue. The core contribution—constraining generation to align with a partial prompt—appears to be a straightforward application of existing constrained decoding ideas. Without detailed methodology, quantitative results, and clear positioning relative to prior work, the contribution cannot be properly evaluated. A full paper with comprehensive experiments, ablations, and comparisons would be needed to assess this work fairly.
+
+**Confidence:** 2 (Low)
+
+The review is based solely on the abstract, which is sparse on technical and empirical details. Confidence would increase substantially with access to the full paper, methodology section, and experimental results.
+
+**Soundness:** 2 (Poor)
+
+Without methodological details, soundness cannot be assessed. The high-level idea is plausible, but the execution and validation are opaque.
+
+**Presentation:** 2 (Poor)
+
+The abstract is vague on key technical details. Phrases like "backtracking to the last complete tokens" and "ensuring the model's generation aligns" lack precision and clarity needed for reproducibility or understanding.
+
+**Contribution:** 2 (Poor)
+
+The novelty is unclear. Constraining generation to match a prefix is well-established in the literature. The paper does not articulate what is novel beyond applying this to partial tokens, which feels incremental.
+
+**Strengths:**
+
+- Addresses a practical, real-world problem in deployed text and code completion systems.
+- Proposes a simple, efficient method with reportedly minor computational overhead.
+- Considers nuanced edge cases (space-prefix, partial indentation) beyond naive partial token scenarios.
+
+**Weaknesses:**
+
+- Critical methodological details are absent: How is character matching enforced? Is this a

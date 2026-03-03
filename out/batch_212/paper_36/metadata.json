@@ -1,0 +1,18 @@
+{
+  "paper_id": "zeobgjmUCc",
+  "review_id": "UAmUhVe3E8",
+  "year": 2024,
+  "line": 146,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "This paper identifies an important understudied problem in the medical literature. It provides a good motivation/explanation of the underlying issues related to gastrointestinal stromal tumors and the need for ML in this context.",
+  "human_weaknesses": "",
+  "human_review_text": "This work uses machine learning models to predict genitourinary system involvement in patients with gastrointestinal stromal tumors. Employing various supervised learning methods including logistic regression, XGBoost, and Random Forest across a dataset of 170 patients from a specific hospital, the researchers achieved impressive accuracy rates around 97%, showcasing the potential of these models in medical classification problems.",
+  "human_questions": "N/A",
+  "human_ratings": {
+    "rating": "1: strong reject",
+    "confidence": "5: You are absolutely certain about your assessment. You are very familiar with the related work and checked the math/other details carefully.",
+    "soundness": "2 fair",
+    "presentation": "1 poor",
+    "contribution": "1 poor"
+  }
+}

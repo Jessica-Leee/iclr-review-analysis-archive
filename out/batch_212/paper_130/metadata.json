@@ -1,0 +1,18 @@
+{
+  "paper_id": "ykhRO1mAg3",
+  "review_id": "JnFGEQXmec",
+  "year": 2024,
+  "line": 508,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- Overall, the paper is well-organized and easy to follow. The motivation is well-introduced and the method is clearly described.\n- The proposed method is relatively simple, so it can be easily used for real-world application.\n- The proposed method achieves competitive scores, so it makes W4A8 practically usable.",
+  "human_weaknesses": "",
+  "human_review_text": "The authors propose a new quantization method for LLMs which can utilize both 4-bit weights for memory bandwidth saving and 8-bit activations for faster computation (W4A8). Especially, it's known that naive W4A8 method degrade model performance significantly. The authors use group-wise quantization for the model weights, and Logarithmic Activation Equalization (LAE) for the activations. In particular, it is challenging to quantize activations, and the authors use different strategies on different kinds of layers based on the statistics observed. For those strategy selections, the proposed method uses some calibration datasets. As a result, the author could achieve comparable quantization performance with W4A8. The authors show this on various LLMs including BLOOM, LLaMA and LLaMA2 on different tasks including MMLU, commonsense QA and etc.",
+  "human_questions": "- It's not clear why v0 and v1 are set to 15 and 150.\n- At the bottom of page 5, what are the two strategies? It's not clear in the context.\n- In page 6, KV cache quantization is mentioned, but there's no more details.\n- In Table 4, it's not clear what numbers are marked bold font.\n- In Table 6, it seems there are variations with different calibration datasets. Is there any way to reduce the variations?",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

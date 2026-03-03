@@ -1,0 +1,18 @@
+{
+  "paper_id": "yvxDJ8eyBu",
+  "review_id": "ap44PP4HEJ",
+  "year": 2024,
+  "line": 426,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "I myself have had a painful experiment to devise GPT-4 prompt to generate music that is at least listenable. (Still, it was not up to the quality of the GPT-4 samples that the author has on the github page.) The authors must have been quite ingenious. And I was honestly impressed that MuseCoCo could generate music of a quality far superior to that. The results are quite impressive indeed.\n\nThe approach appears to be solid. And the results and the quality of the paper are excellent. The explanations are clear enough (though I would like a few more examples). It would be significant in terms of accelerating the composition workflow.",
+  "human_weaknesses": "",
+  "human_review_text": "A symbolic music generation technique based on language models is presented. \nThe method is based on two-stage processing. One is extracting musical attributes and another is attribute-music synthesis. The former is based on BERT. This part will not be that difficult. What is important is the latter part. The authors leverated vast amount of unlabeld musical data, and estimated the attributes automatically since some of attributes (e.g. tempo, key, instrument) are easily extracted from symbolic music data without specific annotation. Using these unlabeled data and these attributes extracted from them, a transformer that generates symbolic music is trained.\nBecause the proposed method has been properly trained with a vast amount of musical data, its output is clearly superior musically to the poor results by GPT4, which contains little musical knowledge and only feeded a few examples through prompts. It also produces results that are faithful to the instructions.",
+  "human_questions": "- Having had my own experience with GPT-4, I agree with the results presented by the author, but some readers may possibly criticize the results as \"cherry-picking\". Objective evaluations such as Table 4 and comments by professional musicians are actually making the results convincing, but I still have an impression that the paper lacks something. Perhaps because there are no examples in the body of the paper. Simply posting multiple sheets or piano rolls would probably improve the impression of the paper.\n- Readers with some musicologic background knowledge will note that the example generated in Figure 4 violates prohibitions of classical counterpoint techniques. Of course, it would be possible to use such a technique in film or game music to represent \"forest strolls\" and \"whispering winds\" but this may not be a good example to convey the strength of this technique, since a piece with two voices in the fifth and sixth intervals does not appear to be very sophisticated. (In other words, this example alone gives the impression that it is not a greatly superior technique.) The key is supposed to be C major, but it looks like A minor or A Aeolian to me. This too would be disconcerting to a reader with musical knowledge. ...... And I realized after writing this that this is the baseline GPT-4 result to which you are comparing. That makes sense, but I would still like to see specific input examples and output results of the proposed method in the main body of the paper.",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "4 excellent",
+    "presentation": "4 excellent",
+    "contribution": "4 excellent"
+  }
+}

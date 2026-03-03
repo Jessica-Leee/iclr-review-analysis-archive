@@ -1,0 +1,34 @@
+**Review:**
+
+This paper proposes a novel teacher training method for knowledge distillation based on maximizing conditional mutual information (CMI) alongside log-likelihood. The core idea is that the Bayes conditional probability distribution (BCPD) estimated by a teacher trained via the proposed maximum CMI (MCMI) method will be more informative for student training than one obtained via conventional maximum log-likelihood (MLL). The authors report consistent improvements in student accuracy across multiple KD frameworks, with gains up to 3.32% in standard settings and more substantial improvements (5.72%) in few-shot scenarios.
+
+**Strengths:**
+- The motivation is intuitive: incorporating CMI during teacher training to capture contextual information is a reasonable hypothesis for improving knowledge distillation.
+- Empirical results are comprehensive, showing improvements across multiple KD frameworks and settings (standard, few-shot, zero-shot).
+- The paper addresses practical scenarios (few-shot and zero-shot) where improved teacher estimates could be particularly valuable.
+- Visualization via Eigen-CAM provides some interpretability of what the teacher learns.
+
+**Weaknesses:**
+- **Theoretical justification is weak.** The paper asserts that maximizing CMI ensures the teacher "effectively captures contextual information," but provides no formal analysis of why CMI maximization should lead to better BCPD estimates for KD. The connection between CMI and the quality of the teacher's probability distribution for student learning is assumed rather than established.
+- **Method clarity is insufficient.** The abstract does not explain how CMI is computed, what the optimization objective looks like, or how it is balanced with log-likelihood. Without these details, reproducibility and understanding are compromised.
+- **Missing ablations and baselines.** The paper does not ablate the relative weighting of log-likelihood and CMI, nor does it compare against other teacher regularization or training strategies that might also improve BCPD estimates (e.g., label smoothing, mixup, or other information-theoretic objectives).
+- **Limited analysis of why improvements occur.** While Eigen-CAM visualizations are provided, there is no quantitative analysis of whether MCMI-trained teachers actually produce better-calibrated or more informative probability distributions compared to MLL-trained teachers (e.g., via calibration metrics or mutual information measurements).
+
+**Questions:**
+- How is the CMI term formally defined and optimized jointly with log-likelihood? What is the weighting scheme?
+- Have you measured whether MCMI-trained teachers produce better-calibrated probability distributions or higher mutual information with the true labels compared to MLL teachers?
+- How sensitive are the results to the balance between the log-likelihood and CMI terms?
+- Why does CMI maximization specifically help in few-shot and zero-shot settings more than standard settings?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses a relevant problem and reports positive empirical results, but the theoretical motivation is underdeveloped, the method description is incomplete, and the analysis of why the approach works is superficial. For a venue like ICLR, stronger theoretical grounding, clearer exposition of the method, and deeper investigation into the mechanisms driving improvement would be expected.
+
+**Confidence:** 3 (moderate)
+
+**Soundness:** 2 (fair)
+
+**Presentation:** 2 (fair)
+
+**Contribution:** 2 (fair)

@@ -1,0 +1,34 @@
+**Review:**
+
+This paper addresses out-of-distribution (OOD) detection by proposing a general probabilistic framework to unify existing methods and introducing SSOD (Self-supervised Sampling for OOD Detection), an OOD-data-free approach that exploits natural OOD signals from in-distribution data via the local property of convolution. The method jointly optimizes OOD detection and ID classification end-to-end without requiring explicit OOD samples during training. The authors report substantial improvements on standard benchmarks (e.g., −6.28% FPR95 and +0.77% AUROC on ImageNet, −19.01% FPR95 and +3.04% AUROC on CIFAR-10) and competitive performance on hard OOD datasets.
+
+**Strengths:**
+1. **Addresses two important gaps:** The paper tackles both the lack of a unified perspective on existing OOD detection methods and the practical challenge of OOD-data-free detection, which is valuable for practitioners.
+2. **Strong empirical results:** Reported improvements across multiple large-scale benchmarks (ImageNet, CIFAR-10) and hard OOD datasets (ImageNet-O, OpenImage-O) are substantial and consistent.
+3. **Practical motivation:** Leveraging natural OOD signals from ID data via convolution locality is intuitive and avoids the need to collect explicit OOD samples, reducing annotation burden.
+4. **Comprehensive evaluation:** The paper appears to evaluate on diverse benchmarks, suggesting broad applicability.
+
+**Weaknesses:**
+1. **Limited methodological clarity in the abstract:** The abstract does not clearly explain *how* the probabilistic framework unifies existing methods or the precise mechanism by which SSOD extracts OOD signals from convolution locality. This makes it difficult to assess novelty and technical depth without the full paper.
+2. **Insufficient detail on the proposed framework:** The "general probabilistic framework" is mentioned as a contribution but not substantively described. Without understanding this unifying perspective, it is hard to evaluate whether it provides genuine insight or is merely a post-hoc interpretation.
+3. **Missing ablation and analysis:** The abstract provides no ablation studies, failure cases, or analysis of when and why the method works. It is unclear which components (self-supervised sampling, joint optimization, etc.) drive the improvements.
+4. **Reproducibility concerns:** No mention of code availability, hyperparameter details, or implementation specifics that would enable reproduction.
+
+**Questions:**
+1. How does the probabilistic framework differ from or improve upon existing theoretical perspectives on OOD detection (e.g., energy-based or likelihood-based views)?
+2. Can you provide an intuitive explanation of how convolution locality enables the extraction of OOD signals from ID data? Are there failure modes where this assumption breaks down?
+3. What is the computational overhead of SSOD compared to baseline methods during training and inference?
+4. How sensitive is the method to hyperparameters controlling the balance between ID classification and OOD detection objectives?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper makes a solid empirical contribution with strong results across multiple benchmarks and addresses a practical problem (OOD-data-free detection). However, the abstract lacks sufficient methodological clarity to fully assess the novelty and rigor of the proposed probabilistic framework and the technical mechanism of SSOD. The work appears sound and the empirical validation is convincing, but the presentation in the abstract limits confidence in the depth of the contribution. A full paper review would likely reveal whether the unifying framework and self-supervised sampling strategy constitute sufficiently novel insights for a strong accept.
+
+**Confidence:** 3 (moderate—assessment is limited by abstract-only information)
+
+**Soundness:** 4 (good—empirical results are strong, but theoretical justification is unclear from the abstract)
+
+**Presentation:** 3 (fair—the abstract is somewhat vague on key technical contributions)
+
+**Contribution:** 4 (good—addresses practical OOD detection without explicit OOD data and claims to unify existing methods, but clarity is limited)

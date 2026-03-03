@@ -1,0 +1,18 @@
+{
+  "paper_id": "yrLwQ7VQ7h",
+  "review_id": "MThcIbVrHv",
+  "year": 2024,
+  "line": 455,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The proposed method outperforms existing GNN methods.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper introduces a novel graph self-supervised learning approach aimed at addressing the well-known issue of dimensional collapse within the self-supervised learning paradigm. Specifically, the paper puts forward an anchor-neighborhood alignment strategy accompanied by an isotropic constraint. The effectiveness of the proposed ANA-IC method is extensively assessed, revealing that it yields superior performance compared to existing methodologies.\n\nWhile the success of the proposed method in outperforming existing Graph Neural Networks (GNNs) is promising, the specific reasons why anchor-neighborhood alignment effectively resolves the problem remain somewhat ambiguous.",
+  "human_questions": "1. As highlighted in the weakness section, the rationale behind the introduction of anchor-neighborhood alignment requires a more comprehensive explanation. It is imperative to elucidate precisely how the utilization of anchor-neighboring alignment addresses the issue of dimensional collapse in self-supervised learning.\n2. The current evaluation of the proposed method is primarily based on empirical comparisons with baseline methodologies established in 2022. To enhance the robustness of the evaluation, it is crucial to incorporate additional comparisons with recently proposed methods from 2023. Furthermore, it is essential to articulate the specific advantages that the proposed method offers over these contemporary approaches to highlight its superiority and unique contributions to the field.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

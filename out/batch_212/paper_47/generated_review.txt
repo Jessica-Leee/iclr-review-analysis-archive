@@ -1,0 +1,38 @@
+**Review:**
+
+This paper addresses the important problem of detecting whether a piece of text was included in an LLM's pretraining data. The authors introduce WIKIMIA, a dynamic benchmark leveraging Wikipedia data created before and after model training cutoffs to establish ground truth, and propose MIN-K PROB, a detection method based on the intuition that unseen examples contain outlier words with low probabilities while seen examples do not. A key strength of MIN-K PROB is its simplicity and practical applicability: it requires only black-box access to the LLM and no knowledge of the pretraining corpus or auxiliary reference models, departing from prior work that requires training on similar data. The method achieves a 7.4% improvement over previous approaches on WIKIMIA and demonstrates effectiveness on real-world scenarios including copyrighted book detection and contaminated downstream example detection.
+
+**Strengths:**
+- **Practical and model-agnostic approach**: MIN-K PROB operates with black-box access and requires no pretraining corpus knowledge or reference model training, making it broadly applicable across different LLMs and deployment settings.
+- **Well-motivated benchmark**: WIKIMIA provides a principled evaluation framework using temporal splits of Wikipedia data, enabling reliable ground-truth labels for pretraining data detection.
+- **Clear empirical gains**: The 7.4% improvement over prior methods on WIKIMIA is substantial, and the application to real-world scenarios (copyrighted books, benchmark contamination) demonstrates practical relevance.
+- **Simple and interpretable method**: The MIN-K PROB hypothesis is intuitive and easy to understand, reducing the barrier to adoption and analysis.
+
+**Weaknesses:**
+- **Limited scope of evaluation**: While WIKIMIA is well-designed, evaluation on a single source (Wikipedia) may not fully capture the diversity of pretraining corpora. Evaluation on other domains or data types would strengthen claims of generalizability.
+- **Insufficient analysis of failure modes**: The paper does not deeply explore when and why MIN-K PROB fails. For instance, how does performance degrade with text length, domain shift, or paraphrasing? What is the sensitivity to the choice of k?
+- **Incomplete comparison with baselines**: The paper mentions previous detection methods require training on similar data but does not provide detailed ablations or analysis of why MIN-K PROB outperforms them beyond the 7.4% figure. More granular comparisons would clarify the source of improvements.
+- **Limited discussion of robustness**: The paper does not address potential adversarial scenarios (e.g., can models be fine-tuned to evade detection?) or the robustness of MIN-K PROB to model variations, quantization, or other practical deployment factors.
+
+**Questions:**
+- How sensitive is MIN-K PROB to the choice of k? Is there a principled way to select k, or does it require tuning on a held-out set?
+- How does performance vary across different text domains (e.g., code, scientific papers, social media) beyond Wikipedia?
+- Can you provide more detailed comparisons with prior methods, including their computational costs and data requirements?
+- How does the method perform on paraphrased or slightly modified versions of pretraining data?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper makes a solid contribution to an important and timely problem. MIN-K PROB is practical, well-motivated, and achieves clear empirical improvements. The WIKIMIA benchmark is a valuable resource for the community. However, the evaluation is somewhat narrow (primarily Wikipedia), and the paper lacks depth in analyzing failure modes, robustness, and detailed comparisons with baselines. These limitations prevent a stronger acceptance, but the practical utility and clear gains justify acceptance.
+
+**Confidence:**
+4 (High confidence in the assessment, though some details on experimental setup and baseline comparisons would increase certainty.)
+
+**Soundness:**
+Good. The method is straightforward and the benchmark design is principled, though more thorough ablations and robustness analysis would strengthen the work.
+
+**Presentation:**
+Good. The paper is clearly written with well-motivated contributions, though some sections could benefit from deeper technical exposition.
+
+**Contribution:**
+Good. The paper addresses a relevant problem with a practical solution and introduces a useful benchmark, though the novelty of the core method is somewhat limited (the MIN-K PROB hypothesis is intuitive rather than surprising).

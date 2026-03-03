@@ -1,0 +1,38 @@
+**Review:**
+
+This paper proposes a three-stage red-teaming framework—Explore, Establish, Exploit—for identifying harmful outputs from language models without relying on pre-existing failure classifiers. The key insight is that red-teaming "from scratch" should first explore the model's behavioral range, then establish a measurement for undesired behavior (e.g., via a learned classifier aligned with human judgments), and finally exploit this measure to generate diverse adversarial prompts. The authors apply this approach to GPT-3 to discover inputs that elicit false statements, and contribute the CommonClaim dataset of 20,000 human-labeled statements (true, false, or neither).
+
+**Strengths:**
+- **Well-motivated problem formulation**: The observation that prior red-teaming work assumes pre-existing classifiers is valid, and the "from scratch" setting is practically relevant for discovering novel failure modes.
+- **Structured methodology**: The three-stage framework (Explore → Establish → Exploit) is intuitive and provides a clear operational pipeline for practitioners.
+- **Concrete dataset contribution**: The CommonClaim dataset with 20,000 human-labeled statements is a useful resource for studying factuality in LMs, and the commitment to release code and data enhances reproducibility.
+- **Realistic target**: Evaluating on GPT-3 and focusing on false statement generation is a meaningful and challenging red-teaming objective.
+
+**Weaknesses:**
+- **Limited novelty in individual components**: Exploration via prompting, classifier training on human labels, and adversarial prompt generation are standard techniques. The main contribution is their combination, which feels incremental.
+- **Insufficient methodological detail**: The abstract does not specify how exploration is conducted, what classifier architecture is used, or how the exploit stage generates diverse prompts. Without these details, reproducibility and comparison to baselines are unclear.
+- **Lack of empirical comparison**: No comparison to prior red-teaming approaches (even those with pre-existing classifiers) is mentioned. It is unclear whether the "from scratch" approach yields better or more diverse failures than existing methods.
+- **Evaluation scope unclear**: The abstract does not describe how the discovered adversarial prompts are evaluated, whether they generalize to other models, or how the CommonClaim dataset's quality compares to existing factuality benchmarks.
+
+**Questions:**
+- How does the Establish stage differ from standard supervised learning of a binary classifier? What makes the learned classifier specifically suited to the target model?
+- In the Exploit stage, what algorithm generates adversarial prompts? Is it gradient-based, search-based, or heuristic?
+- How do the false statements discovered via this framework compare in diversity and difficulty to those found by simpler baselines (e.g., random prompting + human filtering)?
+- Does the CommonClaim dataset overlap with existing factuality datasets, and how does inter-annotator agreement compare?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper addresses a relevant problem and proposes a sensible framework with a useful dataset contribution. However, the methodological novelty is limited, and the abstract lacks sufficient detail on key technical choices and empirical validation. With more comprehensive experiments, comparisons to baselines, and clearer exposition of the Establish and Exploit stages, this could be a solid contribution to the red-teaming literature.
+
+**Confidence:**
+3 (moderate—the abstract is somewhat sparse on technical and experimental details, limiting confidence in the full contribution)
+
+**Soundness:**
+3 (fair—the framework is reasonable, but without detailed methodology and empirical validation in the abstract, soundness is hard to assess)
+
+**Presentation:**
+3 (fair—the three-stage framing is clear, but critical methodological details are missing)
+
+**Contribution:**
+3 (fair—the dataset is useful, but the framework combines existing techniques with limited novelty)

@@ -1,0 +1,18 @@
+{
+  "paper_id": "zLwCT9srfo",
+  "review_id": "gkomvJr8aJ",
+  "year": 2024,
+  "line": 258,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- The summarization of this research area is clear and accurate; the related work section is well-organized.\n\n- The intuition behind the scheduling algorithm design is clear and straightforward.   \n\n- Based on the reported experimental results, the reduction of the solver execution time is significant.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper tries to solve the problem of efficient scheduling of re-materialization of the training computation. Concretely, the paper proposes H-rockmate, a hierarchical solution to decompose the data-flow graph into a hierarchy of small-scale subgraphs and compute a re-materialization schedule that minimizes the computational overhead within a given memory budget. Empirical studies are conducted to evaluate the performance of the proposed method in terms of solver efficiency and end-to-end performance.",
+  "human_questions": "See my comments in the Weakness section.",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

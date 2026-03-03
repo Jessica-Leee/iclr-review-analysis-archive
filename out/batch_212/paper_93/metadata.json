@@ -1,0 +1,18 @@
+{
+  "paper_id": "z4qWt62BdN",
+  "review_id": "rkM2iId88n",
+  "year": 2024,
+  "line": 364,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- The proposed architecture utilizes various methods to prevent some of the well known problems, especially the overfitting problem which is important for knowledge graph completion.\n- The paper provides ablation studies to show the benefit of implementing proposed methods.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposed a new architecture of neural networks, the DSparsE, for graph completion. It is a link prediction model structure that uses only MLP layers and employs sparse and residual structures to alleviate overfitting, and reduce the difficulty of training deep networks. The paper provides performance comparison of various knolwege graph embedding techniques across two datasets.",
+  "human_questions": "- What is an expert kernel?\n- How does the model do in the case of no experts? Or simple mean of the outputs of k different mlps.\n- How is imposing sparse structure different from the drop-connect (dropout on the weights)\n- Why does the dynamic structure enhance the robustness of the model? Is it by some form of ensembling?\n- How statistically different are the results between the models (or at least the top competing ones).\n- How does the model perform in terms of computational complexity?",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

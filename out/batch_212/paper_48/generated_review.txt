@@ -1,0 +1,46 @@
+**Review:**
+
+This paper proposes Dozerformer, a sparse attention mechanism for multivariate time series forecasting that addresses the quadratic complexity of canonical transformers. The core contribution is the Dozer Attention mechanism, which combines three sparse components: Local attention (within a fixed window), Stride attention (at predefined intervals to capture seasonality), and Vary attention (dynamically expanding subset of historical context as the forecasting horizon extends). The authors argue these components capture locality, seasonality, and global temporal dependencies respectively, and evaluate the framework on nine benchmark datasets against recent state-of-the-art methods.
+
+**Strengths:**
+- The motivation is clear and well-articulated: addressing both computational complexity and the design choice of what historical information to attend to for forecasting is practically important.
+- The three-component design is intuitive and interpretable, with each component targeting a specific aspect of time series structure (locality, periodicity, and horizon-dependent context).
+- Evaluation on nine benchmark datasets demonstrates breadth, and the claim of superior performance suggests empirical validation.
+- The Vary component's dynamic expansion with forecasting horizon is a thoughtful design choice that adapts to the increasing uncertainty of longer-term predictions.
+
+**Weaknesses:**
+- The abstract lacks critical implementation details: how exactly is the Vary subset selected and expanded? What is the computational complexity of the proposed mechanism compared to canonical attention? Without these details, it is difficult to assess whether the method truly achieves the claimed efficiency gains.
+- No ablation study is mentioned in the abstract. It is unclear which components (Local, Stride, Vary) contribute most to performance, or whether all three are necessary.
+- The paper does not discuss how hyperparameters (window size, stride interval, expansion rate) are chosen or tuned, raising questions about sensitivity and generalization across datasets.
+- The abstract provides no quantitative results, baseline comparisons, or statistical significance testing, making it impossible to assess the magnitude of improvements or their reliability.
+
+**Questions:**
+- What is the actual time and space complexity of Dozer Attention compared to standard attention and other sparse variants (e.g., Linformer, Performer)?
+- How are the three attention components combined (concatenation, summation, learned weighting)? Is there a principled way to balance their contributions?
+- Can you provide ablation results showing the individual contribution of Local, Stride, and Vary components?
+- How sensitive is the method to the choice of window size, stride interval, and the expansion schedule for Vary attention?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper addresses a relevant problem with a reasonable and interpretable solution. The three-component design is sensible and the breadth of evaluation is commendable. However, the abstract is insufficient to fully evaluate the technical contribution: critical details on complexity, ablation, and quantitative results are missing. The work appears sound in motivation but would benefit from clearer exposition of implementation and more rigorous empirical analysis before publication.
+
+**Confidence:**
+3 (Low–Medium)
+
+The abstract alone does not provide enough detail to assess soundness rigorously. A full paper review would be needed to verify claims about complexity, ablation, and statistical significance of improvements.
+
+**Soundness:**
+3 (Fair)
+
+The core idea is reasonable, but without implementation details, complexity analysis, and ablation studies, soundness cannot be fully assessed. The claim of "superior performance" is unsupported by quantitative evidence in the abstract.
+
+**Presentation:**
+3 (Fair)
+
+The abstract is well-structured and readable, but lacks critical technical and empirical details necessary for a complete evaluation. Key design choices (how Vary expands, how components combine) are not explained.
+
+**Contribution:**
+3 (Fair)
+
+The contribution is incremental: combining known sparse attention patterns (local, stride-based) with a dynamic context window is intuitive but not particularly novel. The Vary component's dynamic expansion is the most novel aspect, but its design and impact are not clearly articulated.

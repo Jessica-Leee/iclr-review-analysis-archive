@@ -1,0 +1,18 @@
+{
+  "paper_id": "ymjI8feDTD",
+  "review_id": "GEDOTM0q59",
+  "year": 2024,
+  "line": 481,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "Overall, I think this is a great submission. \n\n- The topic of the paper is timely. Consistency Models have been recently proposed and they offer a promising solution for one-step generation with diffusion models.\n\n- The proposed method is simple, intuitive, and novel. \n\n- This framework provides a natural way to perform multistep sampling. It mitigates a significant limitation of Consistency Models which is that the performance was not increasing significantly even if more computational budget was available.\n- The method has great empirical success -- it achieves a new SOTA for single-step generation in ImageNet and CIFAR-10.\n- The comparison with the baselines is thorough.\n- The presentation of the method is clear. I particularly liked Figure 2.",
+  "human_weaknesses": "",
+  "human_review_text": "The authors extend the recently introduced Consistency Models framework. Consistency Models were proposed as a distillation method to accelerate the sampling of diffusion models. They are trained to predict the output of the Probability Flow ODE trajectory. The authors of this work extend this method by training a model that can predict any intermediate point of the Probability Flow ODE trajectory. This has two benefits: i) the trained model can recover the conditional expectation (and the score) when the starting and the final time of the Probability Flow ODE are chosen to be close, ii) the framework provides a natural way to perform multistep sampling. The authors demonstrate successfully that their method works by achieving a new SOTA on CIFAR-10 and ImageNet.",
+  "human_questions": "See weaknesses above. Also, why would the student outperform the teacher? And why this method gives better results that Consistency Models when s=0?",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

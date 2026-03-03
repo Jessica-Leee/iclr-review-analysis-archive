@@ -1,0 +1,18 @@
+{
+  "paper_id": "yF19SY1i8M",
+  "review_id": "dXhFg93FPv",
+  "year": 2024,
+  "line": 741,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "This is clearly a relevant problem -- benchmarking general-purpose models is increasingly done by comparing results on multiple datasets and tasks, but due to many reasons (outlined in the paper) not all systems may be run on all tasks, which makes simple averaging impractical.\n\nThe method is clever. It combines 1) estimates based on the proportion of total orders with a given pairwise ordering that are compatible with the observed partial ordering, 2) Borda count on the task orderings into a final ranking, 3) confidence intervals on the resulting rankings.\n\nThe formalisation of the problem is clear and useful, and a lot of detail is provided in the appendix. One of the contribution is a practical, non combinatorial method solving the non-trivial problem of estimating the proportion of total orders compatible with an observed partial order.\n\nThe method seems to yield much improved robustness compared to simple averaging, and the resulting ranking remains much closer to reference ranking when the proportion of missing scores increases.",
+  "human_weaknesses": "",
+  "human_review_text": "This submission addresses the significant and increasingly relevant problem of benchmarking on multiple datasets when not all systems have been run on all tasks, or even all instances in a task. They propose a novel formalism to derive system rankings (with confidence) from results missing some scores, and show that this improves robustness compared to simply averaging over only available scores.",
+  "human_questions": "It was not fully clear why the 'argsorts' are systematically doubled (p.3, p.6). E.g. in Eq. 3, it seems that computing the average of estimated scores, one sort would be enough to recover the permutation with correct ranking?\n\nClarity:\n* \"input\" in Sec. 3.2.1 is likely \"impute\" (the missing data/information)?\n* Still Sec. 3.2.2: p_{i,j} pops up in the last paragraph -- is that M_{i,j}?\n* Sec 3.2.3, step 3.: Need some reference to a publication or appendix for Borda count aggregation\n* Figures are overall way too small and often unreadable. Their positioning is odd, for example Fig. 2 (top p.7) is referenced on p.9. \n* The x-axis in Fig 2 and Fig 5 seem to show the proportion of scores observed rather than proportion of scores removed. As described in the text, Kendal Tau tends to 1 when there is no (0%) missing data.\n* What is \"[4]\" in Sec. 5.1?\n* Sec 5.2: \"in the robustness experiment\" -> not clear what you mean by that and where those are described.\n\nTypos:\n* Citations lack brackets in most places -- likely an issue with \\cite[] usage with the style file\n* p.2: \"Our includes...\"\n* p.3: \"previously mentioned.\" ... article?\n* p.3: \"on a k of test instances\" -> on k test instances?\n* p.5, l-4: Superscripts of M seem messed up\n* p.9: \"in Ssec 5.3\" is likely 5.2 (we are in 5.3)",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "2 fair",
+    "contribution": "3 good"
+  }
+}

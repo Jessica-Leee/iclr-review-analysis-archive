@@ -1,0 +1,46 @@
+**Review:**
+
+This paper proposes Med-Tuning, a parameter-efficient transfer learning framework for medical volumetric segmentation that combines intra-stage feature enhancement and inter-stage feature interaction. The key contribution is Med-Adapter, a novel adapter block incorporating a Fourier Transform branch designed to capture global context while maintaining computational efficiency. The authors claim to reduce tuned parameters by up to 4× compared to full finetuning while achieving better segmentation performance on CT and MRI benchmarks.
+
+**Strengths:**
+
+1. **Well-motivated problem**: Parameter-efficient transfer learning for medical imaging is practically important, and the paper addresses a genuine need for reducing computational and memory costs during finetuning of large pre-trained models.
+
+2. **Principled design choice**: The use of Fourier Transform to model global context in medical volumetric data is intuitive and theoretically grounded. The combination of intra-stage feature enhancement and inter-stage feature interaction is a reasonable architectural design.
+
+3. **Comprehensive evaluation**: The paper evaluates on three benchmark datasets spanning both CT and MRI modalities, demonstrating broad applicability. The claim of 4× parameter reduction with improved performance is compelling if well-validated.
+
+4. **Clear practical impact**: Achieving better results with fewer parameters is a valuable contribution for practitioners deploying medical segmentation models in resource-constrained settings.
+
+**Weaknesses:**
+
+1. **Limited novelty in components**: While the overall framework is reasonable, individual components (adapters, feature enhancement, Fourier transforms) are not novel. The paper reads more as a careful engineering contribution than a fundamental methodological advance. The novelty lies primarily in their combination for this specific task.
+
+2. **Insufficient methodological detail in abstract**: The abstract lacks specifics on how intra-stage feature enhancement and inter-stage feature interaction are implemented. The description of Med-Adapter's Fourier Transform branch is vague—what exactly does "well-designed" mean, and how does it differ from standard Fourier approaches?
+
+3. **Missing ablation and baseline comparisons**: The abstract does not clarify which parameter-efficient methods are compared against (LoRA, prefix tuning, BitFit, etc.) or provide ablation studies isolating the contribution of each component (Fourier branch, feature enhancement, inter-stage interaction).
+
+4. **Reproducibility concerns**: No mention of code availability, hyperparameter details, or training procedures. The claim of "better results than previous parameter-efficient transfer learning methods" cannot be verified without knowing which methods and what experimental setup was used.
+
+5. **Generalization unclear**: The paper transfers from 2D natural image pre-training to 3D medical data. While interesting, the abstract does not discuss how well this approach generalizes to other medical imaging tasks or whether the method is specific to volumetric segmentation.
+
+**Questions:**
+
+1. How does Med-Adapter's Fourier Transform branch specifically differ from applying standard FFT-based convolutions or frequency-domain processing in prior work?
+2. Which parameter-efficient baselines (LoRA, adapters, etc.) are included in the comparison, and what are their parameter counts?
+3. Can you provide ablation studies showing the individual contribution of intra-stage enhancement, inter-stage interaction, and the Fourier branch?
+4. How sensitive is the method to the choice of pre-trained 2D model, and does it work with different backbone architectures?
+
+**Overall score:**
+
+6: marginally above the acceptance threshold
+
+The paper addresses a practical problem with a reasonable solution and claims strong empirical results. However, the novelty is primarily in careful engineering rather than fundamental methodological innovation, and the abstract lacks sufficient detail on methodology, baselines, and ablations to fully assess the contribution. The work would benefit from more thorough experimental validation and clearer exposition of what makes Med-Adapter and the overall framework novel beyond existing parameter-efficient transfer learning approaches.
+
+**Confidence:** 3 (medium)
+
+**Soundness:** 3 (fair)
+
+**Presentation:** 2 (fair)
+
+**Contribution:** 3 (fair)

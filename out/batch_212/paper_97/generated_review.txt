@@ -1,0 +1,38 @@
+**Review:**
+
+This paper tackles the challenging problem of scaling inverse reinforcement learning (IRL) to planetary-scale route recommendation in Google Maps, involving hundreds of millions of states and demonstration trajectories. The authors introduce Receding Horizon Inverse Planning (RHIP), a generalization of classic IRL algorithms that provides fine-grained control over the trade-off between cheap deterministic planners and expensive stochastic policies via a planning horizon parameter. The approach combines graph compression, spatial parallelization, and initialization strategies inspired by eigenvector algorithms to achieve practical scalability. The work demonstrates a 16–24% improvement in route quality at global scale and includes ablation studies and negative results from alternative eigenvalue solvers.
+
+**Strengths:**
+- **Significant real-world impact and scale**: Deploying IRL at planetary scale with hundreds of millions of states and trajectories is a substantial engineering and algorithmic achievement. The reported 16–24% route quality improvement is a concrete, measurable contribution to a widely-used system.
+- **Clear methodological insight**: The observation of a trade-off between deterministic and stochastic planners, formalized through the planning horizon in RHIP, is intuitive and well-motivated. This provides practitioners with explicit control over performance–cost trade-offs.
+- **Thorough empirical validation**: The paper includes ablation studies of key components and reports negative results from alternative eigenvalue solvers, demonstrating scientific rigor and transparency.
+- **Practical scalability techniques**: Graph compression, spatial parallelization, and improved initialization are concrete, implementable contributions that enable the approach to work at scale.
+
+**Weaknesses:**
+- **Limited algorithmic novelty**: RHIP appears to be a relatively straightforward generalization of classic IRL methods via a planning horizon parameter. The core algorithmic contribution is incremental compared to the engineering effort required for scalability.
+- **Insufficient technical detail and theoretical justification**: The abstract provides limited insight into how graph compression, spatial parallelization, and eigenvector-inspired initialization work or why they are effective. The connection to eigenvector algorithms is mentioned but not explained. Readers cannot assess the soundness of these techniques or reproduce them.
+- **Unclear generalization and reproducibility**: The work is deeply embedded in Google Maps' infrastructure and domain-specific optimizations. It is unclear how much of the success is due to RHIP versus engineering choices, data quality, or domain-specific tuning. Reproducibility outside this setting appears limited.
+- **Incomplete evaluation**: The paper lacks comparison to baselines or alternative IRL approaches at scale. Without such comparisons, it is difficult to assess whether RHIP or the scalability techniques are responsible for improvements. The evaluation focuses on route quality but does not report computational costs, convergence rates, or other metrics that would help practitioners understand trade-offs.
+
+**Questions:**
+- How does RHIP compare quantitatively to classic IRL methods (e.g., MaxEnt IRL, apprenticeship learning) on the same data and infrastructure?
+- Can you provide more detail on the graph compression and spatial parallelization schemes? What are the approximation guarantees or error bounds?
+- How sensitive is the approach to the planning horizon parameter? Is there a principled way to select it?
+- What fraction of the 16–24% improvement comes from RHIP versus the scalability techniques, initialization, or other engineering choices?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+This paper makes a solid practical contribution by successfully deploying IRL at unprecedented scale with measurable real-world impact. However, the algorithmic novelty is limited, and the presentation lacks sufficient technical depth to enable understanding or reproduction of the core techniques. The work is valuable as an engineering contribution and case study, but falls short of the algorithmic or theoretical rigor expected at a top-tier venue. It would benefit from clearer exposition of the scalability techniques, more rigorous baselines, and deeper analysis of the trade-offs introduced by RHIP.
+
+**Confidence:**
+3: moderate (the assessment is based on the abstract and limited technical detail; a full paper with methodology sections could substantially change this evaluation)
+
+**Soundness:**
+Fair (the approach appears sound in principle, but insufficient technical detail prevents full assessment; negative results from alternative solvers are a positive sign)
+
+**Presentation:**
+Fair (the abstract is well-written and motivating, but lacks the technical depth needed to understand or reproduce the work)
+
+**Contribution:**
+Good (strong real-world impact and scale, but limited algorithmic novelty; the work is primarily an engineering contribution)

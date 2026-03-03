@@ -1,0 +1,18 @@
+{
+  "paper_id": "yroyhkhWS6",
+  "review_id": "pxzpK4TCH8",
+  "year": 2024,
+  "line": 448,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. This paper proposes a scheduler for the synchronization interval of local SGD/ADAM, a.k.a. the Quadratic Synchronization Rule (QSR), which recommends dynamically setting such intervals in proportion to the inverse of the square of learning rate. \n\n2. The proposed algorithm is supported by theoretical analysis based on SDE. \n\n3. The empirical results show that QSR can achieve better validation accuracy with less communication overhead.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposes a scheduler for the synchronization interval of local SGD/ADAM, a.k.a. the Quadratic Synchronization Rule (QSR), which recommends dynamically setting such intervals in proportion to the inverse of the square of learning rate. The proposed algorithm is supported by theoretical analysis based on SDE. The empirical results show that QSR can achieve better validation accuracy with less communication overhead.",
+  "human_questions": "1. Although QSR is supported by theoretical analysis, I still wonder how the other options work, such as setting $H$ proportion to $\\frac{1}{\\eta}$ or $\\frac{1}{\\sqrt{\\eta}}$. Is there any corresponding ablation experiments?\n\n2. Many theoretical analysis suggests a learning rate scheduler $\\eta \\propto \\frac{1}{\\sqrt{T}}$, where $T$ is the number of steps. What if we detach the choice of $H$ from the learning rate, and simply use $H \\propto T$ (with some rounding of course)?\n\n3. Is it possible to extend the theoretical analysis to local Adam?",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

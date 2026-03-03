@@ -1,0 +1,36 @@
+**Review:**
+
+This paper advocates for using transparent, knowledge-based models over opaque deep learning approaches for simple tasks, and demonstrates the approach on banana ripeness classification. The authors propose planning explainability and model design together, comparing deep learning baselines against more interpretable strategies while conducting a user study to evaluate perceived explainability. While the core message—that simpler, more transparent models can be preferable for straightforward problems—is sensible and underexplored in the literature, the execution falls short of publication standards for a top-tier venue.
+
+**Strengths:**
+- Addresses a genuinely overlooked perspective in ML: the unnecessary application of black-box models to simple, well-structured tasks where transparent approaches suffice.
+- Includes a user study to validate that end users perceive explainability gains, moving beyond purely technical metrics.
+- Clear motivation grounded in practical concerns (trustworthiness, debuggability, regulatory compliance).
+
+**Weaknesses:**
+- **Severely limited scope and generalizability:** The entire empirical validation rests on a single, narrow task (banana ripeness classification). No evidence that findings transfer to other "simple tasks" or problem domains. This makes it impossible to assess whether the guidelines proposed are broadly applicable.
+- **Insufficient technical novelty:** The paper does not propose new methods, algorithms, or theoretical insights. It applies existing transparent modeling techniques (feature engineering + traditional classifiers) to one case study without methodological innovation.
+- **Incomplete experimental design:** The abstract mentions comparing opaque and transparent strategies but provides no details on baselines, accuracy metrics, or statistical significance. The user study design, sample size, and statistical analysis are not described. No ablation studies or sensitivity analyses are evident.
+- **Vague guidelines:** The paper claims to "highlight" and propose "guidelines" for knowledge-based problem-solving, but these are not formally articulated, validated across tasks, or actionable for practitioners facing new problems.
+- **Presentation issues:** The title is prescriptive ("Stop overkilling...") rather than descriptive, and the abstract reads more like a position paper than a research contribution with reproducible methodology and results.
+
+**Questions:**
+- What specific transparent modeling strategies were used, and how do they compare quantitatively to deep learning baselines on banana ripeness classification?
+- How many participants were in the user study, and what were the statistical findings regarding perceived explainability?
+- Can the proposed approach and guidelines be validated on additional simple classification tasks to demonstrate generalizability?
+- What is the "minimal loss of accuracy" mentioned—can you provide exact numbers?
+
+**Overall score:**
+3: Reject, not good enough. While the paper raises a valid and underexplored perspective, it lacks the technical depth, methodological rigor, experimental breadth, and novelty expected at ICLR. A single case study on banana classification, without detailed methodology or reproducible results, is insufficient to support broad claims about when to use transparent models. The work would be better suited to a workshop, applications track, or domain-specific venue after substantial expansion to multiple tasks and rigorous experimental validation.
+
+**Confidence:**
+4 (High confidence in this assessment; the limitations are fundamental rather than marginal.)
+
+**Soundness:**
+2 (Fair—the core idea is sound, but execution is incomplete; insufficient experimental detail and validation.)
+
+**Presentation:**
+2 (Fair—clear motivation, but lacks technical precision and rigor in describing methods and results.)
+
+**Contribution:**
+2 (Poor—primarily a position/perspective paper with minimal novel methodology or validated insights; single narrow case study.)

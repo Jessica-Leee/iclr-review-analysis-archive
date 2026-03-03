@@ -1,0 +1,35 @@
+**Review:**
+
+This paper proposes a pattern memory network for multivariate time series (MTS) forecasting that aims to capture both evident and latent channel dependencies. The core contribution is the introduction of knowledge and episodic memory modules—the former designed to capture latent channel dependencies by identifying intrinsic variables causing synchronized changes, and the latter to capture evident channel dependencies through direct channel mixing. The authors claim their approach addresses a gap in existing methods and validate it on eight datasets.
+
+**Strengths:**
+
+- The conceptual distinction between evident and latent channel dependencies is intuitive and potentially useful for understanding MTS structure.
+- Evaluation on eight datasets demonstrates breadth of empirical validation.
+- The motivation to move beyond simple channel mixing toward discovering intrinsic causal factors is reasonable.
+
+**Weaknesses:**
+
+- **Clarity and rigor:** The abstract lacks precise definitions of "evident" vs. "latent" channel dependencies and does not clearly explain how the memory modules operationally distinguish between them. The phrase "intrinsic variable that caused the same changes" is vague and not formally defined.
+- **Methodological details absent:** The abstract provides no algorithmic details, loss functions, or architectural specifics for the knowledge and episodic memory modules or their "well-designed recall method." Without these, reproducibility and technical assessment are impossible.
+- **Limited novelty justification:** Memory-augmented architectures and attention-based channel modeling are well-established in time series forecasting. The abstract does not articulate what is fundamentally novel beyond applying memory modules to this problem.
+- **Incomplete experimental reporting:** No baseline comparisons, performance metrics, or statistical significance tests are mentioned. Claims of "effectiveness" cannot be evaluated without quantitative results, ablation studies, or comparison to state-of-the-art methods.
+- **Presentation:** The writing is somewhat awkward (e.g., "observe two kinds of existed channel dependencies") and the abstract reads more as a motivation than a complete technical contribution.
+
+**Questions:**
+
+- How are the knowledge and episodic memory modules formally defined and trained? What is the recall mechanism?
+- What specific baselines were compared, and by how much does the proposed method outperform them?
+- Can you provide ablation studies isolating the contribution of each memory module?
+- How do you empirically validate that the method captures latent vs. evident dependencies as claimed?
+
+**Overall score:**
+3: Reject, not good enough. While the motivation is reasonable, the abstract lacks sufficient technical detail, formal definitions, and experimental evidence to assess the contribution. The paper reads as preliminary and requires substantial clarification of methods and comprehensive empirical validation before it can be properly evaluated.
+
+**Confidence:** 3 (Limited; assessment is based on abstract only, which is sparse on technical content.)
+
+**Soundness:** 2 (Poor; insufficient methodological detail to evaluate soundness.)
+
+**Presentation:** 2 (Poor; vague terminology, incomplete descriptions, and awkward phrasing hinder understanding.)
+
+**Contribution:** 2 (Poor; novelty is unclear and not well-justified relative to existing memory-augmented and attention-based time series methods.)

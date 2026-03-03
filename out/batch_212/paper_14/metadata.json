@@ -1,0 +1,18 @@
+{
+  "paper_id": "zrxlSviRqC",
+  "review_id": "og13umrAL0",
+  "year": 2024,
+  "line": 55,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "I think this paper is well written and the idea is easy to follow. The reformulation trick, though simple, is interesting to me.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposes to change the loss function of energy based model based on a variational formulation. The proposed algorithm estimate an extra parameter b together with the energy function $E_\\theta(x)$. The author use importance sampling with base distribution $q(x)$ to estimate the normalizing term of the energy function. They carry out the experiments on toy example datasets and energy regression task.",
+  "human_questions": "Please see weakness.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

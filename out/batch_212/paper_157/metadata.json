@@ -1,0 +1,18 @@
+{
+  "paper_id": "yXklOV0ZIv",
+  "review_id": "9G1RrtYTbi",
+  "year": 2024,
+  "line": 607,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The authors provide a clear and intuitive analysis of the limitations present in the baseline method (CAL), proposing straightforward yet effective solutions to enhance its performance. Each proposed solution, addressing Characteristics 1, 2, and 3, demonstrates simplicity and efficacy. The experimental results solidify the effectiveness of the introduced loss functions, providing tangible evidence of improvement. Furthermore, the manuscript is well-structured and articulated, ensuring a smooth and comprehensible reading experience for the audience.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper introduces a learnable counterfactual attention mechanism, specifically tailored for the singer identification task, aiming to address the limitations of existing counterfactual attention learning. Unlike the traditional approach that depends on random attentions, the LCA mechanism enhances the ability of counterfactual attention to identify fine-grained vocals through direct learning. The implementation involves integrating a counterfactual attention branch into the existing model. This addition is meticulously guided by multiple loss functions, ensuring that the counterfactual attention branch focuses on regions that are meaningful yet not overly discriminative, avoiding potentially misleading results. Meanwhile, it directs the main branch towards discriminative regions to learn singer-specific features effectively. The performance improvement is demonstrated through evaluation on the benchmark artist20 dataset.",
+  "human_questions": "Please refer to the weaknesses.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

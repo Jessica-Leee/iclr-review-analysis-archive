@@ -1,0 +1,18 @@
+{
+  "paper_id": "yZBpnKpBCw",
+  "review_id": "dAHCPdkN0X",
+  "year": 2024,
+  "line": 595,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "Leveraging output probabilities for uncertainty estimation and batch diversity is novel, simple and elegant. This intuitively should capture informativeness and redundancy better than latent features.\nThe empirical results generally validate that FALCUN provides excellent accuracy across datasets at low computational cost. Outperforming methods like BADGE and CLUE is impressive.\nAnalysis of the uncertainty and diversity components in the ablation study highlights their complementary benefits. The automatic balancing between the two is also shown to be effective.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper proposes FALCUN, a new pool-based active learning approach for deep neural networks. FALCUN operates directly on output probabilities for efficiency and naturally balances uncertainty and diversity. Experiments on various image datasets show it matches or exceeds state-of-the-art methods in accuracy while being faster. The core ideas are interesting but the empirical evaluation methodology could be stronger.",
+  "human_questions": "On the proposed method:\n\nThe margin-based uncertainty measure is intuitive. But are there any theoretical justifications for using it over other alternatives like entropy or Bayesian uncertainty?\nFor the diversity initialization and update, were other potential approaches considered? Is there a principled basis for the specific design choices made?\nHow sensitive is FALCUN to the choice of the \u03b3 parameter for sampling from the relevance distribution? Is tuning gamma required for different datasets?\nWhat impact does the neural network architecture have on FALCUN's performance, if any? Does it generalize across model families like CNNs, MLPs etc?\nOn the experiments:\n\nBatchBALD is a highly relevant Bayesian batch active learning method - would be good to compare against it. What advantages can FALCUN provide over Bayesian approaches?\nThe datasets seem heavily focused on MNIST variants - were results consistent on more complex, modern datasets? How was performance with higher input dimensionality?\nFor colored image experiments, using pretrained weights may favor FALCUN over baselines - could this be addressed?\nWhat was the hyperparameter tuning strategy for baselines? Would better optimized baselines affect relative comparisons?\nHow was robustness to things like random initialization and train-test splits evaluated?",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

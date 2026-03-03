@@ -1,0 +1,18 @@
+{
+  "paper_id": "ycv2z8TYur",
+  "review_id": "f9U1AShxjV",
+  "year": 2024,
+  "line": 570,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- The proposed dataset holds potential value for research in dynamic scene reconstruction field\n- EmerNeRF demonstrates better reconstruction quality in driving scene dataset compared to the baselines\n- The obtained scene flow exhibits high accuracy compared to baseline method",
+  "human_weaknesses": "",
+  "human_review_text": "The paper introduces EmerNeRF, an approach for learning spatial-temporal representations of dynamic scenes. EmerNeRF decomposes scenes into static and dynamic fields, with an additional scene flow field modeling the movement of objects across time. The dynamic feature is computed as a weighted sum of features from nearby timesteps, where the sampling operation is determined by the self-supervised scene flow field. Additionally, the paper proposes a method to generate positional encoding (PE) free features from a pretrained feature encoder by leveraging the time-consistent property of PE features. The empirical result indicates the proposed method can achieve better novel view synthesis, flow estimation, and few-shot semantic prediction results compared to the baselines.",
+  "human_questions": "- What\u2019s the novel components that EmerNeRF propses?\n- How does EmerNeRF perform in more general dynamic scenes?\n- How does EmerNeRF compare to recent newer baseline?",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

@@ -1,0 +1,38 @@
+**Review:**
+
+This paper addresses multi-agent deep reinforcement learning in partially competitive environments by proposing Best Response Shaping (BRS), which improves upon prior work (LOLA, POLA) that is susceptible to exploitation through further optimization. The core contribution is a method that differentiates through an opponent approximating the best response (the "detective"), conditioned on the agent's policy via a state-aware differentiable conditioning mechanism using a question answering (QA) method. The authors validate their approach empirically against a Monte Carlo Tree Search (MCTS) opponent in the Coin Game, demonstrating improved performance and social welfare compared to existing methods.
+
+**Strengths:**
+- Clear motivation: the paper identifies a concrete limitation of LOLA/POLA (susceptibility to exploitation by further optimization) and proposes a principled response through best response approximation.
+- Novel conditioning mechanism: the state-aware differentiable conditioning via QA to extract policy representations is creative and appears well-suited to complex games where direct policy conditioning is intractable.
+- Relevant problem domain: multi-agent RL in partially competitive settings is an important and challenging area with practical applications.
+
+**Weaknesses:**
+- Limited empirical validation: evaluation is restricted to the Coin Game against MCTS. The paper lacks breadth—no comparison on standard multi-agent benchmarks (e.g., Iterated Prisoner's Dilemma, other partially competitive games) or against other recent multi-agent RL baselines beyond LOLA/POLA.
+- Insufficient technical clarity: the abstract does not explain how the QA method works in detail, what "question answering" means in this context, or how the state-aware conditioning is formally implemented. This makes reproducibility and understanding difficult.
+- Missing ablation studies and analysis: the paper does not justify design choices (e.g., why QA for conditioning? what is the computational overhead?). No ablation isolates the contribution of the detective vs. the conditioning mechanism.
+- Unclear generalization: it is unclear whether BRS generalizes beyond the Coin Game or whether the approach is tailored to this specific domain. The claim of "expanded applicability" is not well-supported by the limited experiments.
+
+**Questions:**
+- How does the QA method extract policy representations? Can you provide a formal definition or algorithm?
+- What is the computational cost of BRS compared to LOLA/POLA, especially given the need to train a detective and QA module?
+- How does BRS perform on other partially competitive games (e.g., Iterated Prisoner's Dilemma, mixed-motive coordination tasks)?
+- Can you provide ablation studies isolating the detective approximation from the state-aware conditioning mechanism?
+- How sensitive is the method to the quality of the MCTS opponent approximation?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper tackles a relevant problem and proposes a creative solution, but the evaluation is too narrow (single game, limited baselines) and the technical presentation lacks sufficient detail for reproducibility. The core ideas show promise, but the work needs stronger empirical validation across multiple domains and clearer exposition of the conditioning mechanism to meet the bar for acceptance at a top venue.
+
+**Confidence:**
+3 (moderate—limited information in abstract restricts confidence in detailed assessment)
+
+**Soundness:**
+Fair (the approach is conceptually sound, but insufficient detail and limited experiments prevent full evaluation)
+
+**Presentation:**
+Fair (clear motivation, but technical details of the QA conditioning mechanism are underspecified)
+
+**Contribution:**
+Fair (novel conditioning idea and response to LOLA/POLA limitations, but narrow empirical scope limits impact)

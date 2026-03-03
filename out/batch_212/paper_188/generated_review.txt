@@ -1,0 +1,36 @@
+**Review:**
+
+This paper proposes a robust GNN defense mechanism grounded in a unified robust estimation framework. The authors analyze existing robust GNNs through the lens of estimation bias, identify limitations in current approaches, and propose a robust unbiased graph signal estimator solved via a Quasi-Newton iterative reweighted least squares algorithm. The algorithm unfolds as robust unbiased aggregation layers with theoretical convergence guarantees. The work addresses an important problem—adversarial robustness of GNNs—and offers both theoretical insight and a practical algorithm.
+
+**Strengths:**
+
+- **Unified theoretical perspective**: The paper provides a principled robust estimation framework to understand and compare existing robust GNNs, moving beyond ad-hoc defenses. The analysis of estimation bias as a source of vulnerability is conceptually clear and well-motivated.
+- **Algorithmic contribution with guarantees**: The Quasi-Newton iterative reweighted least squares approach is concrete and comes with theoretical convergence guarantees, bridging optimization theory and GNN design in a principled way.
+- **Comprehensive evaluation**: The paper reports strong empirical robustness results and includes ablation studies that provide insight into the method's advantages.
+
+**Weaknesses:**
+
+- **Limited novelty in core techniques**: While the application is novel, iterative reweighted least squares and Quasi-Newton methods are standard optimization tools. The main contribution is their application to robust GNNs rather than methodological innovation.
+- **Incomplete experimental details**: The abstract does not specify which datasets, baselines, or attack methods were used. Without details on adaptive attacks (which the abstract acknowledges as a key concern), it is difficult to assess whether the robustness claims are convincing or whether the method is vulnerable to stronger adaptive adversaries.
+- **Presentation clarity**: The abstract does not clearly explain how the estimation bias analysis translates into the design of the unbiased estimator, or how the algorithm concretely differs from prior robust GNN defenses. The connection between theory and practice could be made more explicit.
+- **Scalability and practical considerations**: No discussion of computational complexity or scalability to large graphs is provided, which is important for practical deployment of iterative reweighting schemes.
+
+**Questions:**
+
+- How does the computational cost of the Quasi-Newton iterative reweighted least squares algorithm scale with graph size compared to standard GNN aggregation?
+- Were adaptive attacks specifically designed against your method evaluated, or only standard attacks from the literature?
+- Can you provide more detail on how the estimation bias analysis directly motivates the specific form of the unbiased estimator?
+
+**Overall score:**
+
+6: marginally above the acceptance threshold
+
+The paper makes a solid theoretical contribution by unifying robust GNN analysis under an estimation framework and proposes a principled algorithmic solution with convergence guarantees. The empirical results appear strong, and the ablation study adds value. However, the core optimization techniques are standard, experimental details are sparse in the abstract, and the practical advantages over existing methods are not clearly articulated. The work is technically sound and addresses an important problem, but falls short of being a strong accept due to limited algorithmic novelty and incomplete experimental transparency.
+
+**Confidence:** 3
+
+**Soundness:** Good
+
+**Presentation:** Fair
+
+**Contribution:** Good

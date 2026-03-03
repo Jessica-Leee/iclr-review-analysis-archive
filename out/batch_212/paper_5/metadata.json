@@ -1,0 +1,18 @@
+{
+  "paper_id": "zxOFe1mx26",
+  "review_id": "luDxWFzm32",
+  "year": 2024,
+  "line": 19,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The article is devoted to important subject of disentanglement learning. Authors report improvements over some of existing methods on four simple datasets",
+  "human_weaknesses": "",
+  "human_review_text": "The manuscript aims to improve existing methods of unsupervised disentangled representations learning.  Inspired by the symmetry group action approach from (Higgins et al 2018,2022), authors suggest several additions for the conventional beta-VAE  method, resulting  in the form of seven supplementary loss terms.",
+  "human_questions": "Why is the reconstruction quality not reported in three out of four datasets?\n\nWhy the method was not tested on standard more complex datasets like MPI3D?",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

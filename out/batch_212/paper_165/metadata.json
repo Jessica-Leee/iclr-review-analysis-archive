@@ -1,0 +1,18 @@
+{
+  "paper_id": "ySS7hH1smL",
+  "review_id": "l9u4fN147G",
+  "year": 2024,
+  "line": 637,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- The authors did several experiments to justify their design choices and overcome the limitations of previous work.\n- I think the Dynamic Expert Allocation technique is intriguing and intuitive, and the results+analysis seem good. (See Questions section, though)\n- The authors did extensive ablations on their proposed techniques, and compared to a number of baselines.\n- The analysis based on empirical results is also good, and answer most of the questions a reader would have.",
+  "human_weaknesses": "",
+  "human_review_text": "The authors propose Lingual-SMoE, an MoE model suited to multilingual MT that overcomes limitations of previous work. It features:\n1) Has hierarchical gating that leverages linguistic groupings of the languages on which the model is trained.\n2) Uses a Dynamic Expert Allocation during training to determine the correct number of experts to allocate to each target language.\n\nThey conduct experiments on the OPUS-100 dataset with 16-100 languages, and extensively compare Lingual-SMoE to the baselines.",
+  "human_questions": "- wrt result with DEA added in Tables 1 and 2, do you have any analysis on why adding this is worse on LRLs for OPUS-16,100 compared to OPUS-50 (ie, the trend is reversed)? is, say, the number of experts per low resource language suddenly worse for 16,100? are there outliers for the 50 case? a trend reserval of +/-0.2 is not bad, but this is an order of magnitude reversal of the trend\n\n- wrt Figure 4, is this equally an issue for dense models? (it's known that this is an issue in general, but it is particularly different than dense models?)\n- What are the inference implications of your method? I think even theoretical trade-offs and discussion of this would be interesting, since the most related works discuss this extensively",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "5: You are absolutely certain about your assessment. You are very familiar with the related work and checked the math/other details carefully.",
+    "soundness": "4 excellent",
+    "presentation": "4 excellent",
+    "contribution": "4 excellent"
+  }
+}

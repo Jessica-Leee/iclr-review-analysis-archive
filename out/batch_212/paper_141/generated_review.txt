@@ -1,0 +1,33 @@
+**Review:**
+
+This paper proposes VDC (Versatile Data Cleanser), a method for detecting dirty samples in datasets by leveraging multimodal large language models (MLLMs) to identify visual-linguistic inconsistency between images and labels. The approach consists of three modules: visual question generation, visual question answering via MLLM, and visual answer evaluation to quantify inconsistency. The core insight—that poisoned samples, noisy labels, and hybrid corruptions share a common signature of visual-linguistic misalignment—is intuitive and potentially valuable for data-centric AI. The use of MLLMs' cross-modal reasoning capabilities to capture semantic inconsistency is a reasonable design choice.
+
+**Strengths:**
+- **Clear motivation and unified perspective**: The paper identifies a common property (visual-linguistic inconsistency) across diverse dirty sample types (backdoor attacks, noisy labels, hybrids), which is a useful unifying principle for a general-purpose detector.
+- **Practical relevance**: Addresses an important problem in data-centric AI; the ability to generalize across different corruption types is valuable.
+- **Leverages modern capabilities**: Using MLLMs for cross-modal alignment and reasoning is well-motivated and timely.
+
+**Weaknesses:**
+- **Limited methodological novelty**: The three-module pipeline (question generation → QA → evaluation) is relatively straightforward application of existing MLLM capabilities. The paper does not clearly articulate what novel algorithmic or architectural contributions it makes beyond prompting an MLLM.
+- **Insufficient experimental details in abstract**: The abstract provides no quantitative results, baseline comparisons, or dataset details. It is unclear how VDC compares to existing detectors (e.g., spectral methods, loss-based approaches, or other MLLM-based methods) or what the absolute performance levels are.
+- **Generalization claims lack support**: While the abstract claims "superior performance and generalization to various categories and types of dirty samples," no evidence is provided. Without seeing the full paper, it is unclear whether experiments cover diverse domains, corruption types, and dataset scales.
+- **Potential computational cost not addressed**: MLLMs are expensive to run at scale. The paper does not discuss computational overhead or scalability, which is critical for practical data cleaning.
+
+**Questions:**
+- How does VDC compare quantitatively to existing dirty sample detectors (e.g., spectral signatures, loss-based methods, or other MLLM-based approaches)?
+- What is the computational cost of running VDC on large datasets, and how does it scale?
+- How sensitive is the method to the quality of the visual question generation module? Are questions hand-crafted or generated automatically?
+- Does the method require task-specific tuning, or is it truly task-agnostic as claimed?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses a relevant problem and proposes a reasonable solution using modern MLLMs. However, the methodological contribution is limited (straightforward application of existing MLLM capabilities), and the abstract lacks concrete experimental validation, quantitative results, and comparisons to baselines. For a venue like ICLR, stronger evidence of novelty and empirical superiority is needed. The work may be suitable for a workshop or applications track, but the current presentation does not meet the bar for the main conference.
+
+**Confidence:** 2–3 (Low to moderate; assessment is based on abstract only; full paper may provide stronger evidence)
+
+**Soundness:** Fair (The core idea is sound, but methodological rigor and experimental validation are unclear from the abstract.)
+
+**Presentation:** Fair (The abstract is clear in motivation but lacks quantitative results and experimental details necessary for evaluation.)
+
+**Contribution:** Fair (Applying MLLMs to detect visual-linguistic inconsistency is a reasonable idea, but the novelty over existing MLLM applications is unclear.)

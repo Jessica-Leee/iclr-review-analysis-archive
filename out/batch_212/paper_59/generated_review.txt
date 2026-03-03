@@ -1,0 +1,38 @@
+**Review:**
+
+This paper proposes $\mathcal{ZS}^2$, a zero-shot video sampling algorithm that generates video clips directly from pretrained image diffusion models (e.g., Stable Diffusion) without training or optimization. The method leverages a dependency noise model and temporal momentum attention to maintain content consistency and animation coherence respectively. The authors claim state-of-the-art zero-shot video generation performance and applicability to conditional generation, context-specialized video generation, and instruction-guided video editing.
+
+**Strengths:**
+- **Practical approach**: The zero-shot setting is valuable—avoiding retraining or fine-tuning on video data sidesteps catastrophic forgetting and computational overhead, making the method broadly applicable to existing image models.
+- **Clear motivation**: The paper identifies genuine limitations of prior work (brief clips, simple movements, inability to capture fine-grained motion or non-grid deformation) and positions the proposed components (dependency noise model, temporal momentum attention) as targeted solutions.
+- **Broad applicability**: The claimed versatility across conditional generation, context-specialized generation, and video editing suggests the method is flexible and potentially impactful.
+
+**Weaknesses:**
+- **Insufficient technical detail in abstract**: The abstract provides no concrete explanation of how the dependency noise model or temporal momentum attention work. Without understanding the mechanism, it is difficult to assess novelty or soundness. Are these standard techniques applied in a new way, or genuinely novel components?
+- **Lack of experimental evidence in abstract**: The abstract claims "state-of-the-art performance, occasionally outperforming recent supervised methods," but provides no quantitative results, datasets, baselines, or metrics. This is a strong claim that requires concrete support.
+- **Missing ablation and analysis**: The abstract does not indicate whether ablations isolate the contribution of each component (dependency noise model vs. temporal momentum attention), nor does it discuss failure cases or limitations.
+- **Vague comparison to prior work**: The abstract mentions "recent attempts to directly extract video snippets from image diffusion models" but does not name specific methods or clearly delineate what $\mathcal{ZS}^2$ improves upon.
+
+**Questions:**
+- What is the dependency noise model, and how does it differ from standard noise scheduling in diffusion models?
+- How is temporal momentum attention implemented, and what is its computational cost relative to standard attention?
+- On which datasets and metrics (FVD, IS, LPIPS, user studies) were comparisons made, and what are the numerical results?
+- How does video length scale with the method, and what are typical generation times?
+- Can you provide qualitative or quantitative evidence of improved fine-grained motion and non-grid deformation compared to prior zero-shot methods?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses a relevant problem and proposes a practical zero-shot approach, but the abstract lacks sufficient technical depth and experimental validation to assess the contribution convincingly. The claimed improvements over supervised methods are striking but unsupported by numbers or baselines. A full paper with detailed methodology, comprehensive experiments, and ablations would be needed to evaluate this work fairly.
+
+**Confidence:**
+2–3 (Low to moderate; assessment is limited by the abstract's brevity and lack of technical/experimental detail.)
+
+**Soundness:**
+2 (Fair; the core idea is reasonable, but without technical details or experiments, soundness cannot be verified.)
+
+**Presentation:**
+2 (Fair; the abstract is clear in motivation but lacks the specificity needed for a technical venue.)
+
+**Contribution:**
+2–3 (Fair to poor; novelty is unclear without understanding the technical components or how they differ from prior work.)

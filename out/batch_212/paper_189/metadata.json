@@ -1,0 +1,18 @@
+{
+  "paper_id": "yGdoTL9g18",
+  "review_id": "AKOVNq9VnT",
+  "year": 2024,
+  "line": 737,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The paper introducers a small novel dataset and compares against a baseline on a hold-out test set.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper explores the introduction of a residual connection to the Factorized Fourier Neural Operator and evaluates this idea on a custom dataset of 118 simulations of turbulent flow around a 3D cube. It further explores the effect of simulating at a coarser time resolution (\"skip corrector\") and randomly subsampling the dataset each epoch to decrease the time it takes to train for one epoch (\"innovative training methodology\").",
+  "human_questions": "- The choice of evaluating models at 500 and 2000 training epochs seems arbitrary. It would be better to choose a convergence metric and compare both models at their optimum. If not, can you justify the choice of these steps, and does this choice benefit one model over the other?\n- Have you studied the discontinuities between the coarse-grained predictions and the adjacent last fine-grained predictions?",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "1 poor"
+  }
+}

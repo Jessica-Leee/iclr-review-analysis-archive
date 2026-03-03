@@ -1,0 +1,18 @@
+{
+  "paper_id": "y4bvKRvUz5",
+  "review_id": "F6beN3dS71",
+  "year": 2024,
+  "line": 794,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_review_text": "The paper proposes a novel method for dynamic convolutions, i.e. a method where the convolutional kernels used depend on the input tensor. This idea is typically achieved by having an attention head (e.g. akin to squeeze-and-excitation networks) to provide some linear coefficients that are then used to linearly combine some kernel basis to build the convolutional kernel. The proposed method breaks the kernel into pieces (e.g. across the channel dimension), each piece is constructed in the way described above, and then the pieces are put together to form the kernel. The authors propose some strong sharing methodology in which the kernel basis are shared by the different \"kernel pieces\" are across layers. The authors also propose a new way of computing the linear coefficients and some initialization strategy that are key to good performance. Experiments show improvements on imagenet, detection and segmentation for a number of convolutional architectures.",
+  "human_strengths": "The paper is clearly motivated and it is easy to understand the differentiation with respect to prior work.\n\nThe experimental results are comprehensive, covering several architectures, classification, detection and segmentation, has good ablations and even runtimes. I appreciate for example the inclusion of convnext-tiny and runtime measurements.\n\nThe paper is not trivial from a technical standpoint. There seems to be a significant amount of effort and experimentation involved into making the idea work.\n\nResults show high performance and ablations show the need for the different components.",
+  "human_weaknesses": "",
+  "human_questions": "See comments above",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

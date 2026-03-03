@@ -1,0 +1,37 @@
+**Review:**
+
+This paper addresses Byzantine robustness in cooperative multi-agent reinforcement learning (c-MARL) by proposing a Bayesian Adversarial Robust Dec-POMDP (BARDec-POMDP) framework. The key idea is to model Byzantine adversaries as nature-dictated types in a Bayesian game, allowing agents to learn posterior beliefs about other agents' types and adapt their policies accordingly. The authors define the optimal solution as an ex interim robust Markov perfect Bayesian equilibrium, prove its existence, and show that the corresponding policy weakly dominates previous approaches asymptotically. They develop a two-timescale actor-critic algorithm with convergence guarantees and validate the approach on matrix games, Level-based Foraging, and StarCraft II.
+
+**Strengths:**
+- The problem formulation is well-motivated and timely: Byzantine robustness in c-MARL is practically important and theoretically underexplored. Framing adversaries as Bayesian types is a principled way to handle uncertainty about agent behavior.
+- The theoretical contribution is solid: existence of ex interim robust Markov perfect Bayesian equilibrium and asymptotic policy dominance provide formal grounding. The two-timescale actor-critic algorithm with convergence guarantees is a reasonable algorithmic contribution.
+- Experimental validation spans diverse domains (matrix games, Level-based Foraging, StarCraft II) and tests multiple attack types (non-oblivious adversaries, observation-based attacks, transfer-based attacks), demonstrating practical applicability.
+
+**Weaknesses:**
+- The paper lacks clarity on key technical details. The abstract mentions "a separate transition" for adversary types but does not explain how this is formally incorporated into the Dec-POMDP or how agents infer types from observations. The connection between the Bayesian game formulation and the actual learning algorithm needs better exposition.
+- Convergence guarantees are stated as holding "under specific conditions," but these conditions are not detailed in the abstract. Without knowing what assumptions are required (e.g., bounded rewards, ergodicity, exploration rates), it is difficult to assess the practical applicability of the theoretical results.
+- The experimental section is underdeveloped in the abstract. While diverse domains are mentioned, there is no quantitative comparison to baselines, no ablation studies, and no discussion of computational overhead. The claim that the method "successfully acquires intricate micromanagement skills" is vague without concrete metrics or comparisons.
+- The relationship to prior work on Byzantine-robust learning and robust MARL is not discussed. It is unclear how this approach compares to existing defenses (e.g., median-based aggregation, robust consensus) or whether the Bayesian game perspective offers advantages beyond conceptual clarity.
+
+**Questions:**
+- How are agent types inferred in practice? Is there an explicit type-inference mechanism, or do agents learn type posteriors implicitly through policy gradients?
+- What are the "specific conditions" required for convergence, and how restrictive are they compared to standard actor-critic assumptions?
+- How does computational cost scale with the number of agents and types? Is the two-timescale algorithm practical for large-scale systems?
+- Can you provide quantitative comparisons (win rates, convergence speed, robustness metrics) against baselines on the experimental domains?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper tackles an important problem with a principled Bayesian game formulation and provides both theoretical and empirical contributions. However, the presentation lacks sufficient detail on the technical approach, convergence conditions, and experimental baselines. With revisions addressing clarity and more comprehensive experiments, this could be a solid contribution to the Byzantine-robust MARL literature.
+
+**Confidence:**
+3 (moderate confidence; limited detail in the abstract makes full assessment difficult)
+
+**Soundness:**
+Good (theoretical framework is principled, but convergence conditions are underspecified)
+
+**Presentation:**
+Fair (key technical details are missing or unclear; experimental validation is mentioned but not substantiated)
+
+**Contribution:**
+Good (novel problem formulation and Bayesian game perspective; solid theoretical and algorithmic contributions, though incremental in some respects)

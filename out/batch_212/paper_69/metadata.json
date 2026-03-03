@@ -1,0 +1,18 @@
+{
+  "paper_id": "zI6mMl7UmW",
+  "review_id": "LUQZff6t8g",
+  "year": 2024,
+  "line": 271,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. Overall, this paper is theoretically solid. The relationship between spatial and spectral is clearly uncovered with theoretical proofs.\n2. The experimental analysis of SAF can effectively demonstrate its capability for capturing heterophilous edges and punishing them with negative weights.\n3. The motivation for finding the correlation between spatial and spectral and combining them is clear and intriguing.\n4. The analysis of attention trends is consistent with intuition, showing the effectiveness of the proposed SAF.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper investigated the relationship between spectral graph filters and spatial GNNs. The theoretical results suggest that the graph filter obtained in spectral space is able to construct a non-local new graph that contains global connectivity information. By combining the representation aggregating from this adapted new graph with the spectral embedding obtained from polynomial graph filters, a new framework SAF is proposed for node classification. \nThe experiments revealed what the adapt adjacency learned in spatial space. The ablation study shows the effectiveness of spectral filtering, and the node classification performance of SAF is competitive.",
+  "human_questions": "Please try to fix the questions stated above.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "4 excellent",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "paper_id": "y3qpL2Ioys",
+  "review_id": "jzLN5R035C",
+  "year": 2024,
+  "line": 800,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_review_text": "This paper proposed efficient hierarchical generative modelling for neural architecture search using zero-cost proxies. NAS as a field often relies strongly on well-designed search spaces. Design of such search spaces is non-trivial especially in new domains and research areas. This paper addresses this disadvantage by  exploiting an extremely large, general-purpose search space efficiently, by training a two-level\nhierarchy of generative models. First level of the conditional generative process focusses on micro-cell design using conditional continuous normalizing flow and the second level uses an transformer to sequentially model the macro architecture. What makes this approach effective in these larger spaces is the ability to exploit task-agnostic zero cost proxy scores to pre-train the generative model. The method is evaluated on the cifar10, cifar100 and the imagenet1-k dataset.",
+  "human_strengths": "Originality: I find the main contribution of the paper of modelling a 2-level hierarchical search space (which is very expressive) novel and interesting. Furthermore this paper effectively avoids the expensive training cost of generative nas models by relying on zero-cost proxies for pre-training\n\nClarity: I found the presentation clear in most parts (refer to questions for things that are unclear)\n\nSignificance: This paper in my opinion proposes an interesting way to exploit zero cost proxies to search in a large and expressive search spaces. The results in my opinion are competitive and significant",
+  "human_weaknesses": "",
+  "human_questions": "- Refer points in weaknesses\n\n- Could the search space design and search methodology be extended to transformer spaces like AutoFormer [1] or HAT [2]?\n\n- Could the authors ablate the choice of T-CET as a proxy in macro architecture generation across different proxy choices? How robust/sensitive is the search to different choices of (strong) zero-cost proxies?\n\n- Could the authors ablate the gains from each of the two phases of hierarchical generative modelling? ie fixing the cell and only performing macro search and vice-versa. \n\n- Could the authors study insights derived from NAS method? Which architectural designs tend to be more impactful than the others?\n\n[1] Chen, M., Peng, H., Fu, J. and Ling, H., 2021. Autoformer: Searching transformers for visual recognition. In Proceedings of the IEEE/CVF international conference on computer vision (pp. 12270-12280).\n\n[2] Wang, H., Wu, Z., Liu, Z., Cai, H., Zhu, L., Gan, C. and Han, S., 2020. Hat: Hardware-aware transformers for efficient natural language processing. arXiv preprint arXiv:2005.14187.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

@@ -1,0 +1,48 @@
+**Review:**
+
+AUTOPARLLM proposes a two-stage framework for automatic code parallelization that combines a heterogeneous GNN-based parallelism discovery module with an LLM-based code generator. The GNN learns flow-aware characteristics of sequential programs to identify parallel regions and detect parallel patterns, whose results are then used to construct an enhanced prompt for the LLM to generate parallel code. The authors evaluate on 11 applications from NAS Parallel Benchmark and Rodinia Benchmark, demonstrating improvements in code generation metrics and runtime (up to 3.4% and 2.9% respectively), and propose OMPScore, a new metric for evaluating parallel code quality that shows better correlation with human judgment than existing metrics.
+
+**Strengths:**
+- The combination of GNN-guided parallelism discovery with LLM-based generation is a sensible and well-motivated approach that leverages complementary strengths: structured program analysis via GNNs and flexible code generation via LLMs.
+- The introduction of OMPScore addresses a real gap in evaluation methodology for parallel code, with demonstrated improvements in correlation with human judgment (up to 75% improvement in Spearman correlation).
+- Evaluation on two established benchmark suites (NAS Parallel Benchmark and Rodinia) provides some standardization and reproducibility.
+- The work tackles a practically important problem—automating parallelization is valuable for productivity.
+
+**Weaknesses:**
+- The empirical improvements are modest: 3.4% and 2.9% runtime improvements are marginal and lack statistical significance testing or confidence intervals. It is unclear whether these gains are consistent or within noise margins.
+- The paper lacks sufficient methodological detail on key components: the GNN architecture (what heterogeneous graph structure is used? how are nodes/edges defined?), the prompt engineering strategy, and how the GNN results are integrated into the LLM prompt are underspecified.
+- Limited baseline comparisons: the abstract mentions "state-of-the-art LLM-based models" but does not name specific baselines or provide detailed comparisons. It is unclear how much improvement comes from the GNN guidance versus other design choices.
+- The evaluation is restricted to 11 applications on two benchmarks, which is a relatively small scale. Generalization to other domains, programming paradigms, or parallel frameworks (beyond OpenMP, implied by OMPScore) is not discussed.
+- OMPScore's design and validation are mentioned only briefly; the paper would benefit from more rigorous analysis of what makes this metric better and whether it generalizes beyond the tested benchmarks.
+
+**Questions:**
+- What is the exact architecture and training procedure for the heterogeneous GNN? How are program graphs constructed from source code?
+- Which specific LLM-based baselines are compared, and what are their names and configurations?
+- Are the runtime improvements statistically significant? What is the variance across runs?
+- How does AUTOPARLLM perform on programs with complex control flow or irregular parallelism patterns?
+- Can OMPScore be applied to parallel frameworks beyond OpenMP?
+
+---
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses a relevant problem and proposes a reasonable hybrid approach combining GNNs and LLMs. However, the modest empirical gains (without significance testing), insufficient methodological detail, limited baseline comparisons, and small-scale evaluation weaken the contribution. The introduction of OMPScore is a useful step, but its validation is underdeveloped. The work would benefit from deeper technical exposition, more comprehensive experiments, and stronger empirical results before publication at a top venue.
+
+**Confidence:**
+3 (moderate)
+
+**Soundness:**
+Fair
+
+The overall approach is sound in principle, but the execution lacks rigor: missing statistical analysis of improvements, underspecified technical details, and limited experimental scope reduce confidence in the claims.
+
+**Presentation:**
+Fair
+
+The abstract is clear and well-structured, but the paper likely lacks sufficient detail in the main text on the GNN architecture, prompt engineering, and OMPScore design to enable reproduction and deep understanding.
+
+**Contribution:**
+Fair
+
+The combination of GNN and LLM for parallelization is a reasonable contribution, and OMPScore addresses a real evaluation gap. However, the empirical validation is weak, and the novelty of individual components (GNN for program analysis, LLM for code generation) is incremental.

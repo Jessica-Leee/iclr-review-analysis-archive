@@ -1,0 +1,18 @@
+{
+  "paper_id": "zMvMwNvs4R",
+  "review_id": "9RStRmL1RR",
+  "year": 2024,
+  "line": 244,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The first half of the paper is well-organized and clearly written. I enjoy reading this part, which provides me a clear understanding of your motivation and method.\n2. The proposed method is technically sound, echoing your motivation, with theoritical proof and experimental studies.\n3. The experiments, overall, provide a good evidence of the effectivenss of the proposed method.",
+  "human_weaknesses": "",
+  "human_review_text": "This work proposes Error Norm Truncation (ENT), a method to clean low-quality data in training text generation models. The proposed method measures the distribution of each token between the predicted distribution and the ground-truth distribution, which is more robust than previous works of measearuing loss or probability.",
+  "human_questions": "1. In Table 1, when the untranslated ration is 10%, MLE outputperforms all the methods with a relatively large margin. This is interesting and also confusing, comparing to other ratio. Do you have any explain or study on this? Moreover, in real scenoria, I think the untranslated ratio in the dataset is not as large as more than 20%, so does this result suggest that under common situation, using MLE is enough to beat other modifications?\n2. In Table 2, the advantages of ENT and also the Loss Trunc. and TaiLr are not significant against MLE when ratio <=30%. Also in real scenoria, the misordered ratio might not be that high, which also raieses the same question as above.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

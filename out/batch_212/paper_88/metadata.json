@@ -1,0 +1,18 @@
+{
+  "paper_id": "z7usV2BlEE",
+  "review_id": "gkdfSdBLzm",
+  "year": 2024,
+  "line": 345,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "Overall the paper is easy to read and the presentation of the main ideas is clear.\n\nThe proposed method seems novel and is well-motivated. The empirical results are convincing.",
+  "human_weaknesses": "",
+  "human_review_text": "The authors propose a method to improve the chain-of-thought reasoning training by adding a loss function that imposes additional constraints such that sampled generated outputs that reach the correct answer are consistently favored over those with incorrect answer.\nThe method is evaluated on several reasoning datasets and is shown to outperform existing methods.",
+  "human_questions": "See above.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

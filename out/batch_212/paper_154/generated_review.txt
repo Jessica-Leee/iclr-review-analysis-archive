@@ -1,0 +1,42 @@
+**Review:**
+
+FALCUN proposes a batch active learning method that operates in the low-dimensional probability space rather than high-dimensional embedding space, achieving both label efficiency and computational speed. The core contribution is a self-adjusting acquisition function that naturally balances uncertainty and diversity by transitioning from emphasizing uncertain instances at the decision boundary to emphasizing batch diversity, without requiring fixed hyperparameter weighting. By avoiding intensive search through latent embeddings, the method addresses a practical bottleneck in deep active learning where acquisition time causes expert idle time.
+
+**Strengths:**
+- **Computational efficiency with practical impact**: Operating exclusively on probability space is a pragmatic design choice that directly addresses the real-world problem of acquisition time bottlenecks, which is often overlooked in active learning literature.
+- **Self-adjusting mechanism**: The natural transition from uncertainty to diversity without fixed weighting is conceptually appealing and appears to be a genuine methodological contribution over methods like BADGE and CLUE.
+- **Comprehensive experimental scope**: The paper demonstrates suitability across diverse use cases (image and tabular data) and compares against established baselines (BADGE, CLUE, AlfaMix).
+- **Clear motivation**: The paper articulates well why existing methods' fixed uncertainty-diversity trade-offs and embedding-space search are problematic.
+
+**Weaknesses:**
+- **Limited technical depth in abstract**: The abstract does not explain *how* the self-adjusting balance is achieved mechanistically. What drives the transition from uncertainty to diversity? Is it iteration-dependent, data-dependent, or based on some other principle?
+- **Insufficient methodological detail**: Without seeing the full paper, it is unclear whether FALCUN's advantage comes primarily from the acquisition function design or simply from the computational savings of operating in probability space. The relative contribution of each component is not evident.
+- **Incomplete experimental narrative**: The abstract claims "highest average label efficiency" and being "among the fastest," but does not specify on which datasets or under what conditions these claims hold, or whether trade-offs exist.
+- **Missing ablation and analysis**: No mention of ablation studies isolating the contribution of the self-adjusting mechanism versus the probability-space design, or analysis of when/why the method excels.
+
+**Questions:**
+- What is the precise mechanism by which the acquisition function transitions from uncertainty to diversity? Is this transition deterministic or learned?
+- How does FALCUN's label efficiency compare to baselines when computational cost is held constant (i.e., if baselines are given equivalent wall-clock time)?
+- Are there datasets or problem settings where the method underperforms, and if so, what characterizes them?
+- How sensitive is the method to the initialization and hyperparameters of the neural network classifier?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper addresses a genuine practical problem (acquisition time) with a reasonable solution (probability-space operations) and proposes a conceptually sound mechanism (self-adjusting uncertainty-diversity balance). The experimental scope appears broad and comparisons are made to relevant baselines. However, the abstract lacks sufficient technical detail to fully assess the novelty and soundness of the approach, and key ablations and failure-case analyses are not mentioned. The contribution feels solid but incremental—the main insight is computational rather than algorithmic. With a complete paper providing clearer mechanistic explanation, thorough ablations, and honest discussion of limitations, this could be a good practical contribution to active learning.
+
+**Confidence:**
+3 (Low–Medium)
+The abstract alone does not provide enough detail to assess the technical soundness or the true source of improvements. Confidence would increase substantially with access to the full paper, methods section, and experimental details.
+
+**Soundness:**
+Good (conditional)
+The core idea of operating in probability space is sound and the motivation is clear. However, without seeing the full method description, it is difficult to assess whether the self-adjusting mechanism is technically rigorous or whether the experimental validation is thorough.
+
+**Presentation:**
+Good
+The abstract is well-written and clearly motivates the problem. The paper's terminology (FALCUN, uncertainty-diversity balance, probability space) is used consistently and the narrative is easy to follow.
+
+**Contribution:**
+Fair–Good
+The contribution is primarily practical (faster acquisition via probability space) with a secondary algorithmic contribution (self-adjusting balance). This is a solid incremental advance but not a fundamental breakthrough. The novelty depends on how the self-adjusting mechanism is realized—if it is a simple heuristic, the contribution is more limited; if it is a principled design, it is stronger.

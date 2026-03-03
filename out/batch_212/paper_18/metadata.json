@@ -1,0 +1,18 @@
+{
+  "paper_id": "zpVPhvVKXk",
+  "review_id": "VQJ9HlclBE",
+  "year": 2024,
+  "line": 70,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The introduction of \"soft-weighted regularization\" that effectively removes negative target information from text embeddings, improving the control over undesired content generation.\n\n2. The method is more efficient than previous methods: no need for fine-tuning the generator and no collection of paired images.\n\n3. An interesting and inspiring analysis is conducted in Section 3.2.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper addresses the challenge of controlling the generation of unwanted content in text-to-image diffusion models by introducing two methods: soft-weighted regularization and inference-time text embedding optimization. These techniques effectively suppress undesired content and encourage the generation of desired content, with positive results demonstrated through quantitative and qualitative experiments on both pixel-space and latent-space diffusion models.",
+  "human_questions": "Please address questions in \"Weaknesses\".",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

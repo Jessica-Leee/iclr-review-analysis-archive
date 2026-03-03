@@ -1,0 +1,38 @@
+**Review:**
+
+This paper proposes a theoretical framework for reward-agnostic preference-based reinforcement learning (PbRL), addressing a gap between practical PbRL algorithms and existing regret-minimization theory. The key contribution is a two-phase approach: first, exploratory trajectories are collected to learn the hidden reward function; second, human feedback is used to optimize the policy. The authors provide sample complexity analysis for linear and low-rank MDPs with unknown transitions, and extend the framework to action-based comparison feedback. The theoretical results claim improved sample efficiency compared to existing literature.
+
+**Strengths:**
+- Addresses a meaningful gap between practical PbRL (e.g., in language model fine-tuning) and existing theoretical work, which has focused primarily on regret minimization.
+- Proposes a clean reward-agnostic formulation that separates exploration (for learning the reward) from exploitation (for policy optimization), which is conceptually appealing and may be more practical than online regret-minimization approaches.
+- Provides theoretical analysis with explicit sample complexity bounds for structured settings (linear and low-rank MDPs), extending beyond prior work.
+- Considers both trajectory-based and action-based comparison feedback, showing some generality.
+
+**Weaknesses:**
+- The abstract and summary lack concrete sample complexity bounds or comparisons to prior work. Without seeing the main results, it is difficult to assess the magnitude of the claimed improvement or whether the bounds are tight.
+- No empirical validation is mentioned. Even for a theory paper, experiments on synthetic or simple domains would strengthen the contribution and validate that the theoretical insights translate to practice.
+- The paper does not clarify how the "exploratory trajectories" are collected in the first phase. If this requires domain knowledge or is computationally expensive, the practical advantage over online methods may be limited.
+- Limited discussion of how the framework relates to recent practical PbRL work (e.g., in language models). The claim of capturing "most practical frameworks" is not substantiated in the abstract.
+
+**Questions:**
+- What are the explicit sample complexity bounds, and how do they compare quantitatively to regret-minimization baselines?
+- How is the exploration phase implemented? Does it require access to a simulator or expert demonstrations?
+- Can the authors provide even simple synthetic experiments to validate the theory?
+- How does the framework handle the case where the reward function is not perfectly learnable in the first phase?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper makes a solid theoretical contribution by proposing a reward-agnostic PbRL framework that bridges theory and practice. The two-phase approach is intuitive and the extension to low-rank MDPs is non-trivial. However, the lack of concrete sample complexity results in the abstract, absence of empirical validation, and limited clarity on practical implementation details prevent this from being a strong accept. The work would benefit from explicit bounds and at least synthetic experiments to demonstrate the utility of the approach.
+
+**Confidence:**
+3 (moderate)
+
+**Soundness:**
+Good (the approach is theoretically motivated, but without seeing proofs and detailed results, full assessment is limited)
+
+**Presentation:**
+Fair (the abstract is somewhat vague on key results; more concrete statements of bounds and comparisons would help)
+
+**Contribution:**
+Good (addresses a real gap between theory and practice in PbRL, but the magnitude of improvement and practical impact remain unclear)

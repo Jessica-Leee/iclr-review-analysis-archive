@@ -1,0 +1,18 @@
+{
+  "paper_id": "y8dHnNEcJu",
+  "review_id": "WIWUXKn7gI",
+  "year": 2024,
+  "line": 777,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "Using contrastive learning and CLIP text/visual encoders is an interesting idea. Especially optimizing learnable negative prompts and applying it to contrastive learning with positive image regions is very interesting. The novelty of the proposed method seems to be high.\n\nBy the experiments, the effectiveness of the proposed method was clearly shown. The proposed method seems to outperform the current SOTA method, WeakTr.",
+  "human_weaknesses": "",
+  "human_review_text": "A new Weakly-Supervised Semantic Segmentation (WSSS)  method, called SemPLeS, is proposed in this paper. In SemPLeS, Contrastive Prompt Learning and Class-associated Semantic Refinement are used to learn the prompts that adequately describe and suppress the image backgrounds associated with each target object category. The authors tested SemPLeS, and it outperformed the existing SOTA on popular benchmarks like PASCAL VOC and MS COCO.",
+  "human_questions": "I'm wondering if the proposed method is also effective for panatomic segmentation tasks such as Pascal Panatomic and CityScapes.",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "4 excellent",
+    "presentation": "3 good",
+    "contribution": "4 excellent"
+  }
+}

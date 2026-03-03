@@ -1,0 +1,18 @@
+{
+  "paper_id": "z9Xb6fADe4",
+  "review_id": "lwzvABGjSX",
+  "year": 2024,
+  "line": 321,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- Novel state representation using event graph captures airside congestion well\n\n- Pushback rate action space is more practical than on/off metering\n\n- Significant taxi delay and fuel burn reduction in experiments\n\n- Outperforms other approaches like tabu search and baseline DRL\n\n- Evaluated on realistic traffic scenarios from Singapore Airport",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposes a method based on Deep Reinforcement Learning (DRL) to address the airport takeoff control problem on mixed-mode runways. The core idea of the article includes formalizing the takeoff control problem as a Markov Decision Process (MDP), using a spatio-temporal event graph to characterize the traffic density in hotspots, and adopting a continuous deferral rate action space instead of the traditional binary open/close control method. In addition, the reward function aims to encourage high taxi speeds and runway utilization, and utilizes the Proximal Policy Optimization (PPO) algorithm to train agents. This method was evaluated on simulated traffic data from Singapore Changi Airport, and the results show that the DRL strategy reduces taxi delays, fuel consumption, and conflicts compared to baseline strategies. The article emphasizes the applicability and research characteristics of its application.",
+  "human_questions": "- How would the policy transfer to other airports with different layouts and traffic patterns?\n\n- Could the event graph idea be used for other air traffic management tasks?\n\n- What are other ways to set the hyperparameters instead of manual tuning?\n\n- How would the policy perform with human controllers in the loop vs automation?",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "2: You are willing to defend your assessment, but it is quite likely that you did not understand the central parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

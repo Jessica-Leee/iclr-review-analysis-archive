@@ -1,0 +1,38 @@
+**Review:**
+
+This paper addresses robustness of neural methods for vehicle routing problems (VRPs) against adversarial attacks—a practically important but underexplored problem. The authors propose a Collaborative Neural Framework (CNF) that adversarially trains multiple models in a collaborative manner, using a neural router to distribute instances across models for load balancing. The approach aims to enhance robustness against adversarial perturbations while maintaining or improving standard generalization on clean instances and out-of-distribution real-world benchmarks.
+
+**Strengths:**
+- **Timely and underexplored problem:** Adversarial robustness of neural combinatorial optimization methods is an important practical concern that has received limited attention in the literature.
+- **Versatile framework:** The CNF is presented as applicable to different neural methods for VRPs, suggesting generality across architectures.
+- **Comprehensive evaluation:** The paper claims extensive experiments across various attacks and methods, with evaluation on both clean and out-of-distribution instances.
+- **Practical relevance:** The focus on real-world benchmark generalization adds practical value beyond adversarial settings.
+
+**Weaknesses:**
+- **Limited methodological novelty:** The core contribution—adversarial training with multiple collaborative models and a neural router—appears to be a relatively straightforward combination of existing techniques (ensemble methods, adversarial training, and routing). The novelty of the neural router design and the specific collaborative mechanism is unclear from the abstract.
+- **Insufficient technical clarity:** The abstract provides minimal detail on how the neural router works, what "collaborative manner" means precisely, and how the approach differs from standard ensemble adversarial training. Without these details, it is difficult to assess the technical contribution.
+- **Missing experimental details:** The abstract does not specify which attacks are considered, which neural methods are evaluated, or provide quantitative results. Concrete numbers on robustness improvements and clean accuracy are essential for assessing impact.
+- **Unclear novelty over baselines:** It is not clear what the main baselines are (e.g., standard adversarial training, simple ensembles) or how substantially CNF outperforms them. The paper would benefit from explicit comparisons.
+
+**Questions:**
+- How does the neural router learn to distribute instances, and what is the training procedure? Is it jointly trained with the ensemble?
+- What specific adversarial attacks are considered (e.g., perturbations to coordinates, edge weights, or problem structure)?
+- Can you provide quantitative results on robustness (e.g., accuracy under attack) and clean accuracy for the main methods evaluated?
+- How does CNF compare to simpler baselines such as standard adversarial training on a single model or naive ensembles without the router?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper tackles a relevant problem and proposes a framework with practical potential, but the contribution feels incremental and the presentation lacks sufficient technical depth and experimental rigor for a top-tier venue. The abstract does not clearly articulate the novelty beyond combining existing techniques, and critical experimental details are missing. With more rigorous methodology exposition, stronger baselines, and concrete quantitative results, this could become a solid contribution.
+
+**Confidence:** 3 (Low)
+The assessment is based solely on the abstract, which provides limited technical and experimental detail. A full paper review could substantially change this evaluation.
+
+**Soundness:** 2 (Fair)
+The approach appears reasonable but lacks sufficient detail to verify soundness. The collaborative mechanism and neural router design need clearer exposition.
+
+**Presentation:** 2 (Fair)
+The abstract is readable but omits critical technical details and experimental results necessary to evaluate the contribution. Key methodological components are vaguely described.
+
+**Contribution:** 2 (Poor to Fair)
+While addressing an underexplored problem is valuable, the methodological contribution appears incremental—combining adversarial training, ensembles, and a routing mechanism without clear novelty in any component.

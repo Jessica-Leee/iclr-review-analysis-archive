@@ -1,0 +1,43 @@
+**Review:**
+
+This paper proposes CFASL, a disentanglement framework for VAEs that addresses multi-factor change conditions—where multiple latent factors vary simultaneously between paired samples—rather than single-factor changes alone. The core contribution is an inductive bias that aligns changes in input and latent spaces, constructs composite symmetries for multi-factor transformations, and induces group equivariant encoder and decoder. The authors introduce sample pairing for multi-factor conditions and an extended evaluation metric to assess disentanglement under these more realistic scenarios.
+
+**Strengths:**
+
+1. **Well-motivated problem:** The focus on multi-factor change conditions is practical and underexplored; most prior work assumes single-factor or pre-defined factor constraints, making this a meaningful extension.
+
+2. **Comprehensive approach:** The paper combines multiple ideas—symmetry alignment, composite symmetry construction, and group equivariance—into a coherent framework with clear motivation for each component.
+
+3. **Evaluation methodology:** Introduction of sample pairing and an extended metric tailored to multi-factor change conditions is a useful contribution that enables fairer assessment of the proposed method.
+
+4. **Empirical validation:** The abstract reports significant improvements on multi-factor conditions and competitive or improved performance on single-factor benchmarks, suggesting the method generalizes.
+
+**Weaknesses:**
+
+1. **Limited clarity on technical details:** The abstract does not provide sufficient detail on how composite symmetries are constructed, how group equivariance is enforced, or how the inductive bias is formally specified. The mechanism for handling "unknown factors" without pre-definition remains vague.
+
+2. **Incomplete experimental description:** No details on datasets, baselines, or quantitative metrics are provided. It is unclear which state-of-the-art methods are compared, what the magnitude of improvements is, or whether statistical significance is reported.
+
+3. **Presentation concerns:** The abstract is dense and uses terminology (e.g., "explicit symmetries," "composite symmetry") without clear definition. The paper would benefit from more intuitive exposition before technical details.
+
+4. **Generalization and scalability:** No discussion of computational cost, scalability to high-dimensional latent spaces, or limitations of the approach. The claim of "general multi-factor change condition without constraint" needs clarification—what constraints are truly removed?
+
+**Questions:**
+
+- How does CFASL handle cases where the number of factors or their nature is unknown a priori?
+- What is the computational overhead compared to baseline VAE methods?
+- Can you provide concrete examples of the composite symmetry construction for a specific dataset?
+- How sensitive is the method to the sample pairing strategy?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper tackles a relevant problem with a principled approach and shows empirical improvements. However, the abstract lacks sufficient technical clarity and experimental detail to fully assess the contribution. A full paper submission with detailed methodology, comprehensive experiments, and clearer exposition would be needed to confirm the significance of the results.
+
+**Confidence:** 3 (low—limited information in abstract alone)
+
+**Soundness:** 3 (fair—plausible approach but insufficient detail to verify)
+
+**Presentation:** 2 (poor—dense, unclear terminology, lacks intuitive explanation)
+
+**Contribution:** 3 (fair—addresses a relevant gap but novelty and scope unclear from abstract)

@@ -1,0 +1,18 @@
+{
+  "paper_id": "yBIJRIYTqa",
+  "review_id": "UjCdloEsKT",
+  "year": 2024,
+  "line": 765,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. This paper proposes and studies a novel and interesting problem. It is pretty smart to consider the case where the cost of an arm could be negative. \n\n2. The results are rich and good. It studies multiple cases, and provides good results for them. The results look good enough from my understanding and knowledge.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper studies the problem of bandits with knapsacks (BwK). In a BwK problem, there are m (m > 1) different types of cost for each action, and the agents needs to maximize the cumulative rewards (i.e., minimize the cumulative regret) before any resource runs out. In classic bandit setting, there is only one cost which is time, so the standard MAB problem is a special case of BwK.\n\nIn this paper, the cost of each action can be negative, whereas the previous BwK works only study the cases where the costs are non-negative. This new setting simulates the real-world applications (eg inventory management and Bilateral trade given in the paper) where the resources can be recovered with time. \n\nThis paper gives a general primal-dual algorithms for this new setup. In both of adversarial and stochastic bandit settings, this paper achieves nearly optimal results (linear gaps for adversarial and logarithm gaps for stochastic). To be specific, in the adversarial case, no algorithm can achieve sub-linear regrets, and the proposed algorithm only has constant gap to the lower bound. In the stochastic case, the algorithm achieves \\tilde{O}(\\sqrt{T \\log{mT}}) regret upper bound (note that the trivial lower bound is \\Omega(\\sqrt{T})).",
+  "human_questions": "It is not well discussed or stated how the negative cost could affect the problem. Is this new setup invalidate the existing algorithms, or it creates major challenges where we cannot simply use the existing algorithms or the regret analysis techniques?",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "2 fair",
+    "contribution": "3 good"
+  }
+}

@@ -1,0 +1,38 @@
+**Review:**
+
+This paper proposes Consistency Trajectory Models (CTM), a generalization of Consistency Models that learns to output scores and enables unrestricted traversal along the Probability Flow ODE in a single forward pass. The key contribution is a unified framework that encompasses both CM and score-based diffusion models as special cases, enabling flexible quality-speed trade-offs. The method combines adversarial training with denoising score matching loss and demonstrates strong empirical results: FID 1.73 on CIFAR-10 and FID 1.92 on ImageNet 64×64 for single-step sampling. Beyond improved sample quality, CTM provides access to the score function, enabling likelihood computation and easier integration with existing conditional/controllable generation methods from the diffusion literature.
+
+**Strengths:**
+- **Clear practical contribution**: CTM addresses a genuine limitation of Consistency Models—the lack of a natural quality-speed trade-off—by enabling traversal along ODE trajectories with a single network. The unification of CM and score-based models is conceptually elegant.
+- **Strong empirical results**: The reported FIDs (1.73 on CIFAR-10, 1.92 on ImageNet 64×64) for single-step sampling represent meaningful improvements and are competitive with state-of-the-art fast sampling methods.
+- **Broader applicability**: Access to the score function unlocks likelihood computation and streamlines adoption of conditional generation methods, increasing the practical utility of the approach beyond unconditional generation.
+- **Comprehensive sampling schemes**: The paper enables both deterministic and stochastic sampling with "long jumps" along ODE trajectories, providing flexibility absent in prior work.
+
+**Weaknesses:**
+- **Limited methodological novelty**: While the unification is useful, the core technical contribution—training a network to output both scores and consistency trajectories—appears incremental relative to existing score-based and consistency model literature. The paper would benefit from clearer exposition of the key technical innovations beyond combining existing losses.
+- **Incomplete experimental details**: The abstract lacks crucial details on experimental setup, hyperparameters, training procedures, and ablation studies. It is unclear how much improvement comes from the unified framework versus the combination of adversarial and denoising score matching losses, or how sensitive results are to design choices.
+- **Limited scope of evaluation**: Evaluation is restricted to CIFAR-10 and ImageNet 64×64. Broader evaluation (e.g., higher resolutions, other datasets, comparison with recent fast sampling methods like progressive distillation) would strengthen claims of state-of-the-art performance.
+- **Presentation clarity**: The abstract does not clearly explain *how* CTM achieves unrestricted ODE traversal or the mathematical formulation underlying the approach. The relationship between the consistency trajectory and the score function needs clearer exposition.
+
+**Questions:**
+- How does the computational cost of CTM compare to standard Consistency Models and recent score distillation methods during both training and inference?
+- What is the ablation breakdown: how much does each component (adversarial training, denoising score matching, trajectory parameterization) contribute to the final FID improvements?
+- How does CTM perform on higher resolutions (e.g., 256×256) and other datasets beyond CIFAR-10 and ImageNet 64×64?
+- Can you provide more detail on the mathematical formulation of how the network learns to output both scores and consistency trajectories simultaneously?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper makes a solid practical contribution by unifying Consistency Models and score-based diffusion under a single framework that enables quality-speed trade-offs and provides access to the score function. The empirical results are strong and the approach has clear utility for practitioners. However, the core technical novelty is somewhat incremental, and the abstract lacks sufficient experimental detail and ablation analysis to fully justify the claimed improvements. With more thorough experimental validation and clearer exposition of the technical contributions, this could be a strong accept.
+
+**Confidence:**
+3 (moderate)
+
+**Soundness:**
+Good
+
+**Presentation:**
+Fair
+
+**Contribution:**
+Good

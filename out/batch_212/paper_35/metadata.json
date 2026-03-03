@@ -1,0 +1,18 @@
+{
+  "paper_id": "zfLf2qniFH",
+  "review_id": "cnwhdUxDzw",
+  "year": 2024,
+  "line": 142,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- Propose print debugging to improve code generation\n- Demonstrate significant outperformance vs. recent \"rubber duck debugging\" approach on medium-level Leetcode problems\n- Show that debugging methods can improve easy and medium problem solutions, but cannot improve hard problem solutions that probably require deeper algorithmic, structural, or semantic understanding\n- Leetcode problems dataset",
+  "human_weaknesses": "",
+  "human_review_text": "Authors propose to use print debugging to improve LLM based code generation. They use Leetcode problem dataset and demonstrate that print debugging approach outperforms previous rubber duck debugging approach.",
+  "human_questions": "No questions",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

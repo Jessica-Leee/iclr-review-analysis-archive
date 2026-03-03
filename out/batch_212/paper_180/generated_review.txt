@@ -1,0 +1,38 @@
+**Review:**
+
+MAmmoTH introduces a series of open-source LLMs trained on MathInstruct, a curated instruction tuning dataset combining 13 math datasets with hybrid chain-of-thought (CoT) and program-of-thought (PoT) rationales. The key contribution is demonstrating that diverse problem coverage and hybrid rationales—where different thought processes are applied to different problem types—yield substantial improvements in mathematical reasoning. The models are evaluated on nine mathematical reasoning datasets across multiple scales, showing average accuracy gains of 16–32% over existing open-source baselines, with MAmmoTH-7B reaching 33% on MATH (competition-level) and MAmmoTH-34B achieving 44%, surpassing GPT-4's CoT result.
+
+**Strengths:**
+- Strong empirical results across multiple scales and datasets, with particularly impressive gains on the challenging MATH benchmark (23% improvement over WizardMath-7B).
+- Thoughtful hybrid approach combining CoT and PoT rationales, allowing the model to leverage both symbolic reasoning and tool use (code execution) appropriately for different problem types.
+- Comprehensive dataset curation effort: six datasets newly curated with rationales, ensuring diverse coverage across mathematical fields.
+- Open-source release of models and dataset, enabling reproducibility and community benefit.
+
+**Weaknesses:**
+- Limited analysis of *why* the hybrid approach works: the abstract claims it "unleashes the potential of tool use" and "allows different thought processes," but provides no ablation studies, error analysis, or mechanistic insight into when CoT vs. PoT is preferred or how the model learns to select between them.
+- Insufficient detail on dataset curation methodology: the abstract mentions six newly curated datasets but does not specify the curation process, quality control measures, or how rationales were generated (manually, automatically, or hybrid).
+- Missing comparisons with other recent instruction-tuning approaches for math (e.g., other hybrid or multi-strategy methods) and no analysis of computational cost or training efficiency relative to baselines.
+- No discussion of failure modes, limitations, or domains where the approach underperforms, limiting understanding of generalization boundaries.
+
+**Questions:**
+- How does the model learn to select between CoT and PoT during inference? Is this explicit (e.g., a routing mechanism) or implicit?
+- What is the inter-annotator agreement or quality metric for the six newly curated datasets?
+- How sensitive are the results to the ratio of CoT vs. PoT examples in the training data?
+- Does performance scale linearly with dataset size, or are there diminishing returns?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper presents a well-executed empirical study with strong results and a sensible methodological contribution (hybrid CoT/PoT rationales). The open-source release and comprehensive evaluation across nine datasets add value. However, the lack of ablation studies, mechanistic analysis, and detailed curation methodology prevent this from being a strong accept. The work is solid and will be useful to practitioners, but deeper insights into *why* the approach works would strengthen the contribution significantly.
+
+**Confidence:**
+4 (high confidence in the empirical claims based on the abstract, though full assessment would benefit from seeing experimental details and ablations in the full paper)
+
+**Soundness:**
+Good (the approach is straightforward and results are strong, but lack of ablations and analysis limits confidence in understanding the source of improvements)
+
+**Presentation:**
+Good (the abstract is clear and well-structured, though more detail on methodology would help)
+
+**Contribution:**
+Good (solid empirical contribution with practical value, but incremental in terms of novel techniques; the main novelty is in dataset curation and the hybrid training strategy)

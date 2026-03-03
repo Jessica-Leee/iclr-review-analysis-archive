@@ -1,0 +1,35 @@
+**Review:**
+
+This paper proposes Bound-and-Average (BaA), a training approach for Class Incremental Learning (CIL) that combines inter-task weight averaging (integrating weights from all previous stages), intra-task weight averaging (enriching current-task learning), and a bounded update technique to minimize cumulative parameter changes. The method is designed to be agnostic to architecture and learning objectives, integrating into existing CIL methods to reduce catastrophic forgetting. While the core idea of leveraging weight ensemble and constrained optimization is intuitive, the abstract provides insufficient detail about the bounded update mechanism, the precise formulation of the optimization problem, or how these components interact theoretically.
+
+**Strengths:**
+- The approach is modular and claims to integrate seamlessly into existing CIL methods without architectural modifications, which could enhance practical applicability.
+- The dual weight-averaging strategy (inter-task and intra-task) is a reasonable way to balance retention of prior knowledge and learning of new tasks.
+- The paper addresses an important problem (catastrophic forgetting in CIL) with a method motivated by recent transfer learning advances.
+
+**Weaknesses:**
+- The abstract lacks crucial technical details: the bounded update technique is described only vaguely ("optimize the target model with minimal cumulative updates"), making it difficult to assess novelty or reproducibility. How is "minimal cumulative updates" formalized and optimized?
+- No experimental results, datasets, or comparisons are mentioned in the abstract. Claims of "superior performance compared to state-of-the-art methods" cannot be evaluated without seeing the actual benchmarks, baselines, or numerical results.
+- The motivation and theoretical justification for why weight averaging specifically reduces catastrophic forgetting are not articulated. The connection to transfer learning advances is mentioned but not explained.
+- The paper does not clarify how the method handles the fundamental CIL challenge of maintaining discriminative boundaries between old and new classes when averaging weights.
+
+**Questions:**
+- How is the bounded update constraint formulated mathematically? Is it an ℓ2 ball, trust region, or another form?
+- What are the specific CIL benchmarks used (e.g., CIFAR-100, ImageNet-Subset), and how large are the improvements over baselines?
+- How does BaA compare to recent memory-replay and regularization-based CIL methods?
+- Does intra-task averaging (within a single stage) not risk over-smoothing the learned representations?
+
+**Overall score:**
+4: below the acceptance threshold. The paper addresses a relevant problem and proposes a reasonable high-level idea, but the abstract is too vague on technical details and provides no empirical validation. Without seeing the full paper's formulation, experiments, and results, it is impossible to assess whether the contribution is sufficiently novel or effective. The work reads more as a preliminary idea than a complete contribution ready for publication at a top venue.
+
+**Confidence:**
+2 (low). Assessment is based solely on the abstract, which omits critical technical and experimental information. A full paper review could substantially change this verdict.
+
+**Soundness:**
+2 (fair). The intuition is reasonable, but without formal problem statements, optimization details, or experimental validation, soundness cannot be properly evaluated.
+
+**Presentation:**
+2 (fair). The abstract is too high-level and omits key technical details necessary for understanding the method's novelty and feasibility.
+
+**Contribution:**
+2 (poor). Weight averaging and constrained optimization are well-known techniques. The specific contribution of combining them for CIL, and the novelty of the bounded update mechanism, are unclear from the abstract alone.

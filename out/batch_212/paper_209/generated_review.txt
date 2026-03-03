@@ -1,0 +1,35 @@
+**Review:**
+
+This paper addresses the memory-intensive problem of gradient backpropagation through diffusion probabilistic models (DPMs) by proposing AdjointDPM, which leverages the adjoint sensitivity method to compute gradients without storing intermediate states. The key contribution is reformulating DPM sampling as solving a probability-flow ODE and using an augmented ODE to backpropagate gradients to all parameter types (network weights, conditioning signals, initial noises). The authors further improve numerical stability by reparameterizing both the forward and backward ODEs as non-stiff systems using exponential integration. The method is demonstrated on three applications: guided generation via trajectory modification, DPM weight finetuning for stylization, and converting visual effects to text embeddings.
+
+**Strengths:**
+- **Well-motivated and practical problem**: The memory bottleneck in gradient-based optimization of DPMs is a genuine limitation for many applications, and the proposed solution is elegant and theoretically grounded.
+- **Comprehensive parameter coverage**: Unlike naive backpropagation, AdjointDPM can efficiently compute gradients with respect to network weights, conditioning text prompts, and initial noise states—a significant practical advantage.
+- **Numerical stability improvements**: The reparameterization of ODEs as non-stiff systems via exponential integration is a thoughtful engineering contribution that addresses potential numerical errors in both forward and backward passes.
+- **Diverse applications**: The three demonstrated tasks (guided generation, stylization finetuning, effect-to-embedding conversion) show versatility and practical utility.
+
+**Weaknesses:**
+- **Limited experimental validation**: The abstract provides no quantitative results, comparisons to baselines, or ablation studies. Without empirical evidence (e.g., memory usage, wall-clock time, gradient accuracy, quality metrics on the three tasks), it is difficult to assess the practical impact.
+- **Missing implementation details**: Key details are absent from the abstract, such as the specific form of the augmented ODE, the choice of ODE solver, computational overhead of the adjoint method, and convergence properties.
+- **Unclear novelty scope**: While applying the adjoint sensitivity method to DPMs is sensible, the core technique is well-established in neural ODEs (e.g., Neural ODE literature). The novelty appears incremental unless the paper makes non-obvious adaptations specific to diffusion models.
+- **No discussion of limitations**: The abstract does not address potential failure modes, when the method might be less suitable, or trade-offs (e.g., does the adjoint method introduce approximation errors compared to exact gradients?).
+
+**Questions:**
+- How does the memory consumption and wall-clock time of AdjointDPM compare quantitatively to naive backpropagation and other gradient-efficient methods?
+- What is the computational overhead of solving the augmented ODE relative to the forward pass?
+- How sensitive is the method to ODE solver choice and tolerance settings? Are there convergence guarantees?
+- For the three applications, what are the quantitative improvements (e.g., FID scores, user studies, embedding quality) compared to baselines?
+- How does gradient accuracy compare to exact backpropagation on smaller problems where both are feasible?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper tackles a genuine and important problem with a theoretically sound approach (adjoint sensitivity method for DPMs). The idea of reparameterizing ODEs for numerical stability is sensible, and the breadth of parameter types that can be optimized is a clear advantage. However, the abstract lacks empirical validation, quantitative results, and detailed comparisons. The novelty is somewhat incremental given the established use of adjoint methods in neural ODEs. With strong experimental results and clearer positioning of the technical contributions, this could be a solid accept; as presented, it is marginally above the bar but would benefit from comprehensive empirical validation in the full paper.
+
+**Confidence:** 3 (moderate—assessment is limited by the abstract-only format; full paper details could significantly change the evaluation)
+
+**Soundness:** 4 (good—the adjoint sensitivity method is well-established and the application to DPMs appears sound, though numerical details are not fully specified)
+
+**Presentation:** 3 (fair—the abstract is clear in motivation and method overview, but lacks sufficient detail on implementation and results)
+
+**Contribution:** 3 (good—solid engineering contribution with practical utility, but incremental novelty relative to existing adjoint methods)

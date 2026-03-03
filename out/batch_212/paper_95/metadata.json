@@ -1,0 +1,18 @@
+{
+  "paper_id": "z3mPLBLfGY",
+  "review_id": "LzZzfxycC6",
+  "year": 2024,
+  "line": 371,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "+ The paper is clearly written. The problem is well motivated.\n+ The paper proposes a universal representation for molecular complexes. This approach has the potential to streamline and unify various interaction studies across different molecular domains.\n+ The GET model ensures that all modules are E(3)-equivariant and also allows capturing interactions at block and atom scales, potentially leading to richer and more informative interaction modeling.\n+ The experiments across small molecules, proteins, and nucleic acids suggest that GET has strong generalization capabilities.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper presents a generalist equivariant Transformer architecture for learning 3D molecular interactions. The proposed GET model is composed of bilevel attention networks, feed-forward networks, and layer normalization modules, all of which are all equivariant to E(3)-equivariant transformations. The GET model is able to simultaneously learn both the atom- and block-level information.",
+  "human_questions": "- Including the graphical illustration (Figure 4) within the main text could provide readers with a more immediate and clear understanding of the architecture and operational flow of GET.\n- Adding statistics for the PDBBind benchmark within the paper would offer a more concrete assessment for readers unfamiliar with the benchmark.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

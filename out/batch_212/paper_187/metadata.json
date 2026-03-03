@@ -1,0 +1,18 @@
+{
+  "paper_id": "yIEKq72cTE",
+  "review_id": "iKuJywsdLA",
+  "year": 2024,
+  "line": 727,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "+ The use of the barycentric technique, borrowed from optimal transport, for computing a robust global model is an interesting approach for defending against some attacks in federated learning. \n+ The authors provided a nice analysis of the computational complexity of the algorithm and the convergence analysis. \n+ The paper is overall well presented, and the assumptions made are clear.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper presents Federated Learning Optimal Transport (FLOT), a method for defending against black-box data poisoning attacks in federated learning. The method uses the Wasserstein barycentric technique to compute the global model and a loss function-based rejection for removing the effect from malicious clients. This requires the aggregator to have a trusted validation dataset representative of the global data distribution. The authors show the effectiveness of their defense compared to other methods in the research literature against some black-box data poisoning attacks in federated learning.",
+  "human_questions": "- The comparison of the method with KRUM is not really fair, as KRUM relies on a different set of assumptions (e.g., it does not require having access to a separate validation dataset). In this sense, how does FLOT compare with other methods in the state of the art that also require access to a trusted validation dataset?\n- In the experiments, it seems that FLTrust performs poorly in all the scenarios considered. This really contrasts the results provided by Cao et al. Could the authors explain this poor performance and the differences in the results with respect to Cao et al.\u2019s paper?\n- Having access to a separate validation dataset representative of the global training distribution is a strong assumption, which may not be possible for many applications of federated learning (e.g., in many cross-device applications) and, even if this is the case, gathering a large trusted dataset can be challenging. Could the authors provide a sensitivity analysis for assessing the robustness of the method as a function of the size of this trusted dataset?",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

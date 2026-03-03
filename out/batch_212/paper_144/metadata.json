@@ -1,0 +1,18 @@
+{
+  "paper_id": "yeeVBMDAwy",
+  "review_id": "Gs5NSnG2pW",
+  "year": 2024,
+  "line": 559,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "* SSL is an important problem and the paper addresses the crucial issue of node degeneracy in Graph SSL. As such, the problem is well-motivated\n* The solution is simple and intuitive and theoretical connections are provided to explain the inner workings of the proposed technique\n* Experiments are conducted on a wide range of datasets and show significant gains which demonstrates the utility of the technique",
+  "human_weaknesses": "",
+  "human_review_text": "Semi-supervised learning (SSL) aims to leverage a vast amount of freely available unlabeled data alongside a small sample of expensive labeled data to improve the classification performance of a learnt model. Graph SSL techniques are a popular class of approaches where by constructing a graph with data points nodes and relationship edges, information can be propagated across the graph to make predictions on unlabeled data. A well-recognized limitation of typical Graph SSL techniques is the problem of degenerate solutions where, when the labeled sample is sparse, the nodes far away from any labeled sample can converge to a constant and uninformative value.\n\nThis paper proposes a simple and intuitive fix to degeneracy issue by regularizing the node values to be different from one another through a term that increases the variance between node values. Clear theoretical insights have been provided to show that, when the graph edges connect same class nodes more often than others, variance enlargement can amplify the importance of edge weights connecting vertices within the same class, while simultaneously diminishing the importance of those connecting vertices from different classes, thus leading to improved solutions.\n\nExperimental results show salient gains due to variance enlargement regularize on a variety of datasets.",
+  "human_questions": "Can variance enlargement help with other Graph SSL approaches besides GPN? If so, a discussion on where and why it helps and does not help, can be useful and interesting.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

@@ -1,0 +1,37 @@
+**Review:**
+
+This paper proposes LSTNet, a self-supervised method for learning SO(3)-invariant 3D correspondences between point clouds. The key contribution is a novel approach that learns to dynamically formulate an SO(3)-invariant local shape transform for each point, mapping SO(3)-equivariant global shape descriptors to local shape descriptors. These local descriptors are then used to reconstruct point clouds (both self- and cross-reconstruction), with the self-supervised training encouraging semantically corresponding points across different shape instances to map to similar local descriptors. The method is evaluated on 3D semantic keypoint transfer and part segmentation label transfer tasks, reportedly achieving state-of-the-art results on arbitrarily rotated point cloud pairs.
+
+**Strengths:**
+- The core idea of learning SO(3)-invariant local shape transforms is intuitive and well-motivated for handling rotation-invariant correspondence without requiring aligned inputs, addressing a practical limitation of prior self-supervised methods.
+- The problem setting is relevant and challenging: establishing dense correspondences under intra-class variations and arbitrary rotations is important for robotics and vision applications.
+- The paper claims significant performance improvements over existing methods on standard benchmarks.
+
+**Weaknesses:**
+- The abstract provides insufficient technical detail to fully evaluate the method. The mechanism by which the local shape transform is "dynamically formulated" and how it ensures SO(3)-invariance is not clearly explained. How exactly does the decoder use these local descriptors for reconstruction?
+- The self-supervised training objective is not precisely specified. How does the reconstruction loss encourage corresponding points to have similar descriptors? Is there an explicit correspondence matching loss, or is this emergent from reconstruction alone?
+- Limited scope of evaluation details in the abstract: no discussion of datasets used, baseline comparisons, or quantitative metrics. Claims of "significant margins" cannot be assessed without concrete numbers.
+- The relationship between SO(3)-equivariance of the global descriptor and SO(3)-invariance of the local transform is unclear. How does the method handle the inherent tension between these properties?
+
+**Questions:**
+1. Can you clarify the architecture and training objective more precisely? Specifically, how is the local shape transform parameterized and optimized?
+2. What is the computational complexity compared to existing methods?
+3. How sensitive is the method to hyperparameters and initialization?
+4. Have you evaluated on real-world scanned data or only synthetic point clouds?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses an important problem with a potentially novel approach, but the abstract lacks sufficient technical clarity and experimental detail to properly assess the contribution. The core ideas appear sound, but the presentation needs substantial improvement to enable reproducibility and fair comparison. A full paper submission with detailed methodology, ablation studies, and comprehensive experimental validation would be needed to properly evaluate this work.
+
+**Confidence:**
+2–3 (Low to moderate; assessment is limited by abstract-only information)
+
+**Soundness:**
+Fair (The conceptual approach seems reasonable, but technical details are insufficiently specified to verify correctness.)
+
+**Presentation:**
+Fair (The abstract is readable but lacks necessary technical depth and experimental specifics.)
+
+**Contribution:**
+Fair to Good (The SO(3)-invariant local shape transform idea is interesting, but novelty and significance cannot be fully assessed from the abstract alone.)

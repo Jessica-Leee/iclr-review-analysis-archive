@@ -1,0 +1,37 @@
+**Review:**
+
+This paper proposes NBDI (Novelty-based Decision Point Identification), a method for learning variable-length skills by identifying critical decision points using a state-action novelty module trained on offline agent experience datasets. The core insight is that fixed-length skills miss valuable decision points, and that novelty can serve as an efficient proxy for detecting where temporally-extended decisions should be made. The authors claim their approach accelerates policy learning on complex, long-horizon tasks like robotic manipulation and maze navigation by enabling more efficient exploration and better knowledge transfer.
+
+**Strengths:**
+- The motivation is intuitive and well-articulated: variable-length skills aligned with decision points should be more efficient than fixed-length alternatives, and using novelty as a signal for decision points is a reasonable design choice.
+- The paper addresses a relevant problem in hierarchical reinforcement learning and skill discovery, where the granularity of decisions can significantly impact sample efficiency.
+- Evaluation on multiple domains (robotic manipulation, maze navigation) suggests some generality of the approach.
+
+**Weaknesses:**
+- The abstract provides insufficient detail on the technical approach. How exactly does the state-action novelty module identify decision points? What is the training procedure? How are variable-length skills extracted and used in downstream policy learning? Without these details, it is difficult to assess the novelty and soundness of the method.
+- No concrete empirical results are provided in the abstract. Claims of "substantially outperforms previous baselines" lack quantitative support, making it impossible to evaluate the magnitude of improvements or statistical significance.
+- The paper lacks clarity on what "offline agent experience datasets" means and how they are obtained. Are these random rollouts, expert demonstrations, or something else? This is crucial for reproducibility and understanding the method's practical applicability.
+- The relationship between novelty and decision points is asserted but not rigorously justified. Why should state-action novelty reliably identify critical decision points? Are there failure modes or limitations?
+
+**Questions:**
+- Can you provide specific quantitative results comparing NBDI to fixed-length skill baselines and other variable-length skill learning methods?
+- How is the novelty module trained, and what loss function or objective is used?
+- How sensitive is the method to hyperparameters controlling novelty thresholds for decision point identification?
+- Do you provide ablations isolating the contribution of novelty-based identification versus other components?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper tackles an interesting problem and proposes a reasonable approach, but the abstract lacks sufficient technical and empirical detail to support the claims. For a venue like ICLR, readers need concrete methodology, quantitative results, and rigorous justification of design choices. The current submission reads more like an early-stage position paper than a complete contribution. With a full paper providing detailed algorithms, comprehensive experiments with baselines, and ablation studies, this could become a solid contribution.
+
+**Confidence:**
+2 (Low) — Assessment is limited by the abstract-only format; a full paper might address many concerns.
+
+**Soundness:**
+2 (Fair) — The core idea is reasonable, but technical soundness cannot be assessed without method details and empirical validation.
+
+**Presentation:**
+2 (Fair) — The abstract is clear in motivation but lacks technical depth and specificity needed for evaluation.
+
+**Contribution:**
+2 (Fair) — The novelty of using a state-action novelty module for decision point identification is moderate, and its advantages over existing approaches are not demonstrated.

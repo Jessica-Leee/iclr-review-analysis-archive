@@ -1,0 +1,18 @@
+{
+  "paper_id": "ykEixGIJYb",
+  "review_id": "Q7cjk3BiZE",
+  "year": 2024,
+  "line": 514,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The paper studies the interesting and practically relevant setting when each client may potentially misreport its participation cost (in the interest of exploiting the system or maximising its utility), a setting that is not studied in the prior works. For the problem of FL with incentivisation studied in the prior work of Wei et al. (2023), the paper brings in the ideas of *truthfulness* and *social cost* from economics to quantify the performance of a regret-minimisation algorithm. A formal demonstration of the monotonicity of Algorithm 1 is one of the key contributions of the paper; a similar result is missing in the prior works on FL. The experimental valuations are adequate and insightful.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper studies the problem of learning the unknown parameter in linear parametric bandits via federated/distributed learning (FL) with a central server and multiple clients, when each client must be incentivised to participate in the learning task. More specifically, each client possesses an intrinsic participation cost (e.g., amount of local computational resources at the client required to execute its share of the FL task), and participates only when its incentive for participation exceeds its participation cost. The paper studies the interesting and practically relevant setting when each client may potentially misreport its participation cost (in the interest of exploiting the system or maximising its utility), a setting that is not studied in the prior works. The authors borrow the ideas of *truthfulness* and *social cost* (popular in economics) to design an FL algorithm in which each client can maximise its utility only if it reports the true participating cost. For such an algorithm, the authors obtain bounds on the communication cost and pseudo-regret for FL with incentivised communication, while also demonstrating that the optimal social cost may be achieved up to scaling factors.",
+  "human_questions": "I have discussed the questions under \"Weaknesses\".",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "2 fair",
+    "contribution": "3 good"
+  }
+}

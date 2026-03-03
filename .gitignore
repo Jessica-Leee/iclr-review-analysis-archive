@@ -10,7 +10,9 @@ __pycache__/
 *.pyo
 
 # Outputs
-out/
+out/*
+!out/batch_212/
+!out/batch_212/**
 data/raw/
 data/processed/
 processed/

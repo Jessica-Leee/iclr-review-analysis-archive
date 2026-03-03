@@ -1,0 +1,18 @@
+{
+  "paper_id": "zsfrzYWoOP",
+  "review_id": "qVfDeKlstk",
+  "year": 2024,
+  "line": 52,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- The proposed technique is model-free and training-agnostic, and is easily applicable to most attention-based image generation methods.\n\n- The proposed technique surpasses baselines and enable existing models to follow preferences reasonably\n\n- Extensive exploration of important parts of the proposed technique: the trade-off between diversity and quality, and the effects of adjusting feedback strength on PickScore.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper introduces a novel method to control diffusion models to generate user-preferred images through iterative feedback. This method is based on augmenting the attention module. The proposed method is training-free and model-agnostic (as long as attention plays a core role in the image generation model), and can generate images based on any user preferences by having them provide positive and negative labels of their preference on images.",
+  "human_questions": "- While the paper claims to outperform a supervised-learning baseline (HPS LoRA), it is unclear to me how does HPS relate to PickScore, as they both appear to measure human preference. Would the author(s) please clarify how might they relate to each other? As the models are evaluated on PickScore but LoRA-tuned on HPS.\n\n- How does the method relate to/differ from prompt2prompt and instruct-pix2pix? As stated above, it would be helpful to systematically compare them (and other related prior work) in a table.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

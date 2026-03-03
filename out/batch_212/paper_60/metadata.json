@@ -1,0 +1,18 @@
+{
+  "paper_id": "zNzVhX00h4",
+  "review_id": "Dfs24cJWmq",
+  "year": 2024,
+  "line": 240,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- The theoretical finding of this paper is rigorous and interesting. It provides good insight on the optimization landscape of mildly overparameterized NNs. \n- The writing of this paper is easy to follow and the presentation is clear.",
+  "human_weaknesses": "",
+  "human_review_text": "This work studies the optimization landscape of mildly over-parameterized 2-layer ReLU networks. By looking at the rank of Jacobian in different activation regions, the authors claim that for most activation regions there are no bad differentiable local minima.",
+  "human_questions": "- Continued on bad local minima. It seems to me that in figure 9(b) GD does not converge to good local minima when network is only mildly overparameterized, despite at initialization the Jacobian has full rank. Can you explain this? Does this contradict your theoretical findings? \n- Numerical experiment. \n-- How do you determine whether a Jacobian matrix is full rank? \n-- For figure 9(a) is the network overparameterized at all? The experiment setting for figure 9 is not clear to me. Can you elaborate on this, just like what you did for other figures?",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

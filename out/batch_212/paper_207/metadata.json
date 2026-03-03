@@ -1,0 +1,18 @@
+{
+  "paper_id": "y3CsNQal2l",
+  "review_id": "c1XgGaddUJ",
+  "year": 2024,
+  "line": 808,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_review_text": "This work introduces AdaMergeX, a new cross lingual transfer learning approach. The main idea is to realize that regular fine-tuning on a task consists of two aspects: \u201ctask ability\u201d, the ability to train the actual task, and \u201clanguage ability\u201d the ability to understand the language in which the task was trained. With that assumption authors define a way to train a model on a specific task task and specific language by using another task as pivot to provide the language ability, to provide the task on a different language, and remove the undesired pair pivot task and languages.\nThis idea is adapted into two existing parameter efficient fine tuning methods, LoRA and (IA)3 and tested in a variety of tasks such as multilingual arithmetic reasoning, multilingual common-sense reasoning, multilingual natural language inference, question-answering and multilingual summarization. The method is compared against five cross-lingual transfer competing techniques, which are beaten by AdaMergeX.\nA few ablation studies are presented, showing the generalizability of the approach regardless of the pivot language, using Spanish and Vietnamese instead, and generalizability  in terms of pivot task, comparing the performance using XNLI and XCOPA as reference tasks.\nFinally an experiment using T5 instead of LlaMa model is performed, showing the generalizability  in terms of architecture.",
+  "human_strengths": "The paper is sound and strong.\nThe idea is cleverly defined, implemented and tested.\nThe experimentation seems appropriate, it shows that the new approach is effective to perform cross lingual and cross task training.",
+  "human_weaknesses": "",
+  "human_questions": "The ablation study on adaptive merging method is a bit confusing? What do the authors were expecting? Cross adaptive merging methods is probably a bad idea and your experiments support that.\n\nThe experiments on source language generalizability ? Why choose only 2 languages? Do the authors consider that the experiments on Spanish and Vietnamese make the point?\n\nSimilar question for XNLI and XCOPA for task generalizability\n\nAnd for T5.\n\nDo this approach work on Encoder models as well such as XLM or mBERT?",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "2: You are willing to defend your assessment, but it is quite likely that you did not understand the central parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "4 excellent",
+    "presentation": "4 excellent",
+    "contribution": "3 good"
+  }
+}

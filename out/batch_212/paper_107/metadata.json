@@ -1,0 +1,18 @@
+{
+  "paper_id": "ywGSgEmOYb",
+  "review_id": "8ywlle3VnP",
+  "year": 2024,
+  "line": 416,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- The paper discusses backdoor mitigation strategies across several attack scenarios\n- The computational cost of the proposed defense is minimal",
+  "human_weaknesses": "",
+  "human_review_text": "The paper focuses on addressing the challenge mitigating backdoor attacks while minimizing computational complexity and preserving model accuracy. To tackle this issue, the paper introduces two defense variants: fine-tuning and super fine-tuning. Super fine-tuning represents a novel approach that periodically adjusts the learning rate to expedite the learning process. The effectiveness of the proposed defense mechanisms is demonstrated across three attack variants: the encoder-based scenario, the transfer-learning setting, and the standalone scenario. This demonstration is conducted empirically using five different datasets.",
+  "human_questions": "Please see above.",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

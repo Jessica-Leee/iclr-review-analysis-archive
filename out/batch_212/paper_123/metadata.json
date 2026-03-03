@@ -1,0 +1,18 @@
+{
+  "paper_id": "ynguffsGfa",
+  "review_id": "1MVyRcXPQv",
+  "year": 2024,
+  "line": 478,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "Strengths:\n* The paper proposes an intuitive and well-motivated approach to leverage background knowledge of GPT-4 for informed tabular data generation\n* The experimental results are promising and cover a representative set of baseline tabular data generation methods\n* The idea of generated data curation is very interesting. Discarding samples with both low predictive confidence and data uncertainty improves performance both of the GPT-4-based data generation and of other tabular data generation model\n* The additional insight into GPT-4\u2019s ability to extrapolate to unseen regions of the manifold is interesting, even though the evidence is somewhat anecdotal and based on a TSNE plots.\n* Importantly, the paper shows that LLM-based tabular data generation is most helpful for generation of underrepresented samples which traditionally is a challenge for other tabular data generation methods. \n* The presentation is excellent.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper proposes to use strong LLMs such as GPT-4 for tabular data augmentation and generation. The paper also proposes a generated data curation technique based on predictive confidence and aleatoric uncertainty metrics. The paper shows that the resulting method CLLM is able to effectively leverage prior knowledge of LLMs and achieves good experimental performance in low-data regimes.",
+  "human_questions": "Please, see the weaknesses section for both weaknesses and questions.",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "5: You are absolutely certain about your assessment. You are very familiar with the related work and checked the math/other details carefully.",
+    "soundness": "3 good",
+    "presentation": "4 excellent",
+    "contribution": "3 good"
+  }
+}

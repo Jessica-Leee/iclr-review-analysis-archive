@@ -1,0 +1,18 @@
+{
+  "paper_id": "zwcRnM8lD6",
+  "review_id": "2ZUplLsWYY",
+  "year": 2024,
+  "line": 23,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The paper is a logical motivation. Differential entropy is easy to calculate for Gaussian distributions, and mixture of Gaussians are universal approximations given enough data, so why not use GMM for mutual information estimation. The insight of using the augmentations as defining the GMM is a useful, simplifying assumption.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper proposes uses bounds on the entropy and mutual information for a mixture of Gaussian random variables based on the log determinant calculations used in calculating the entropy for a single Gaussian. In the context of self-supervised learning, the Gaussian mixture is assumed to known based on the augmentation. In other cases the number of mixture components has to be selected. Empirical results are reported on a synthetic benchmark of correlated Gaussians with and without non-linear transformations. Results of self-consistency measures are reported on CIFAR10.",
+  "human_questions": "How is the $H(Z)$ term estimated in section 3.1? Is it also based on augmented data?\n\nIn the SSL, the trade-off parameter having to be searched in the grid  [0.01,0.1,1.0,2.0] doesn't seem to be efficient compared to EMP-SSL. Are there hyper-parameters for EMP-SSL?  \n\nWhy in Table 1 is 1000 epochs not tested?\n\nIs the GMM method run at each time point in Figure 2?",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

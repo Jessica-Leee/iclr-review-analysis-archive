@@ -1,0 +1,18 @@
+{
+  "paper_id": "yZJapMWdHZ",
+  "review_id": "v2I7pt0mCO",
+  "year": 2024,
+  "line": 592,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The presented uncertainty estimation is built up out of simple to understand pieces, and yield impressive empirical results compared to competing techniques.",
+  "human_weaknesses": "",
+  "human_review_text": "The authors present a new method for quantifying uncertainty in LLM outputs that involves weighting token probabilities by an estimate of the token's relative importance (\"relevance\"). This is combined with a second sentence-level uncertainty measure which adjusts a sentence's importance measure according to how similar it is to other generated sentences. When combined these uncertainty measures outperform multiple baselines across various models, and datasets, and evaluation methods.",
+  "human_questions": "\u201cThe area under the receiver operator characteristic curve (AUROC) metric is equivalent to the probability that a randomly chosen correct answer has a higher uncertainty score than a randomly chosen incorrect answer.\u201d - Shouldn\u2019t this be the opposite? If the model\u2019s uncertainty is high, then it implies that the model is more likely to get the answer wrong, no? I realize that this was copied from Kuhn et al, but this still seems like an important point to understand.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

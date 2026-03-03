@@ -1,0 +1,34 @@
+**Review:**
+
+SPLITZ proposes a hybrid approach to certifiable robustness that combines Lipschitz-constrained training on the first half of a classifier with randomized smoothing on the second half. The key motivation is that standard deep networks exhibit heterogeneous Lipschitz constants across layers, and exploiting this structure can improve the robustness-accuracy tradeoff. The authors provide theoretical analysis deriving certified robustness guarantees and demonstrate substantial improvements over prior work: on CIFAR-10 with ℓ₂ perturbation budget ε=1, SPLITZ achieves 61.7% certified accuracy versus 39.8% for prior state-of-the-art—a 55% improvement.
+
+**Strengths:**
+1. **Novel and well-motivated approach**: The idea of splitting the network and applying different robustness techniques to each half is intuitive and exploits an empirical observation about layer-wise Lipschitz heterogeneity. This synergistic combination of Lipschitz constraints and randomized smoothing is creative.
+2. **Strong empirical results**: The reported improvements are substantial across MNIST, CIFAR-10, and ImageNet. A 55% improvement in certified accuracy on CIFAR-10 is significant and suggests the method has practical value.
+3. **Theoretical grounding**: The paper provides principled theoretical analysis to derive certified robustness guarantees, which is essential for a certifiable robustness contribution.
+4. **Comprehensive evaluation**: The abstract mentions comparison across multiple baseline types (denoising, ensemble, adversarial smoothing), suggesting thorough experimental validation.
+
+**Weaknesses:**
+1. **Limited methodological detail in abstract**: The abstract does not explain *how* the split point is chosen, how the Lipschitz constraint is enforced on the first half, or what the training procedure entails. These are critical details for reproducibility and understanding the practical applicability of the approach.
+2. **Unclear theoretical contribution**: While the abstract states that theoretical analysis is provided, it does not specify what the certified robustness guarantee looks like or how it differs from existing randomized smoothing guarantees. The novelty of the theoretical result is unclear.
+3. **Missing ablation and analysis**: The abstract does not discuss ablations (e.g., sensitivity to split point, impact of Lipschitz constraint strength) or provide intuition for *why* the heterogeneity observation leads to improvements. This limits understanding of the method's behavior.
+4. **Scalability claims need support**: The abstract claims SPLITZ "inherits the scalability of randomized smoothing," but without computational cost comparisons or timing results, this claim is unsubstantiated.
+
+**Questions:**
+1. How is the split point determined? Is it fixed, learned, or tuned per dataset/architecture?
+2. What is the form of the certified robustness guarantee, and how does it compare quantitatively to standard randomized smoothing?
+3. What is the computational overhead of enforcing Lipschitz constraints on the first half during training and inference?
+4. How sensitive is performance to the choice of split point and the strength of the Lipschitz constraint?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper presents a novel and intuitive idea with impressive empirical results. The combination of Lipschitz constraints and randomized smoothing is creative, and the reported improvements are substantial. However, the abstract lacks sufficient detail on methodology and theory to fully assess the contribution. The work appears sound and likely to be of interest to the robustness community, but clarity on key technical details and ablation studies would strengthen the contribution. The strong empirical gains and novel approach push this slightly above the bar, though a full review of the paper would be needed to confirm.
+
+**Confidence:** 3 (medium)
+
+**Soundness:** Good
+
+**Presentation:** Fair
+
+**Contribution:** Good

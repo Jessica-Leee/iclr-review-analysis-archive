@@ -1,0 +1,38 @@
+**Review:**
+
+This paper introduces Neural Sinkhorn Gradient Flow (NSGF), which parametrizes the time-varying velocity field of Wasserstein gradient flows with respect to the Sinkhorn divergence using neural networks. The key contribution is a velocity field matching training scheme that requires only samples from source and target distributions to compute an empirical velocity field approximation. The authors provide theoretical analysis showing that the mean-field limit of the empirical approximation converges to the true underlying velocity field as sample size increases, and demonstrate applications to image generation, style transfer, and audio-text translation.
+
+**Strengths:**
+- The velocity field matching training scheme is practical, requiring only paired samples from source and target distributions without explicit computation of intractable divergence terms.
+- Theoretical convergence analysis of the empirical approximation to the true velocity field in the mean-field limit provides principled justification for the approach.
+- The method is claimed to be applicable to diverse tasks (unconditional/conditional generation, style transfer, cross-modal translation), suggesting broad utility.
+- The use of Sinkhorn divergence as the underlying functional is a reasonable choice that balances computational tractability with theoretical properties.
+
+**Weaknesses:**
+- The abstract provides insufficient detail on the velocity field matching objective and how it differs from or relates to existing neural velocity field methods (e.g., flow matching, score-based models). The novelty relative to recent work on neural velocity field approximation is unclear.
+- No quantitative experimental results, comparisons to baselines, or ablation studies are mentioned in the abstract. Claims about "effectiveness" cannot be assessed without concrete metrics, sample quality comparisons, or computational cost analysis.
+- The theoretical convergence result is stated informally; the rate of convergence, sample complexity bounds, and assumptions (e.g., regularity of the velocity field, network capacity) are not discussed.
+- The connection between the Sinkhorn divergence choice and the practical benefits (if any) over other Wasserstein-based formulations is not articulated.
+
+**Questions:**
+- How does the velocity field matching objective compare formally to flow matching or other recent neural velocity field methods?
+- What are the sample complexity requirements and convergence rates in the theoretical analysis?
+- Can you provide quantitative comparisons (FID, IS, LPIPS, etc.) on standard benchmarks against relevant baselines?
+- What is the computational cost relative to diffusion models or other generative approaches?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses a relevant problem and proposes a theoretically motivated approach, but the abstract lacks sufficient experimental validation and clarity on novelty. For a venue like ICLR, concrete empirical results, detailed comparisons to related work, and clearer exposition of the methodological contribution are essential. The work would benefit from revision to include quantitative experiments and a more precise characterization of its advantages over existing neural velocity field methods.
+
+**Confidence:**
+3 (Low confidence due to limited information in abstract; full paper review would be more definitive)
+
+**Soundness:**
+3 (Fair—theoretical contribution is plausible but incompletely described; empirical validation is absent from the abstract)
+
+**Presentation:**
+2 (Poor—key technical details and experimental results are missing; novelty relative to existing work is unclear)
+
+**Contribution:**
+3 (Fair—the velocity field matching scheme and convergence analysis are potentially useful, but the novelty and practical advantages are not well established in the abstract)

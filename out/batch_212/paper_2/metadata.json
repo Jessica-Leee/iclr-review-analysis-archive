@@ -1,0 +1,18 @@
+{
+  "paper_id": "zz61V8bIab",
+  "review_id": "CmlNOecNCI",
+  "year": 2024,
+  "line": 9,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The proposed model performs strong in the benchmark dataset, with minimized learning parameters. The design of using both shared/private feature extractor is interesting and effective in merging the domain in the latent space. The proposed method is straightforward and easy to understand.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper tackles the multi-domain text classification (MDTC) problem, and tries to minimize the amount the learning parameters by introducing a stochastic feature extractor (domain feature). The model is effective in handling the benchmark datasets and outperform the other baseline models. Additional multi-source UDA experiment is also conducted as a simple model extension.",
+  "human_questions": "1. This might be somewhat irrelevant, but would the model perform well in multi domain classification in other domain type(s), e.g., images?",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "2: You are willing to defend your assessment, but it is quite likely that you did not understand the central parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

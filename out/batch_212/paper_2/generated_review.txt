@@ -1,0 +1,38 @@
+**Review:**
+
+This paper addresses the parameter explosion problem in multi-domain text classification (MDTC) by proposing Stochastic Adversarial Networks (SAN), which replaces explicit domain-specific feature extractors with samples drawn from a multivariate Gaussian distribution. The key insight is that modeling multiple domain-specific extractors as a distribution allows the method to scale to new domains without proportionally increasing model parameters, keeping the overall model size comparable to a single domain-specific extractor. The authors complement this core contribution with domain label smoothing and robust pseudo-label regularization to stabilize adversarial training and improve feature discriminability.
+
+**Strengths:**
+- The core idea of parameterizing domain-specific feature extractors as a distribution is novel and addresses a genuine scalability limitation of the shared-private paradigm in MDTC.
+- The parameter efficiency claim is well-motivated: sampling from a Gaussian avoids the linear growth in parameters as domains increase, which is a practical advantage for real-world deployment.
+- The paper incorporates complementary techniques (domain label smoothing and robust pseudo-label regularization) that appear well-justified for stabilizing adversarial training.
+- Evaluation on two prominent MDTC benchmarks demonstrates competitive performance against state-of-the-art methods.
+
+**Weaknesses:**
+- The abstract provides insufficient detail on the technical implementation. How exactly are samples from the Gaussian distribution used during training and inference? Is the distribution learned end-to-end? The mechanism for ensuring domain-specific extractors remain distinct despite sampling from a shared distribution is unclear.
+- No ablation studies are mentioned to validate the individual contributions of the Gaussian parameterization, domain label smoothing, and robust pseudo-label regularization. It is unclear which components drive performance gains.
+- The claim of "comparable model size to a single domain-specific extractor" needs quantitative support. How many parameters does the Gaussian distribution itself require, and how does total parameter count scale with the number of domains in practice?
+- Limited discussion of how the method handles domain shift or generalization to truly unseen domains. The paper does not clarify whether the Gaussian distribution generalizes well or if fine-tuning is required for new domains.
+
+**Questions:**
+- Can you provide a detailed algorithmic description of how the Gaussian distribution is parameterized and optimized during training?
+- What are the results of ablation studies isolating the contributions of each proposed component?
+- How does the method perform when adapting to a new domain not seen during training? Does it require retraining or fine-tuning?
+- Can you provide explicit parameter counts comparing SAN to baseline shared-private methods across different numbers of domains?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper tackles a relevant problem in MDTC with a creative solution that offers practical benefits in parameter efficiency. The core contribution is sound and the empirical validation on standard benchmarks is positive. However, the abstract lacks sufficient technical clarity, and the absence of ablation studies and detailed parameter analysis weakens the contribution. With revisions addressing these concerns—particularly clearer exposition of the method and comprehensive ablations—this could be a solid accept.
+
+**Confidence:**
+3 (moderate)
+
+**Soundness:**
+Good
+
+**Presentation:**
+Fair
+
+**Contribution:**
+Good

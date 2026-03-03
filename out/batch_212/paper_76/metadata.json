@@ -1,0 +1,18 @@
+{
+  "paper_id": "zEHGSN8Hy8",
+  "review_id": "NduXqt9Rba",
+  "year": 2024,
+  "line": 296,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. Provides a well-defined and practical framework that enables complex information retrieval tasks which are not possible with current search methodologies.\n\n2. Applies contrastive learning to sentence embeddings in a unique way, emphasizing contextual differentiation between sets of sentences.\n\n3. Offers compelling real-world applications, such as parsing nuanced topics like ESG stances from earnings calls, highlighting the framework\u2019s potential for practical deployment.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper introduces Set Operations using Contrastive Learning of Sentence Embeddings (SetCSE), a framework that incorporates set theory into semantic search to handle complex and multifaceted queries. Recognizing that intricate semantics often arise from clusters of sentences rather than isolated ones, the authors present a method where sets of sentences collectively represent semantics. The inter-set contrastive learning component is designed to fine-tune language models to capture contextual nuances and discern between different semantic sets. The SetCSE operations - intersection, difference, and series - are employed to structure queries effectively, allowing for a granular and nuanced retrieval of sentences from large corpora. An illustrative use case of analyzing S&P 500 companies\u2019 stances on ESG issues demonstrates the framework's practical utility in complex information retrieval scenarios.",
+  "human_questions": "1. Can the authors discuss any observed limitations or frequent error patterns during SetCSE operations?\n\n2. How does SetCSE scale with the size of the dataset and the complexity of the query semantics?",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

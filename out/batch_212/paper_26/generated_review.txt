@@ -1,0 +1,45 @@
+**Review:**
+
+This paper proposes Sorted Adaptive prediction sets (SAPS), a novel conformal prediction algorithm that addresses miscalibration in deep classifiers by discarding probability values except for the maximum softmax probability. The core insight is that minimizing dependence on miscalibrated probability values while retaining uncertainty information through label ranking can yield smaller prediction sets with better coverage guarantees. The authors provide both theoretical finite-sample coverage guarantees and empirical validation showing that SAPS produces smaller sets than the baseline Adaptive Prediction Sets (APS) while improving conditional coverage and adaptation.
+
+**Strengths:**
+1. **Clear motivation and intuitive approach:** The observation that miscalibrated probabilities harm conformal prediction is well-motivated, and the proposed solution of relying primarily on the maximum softmax probability is simple and interpretable.
+2. **Theoretical contribution:** The paper provides finite-sample coverage guarantees for SAPS and proves that expected set size is always smaller than APS, offering formal justification beyond empirical observation.
+3. **Comprehensive empirical validation:** The abstract indicates extensive experiments demonstrating improvements in set size, conditional coverage, and adaptation across multiple settings.
+4. **Practical relevance:** Conformal prediction for deep classifiers is an important problem, and reducing set size while maintaining coverage guarantees has clear practical value.
+
+**Weaknesses:**
+1. **Limited novelty in core mechanism:** The main algorithmic contribution—using only the maximum softmax probability—is relatively incremental. While theoretically justified, the conceptual advance over APS appears modest, and the paper would benefit from clearer articulation of what is fundamentally new beyond this simplification.
+2. **Incomplete abstract details:** The abstract lacks specifics on experimental scope (datasets, baselines, metrics beyond set size and coverage). It is unclear whether comparisons include other recent conformal prediction variants or only APS, limiting assessment of relative standing.
+3. **Unclear practical implications of label ranking:** While the abstract mentions "label ranking" in the title and discusses retaining uncertainty information, the role and benefit of ranking beyond the maximum probability selection are not clearly explained in the abstract.
+4. **Missing ablation and analysis:** The abstract does not discuss ablation studies, failure cases, or conditions under which SAPS might underperform, which would strengthen confidence in the method's robustness.
+
+**Questions:**
+1. How does SAPS compare to other recent conformal prediction methods beyond APS (e.g., methods addressing calibration directly)?
+2. Can you provide intuition for why discarding all but the maximum probability is sufficient to capture uncertainty, and are there cases where finer-grained probability information is beneficial?
+3. What is the computational overhead of SAPS relative to APS, and how does it scale with dataset size?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper addresses a relevant problem with a simple, theoretically justified solution and demonstrates empirical improvements. However, the core algorithmic novelty is limited, and the abstract leaves important experimental and methodological details unclear. The work makes a solid incremental contribution to conformal prediction but lacks the conceptual depth or breadth of validation that would elevate it to a strong accept.
+
+**Confidence:**
+3 (moderate)
+
+The assessment is based solely on the abstract; full evaluation would require reviewing the complete paper, experimental details, and comparisons.
+
+**Soundness:**
+Good
+
+The theoretical guarantees and empirical approach appear sound, though full verification requires the complete paper.
+
+**Presentation:**
+Fair
+
+The abstract is reasonably clear but omits important details about experiments, baselines, and the precise role of label ranking.
+
+**Contribution:**
+Fair
+
+The contribution is solid but incremental—a useful simplification with theoretical backing rather than a fundamental advance in conformal prediction methodology.

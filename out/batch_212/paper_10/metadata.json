@@ -1,0 +1,18 @@
+{
+  "paper_id": "ztuCObOc2i",
+  "review_id": "KOGX5hXatq",
+  "year": 2024,
+  "line": 39,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The paper is well written and easy to follow. The proofs and arguments in the appendix are well-typed out and clear.  There are some nice diagrams in the empirical section to supports the claim the authors are making.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper introduces the idea of learning a time-dependent velocity field of the Sinkhorn Wasserstein gradient flow from samples from the target distribution to calculate the empirical velocity field approximations. The paper supports its claim by showing that the mean-field limit of this process recovers the true Sinkhorn Wasserstein gradient flow. They also validated the process with some empirical studies.",
+  "human_questions": "One possible question is what happens if we change the source distribution to be closer to the target distribution like it was from a generator how would the method perform there. Another question is to better understand the sample complexity of the method as the current method may not be sample efficient due to the empirical distribution being approximated using the samples.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

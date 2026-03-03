@@ -1,0 +1,18 @@
+{
+  "paper_id": "yhrWPZs6On",
+  "review_id": "vumadknwl4",
+  "year": 2024,
+  "line": 541,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The illustrations are clearly presented, colorful, and easy to understand.\n\n2. This paper is well-written and easy to read.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposed Hybrid Granularity Distribution Estimation (HGDE), which estimates distributions at both coarse-grained category and fine-grained instance levels. Apart from coarse-grained category statistics, the proposed method incorporates external fine-grained instance statistics derived from nearest base samples to provide a representative description of novel categories. Then the proposed method fuses the statistics from different granularity through a linear interpolation to finally characterize the distribution of novel categories.",
+  "human_questions": "See Weakness.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "5: You are absolutely certain about your assessment. You are very familiar with the related work and checked the math/other details carefully.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

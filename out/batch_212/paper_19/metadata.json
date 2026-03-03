@@ -1,0 +1,18 @@
+{
+  "paper_id": "zopJyLgKJU",
+  "review_id": "hujp13D6BW",
+  "year": 2024,
+  "line": 74,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The topic studied in this paper is interesting. It is suprising to see that the diffusion model trained with dog images can be used to generate images on human face and bedrooms.\n\n2. The observations proposed in this paper is also interesting, showing that there exists some rules for the diffusion model.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposes a way to generate images from unseen domain with a pretrained diffusion model by some heurustic rules.",
+  "human_questions": "as above",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "3 good"
+  }
+}

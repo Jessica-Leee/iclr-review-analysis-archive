@@ -1,0 +1,18 @@
+{
+  "paper_id": "yf8MaCjs4j",
+  "review_id": "ywRfsWEK58",
+  "year": 2024,
+  "line": 555,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "* The paper is well presented, facilitating an easy understanding of the research idea at both conceptual and technical levels.\n\n* The author presents a thorough ablation study to underscore the effectiveness of each introduced component.\n\n* Beyond conventional evaluation scenarios, the paper delves into two additional real-world settings: online streaming data and the use of unlabeled training data.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper introduces a prompt-tuning method designed to adapt vision-language models, such as CLIP, to downstream image classification tasks without relying on annotated data. Rather than solely creating an instance-prompt for each test sample, the method innovatively incorporates an additional phase to learn a task-prompt using multiple unlabeled datasets. Three distinct self-supervised learning techniques are introduced: firstly, an online pseudo-labeling paradigm equipped with a manually-tuned threshold provides visual supervision. Secondly, an auxiliary text classification task offers textual supervision. Lastly, a specially crafted regularization term ensures prediction diversification. The method is further evaluated in two additional scenarios, including online streaming data and unlabeled training data. Its effectiveness is robustly confirmed across various benchmark datasets and through comprehensive ablation studies.",
+  "human_questions": "* I expect the author could provide more evidence to show the novelty beyond combining existing self-supervised techniques to make incremental improvements over the previous works.\n\n* The author could provide more insights or experiments on how each proposed component improves the quality of pseudo-supervision signals. For example, how does poor visual supervision from a noisy pseudo-label affect the embedding space? How to determine whether the visual and textual supervision align well or contradict each other in embedding space? How does the regularity term improve the pseudo-labels? In sum, the improvement in the final classification accuracy can show the effectiveness of the proposed method but may hide some important insights.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "5: You are absolutely certain about your assessment. You are very familiar with the related work and checked the math/other details carefully.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

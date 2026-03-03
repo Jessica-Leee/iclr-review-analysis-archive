@@ -1,0 +1,18 @@
+{
+  "paper_id": "zqVvdn0NQM",
+  "review_id": "mEkz5d6kn2",
+  "year": 2024,
+  "line": 66,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The problem is well motivated and highly relevant. The black-box nature of deep networks is a significant concern particularly when used in safety critical applications, and it is crucial to carefully balance the need for performance with that of being able to trust the model's decisions. In this context, using more interpretable models where possible could be very useful. This is particularly relevant given that post-hoc explanations of deep networks have often shown to be misleading.\n1. For the specific task of classification of banana ripeness, this work does a fairly detailed study on the tradeoff between performance and explainability.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper addresses the problem of opacity in the decision making process of deep networks, and investigates the use of simpler, more transparent models for simple tasks that can lead to improved explainability without a significant cost in accuracy. Considering a task of classifying stages of banana ripeness, it compares and discusses the performance and explainability of different traditional and deep learning methods.",
+  "human_questions": "Clarifications on the points raised under Weaknesses would be helpful.",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "1 poor"
+  }
+}

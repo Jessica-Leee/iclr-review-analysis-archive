@@ -1,0 +1,35 @@
+**Review:**
+
+This paper proposes a novel connection between Ricci curvature and causal inference on networked data, arguing that graph geometry—specifically negative curvatures—poses challenges for identifying causal effects. The authors make three contributions: (1) a theoretical link between graph curvature and causal identifiability, (2) empirical validation that positive curvature regions yield more reliable causal effect estimates, and (3) a Ricci flow-based method to improve treatment effect estimation by flattening network edges. The core idea of leveraging geometric properties of graphs to understand and improve causal inference is interesting and relatively unexplored in the GNN literature.
+
+**Strengths:**
+- Novel perspective: Connecting Ricci curvature to causal inference on graphs is creative and opens a new research direction at the intersection of geometric deep learning and causal inference.
+- Clear motivation: The paper articulates why graph geometry might matter for causal effect estimation, moving beyond standard GNN architectures.
+- Practical method: The Ricci flow approach offers a concrete, implementable technique for improving causal estimates on networked data.
+
+**Weaknesses:**
+- Insufficient theoretical justification: The abstract claims to "establish a theoretical connection" but provides no formal theorems, proofs, or rigorous mathematical framework. How exactly does negative curvature impede causal identification? Under what assumptions? The mechanism remains unclear.
+- Vague empirical validation: The paper states it "empirically demonstrates" that positive curvature regions yield better estimates, but no experimental details, datasets, baselines, or quantitative results are provided in the abstract. Without concrete numbers, it is impossible to assess the magnitude of improvement or statistical significance.
+- Missing methodological details: The Ricci flow method is mentioned but not explained. How is Ricci flow computed on discrete graphs? What is the computational cost? How does it compare to simpler graph regularization or smoothing baselines?
+- Unclear scope and generality: The abstract does not specify what types of causal inference problems are addressed (e.g., average treatment effects, heterogeneous treatment effects, causal discovery). Are results limited to specific graph structures or causal models?
+
+**Questions:**
+1. Can you provide formal theoretical results (e.g., identifiability conditions under positive vs. negative curvature)?
+2. What are the quantitative improvements over standard causal inference methods on GNNs? On which datasets and under what causal models?
+3. How does computational cost of Ricci flow scale with graph size?
+4. Does the method assume a particular causal model (e.g., linear, nonparametric) or graph structure?
+
+**Overall score:**
+4: below the acceptance threshold. While the core idea is novel and potentially impactful, the paper lacks sufficient theoretical rigor, empirical validation, and methodological clarity to meet the standards of a top-tier venue. The abstract reads as a promising early-stage idea rather than a complete contribution. Substantial additional work—including formal theorems, comprehensive experiments with baselines, and detailed method descriptions—is needed.
+
+**Confidence:**
+3 (moderate). The assessment is based entirely on the abstract; a full paper might provide the missing details and substantially change the evaluation.
+
+**Soundness:**
+2 (poor). Without theoretical proofs or detailed experimental methodology, soundness cannot be assessed. The claims are suggestive but not substantiated.
+
+**Presentation:**
+2 (poor). The abstract is well-written but lacks concrete details necessary to understand the contribution. Key concepts (Ricci flow, causal identifiability conditions) are mentioned but not explained.
+
+**Contribution:**
+3 (fair). The idea of connecting curvature to causal inference is novel, but the execution appears incomplete. Theoretical and empirical contributions are not sufficiently developed or validated in the abstract.

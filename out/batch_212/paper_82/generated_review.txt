@@ -1,0 +1,41 @@
+**Review:**
+
+This paper proposes a Deep Reinforcement Learning (DRL) approach to Departure Metering (DM) for mixed-mode runway operations, framing pushback rate control as a Markov Decision Process. The method uses a spatial-temporal event graph to identify predictive airside hotspots as observations, with pushback rate as the agent's action and reward shaping to balance runway utilization against taxi delays. Evaluation on Singapore Changi Airport surface movement data shows the DRL policy reduces peak taxi times by 1–3 minutes and achieves ~27% fuel savings compared to baselines, with particular gains in high-traffic scenarios.
+
+**Strengths:**
+- **Well-motivated problem:** The paper addresses a genuine operational challenge—balancing pushback rates to avoid both empty runway slots and excessive taxi congestion under mixed-mode operations—with clear practical relevance.
+- **Realistic evaluation:** Use of actual airport surface movement data from Singapore Changi and concrete metrics (taxi time, fuel consumption) grounds the work in real-world constraints.
+- **Structured observation design:** The spatial-temporal event graph for identifying airside hotspots is a principled way to encode state information for the DRL agent.
+- **Quantified improvements:** The reported reductions in peak taxi times and fuel consumption are substantial and actionable for airport operations.
+
+**Weaknesses:**
+- **Limited methodological novelty:** The paper applies standard DRL techniques (not specified which algorithm—DQN, PPO, A3C, etc.) without clear algorithmic innovation. The main contribution is problem formulation and reward shaping rather than new learning methods.
+- **Insufficient technical detail:** The abstract lacks specifics on the DRL algorithm, network architecture, training procedure, hyperparameters, and convergence analysis. The spatial-temporal event graph construction is mentioned but not explained.
+- **Narrow experimental scope:** Evaluation appears limited to a single airport and a "typical day." No ablation studies, sensitivity analysis, or comparison of different reward shaping schemes are described. Baseline comparisons are mentioned but not detailed.
+- **Generalization and reproducibility concerns:** No discussion of how the approach would transfer to other airports with different runway configurations, traffic patterns, or operational constraints. Lack of implementation details and code availability limits reproducibility.
+- **Missing related work:** The abstract does not position the work relative to existing literature on airport congestion management, air traffic control optimization, or other DRL applications in transportation.
+
+**Questions:**
+1. Which DRL algorithm is used, and why was it chosen over alternatives?
+2. How is the spatial-temporal event graph constructed, and what features define an "airside hotspot"?
+3. What is the reward function explicitly, and how was it designed/tuned?
+4. How does performance vary across different traffic levels, runway configurations, or weather conditions?
+5. Have the learned policies been validated in simulation against domain expert baselines or classical control methods?
+6. What is the computational cost of training and inference, and is the approach deployable in real-time operations?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper tackles a relevant and practical problem with a reasonable approach and demonstrates empirical improvements on real data. However, it lacks sufficient methodological novelty, technical depth, and experimental rigor for a top-tier venue. The contribution is primarily in problem formulation and application rather than algorithmic innovation. Stronger presentation of the DRL method, ablation studies, generalization analysis, and comparison to domain-specific baselines would be needed to meet the acceptance bar.
+
+**Confidence:**
+3 (Moderate—assessment is based on the abstract alone; a full paper might reveal more technical depth or experimental breadth.)
+
+**Soundness:**
+Fair (The problem is well-motivated and the general approach is sound, but insufficient detail on methodology and evaluation limits confidence in the technical rigor.)
+
+**Presentation:**
+Fair (The abstract is clear and well-structured, but lacks the technical specificity needed to assess the method's soundness and reproducibility.)
+
+**Contribution:**
+Fair (The application to mixed-mode runway DM is novel, but the underlying DRL techniques appear standard, and the contribution is primarily in problem formulation and empirical validation rather than methodological innovation.)

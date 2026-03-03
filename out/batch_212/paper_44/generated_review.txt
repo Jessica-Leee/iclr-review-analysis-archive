@@ -1,0 +1,45 @@
+**Review:**
+
+This paper proposes a refined understanding of the cold posterior effect (CPE) in Bayesian deep learning, arguing that misspecification leads to CPE only when the resulting Bayesian posterior underfits. The core claim is that if there is no underfitting, there is no CPE—a nuanced perspective that unifies prior misspecification, likelihood misspecification, and data augmentation hypotheses under a single framework. The authors provide theoretical analysis to support this connection between underfitting and the emergence of CPE.
+
+**Strengths:**
+
+1. **Clear conceptual contribution**: The paper offers a unifying perspective on CPE by linking it explicitly to underfitting, which is intuitive and potentially more actionable than prior explanations. The claim that "no underfitting → no CPE" is a crisp, testable hypothesis.
+
+2. **Addresses an important phenomenon**: The cold posterior effect is a well-documented empirical puzzle in Bayesian deep learning (Wenzel et al., 2020), and a principled explanation is valuable for the community.
+
+3. **Theoretical grounding**: The paper provides theoretical analysis connecting misspecification to CPE through the lens of underfitting, moving beyond purely empirical observations.
+
+**Weaknesses:**
+
+1. **Limited empirical validation**: The abstract provides no details on experiments, datasets, or quantitative results. Without empirical validation on standard benchmarks (e.g., image classification, regression tasks), the theoretical claims remain difficult to assess. How comprehensively is the hypothesis tested?
+
+2. **Incomplete theoretical exposition**: The abstract does not specify the assumptions, formal theorems, or proof sketches. What precisely is meant by "underfitting"? Is this defined in terms of training loss, generalization gap, or posterior concentration? The theoretical contribution cannot be properly evaluated without these details.
+
+3. **Unclear novelty relative to prior work**: While the paper claims to unify prior misspecification, likelihood misspecification, and data augmentation hypotheses, it is unclear what is genuinely new versus what follows from existing analyses. The connection between misspecification and underfitting may be relatively straightforward.
+
+4. **Missing practical implications**: The paper does not discuss how this insight could be used to design better Bayesian methods or predict when CPE will occur. If underfitting is the root cause, what are the actionable recommendations?
+
+**Questions:**
+
+1. Can you provide specific formal statements of the main theorems and their assumptions?
+2. What is the precise definition of "underfitting" used in the analysis? How is it measured empirically?
+3. How does the theoretical analysis account for the role of data augmentation, which is known to affect CPE?
+4. What experiments validate the claim across different model architectures, datasets, and types of misspecification?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses an important phenomenon and proposes an interesting unifying perspective, but the abstract lacks sufficient detail on theory and experiments to assess the contribution rigorously. The theoretical claims need formal statements, and empirical validation is essential to support the hypothesis. With a complete paper including detailed proofs, comprehensive experiments, and practical guidance, this could be a solid contribution.
+
+**Confidence:**
+2 (Low—based only on abstract; full paper assessment would be more reliable)
+
+**Soundness:**
+2 (Fair—theoretical claims are stated informally; empirical validation is absent from the abstract)
+
+**Presentation:**
+2 (Fair—the abstract is concise but lacks sufficient technical detail to evaluate the contribution)
+
+**Contribution:**
+3 (Moderate—the unifying perspective is interesting but appears incremental without stronger theoretical or empirical support)

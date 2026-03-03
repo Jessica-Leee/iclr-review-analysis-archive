@@ -1,0 +1,18 @@
+{
+  "paper_id": "z3dfuRcGAK",
+  "review_id": "Ug9ks02fFe",
+  "year": 2024,
+  "line": 375,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. Through theoretical analysis from the perspective of generative models, the authors point out that generative objectives contribute to the optimization of EEA models.\n2. A generative EEA framework is proposed. By introducing reconstruction loss and distribution matching loss, GEEA further improves the performance of previous EEA models.",
+  "human_weaknesses": "",
+  "human_review_text": "The authors introduce the entity synthesis task and propose an M-VAE model that can convert entity embeddings back to the native concrete features. They also propose prior reconstruction loss and post-reconstruction loss to control the generation process. Empirical results show that entity synthesis has a positive effect on entity alignment.",
+  "human_questions": "GEEA is a general method, but all experiments are completed in multi-modal settings. In a single-modal scenario, will GEEA still be competitive?\nThe time and memory overhead of GEEA should be reported. \nThe number of entities in each data set is 15k. Can GEEA be run on larger datasets(such as 100k)?\nAdditionally, there are some other problems:\nThere are two \"right hand\" in the above line of Eq.43, one of them should be \"left hand\".\nThe weight of prediction matching loss is not included in Table 6.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

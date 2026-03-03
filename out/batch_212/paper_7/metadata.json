@@ -1,0 +1,18 @@
+{
+  "paper_id": "zwU9scoU4A",
+  "review_id": "gBU7uwifxA",
+  "year": 2024,
+  "line": 28,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "Overall, the paper studies an interesting problem and is relatively clearly written. As far as I know, this is a new extension of MFG to sparse graphs. The algorithm is very inspired from existing ones but there is an adaptation to the problem under consideration (core vs periphery).",
+  "human_weaknesses": "",
+  "human_review_text": "In this paper, the authors study a class of games with many players who are interacting through a sparse graph structure. More specifically, they are interested in the regime where the number of players tend to infinity. The main solution concept is an extension of the notion of Nash equilibrium. The authors propose a learning algorithm based on online mirror descent. They conclude the paper with examples and numerical simulations.",
+  "human_questions": "1. I am wondering if some assumptions are missing. For example below Lemma 1, should $f$ be at least measurable (and perhaps more?) with respect to $\\alpha$ for the integral to make sense?\n\n2. Assumption 2 as used for instance in Lemma 1 does not seem to make much sense (unless I missed something): What is $\\boldsymbol{\\pi}$? We do not know in advance the equilibrium policy and even if we did, we would still need to define the set of admissible deviations for the Nash equilibrium. Could you please clarify?\n\n3. Algorithm 1, line 14: Could you please explain or recall what is $Q^{k, \\mu^{\\tau_{\\mathrm{max}}}}$?\n\nSome typos: Should the state space be either $\\mathcal{X}$ or $X$ (see section 3 for instance)? Does $\\mathbb{G}^\\infty_{\\alpha,t}$ depend on $\\boldsymbol{\\mu}$ or not (see bottom of page 4)? Etc.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

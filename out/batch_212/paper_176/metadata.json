@@ -1,0 +1,18 @@
+{
+  "paper_id": "yN4Wv17ss3",
+  "review_id": "EPTl7BxcOi",
+  "year": 2024,
+  "line": 680,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The theory of supervised pretraining for in-context reinforcement learning via transformers is an interesting and important problem. This paper is among the first to explore that area. \n\n2. The paper shows a comprehensive understanding of the existing literature via the related work. \n\n3. The paper shows technical depth in the proofs of Theorems. \n\n4. The paper is technically sound and well-written.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper addresses the theory of supervised pretraining for in-context reinforcement learning (ICRL) via transformers. \n- It first proves that supervised pre-training will imitate the expert algorithm, with a generalization error that scales with the model capacity and a distribution ratio between the expert algorithm and the context algorithm that is used to generate offline trajectories. \n- It then transformers can approximate RL algorithms including LinUCB (w ridge regression), Thompson sampling (w ridge regression), and UCB-VI.\n\n**Update after rebuttal and reviewer-AC discussion**\n\nAfter reading the authors' rebuttal and discussing it with the other reviewers/AC, I am partly convinced about the connection to Transformer, though a stronger connection is more desirable. I still had reservations about how useful the bound is, but this is okay as the first step towards the theory and inspiring the community to continue working on it. I am maintaining my score, but I think this is generally a decent work and it would be okay to see it getting accepted.",
+  "human_questions": "Please see my questions as in the above.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

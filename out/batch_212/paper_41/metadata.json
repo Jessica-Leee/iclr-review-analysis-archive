@@ -1,0 +1,18 @@
+{
+  "paper_id": "zbKcFZ6Dbp",
+  "review_id": "gfz8JSFVdx",
+  "year": 2024,
+  "line": 163,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The introduction of shadow cones presents an innovative approach to defining entailment relations in hyperbolic space. Drawing inspiration from physical phenomena adds an intuitive and captivating aspect to the concept.\n\n2.  The authors provide a comprehensive mathematical formulation for shadow cones, enhancing the rigor of their work and enabling further exploration and development by other researchers in the field.\n\n3.  The experimental results across four datasets demonstrate the superior performance of the proposal compared to the current state-of-the-art methods.",
+  "human_weaknesses": "",
+  "human_review_text": "The authors introduce the \"shadow cones\" framework for constructing entailment cones in hyperbolic space. Unlike prior work that utilized nested cones in the Poincar\u00e9 ball, shadow cones model partial orders based on subset relations between shadows created by a light source and opaque objects.  This framework extends beyond the Poincar\u00e9 ball, allowing for more diverse formulations and hyperbolic space models. Shadow cones offer advantages over existing constructions, particularly in terms of optimization properties. Experimental results demonstrate the consistent and significant outperformance of shadow cones compared to existing entailment cone constructions across datasets of varying sizes and hierarchical structures.",
+  "human_questions": "see weakness",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "2 fair",
+    "contribution": "3 good"
+  }
+}

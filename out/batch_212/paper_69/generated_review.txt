@@ -1,0 +1,38 @@
+**Review:**
+
+This paper establishes a theoretical connection between spectral filtering and spatial aggregation in Graph Neural Networks, revealing that spectral filtering implicitly induces an adapted graph with non-local structure and signed edge weights. The authors propose a Spatially Adaptive Filtering (SAF) framework that leverages this adapted graph for auxiliary non-local aggregation, aiming to address long-range dependencies and graph heterophily. The work is motivated by the observation that while spectral GNNs are theoretically grounded, their spatial-domain interpretability remains unclear, and the paper claims to bridge this gap through explicit characterization of the adapted graph structure.
+
+**Strengths:**
+- The theoretical contribution is valuable: establishing an explicit connection between spectral filtering and spatial graph adaptation provides new interpretability for spectral GNNs and offers a principled perspective on why spectral methods work.
+- The proposed SAF framework is well-motivated by the theory and addresses known limitations of GNNs (long-range dependencies, heterophily) in a principled manner by modeling both node similarity and dissimilarity globally.
+- Comprehensive empirical validation across 13 node classification benchmarks demonstrates consistent improvements over state-of-the-art baselines, suggesting practical utility.
+- The paper tackles an important question about the spatial-domain behavior of spectral GNNs, which has received limited attention in prior work.
+
+**Weaknesses:**
+- The paper lacks sufficient detail on the theoretical derivation and assumptions. The abstract claims to "establish a theoretical connection" but does not specify the mathematical framework, assumptions, or formal theorems. Without seeing the full proofs, it is difficult to assess the rigor and generality of the theoretical claims.
+- The computational complexity of the SAF framework is not discussed. Computing the adapted graph and performing non-local aggregation may be expensive; the paper should provide complexity analysis and runtime comparisons with baselines.
+- The empirical section would benefit from ablation studies isolating the contributions of different components (e.g., the adapted graph structure, signed edge weights, non-local aggregation). It is unclear which aspects drive the improvements.
+- Limited discussion of when and why the adapted graph exhibits non-locality and signed weights. The paper claims these properties "reflect label consistency," but this connection needs clearer explanation and validation.
+
+**Questions:**
+- Can you provide the formal statement of the main theoretical result and clarify the assumptions under which the adapted graph characterization holds?
+- What is the computational complexity of SAF compared to standard spectral and spatial GNNs? Are there scalability concerns for large graphs?
+- How sensitive is SAF to hyperparameters (e.g., polynomial order, aggregation weights)? An ablation study would strengthen the empirical contribution.
+- Can you provide more intuition or empirical evidence for why the adapted graph's signed weights correlate with label consistency?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper makes a solid theoretical contribution by connecting spectral filtering to spatial graph adaptation, and the proposed SAF framework shows consistent empirical improvements. However, the presentation of the theory is incomplete in the abstract, and key practical details (complexity, ablations) are missing. The work is interesting and addresses an important gap, but would benefit from more rigorous exposition and deeper empirical analysis before publication at a top venue.
+
+**Confidence:**
+3 (moderate—the abstract provides limited detail on the theoretical framework, making full assessment difficult)
+
+**Soundness:**
+3 (fair—the theoretical claims are interesting but lack sufficient detail to verify; empirical validation is comprehensive but lacks ablations)
+
+**Presentation:**
+3 (fair—the abstract is well-written and motivating, but the paper likely needs clearer exposition of the theory and more complete experimental analysis)
+
+**Contribution:**
+4 (good—the spatial-domain interpretation of spectral GNNs is novel and the SAF framework is a reasonable application, though the novelty is somewhat incremental)

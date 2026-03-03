@@ -1,0 +1,48 @@
+**Review:**
+
+Sparling proposes a method for learning latent representations with extremely sparse activations in intermediate layers, using only end-to-end labeled examples without direct supervision on the intermediate state. The core contribution is a new informational bottleneck that enforces activation sparsity levels claimed to be unachievable by existing techniques. The authors demonstrate their approach on three domains (DigitCircle, LaTeXOCR, and AudioMNISTSequence), achieving >90% accuracy in localizing intermediate states up to feature permutation.
+
+**Strengths:**
+1. **Clear problem motivation**: The paper addresses a well-motivated setting where intermediate states are sparse but unlabeled, which is realistic for many real-world processes.
+2. **Novel technical contribution**: The proposed informational bottleneck for enforcing extreme sparsity appears to be a genuine methodological advance over existing sparsity-inducing techniques.
+3. **Concrete empirical validation**: The three experimental domains provide evidence that the method can recover intermediate representations with high fidelity despite lacking direct supervision.
+4. **Interpretability focus**: The emphasis on discovering sparse, interpretable intermediate states aligns with important goals in representation learning.
+
+**Weaknesses:**
+1. **Limited experimental scope**: Only three domains are evaluated, and all appear relatively structured (synthetic DigitCircle, OCR, audio sequence). Generalization to more complex, realistic datasets is unclear.
+2. **Insufficient methodological detail in abstract**: The abstract does not explain how the informational bottleneck works or what makes it fundamentally different from prior sparsity-inducing methods (e.g., L1 regularization, gating mechanisms). The mechanism and theoretical justification are opaque.
+3. **Missing comparisons**: No comparison to baseline methods or ablations is mentioned. It is unclear whether the claimed superiority over "other techniques" is empirically validated or merely asserted.
+4. **Evaluation metric ambiguity**: "Accuracy up to feature permutation" is a weak metric that could mask poor recovery of the actual intermediate state structure. No analysis of what the recovered states represent or how they compare to ground truth is provided.
+5. **Reproducibility concerns**: No mention of code availability, hyperparameter details, or training procedures that would enable reproduction.
+
+**Questions:**
+1. How does the proposed informational bottleneck differ mechanistically from existing sparsity-inducing techniques (e.g., L1 regularization, learned gating, or variational dropout)? What is the theoretical justification?
+2. What are the quantitative results compared to reasonable baselines (e.g., standard VAE with L1 sparsity, sparse autoencoders)?
+3. Can you provide examples of the recovered intermediate states and compare them qualitatively to ground truth?
+4. How sensitive is the method to hyperparameters controlling sparsity level?
+5. Do the results hold on larger-scale, less structured datasets?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper tackles an interesting problem and proposes a novel approach, but the abstract lacks sufficient technical clarity about the core contribution, and the experimental validation is limited in scope and lacks critical baselines. The work would benefit from clearer exposition of the method, broader experiments, and rigorous comparison to existing sparsity-inducing techniques before publication at a top venue.
+
+**Confidence:**
+3 (Low–Medium)
+
+The abstract alone provides insufficient detail to fully assess the technical soundness and novelty of the informational bottleneck mechanism. A full paper would be needed to evaluate the claims rigorously.
+
+**Soundness:**
+2 (Fair)
+
+The core idea is plausible, but without methodological details or baseline comparisons, it is difficult to assess whether the approach is sound or merely incremental.
+
+**Presentation:**
+2 (Fair)
+
+The abstract is clear in motivation but vague on the technical contribution. The mechanism of the proposed informational bottleneck is not explained, making it hard to understand what is novel.
+
+**Contribution:**
+2 (Fair)
+
+While the problem is well-motivated, the contribution is not sufficiently differentiated from existing sparsity-inducing methods without clearer exposition and empirical comparison.

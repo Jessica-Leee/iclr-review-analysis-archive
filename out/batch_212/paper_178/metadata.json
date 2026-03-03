@@ -1,0 +1,18 @@
+{
+  "paper_id": "yMMIWHbjWS",
+  "review_id": "AIgYG4mVYf",
+  "year": 2024,
+  "line": 688,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "In recent years, the large language model has been demonstrating a huge potential to realize AI whilst humans don't clearly understand how it works, which makes the papers that aim  to interpret deep neural networks more important.  I like the idea of the paper to demystify the learned representation in terms of convexity.\n\nAlso the paper derived a set of tools from convex theory and made it possible to analyze the convex property learned inside neural network. \n\nAlso the paper analyzes neural networks in different domains, which make their conclusion about neural network more convincing.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper presents some properties of recent neural networks that they found -- convexity emerges everywhere in layers of neural networks. The paper develops a tool for this purpose based on graphs and the Euclidean method. The paper studies the model pre-trained on multiple domains.",
+  "human_questions": "please address the questions that I raised above.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

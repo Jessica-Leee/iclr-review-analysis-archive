@@ -1,0 +1,33 @@
+**Review:**
+
+This paper proposes a bidirectional temporal diffusion model for generating temporally coherent human animation from a single image, video, or noise. The core contribution is replacing the standard unidirectional auto-regressive generation paradigm with a denoising diffusion framework in which intermediate denoising results are cross-conditioned bidirectionally between consecutive frames. The authors argue that bidirectional temporal modeling suppresses appearance ambiguity and enforces temporal coherence, addressing the motion drifting and appearance distortion artifacts common in unidirectional approaches.
+
+**Strengths:**
+- The motivation is well-articulated: unidirectional generation accumulates errors over time, and bidirectional conditioning is a principled way to enforce consistency. The claim that bidirectional temporal modeling suppresses appearance ambiguity is intuitive and addresses a real problem in video generation.
+- The use of a denoising diffusion model is a natural fit for this problem, allowing the network to jointly refine frames through bidirectional cross-conditioning rather than committing to predictions sequentially.
+- The paper demonstrates strong empirical performance compared to existing unidirectional approaches, with improvements in temporal coherence and reduction of artifacts like appearance distortion.
+
+**Weaknesses:**
+- The abstract provides insufficient technical detail about the bidirectional cross-conditioning mechanism. How exactly are intermediate denoising results exchanged between frames? Is this applied to all frame pairs or only consecutive ones? The mechanism needs clearer exposition.
+- No quantitative metrics or comparisons are mentioned in the abstract. While "strong performance" is claimed, the abstract lacks specifics on datasets, baselines, or evaluation metrics (e.g., FVD, LPIPS, user studies), making it difficult to assess the magnitude of improvement.
+- The scope of evaluation is unclear. The paper claims to handle three input modalities (single image, video, random noise), but the abstract does not specify which experiments validate each capability or whether all three are equally well-supported.
+- Limited discussion of computational cost: bidirectional diffusion likely requires more forward and backward passes than unidirectional methods. The practical efficiency trade-offs are not addressed.
+
+**Questions:**
+- Can you provide details on the bidirectional cross-conditioning mechanism? Is it applied at each denoising step, and how are gradients or information flow managed?
+- What are the quantitative improvements over baselines (e.g., on standard benchmarks like Human3.6M or TikTok dataset)?
+- How does computational cost scale compared to unidirectional baselines?
+- Are all three input modalities (image, video, noise) equally well-validated, or are some more thoroughly evaluated?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper addresses a genuine problem in video generation and proposes a reasonable solution using bidirectional diffusion conditioning. The core idea is sound and the claimed empirical improvements are promising. However, the abstract lacks sufficient technical and experimental detail to fully assess the contribution. A full paper with detailed methodology, comprehensive quantitative results, and ablation studies would be needed to confirm the strength of this work. As presented, the contribution is incremental but solid—applying diffusion models with bidirectional conditioning is a natural extension of existing ideas rather than a fundamental innovation, though the application to human animation and the empirical validation appear competent.
+
+**Confidence:** 3
+
+**Soundness:** good
+
+**Presentation:** fair
+
+**Contribution:** 3 (solid but somewhat incremental)

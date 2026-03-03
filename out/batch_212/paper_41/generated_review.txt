@@ -1,0 +1,37 @@
+**Review:**
+
+This paper introduces shadow cones, a physics-inspired generalization of entailment cones for modeling partial orders in hyperbolic space. The key innovation is to represent partial orders as subset relations between shadows cast by a light source and opaque objects in hyperbolic geometry, rather than using nested cones in the Poincaré ball. The authors argue that shadow cones generalize entailment cones to a broader class of hyperbolic models and offer improved optimization properties. The paper demonstrates empirical improvements over existing entailment cone constructions across datasets of varying sizes and hierarchical structures.
+
+**Strengths:**
+- The shadow cones framework is conceptually novel and physically intuitive, providing a fresh perspective on partial order embeddings in hyperbolic space. The generalization beyond the Poincaré ball to other hyperbolic models is a meaningful theoretical contribution.
+- The paper claims consistent and significant empirical improvements over existing entailment cone methods, suggesting practical utility.
+- The physics-inspired formulation (light source, shadows, opaque objects) is elegant and may offer insights into the geometric structure of hierarchies.
+
+**Weaknesses:**
+- The abstract provides limited technical detail about the shadow cones construction itself, making it difficult to assess the mathematical rigor and clarity of the approach. How exactly are shadows defined in hyperbolic space? What is the precise relationship between shadow subset relations and partial orders?
+- The paper does not clearly explain what "better optimization properties" means or provide theoretical justification. Without convergence analysis, approximation bounds, or detailed optimization comparisons, this claim remains vague.
+- The experimental validation is described only at a high level. The abstract mentions "datasets of various sizes and hierarchical structures" but provides no specifics: which datasets, what baselines, what metrics, and by how much do shadow cones outperform entailment cones? Quantitative results are essential for assessing impact.
+- The generalization to hyperbolic models beyond the Poincaré ball is mentioned but not elaborated. Which models are covered, and what are the practical implications?
+
+**Questions:**
+- Can you provide a formal definition of shadow cones and a proof that they correctly model partial orders?
+- What specific optimization advantages do shadow cones possess, and can you provide convergence or complexity analysis?
+- What are the quantitative improvements on standard benchmarks (e.g., WordNet, Freebase) compared to entailment cones and other recent methods?
+- Which hyperbolic models beyond the Poincaré ball are supported, and do they yield additional empirical benefits?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper presents an interesting and novel idea with promising empirical results, but the abstract lacks sufficient technical detail and quantitative evidence to fully evaluate the contribution. The claims about optimization properties and empirical improvements need concrete support. A full paper submission with detailed methodology, theoretical analysis, and comprehensive experiments would be needed to assess whether this work merits acceptance at a top venue like ICLR.
+
+**Confidence:**
+2–3 (Low to moderate; limited by sparse technical detail in the abstract)
+
+**Soundness:**
+Fair (The core idea appears sound, but without full technical exposition, rigor cannot be verified.)
+
+**Presentation:**
+Fair (The abstract is readable but lacks the specificity needed for a strong technical contribution.)
+
+**Contribution:**
+Good (The shadow cones framework is novel and the generalization beyond Poincaré ball is valuable, but empirical validation is underspecified.)

@@ -1,0 +1,18 @@
+{
+  "paper_id": "yLClGs770I",
+  "review_id": "5zaTPp4deQ",
+  "year": 2024,
+  "line": 696,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. Expensive efforts in creating the dataset, very valuable if provided to the research community. \n2. Performance improvements over the baseline approaches without the MathInstruct dataset",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposed a MathInstruct dataset to improve the general performance of all types of math problems.\nSpecifically, they annotate public datasets with CoT and program-of-thought (PoT) annotations with GPT-4.\nThrough experiments on many in-domain and out-of-domain datasets, they demonstrate the effectiveness of this dataset.",
+  "human_questions": "1. GSM8K has about 7k training data, how do you get 14k examples?",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "2 fair",
+    "contribution": "3 good"
+  }
+}

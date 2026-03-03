@@ -1,0 +1,35 @@
+**Review:**
+
+This paper proposes an interaction-centric hypersphere reasoning model for multi-person video HOI recognition. The core contribution is a framework that models interdependencies among humans, objects, and interactions through a context fuser, adopts an interaction-centric hypersphere representation to capture semantic meaning, and incorporates an interaction state reasoner module for temporal reasoning. The authors argue that existing methods treat these three facets as disentangled representations and neglect their inherent interdependencies, motivating their unified approach.
+
+**Strengths:**
+- The motivation is clear: recognizing that humans, objects, and interactions are interdependent rather than independent is a reasonable and potentially valuable insight for HOI recognition.
+- The paper demonstrates strong empirical results on the multi-person dataset MPHOI-72, reportedly surpassing SOTA by more than 15%, which is a substantial margin.
+- The approach is claimed to be flexible for both multi-person and single-person scenarios, with competitive or better results on Bimanual Actions and CAD-120 datasets.
+- The use of an interaction-centric hypersphere framework is a concrete architectural choice that differs from prior work.
+
+**Weaknesses:**
+- The abstract lacks sufficient technical detail to evaluate the soundness of the proposed method. The "context fuser," "interaction-centric hypersphere framework," and "interaction state reasoner" are named but not explained. How exactly do these components model interdependencies? What is the mathematical formulation?
+- No ablation studies are mentioned. It is unclear which components (context fuser, hypersphere representation, state reasoner) contribute most to the reported improvements, making it difficult to assess the value of individual design choices.
+- The paper provides no comparison of computational cost or efficiency relative to SOTA methods. A 15% improvement is noteworthy, but without runtime or parameter counts, the practical utility is unclear.
+- The abstract does not discuss related work or clearly position the novelty relative to existing interaction-centric or graph-based approaches to HOI recognition. The claim that contemporary methods "neglect interdependencies" needs more careful justification.
+- Limited discussion of failure cases, dataset-specific challenges, or generalization properties. The claim of flexibility across single- and multi-person scenarios needs more evidence.
+
+**Questions:**
+- Can you provide the mathematical formulation of the interaction-centric hypersphere representation and explain how it differs from standard embedding spaces?
+- What is the computational overhead of the context fuser and interaction state reasoner compared to baseline methods?
+- Have you performed ablation studies isolating the contribution of each proposed module?
+- How does your method compare to recent graph-based or relational reasoning approaches for HOI recognition?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses a relevant problem and reports strong empirical results on a multi-person HOI dataset. However, the abstract provides insufficient technical detail to assess the soundness and novelty of the proposed method. The lack of ablation studies, computational analysis, and clear positioning relative to related work raises concerns about the depth of the contribution. While the empirical gains are promising, the presentation must be substantially improved—with clearer technical exposition, ablation studies, and more thorough analysis—to meet the standards of a top-tier venue.
+
+**Confidence:** 3 (limited by reliance on abstract alone; full paper review would likely adjust this)
+
+**Soundness:** 2 (fair—strong empirical results but insufficient methodological detail to verify claims)
+
+**Presentation:** 2 (poor—key technical components are named but not explained; lacks rigor in exposition)
+
+**Contribution:** 3 (fair—the motivation is reasonable and results are strong, but novelty and technical depth are unclear from the abstract)

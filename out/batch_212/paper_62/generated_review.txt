@@ -1,0 +1,44 @@
+**Review:**
+
+This paper proposes Condition-Annealed Diffusion Sampler (CADS), a sampling strategy that improves output diversity in conditional diffusion models by adding scheduled, monotonically decreasing Gaussian noise to the conditioning vector during inference. The core insight is that high classifier-free guidance scales, while improving sample quality, reduce diversity; CADS addresses this by annealing the conditioning signal to balance diversity and condition alignment. The method is model-agnostic, compatible with any pretrained diffusion model and sampling algorithm, and achieves state-of-the-art FID scores (1.70 at 256×256 and 2.31 at 512×512) on class-conditional ImageNet generation.
+
+**Strengths:**
+- **Simplicity and generality**: The approach is straightforward—adding scheduled Gaussian noise to conditioning vectors—and requires no retraining, making it immediately applicable to existing pretrained models and sampling algorithms.
+- **Strong empirical results**: Achieving new state-of-the-art FID on ImageNet class-conditional generation at multiple resolutions demonstrates practical effectiveness.
+- **Clear motivation**: The paper identifies a concrete problem (reduced diversity at high guidance scales) and proposes a principled solution grounded in the role of the conditioning signal during inference.
+- **Versatility**: Demonstrated across multiple conditional generation tasks suggests broad applicability.
+
+**Weaknesses:**
+- **Limited theoretical justification**: While the intuition is clear, the paper lacks formal analysis of why annealing the conditioning signal balances diversity and quality. The connection between adding Gaussian noise to the conditioning vector and the underlying diffusion dynamics could be more rigorously established.
+- **Incomplete experimental details**: The abstract does not specify the noise schedule (how is the Gaussian noise annealed?), hyperparameter selection, or ablation studies. Without these details, reproducibility and understanding of design choices are compromised.
+- **Narrow evaluation scope**: The abstract mentions "various conditional generation tasks" but only reports results for class-conditional ImageNet. Evaluation on other tasks (text-to-image, layout-to-image, etc.) and comparison with other diversity-improving methods would strengthen the claims.
+- **Missing analysis of the diversity-quality tradeoff**: While the paper claims "minimal loss of sample quality," quantitative metrics for both diversity (e.g., Inception Diversity, precision-recall curves) and quality across different guidance scales are not discussed in the abstract.
+
+**Questions:**
+- What is the specific noise schedule used for annealing the conditioning vector? Is it dataset- or task-dependent?
+- How does CADS compare to other diversity-promoting techniques (e.g., temperature scaling, alternative guidance formulations)?
+- Can you provide quantitative diversity metrics (e.g., Inception Diversity, precision-recall) alongside FID to substantiate the diversity claims?
+- How sensitive is the method to the choice of noise schedule and annealing parameters?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper presents a simple, practical method with strong empirical results on a challenging benchmark. However, the limited theoretical grounding, incomplete experimental details in the abstract, and narrow scope of reported evaluations prevent a stronger recommendation. With more comprehensive experiments and clearer exposition of design choices, this could be a solid contribution.
+
+**Confidence:**
+3 (moderate)
+
+**Soundness:**
+Good
+
+The core idea is sound and the empirical results are strong, but the lack of theoretical analysis and incomplete experimental details (in the abstract) raise questions about the depth of understanding and reproducibility.
+
+**Presentation:**
+Good
+
+The paper is clearly written and the motivation is well-articulated, though key experimental details are missing from the abstract.
+
+**Contribution:**
+Good
+
+The method is simple and practical with clear applicability, and the empirical results are strong. However, the novelty is somewhat incremental—adding noise to conditioning vectors is a straightforward modification—and the contribution would be strengthened by deeper analysis and broader evaluation.

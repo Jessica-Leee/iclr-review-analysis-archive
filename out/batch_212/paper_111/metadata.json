@@ -1,0 +1,18 @@
+{
+  "paper_id": "yuYMJQIhEU",
+  "review_id": "64E9R7uvCM",
+  "year": 2024,
+  "line": 434,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "* In general this manuscript is well-structured and the problem is well-motivated.\n* Empirical results on various communication topologies with multiple decentralized optimizers are provided, in terms of computation cost and (relative) communication cost. Some ablation studies are also provided.",
+  "human_weaknesses": "",
+  "human_review_text": "This manuscript aims to improve the random-walk decentralized optimization by incorporating the idea of local SGD, keeping local optimizer states, and adding SAM optimization. Empirical results justify the effectiveness of the proposal.",
+  "human_questions": "NA",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "1 poor",
+    "presentation": "2 fair",
+    "contribution": "1 poor"
+  }
+}

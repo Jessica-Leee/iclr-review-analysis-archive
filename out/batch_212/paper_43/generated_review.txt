@@ -1,0 +1,49 @@
+**Review:**
+
+This paper investigates fundamental limitations of temperature scaling for model calibration in settings where class distributions overlap. The authors prove that for empirical risk minimizers, temperature scaling performance degrades with the degree of class overlap and asymptotically approaches random performance as the number of classes increases. As a constructive contribution, they show that optimizing a modified empirical risk induced by Mixup data augmentation can achieve better calibration in such settings, suggesting that training-time calibration may be necessary when class supports overlap significantly. The theoretical results are validated empirically on image classification benchmarks with label noise.
+
+**Strengths:**
+
+1. **Clear theoretical contribution**: The paper identifies a concrete, interpretable bottleneck for temperature scaling—class overlap—and provides formal analysis showing how calibration degrades with overlap magnitude and class count. This fills a gap in understanding when and why post-training calibration fails.
+
+2. **Constructive alternative**: Rather than only identifying limitations, the authors propose that Mixup-induced training can mitigate the problem, providing both theoretical justification and empirical validation. This positions the work as actionable guidance for practitioners.
+
+3. **Well-motivated problem**: The observation that temperature scaling is simple but often underperforms modified training schemes is practically relevant, and the paper provides theoretical insight into why.
+
+4. **Empirical validation**: Experiments on image classification with controlled label noise demonstrate that Mixup outperforms standard ERM across multiple calibration metrics, supporting the theoretical predictions.
+
+**Weaknesses:**
+
+1. **Limited scope of theoretical results**: The analysis assumes empirical risk minimizers and specific distributional assumptions (class support overlaps). It is unclear how broadly these assumptions hold in practice or how the results extend to other architectures, loss functions, or modern training techniques (e.g., regularization, batch normalization).
+
+2. **Incomplete characterization of Mixup**: While the paper shows Mixup helps, the theoretical explanation for *why* Mixup specifically addresses the overlap problem could be deeper. The connection between Mixup's implicit regularization and calibration under overlap deserves more detailed analysis.
+
+3. **Limited experimental scope**: Experiments focus on label noise as the source of overlap. It would strengthen the work to evaluate on naturally overlapping datasets (e.g., fine-grained classification, multi-label scenarios) or to vary overlap in more controlled ways beyond label noise.
+
+4. **Presentation of theoretical results**: The paper would benefit from clearer statement of the main theorems in the abstract or early sections. The conditions under which the negative results hold (e.g., number of classes, overlap magnitude) should be made more explicit upfront.
+
+**Questions:**
+
+- How do the theoretical results change if temperature scaling is applied *after* Mixup training? Does this recover performance?
+- Can the authors provide intuition for why Mixup's implicit data augmentation specifically addresses the overlap-induced calibration failure?
+- How sensitive are the empirical results to the choice of Mixup hyperparameters (e.g., α in Beta(α, α))?
+- Do the theoretical predictions hold for other modern architectures (e.g., vision transformers) or only for the settings analyzed?
+
+---
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper makes a solid theoretical contribution by identifying and formalizing a concrete limitation of temperature scaling under class overlap, and proposes a practical alternative. The combination of theory and validation is valuable for the calibration community. However, the theoretical scope is somewhat narrow (empirical risk minimizers, specific distributional assumptions), and the experimental validation, while supportive, is limited to synthetic overlap via label noise. The work would be strengthened by deeper analysis of why Mixup helps and broader empirical evaluation on naturally overlapping datasets.
+
+**Confidence:**
+4 (high confidence in the assessment)
+
+**Soundness:**
+Good — The theoretical analysis appears sound within its stated assumptions, and the empirical validation supports the main claims. However, the generality of the assumptions and the completeness of the Mixup analysis could be questioned.
+
+**Presentation:**
+Good — The paper is generally well-written and the motivation is clear. The theoretical results could be stated more prominently and with clearer conditions.
+
+**Contribution:**
+Good — The identification of class overlap as a bottleneck for temperature scaling is novel and useful. The Mixup connection is constructive but somewhat incremental, as Mixup's benefits are already known; the novelty lies in explaining one mechanism (calibration under overlap).

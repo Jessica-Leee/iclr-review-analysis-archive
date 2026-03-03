@@ -1,0 +1,18 @@
+{
+  "paper_id": "yVJd8lKyVX",
+  "review_id": "zhRrC1RCpR",
+  "year": 2024,
+  "line": 615,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. Innovatively introducing the MoE model from the NLP field into the domain of computer vision, the paper achieved outstanding results. The use of gating and expert effectively enhanced the model's capacity for relationship modeling in multi-label tasks.\n2. The paper's algorithmic description is concise and clear, with pseudo-code illustrating the core model workflow.\n3. The experiments are comprehensive, including model comparisons, ablation studies, and visualizations.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper addresses the issue of heterogeneity in the multi-label learning process. It transforms multi-label tasks into multi-task learning and innovatively incorporates the MoE model into visual classification tasks. Drawing inspiration from models like MMoE and PLE, the authors employed multiple experts and gating theories to learn various labels in their experiments. To prevent negative transfer during the model learning process, they also employed a shared expert approach to learn label correlations. Finally, the authors conducted experiments on the VOC and MS-COCO datasets and achieved outstanding performance.",
+  "human_questions": "1. What is the significance of Figure 6? The reduction in image resolution implies a decrease in information, which may lead to a decline in the model's performance. How does this relate to robustness?\n2. What is the difference between hybrid experts and attention mechanisms? Is the model's good performance due to the introduction of a large number of parameters? Does MoE in the paper improve training speed? It is recommended to conduct an efficiency experiment to verify this question.\n3. MoE models generally encounter the issue of load balancing. Is there a possibility that certain experts consistently dominate during the model training process? It is recommended to conduct an experiment to verify this question.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "paper_id": "z0B4GJuRjo",
+  "review_id": "M4MYmQZSDM",
+  "year": 2024,
+  "line": 397,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- The author's proposal of sequence-level certainty as a common theme over hallucination is a good idea, as is the design of probabilistic certainty and semantic certainty.\n- The logic and structure of the paper is clear and easy to follow. The design details and experimental setup are explained thoroughly. This work is comprehensive, well-organized, and complete.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper presents sequence-level certainty as a common theme over hallucination. The authors categorize sequence-level certainty into probabilistic certainty and semantic certainty and explore the correlation between sequence-level certainty and the level of hallucination. Based on the observation, the authors proposed a decoding-time method called Certainty-based Response Ranking (CRR) to mitigate hallucination. The experimental results show CRR can reduce model hallucination under certain settings.",
+  "human_questions": "Refer to weakness",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

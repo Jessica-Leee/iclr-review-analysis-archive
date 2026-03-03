@@ -1,0 +1,18 @@
+{
+  "paper_id": "zlcktbqv6b",
+  "review_id": "OffkI8jFEt",
+  "year": 2024,
+  "line": 93,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- The paper presents extensive experiments on three different medical image segmentation datasets. Additionally, it presents a quite extensive ablation study to show the contribution of each component of the proposed block.\n\n- The accuracy/efficiency trade-off is improved significantly compared to the state-of-the-art methods.",
+  "human_weaknesses": "",
+  "human_review_text": "With the recent success of foundation models, there is an increasing interest in fine-tuning these models for various problems. So, how to do the fine-tuning is a valid question, and updating as few parameters as possible during fine-tuning is vital for limited labeled data regimes and computation costs. With this motivation, the paper proposes a plug-and-play block for parameter-efficient fine-tuning of neural networks. The proposed block can be added to any architecture and only the block's parameters (along with the decoder added for segmentation) are updated during fine-tuning. The block consists of inner blocks: intra-feature enhancement (IntraFE) and inter-feature interaction (InterFE). In IntraFE, local features are extracted using channel-wise separable convolutions while FFT is used for global features. The results of each branch in IntraFE are summed and passed through a 1x1x1 convolution. The output of IntraFE is given to the InterFE block where it is concatenated with the features from the previous stage.\n\nThe experiments are conducted in 3 different datasets for segmentation, and the results show slight improvement compared to the state-of-the-art in terms of Dice and Haussdorff metrics, with a better accuracy-efficiency tradeoff.",
+  "human_questions": "Please address my comment in the weaknesses section.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

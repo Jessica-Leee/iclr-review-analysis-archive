@@ -1,0 +1,36 @@
+**Review:**
+
+This paper addresses uncertainty quantification (UQ) in large language models by proposing Shifting Attention to Relevance (SAR), a method that weights tokens and sentences by their semantic importance rather than treating all tokens equally during uncertainty estimation. The core insight is that linguistic redundancy means some tokens carry greater representativeness of meaning, and existing UQ methods fail to account for this disparity. The authors evaluate SAR across multiple LLMs (Vicuna, WizardLM, LLaMA-2-chat, OPT, LLaMA up to 33B) on free-form QA tasks spanning reading comprehension, science, and medical domains, reporting superior performance with demographic analysis.
+
+**Strengths:**
+- The motivation is intuitive and well-articulated: the observation that not all tokens equally contribute to semantic meaning is reasonable and underexplored in LLM uncertainty estimation.
+- Comprehensive experimental scope: evaluation across diverse model sizes, architectures (instruction-tuned and pretrained), and multiple QA domains demonstrates breadth.
+- The paper tackles a practically important problem—hallucinations in LLMs—where uncertainty estimation is a promising mitigation strategy.
+- Inclusion of demographic analysis suggests attention to fairness considerations.
+
+**Weaknesses:**
+- **Insufficient methodological detail:** The abstract provides no concrete description of how SAR identifies or weights "relevant" tokens and sentences. Without clarity on the mechanism (e.g., does it use attention weights, semantic similarity, or learned classifiers?), reproducibility and technical assessment are severely hampered.
+- **Vague evaluation metrics and baselines:** The abstract does not specify which UQ metrics are used (e.g., calibration, selective accuracy, AUC-ROC) or which baseline methods are compared against. This makes it impossible to assess whether improvements are meaningful or marginal.
+- **Missing quantitative results:** No numerical results, confidence intervals, or statistical significance tests are provided in the abstract. Claims of "superior performance" are unsubstantiated.
+- **Unclear novelty:** While the motivation is sensible, the paper does not articulate what is novel beyond the observation that tokens differ in importance. Many existing NLP methods (e.g., attention-based weighting, saliency methods) already exploit token importance; the distinction from prior work is unclear.
+
+**Questions:**
+- How exactly does SAR determine token/sentence relevance? Is this learned, heuristic, or based on existing model components (e.g., attention)?
+- What are the specific UQ metrics used, and what are the quantitative improvements over baselines?
+- How does SAR compare to simpler baselines such as entropy-based weighting or attention-based importance?
+- Does the method require additional training or fine-tuning, or is it applied post-hoc to off-the-shelf models?
+
+**Overall score:**
+4: below the acceptance threshold. While the paper addresses a relevant problem with a reasonable intuition, the abstract lacks sufficient technical and empirical detail to evaluate the contribution. The absence of concrete methodology, baselines, and quantitative results makes it impossible to assess novelty or impact. A full paper submission would be needed to properly evaluate this work.
+
+**Confidence:**
+3 (low—assessment is limited by sparse information in the abstract)
+
+**Soundness:**
+2 (fair—the core idea is plausible, but methodological details are absent)
+
+**Presentation:**
+2 (fair—the motivation is clear, but technical exposition is insufficient)
+
+**Contribution:**
+2 (fair—the novelty and concrete contribution are unclear without methodological specifics)

@@ -1,0 +1,18 @@
+{
+  "paper_id": "zdboax4dlK",
+  "review_id": "WrUCrZ39cD",
+  "year": 2024,
+  "line": 157,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The paper discusses the background and related work quite carefully, and is in general well-written.\n2. I like this discovery. Building connections between geometry of the network and the causal inference should shed light on more future work, in addition to more understanding of this topic, especially given the fast development.\n3. I acknowledge the theoretical analysis as the main contribution, it is good that the experimental results corroborate with the theoretical analysis.",
+  "human_weaknesses": "",
+  "human_review_text": "This manuscript bridges the Ollivier Ricci curvature with causal inference and shows that positive curvatures 'help' with the causal inference while negative ones do not. The connection is built on a causal model that regards the problem as a worst-case risk minimization. The main spot of the theoretical analysis is to show that if the ricci curvature is negative, then higher entropy is needed to fit the causal model. Numerical results align with the theoretical analysis. Further experiments show that integrating ricci flow with GNNs can improve the performance.",
+  "human_questions": "1. I unfortunately do not understand the formalization part very well. Could you explain what are the roles of system robustness and distributional robustness in the causal model? (Especially the risk minimization). In section 3.2 you said \"we utilize the correlation between Boltzmann entropy and Ricci curvature to formally establish this anticipated connection\" but later in section 4, Shannon entropy is discussed and Theorem 2 also uses Shannon entropy. This is confusing, could you please make it clear?\n\n2. I am fine with the most proof of Theorem 3.2 but not the second assumption. If I understand correctly, $X$ is the feature and $Y$ is the label, then the difference of two datasets may not just lie on the features. I wonder if the assumption that $H(Y|X;E)$ remains similar is OK in a causality task, but nothing more.\n\n3. What does it mean by a \"wrong causal model\"?\n\n4. This is not a major issue, but have you experienced computational issues when the networks are large? The computation of ricci flow takes $\\tilde{O}(mn^3)$ if I remember correctly, which can be larger than the time for GNN. Then if we think about applications, this is a hurdle.",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "3 good"
+  }
+}

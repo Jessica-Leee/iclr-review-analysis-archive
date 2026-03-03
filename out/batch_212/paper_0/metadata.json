@@ -1,0 +1,18 @@
+{
+  "paper_id": "zzv4Bf50RW",
+  "review_id": "Upm4GL7iRr",
+  "year": 2024,
+  "line": 0,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The paper is in general well organized and easy to follow. \n2. The proposed method is straightforward and shown to be effective on the test data.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper presents a method of learning dense 3D correspondence between shapes in a self-supervised manner. Specifically, it is built on an existing SO(3)-equivariant representation. The input point clouds are independently encoded to SO(3)-equivariant global shape descriptor Z and dynamic SO(3)-invariant point-wise local shape transforms. Then the network is trained via penalizing errors in self- and cross- reconstructions via the decoder. The experiment validates the effectiveness of the proposed method.",
+  "human_questions": "Please refer to the Weaknees part.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

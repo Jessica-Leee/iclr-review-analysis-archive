@@ -1,0 +1,38 @@
+**Review:**
+
+This paper proposes a graph self-supervised learning (GSSL) method that combines two key components: (1) an anchor-neighborhood alignment strategy leveraging graph diffusion to construct positive sample distributions based on structural context, and (2) isotropic constraints to encourage uniform representation distribution and mitigate dimensional collapse. The authors claim computational and storage advantages by avoiding negative samples, mutual information estimators, and additional projectors. While the motivation is clear and the problem of dimensional collapse in GSSL is well-recognized, the abstract lacks sufficient detail on how these components are technically integrated, what the actual learning objective is, and how the method compares quantitatively to existing approaches.
+
+**Strengths:**
+- Addresses two relevant challenges in GSSL: inadequate exploration of graph topology and dimensional collapse, both of which are known issues in the field.
+- The use of graph diffusion for constructing positive sample distributions is intuitive and grounded in graph structure, offering a principled way to leverage neighborhood information.
+- Claims computational efficiency by avoiding negative sampling and mutual information estimators, which could be practically valuable.
+- The paper promises extensive comparative experiments and ablation studies, suggesting empirical rigor.
+
+**Weaknesses:**
+- The abstract provides insufficient technical detail on the core contributions. The learning objective, how anchor-neighborhood alignment and isotropic constraints are combined, and the precise form of the isotropic constraint are not clearly articulated.
+- No quantitative results, baselines, or datasets are mentioned in the abstract, making it impossible to assess empirical impact or novelty relative to recent GSSL methods (e.g., GraphCL, SimGRACE, or other contrastive approaches).
+- The claim of "no reliance on negative samples" is presented as an advantage, but many modern GSSL methods successfully use negative samples; the trade-off is not explained.
+- The abstract does not clarify whether this is a contrastive or non-contrastive approach, or how it relates to recent work on non-contrastive self-supervised learning (e.g., BYOL-style methods for graphs).
+
+**Questions:**
+- What is the explicit form of the learning objective combining anchor-neighborhood alignment and isotropic constraints?
+- How does the method perform on standard benchmarks (e.g., node classification on Cora, Citeseer, Pubmed) compared to recent GSSL baselines?
+- Can you provide intuition or theoretical justification for why isotropic constraints specifically solve dimensional collapse?
+- How sensitive is the method to the choice of graph diffusion kernel and the strength of the isotropic constraint?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper tackles relevant problems and proposes intuitive solutions, but the abstract is too vague to assess technical novelty and empirical contribution. The lack of any quantitative results, baseline comparisons, or concrete experimental details in the abstract raises concerns about whether the work makes a sufficiently strong contribution for a top-tier venue. A full paper submission with clear technical exposition and comprehensive experiments would be needed to properly evaluate this work.
+
+**Confidence:**
+2 (Low confidence due to limited information in abstract alone)
+
+**Soundness:**
+2 (Fair – the ideas seem reasonable but lack sufficient technical detail to assess rigor)
+
+**Presentation:**
+2 (Fair – the abstract is somewhat vague on technical specifics and experimental validation)
+
+**Contribution:**
+2 (Fair – novelty is unclear without comparison to recent GSSL methods and without seeing the technical approach)

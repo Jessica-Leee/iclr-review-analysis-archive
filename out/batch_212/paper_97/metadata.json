@@ -1,0 +1,18 @@
+{
+  "paper_id": "z3L59iGALM",
+  "review_id": "nrvTPxRNDh",
+  "year": 2024,
+  "line": 378,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "* A compelling problem\n * Real-world empirical experimental problem considered\n * The paper does a good job straddling both novel theory advancements, and practical and engineering advancements, but presents the findings appropriately for the ICLR audience.\n * The connections with graph theoretic results (App. A1, A2, and Theorem B3) are useful and insightful.\n * The paper and appendices include negative results, in addition to the main results - this is encouraging to see (more papers should do this).\n * [Note to ACs and other reviewers]: Although the proposed method is framed for discrete MDP-based route optimization, note that there are several ways to generalize this framework to other interesting problem settings quite trivially, (see e.g. [A]) - as such, the findings here are actually quite broadly applicable, as noted by the authors in Sec 6.\n\n# References\n\n * [A] Byravan, Arunkumar, et al. \"Graph-Based Inverse Optimal Control for Robot Manipulation.\" IJCAI. Vol. 15. 2015.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper considers the important problem of Inverse Reinforcement Learning for route optimization and planning, and specifically the practical limitations of existing methods when scaled to larger problems. The authors draw a unified theoretical perspective around Max Margin planning (Ratliff et al. 2006), the classic MaxEnt framework (Ziebart et al. 2008), and Bayesian IRL (Ramachandran and Amir 2007) which is helpful and insightful. Connections with graph theory methods lead to a novel IRL initialization and algorithm (MaxEnt++ and Receding Horizon Inverse Planning) which demonstrates significant improvements over other methods for large-scale problems. Several other graph optimization methods are presented which further allow scaling to global-scale routing problems.\n\nThe paper is well written, clear to read (despite covering a lot of theory and background), and the experimental evaluations are thorough and provide support for the claims.\n\nI have a background in Inverse Reinforcement Learning theory, however have focused in other areas of computer science more recently, so may be out-of-touch with some recent literature results when performing this review. I have read the paper and appendices closely, however did not check the proofs carefully.",
+  "human_questions": "# Questions and comments\n\n * Unclear notation - Paragraph 'Parallelism strategies' under Sec 4 defines the global reward based on the sharded MDP as $r(s,a) = r_{\\theta_i}(s,a),(s,a) \\in \\mathcal{M}_i$. This notation isn't clear to me - is there a typo here? Is this mean to be a product over the sharded individual reward functions?\n\n# Minor comments and grammatical points\n\n * Typo in footnote 1 - 'rouute'",
+  "human_ratings": {
+    "rating": "10: strong accept, should be highlighted at the conference",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "4 excellent",
+    "presentation": "3 good",
+    "contribution": "4 excellent"
+  }
+}

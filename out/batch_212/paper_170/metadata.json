@@ -1,0 +1,18 @@
+{
+  "paper_id": "yQDFsuG9HP",
+  "review_id": "eMevanpDZL",
+  "year": 2024,
+  "line": 654,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "* The proposed method outperforms prior art on a significant number of benchmarks.\n* The paper also designed a new, high quality synthetic dataset for better evaluation of the model. This dataset, if released, can be of great help to future works.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper introduces a method that generates animated human videos. Depending on the training protocol, the proposed method can generation human animations either unconditionally, or conditionally from images (single image animation) or videos (Person-specific animation). Compared to previous works that relies on autoregressive generation of frames, this paper proposes a bidirectional diffusion model, achieving better quality. The bidirection model takes two noisy frames as input, denoising one of them according to the input embedding that controls the direction.\nTo facilitate the evaluation of the model, a synthetic human animation dataset containing different characters having the same motion is built.",
+  "human_questions": "* The BTU-Net described in the paper has a temporal window of 2. Would increasing the number of frames further improve the performance? \n* How is the proposed model inferenced? Do you take the average of the results from both directions?",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

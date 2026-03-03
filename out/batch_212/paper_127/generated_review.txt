@@ -1,0 +1,44 @@
+**Review:**
+
+This paper addresses an important open challenge in Generative Flow Networks (GFlowNets): how to leverage pre-training and unsupervised learning for efficient adaptation to downstream reward-based tasks. The authors propose outcome-conditioned GFlowNets (OC-GFN), a self-supervised approach where the model learns to reach any targeted outcomes without access to task-specific rewards. The key innovation is framing pre-training as a goal-conditioned exploration problem, enabling direct policy extraction for new reward functions. To handle the intractable marginalization over outcomes during fine-tuning on downstream tasks, the authors propose learning an amortized predictor to approximate this marginalization, enabling efficient adaptation.
+
+**Strengths:**
+- The core idea of outcome-conditioning as a pre-training strategy for GFlowNets is intuitive and well-motivated, drawing a natural parallel to goal-conditioned RL.
+- The paper tackles a genuine limitation of GFlowNets: their dependence on extrinsic reward functions and lack of established pre-training paradigms.
+- The proposed amortized predictor for approximating the intractable marginalization during fine-tuning is a practical contribution that enables scalable adaptation.
+- Extensive experimental validation demonstrates improvements in sample efficiency and mode discovery on downstream tasks.
+
+**Weaknesses:**
+- The paper lacks sufficient technical detail in the abstract and likely in the main text regarding how the outcome-conditioning objective is formulated and how it relates to standard GFlowNet training objectives (e.g., trajectory balance).
+- The claim about "direct extraction of a policy" for new reward functions needs clarification: how exactly does conditioning on outcomes enable zero-shot or few-shot adaptation without any fine-tuning?
+- The amortized predictor approximation is introduced somewhat ad-hoc; the paper would benefit from formal analysis of the approximation error and its impact on downstream performance.
+- Limited discussion of computational overhead: pre-training an outcome-conditioned model and learning an additional predictor may be expensive; comparison of total training time vs. standard fine-tuning from scratch is not addressed.
+
+**Questions:**
+- How does the outcome-conditioning objective differ from or relate to existing GFlowNet training objectives? Is this a modification of trajectory balance or a separate objective?
+- Can you provide theoretical or empirical justification for why the amortized predictor approximation is valid? What is the approximation error?
+- What is the computational cost of pre-training OC-GFN relative to training task-specific GFlowNets from scratch?
+- How sensitive is the approach to the diversity and coverage of outcomes seen during pre-training?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper makes a solid contribution to an underexplored area (pre-training for GFlowNets) with a reasonable approach and experimental validation. However, the presentation lacks sufficient technical depth in the abstract, and key design choices (the amortized predictor, the outcome-conditioning formulation) need clearer exposition and justification. The work is incremental but addresses a real need in the GFlowNet community.
+
+**Confidence:**
+3 (moderate)
+
+**Soundness:**
+Good
+
+The core ideas are sound, but the abstract does not provide enough detail to fully assess the technical correctness of the amortized predictor approximation or the outcome-conditioning formulation.
+
+**Presentation:**
+Fair
+
+The abstract is somewhat vague on technical details. Phrases like "direct extraction of a policy" and "amortized predictor" are introduced without sufficient explanation of how they work or why they are necessary.
+
+**Contribution:**
+Good
+
+The paper introduces a novel pre-training paradigm for GFlowNets and a practical fine-tuning mechanism. While not groundbreaking, it addresses a genuine gap and provides a foundation for future work, as the authors acknowledge.

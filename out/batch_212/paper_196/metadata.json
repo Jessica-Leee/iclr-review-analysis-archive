@@ -1,0 +1,18 @@
+{
+  "paper_id": "yBP36xQhZl",
+  "review_id": "01MB9VZpP0",
+  "year": 2024,
+  "line": 762,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- The motivation of the authors is reasonable given many prior works on supervised SNN are still relying on backpropagation. Also, the biological plausibility and hardware compatibility are reasonable motivation to some extent to explore other supervised learning methods. \n\n- The differences between FGT, backpropagation (BP), and direct feedback alignment (DFA) are well described in the figure and mathematically formulated. The paper is generally well written and provides enough information to understand the proposed approach with detailed appendix. \n\n- FGT and LL couples the global and local supervised learning in SNN empirically showing good results. Table 3 and Figure 3 comprehensively summarize the performance of FGT and LL in the various datasets and comparison methods.",
+  "human_weaknesses": "",
+  "human_review_text": "The authors proposed forward gradient training (FGT) for spiking neural networks to perform biologically plausible and hardware friendly supervised learning. The key objective is how to deliver error signals at the last layer without backpropagating through previous layers. The authors developed forward surrogate gradient to address the non-differentiable functions of SNN and empirically demonstrated promising accuracy compared to BP and DFA. Also, FGT combined with local learning (LL), which optimizes the local loss estimated from local readout layers, shows more improved accuracy. Experiments are performed in various benchmark datasets, such as N-MNIST, DVS-Gesture, CIFAR-10, and CIFAR-100.",
+  "human_questions": "- The higher training cost of FGT and LL makes sense to some extent as CPU/GPU are not SNN-friendly architectures. However, SNN accelerators are still being developed, and it is difficult say there is a standard architecture for neuromorphic computing. For example, if there are dedicated hardware accelerators for BP-based supervised SNN, BP will be more hardware compatible than FGT.\n\n- It is not easy to make connections to well-known biological or biologically-inspired learning rules such as Hebbian learning or spike-time dependent plasticity (STDP). If the layer-wise error propagation is the main difference with BP, the proposed method is loosely related to biological learning rules.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

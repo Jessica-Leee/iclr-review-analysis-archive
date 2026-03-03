@@ -1,0 +1,18 @@
+{
+  "paper_id": "yjX303Smre",
+  "review_id": "xqgGzZ5akw",
+  "year": 2024,
+  "line": 518,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- Section 3 on Diverse Skill Learning is well-written and describes the method and the contributions of the work in a clear manner, with the appropriate references to existing work in the area.\n- Figure 5 provides good qualitative evidence of diverse skills being learnt by the proposed approach.\n- The Conclusions mention a drawback of the approach in that it is unable to replan in the event of collisions, for instance. This is an important empirical detail and I liked the fact that it was raised in the paper.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposes an approach for acquisition of diverse skills using non-linear mixture of experts. The main ingredients of this approach are maximum-entropy objective for learning diverse experts, trust-region optimisation for stable bi-level optimisation, and energy-based models for automatic curriculum learning. Their approach demonstrates the learning of diverse skills for solving the same task.",
+  "human_questions": "- I am not sure why the prior $\\pi(o)$ has been assumed to be uniform. For sparse reward tasks, I can imagine observations that are closer to the goal would be rarer than those closer to the initial state at the beginning of the episode. Or does this paper assume full access to the simulator in which resetting to any observation is possible?\n- In the Experiments section, the paper mentions that the aim is to check whether Di-Skill is able to learn precise and diverse skills. The fact that it learns diverse skills is reasonably demonstrated in Figure 5, but I am yet to find evidence that precise skills are learnt. Could the authors please point me to that?\n- Could the authors provide any insights on the learnt $\\pi(o | c)$? Of the number of experts used, how often were they used when averaging across observations?",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

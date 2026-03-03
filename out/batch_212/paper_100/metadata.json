@@ -1,0 +1,18 @@
+{
+  "paper_id": "z1WiEHnjQs",
+  "review_id": "nSDKbhsahW",
+  "year": 2024,
+  "line": 389,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The paper is well-written. The algorithm design intuition is written in a very clear way. I also appreciate the discussion of the practical implementation of TVPO. Simulation results are extensive and demonstrate the improvement of the proposed algorithm compared with the SOTA.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposed a novel independent learning algorithm TVPO for MARL based on f divergence policy optimization. The paper established convergence of TVPO, and provided a practical algorithm for simulation. Extensive simulations are conducted to show the improvement of TVPO compared with other state-of-the-art MARL algorithms.",
+  "human_questions": "See above.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

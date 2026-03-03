@@ -1,0 +1,18 @@
+{
+  "paper_id": "ygxTuVz9eU",
+  "review_id": "VV87JWnLKE",
+  "year": 2024,
+  "line": 548,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. Noisy or dirty data detection and cleaning is an important research topic. It is becoming even more critical for recent machine learning research since the data scale is always getting larger.\n2. The proposed framework wisely utilize the advantage of current large-scale model to benefit the dirty data detection task.\n3. Comprehensive empirical results show the framework superiority compared with other baselines.\n4. The whole draft is in a good format for readers.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposes a working pipeline for noisy data detection. Compared with existing works focusing on noisy data or noisy label, this work aims to obtain an integrated framework to handle a comprehensive scenario including various noisy cases. Specifically, it terms it as visual-language inconsistency. Leveraging on several prompt techniques, the proposed framework achieves promising results compared with other baselines.",
+  "human_questions": "Please refer to the strengths and weakness for details. Even if I am concerning some points in weakness, I recognize other aspects of this paper mentioned in strengths. Overall, I lean to vote for an acceptance for now and I would like to check other reviewers' comments to discuss and make my final decision.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

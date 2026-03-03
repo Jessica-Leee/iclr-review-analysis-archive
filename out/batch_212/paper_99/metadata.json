@@ -1,0 +1,18 @@
+{
+  "paper_id": "z282NEQDbF",
+  "review_id": "QFyAKHns5A",
+  "year": 2024,
+  "line": 385,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The method proposed is simple, efficient and is shown to perform better than the baselines on the few-shot scenarios by a good margin (Table 1/2).\n\n2. The authors have done a nice analysis experiment to investigate the learnt representations by the student, showing that the correlations between the student's outputs is very similar to that of the teacher's outputs, even though this was never explicitly part of the objective. (Table 4)",
+  "human_weaknesses": "",
+  "human_review_text": "The paper proposes a new method for knowledge distillation: instead of the student trying to mimic the direct output of the teacher, it mimics the difference between two samples (the student's difference should match the teacher's difference). The authors claim that their method is better suited in resource constrained situations where one can only get teacher's outputs a few times. They compare their proposed method (CKD) to different baselines and show improved results on CIFAR100 dataset.",
+  "human_questions": "Comments:\n\n1. Typo: may prove may provide (page 3 top paragraph).\n\n2. The authors have cited some works from the field of psychology as the source of their motivation. While it is fine to refer to works from other fields, one should cite them only when there is something substantive to talk about. Right now, the section talking about those works (Section 1, paragraph 3) seems to have not much context/relevance to the particular problem that the authors are solving.",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "5: You are absolutely certain about your assessment. You are very familiar with the related work and checked the math/other details carefully.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

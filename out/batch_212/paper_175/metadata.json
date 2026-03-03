@@ -1,0 +1,18 @@
+{
+  "paper_id": "yNAlwBoDcg",
+  "review_id": "6nqX9ADxH6",
+  "year": 2024,
+  "line": 676,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The proposed method is more scalable than RS.\n\n2. The idea of exploiting heterogeneity in Lipschitz constants across layers is interesting.\n\n3. Numerical study is quite comprehensive.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper combines Lipschitz networks with randomized smoothing (RS) to develop the SPLITZ method which splits a classifier into two halves, constrain the Lipschitz constant of the first half, and smooth the second half via randomization. The motivation is that many standard deep networks exhibit heterogeneity in Lipschitz constants across layers, and the proposed method is capable of exploiting this heterogeneity while improving scalability of RS. Training methods and related robustness theory are developed. Numerical results are presented to show that the proposed method achieves good results on MNIST, CIFAR-10 and ImageNet datasets.",
+  "human_questions": "1. The idea of combining Lipschitz networks and RS may not be that new. Can the authors be more specific about the unique conceptual novelty of this paper?\n\n2.  From Table 3, it seems that DDS is better for smaller perturbations? Is it possible to make the proposed method achieve better results than DDS even for small perturbations?\n\n3. As mentioned above, there is a large body of literature on parameterizing networks in certain ways to enforce Lipschitz constraints. Why do not use the above Lipschitz networks for the first half and then integrate RS with the second half? How to compare such a network parameterization approach with the proposed method?",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

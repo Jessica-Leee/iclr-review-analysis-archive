@@ -1,0 +1,34 @@
+**Review:**
+
+This paper proposes SASANet, a self-interpreting neural network that integrates Shapley values into an Additive Self-Attribution (ASA) framework. The core contribution is a method that provides theoretical guarantees that self-attribution values equal the output's Shapley values, achieved through a marginal contribution-based sequential schema and internal distillation-based training. The authors claim their approach avoids the expressiveness-interpretability trade-off that plagues existing self-interpreting models and outperforms both post-hoc interpretation methods and competing self-attributing architectures.
+
+**Strengths:**
+- The motivation is clear: grounding self-attribution in Shapley values provides a principled, theoretically justified foundation for interpretability, addressing a real gap in the literature.
+- The claimed theoretical guarantee that self-attribution values equal Shapley values is a strong contribution if rigorously proven; this would distinguish SASANet from approximation-based methods.
+- The paper positions itself as maintaining competitive predictive performance while providing intrinsic interpretability, which is an important practical consideration.
+- The comparison against both post-hoc methods and self-attributing baselines is appropriate for validating the approach.
+
+**Weaknesses:**
+- The abstract provides insufficient detail on the actual mechanism: how exactly does the "marginal contribution-based sequential schema" work? How does "internal distillation-based training" ensure Shapley value alignment? Without clarity on these core technical components, it is difficult to assess feasibility or novelty.
+- No concrete experimental results are presented in the abstract—claims like "surpasses existing self-attributing models" and "rivals black-box models" lack supporting numbers, making it impossible to evaluate the empirical contribution.
+- The scalability of computing Shapley values is notoriously challenging; the abstract does not address computational complexity or how the method scales to high-dimensional inputs, which is critical for practical applicability.
+- The paper lacks discussion of how the method handles the fundamental tension between maintaining un-approximated Shapley values and training efficiency, or what trade-offs (if any) are made.
+
+**Questions:**
+- Can you provide the theoretical proof that the self-attribution values provably equal Shapley values? What are the assumptions?
+- How does computational cost scale with the number of features? Are there approximations or pruning strategies employed in practice?
+- What are the specific performance metrics and datasets used in experiments? How large are the improvements over baselines?
+- How does the method perform on high-dimensional datasets (e.g., images, text), where Shapley value computation is typically intractable?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses an important problem and proposes a theoretically motivated solution, but the abstract is too vague on technical details and experimental validation. The core claims—theoretical guarantees and empirical superiority—cannot be properly assessed without concrete results and clearer exposition of the method. A full paper with detailed methodology, proofs, and comprehensive experiments would be needed to determine if this work makes a solid contribution to the field.
+
+**Confidence:** 3 (Low—assessment is limited by the abstract's lack of technical and experimental detail)
+
+**Soundness:** 2 (Fair—the theoretical framework is plausible but unvalidated in the abstract; scalability concerns are unaddressed)
+
+**Presentation:** 2 (Fair—the abstract is high-level and lacks sufficient technical specificity; key methodological components are underexplained)
+
+**Contribution:** 3 (Fair—the idea of grounding self-attribution in Shapley values is sound, but novelty and impact cannot be assessed without results and detailed methodology)

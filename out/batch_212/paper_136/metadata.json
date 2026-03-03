@@ -1,0 +1,18 @@
+{
+  "paper_id": "yiPtWSrBrN",
+  "review_id": "ZX61CrI5xV",
+  "year": 2024,
+  "line": 529,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "One goal is to build a synthetic dataset with a \"simple\" language to better understand how language is learnt by LLM. The idea is interesting and some hints provide interesting assumptions, like : model depth is more important for consistency than for grammar,  the grammar can be quickly learnt, ...",
+  "human_weaknesses": "",
+  "human_review_text": "This paper is a sum of contributions around two ideas: i) ask to GPT to generate a simple dataset (with words that a typical 3 to 4-year-old child can understand) and ii) use GPT4 to score LLM.",
+  "human_questions": "Why the interpretability section is considered as a contribution in the introduction, while it is  only in appendices ?",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

@@ -1,0 +1,38 @@
+**Review:**
+
+This paper proposes a Generalist Equivariant Transformer (GET) for learning 3D molecular interactions across different molecule types (proteins, small molecules, RNA/DNA). The key contribution is a unified representation of arbitrary 3D complexes as geometric graphs of sets, combined with a bilevel attention module that maintains E(3) equivariance while handling variable-sized sets. Unlike pooling-based hierarchical models, GET claims to retain fine-grained information across all levels. The authors validate their approach on interactions between proteins, small molecules, and RNA/DNAs.
+
+**Strengths:**
+1. **Well-motivated problem**: The observation that existing methods encode different molecule types independently, missing universal interaction physics, is compelling and addresses a genuine limitation in the field.
+2. **Principled design**: The E(3) equivariance constraint is appropriate for 3D molecular systems, and the geometric graph of sets representation is a natural abstraction for heterogeneous molecular complexes.
+3. **Broad scope**: Testing on multiple interaction types (protein-protein, protein-small molecule, etc.) demonstrates ambition toward generalization across domains.
+4. **Information retention**: The claim that GET avoids information loss compared to pooling-based methods is a meaningful architectural advantage if validated.
+
+**Weaknesses:**
+1. **Insufficient experimental detail**: The abstract provides no quantitative results, baseline comparisons, or dataset specifications. Without concrete performance metrics, it is impossible to assess whether GET actually outperforms existing methods or by how much.
+2. **Vague technical description**: The bilevel attention module and its E(3) equivariance are mentioned but not explained. How exactly does it differ from prior equivariant attention mechanisms? What makes it suitable for sets of variable sizes?
+3. **Missing ablations and analysis**: No discussion of which components (bilevel attention, feed-forward, layer normalization) contribute to performance, or how the method scales with complex size and heterogeneity.
+4. **Generalization claims unsupported**: While the paper claims generalization across domains, the abstract does not provide evidence (e.g., zero-shot transfer, cross-domain performance) to substantiate this claim.
+
+**Questions:**
+- What are the quantitative improvements over domain-specific baselines (e.g., separate models for protein-protein vs. protein-ligand)?
+- How does computational cost scale with the number of atoms and complexity of the molecular system?
+- Can you provide ablation studies isolating the contribution of bilevel attention, E(3) equivariance, and fine-grained information retention?
+- Are there results on held-out interaction types to demonstrate true generalization?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses an important problem and proposes a reasonable solution with principled design choices. However, the abstract lacks sufficient experimental validation, quantitative results, and technical clarity to support the strong claims of effectiveness and generalization. For a venue like ICLR, concrete benchmarks and comparisons are essential. The work would benefit from a full paper submission with detailed results, ablations, and clearer exposition of the technical contributions.
+
+**Confidence:**
+3 (Low—assessment is based solely on abstract; full paper would likely clarify many concerns)
+
+**Soundness:**
+3 (Fair—the approach is conceptually sound, but without results or detailed methodology, soundness cannot be fully evaluated)
+
+**Presentation:**
+2 (Poor—the abstract is too vague on technical details and provides no experimental evidence)
+
+**Contribution:**
+3 (Fair—the unified representation and GET architecture are reasonable ideas, but novelty and impact are unclear without results)

@@ -1,0 +1,18 @@
+{
+  "paper_id": "yINucFNbcZ",
+  "review_id": "esdUoIvSX4",
+  "year": 2024,
+  "line": 717,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- This paper is well organized and easy to follow.\n\n- Empirical evidence is provided to demonstrate the efficiency of the proposed method in reducing the size of the prediction set.\n\n- A comprehensive empirical discussion is given to shed light on the behavior of the proposed method, and to explain intuitively its efficiency.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper adresses the problem of producing large prediction sets commonly seen in current approaches of conformal prediction, by applying test-time augmentation to the computation of conformal scores. To compute the conformal score of a sample, the proposed method uses a linear combination of estimated probabilities given by the base classifier on the original data vector and its augmentations. The weights of this linear combination are either uniform or learned by minimizing the cross entropy loss on the calibration set, giving rise to two algorithmes correspondingly referred as TTA-Avg and TTA-Learned. \n\nAn extensive empirical study was carried out to show the effectiveness of test-time augmentation in reducing the prediction set size. The superiority of TTA-Learned over TTA-Avg is notably observed for the expanded augmentation policy where some augmentations not used in the training step are introduced in the calibration step.",
+  "human_questions": "- My biggest question about this work is on the assumption of data exchangeability in TTA-Learned. As the weights of augmentations in TTA-Learned are obtained by minimizing the cross entropy loss on the *calibration set*, there is a statistical dependence between the data in the calibration set and the learned weights of augmentations that are used to compute the conformal score. This means that calibration data and unseen exemples are not exchangeable with respect to the computation of conformal score. So I do not see how the assumption of exchangeability is preserved. If this point could be clarified, I would be willing to reconsider my score.  \n\n\n- As pointed out by the authors, it is understandable that TTA-Learned works better than TTA-Avg for the expanded augmentation policy as it allows the adjustment of the weights associated to the augmentations not included in the training. Meanwhile the results using APS reported in Table~4 show a close match between TTA-Learned and TTA-Avg. Could the authors provide some intuition behind that?",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "2: You are willing to defend your assessment, but it is quite likely that you did not understand the central parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

@@ -1,0 +1,46 @@
+**Review:**
+
+This paper introduces visually-continuous corruption robustness (VCR), a framework for evaluating neural network robustness to image corruptions across a continuous range of severity levels aligned with human perceptual quality. The authors conduct an extensive empirical study comparing NN robustness to human perception across 14 image corruptions, involving 7,718 human participants and multiple state-of-the-art models (CNNs, vision transformers) trained with different objectives (standard, adversarial, corruption robustness training). The key contributions are: (1) a continuous assessment methodology that reveals robustness gaps undetected by discrete benchmarks, (2) evidence that the NN–human robustness gap is larger than previously reported, and (3) identification of corruption similarities that could enable more efficient robustness evaluation. The authors provide a benchmark dataset with human robustness annotations and evaluation code.
+
+**Strengths:**
+- **Comprehensive empirical study**: The scale of human evaluation (7,718 participants) and breadth of model coverage (multiple architectures, training objectives, augmentation levels) is substantial and provides valuable empirical grounding.
+- **Well-motivated problem**: The gap between NN and human robustness is practically important, and the continuous corruption framework is a natural and sensible extension of existing discrete benchmarks.
+- **Practical contribution**: The benchmark and toolbox, combined with the finding that some corruptions have similar effects on human perception, offer actionable insights for future robustness research.
+- **Clear presentation of findings**: The paper articulates three concrete takeaways that are easy to understand and potentially impactful for the community.
+
+**Weaknesses:**
+- **Limited methodological novelty**: The core contribution is primarily empirical and benchmark-oriented. The "visually-continuous" assessment is a straightforward extension (varying corruption intensity continuously rather than discretely), and the two novel human-aware metrics are not described in detail in the abstract, leaving their technical contribution unclear.
+- **Insufficient detail on human-aware metrics**: The abstract mentions "two novel human-aware metrics" but provides no description of what these metrics are, how they differ from existing evaluation approaches, or why they are necessary. This is a significant gap for assessing the paper's technical contribution.
+- **Missing analysis of mechanisms**: While the paper identifies that NNs are less robust than humans, it does not explain *why* or propose solutions. The findings are primarily descriptive rather than mechanistic, limiting the actionability for improving robustness.
+- **Unclear generalization**: The study focuses on 14 corruptions on ImageNet-scale classification. It is unclear whether findings generalize to other domains (e.g., medical imaging, autonomous driving) or tasks (detection, segmentation), which limits the scope of impact.
+
+**Questions:**
+1. Can you provide more detail on the two novel human-aware metrics? How do they differ from standard accuracy or robustness curves?
+2. Do the findings on corruption similarity hold across different datasets or model architectures, or are they specific to the tested setting?
+3. Have you investigated whether the NN–human gap correlates with specific architectural properties (e.g., receptive field size, training data diversity)?
+4. How sensitive are the human robustness measurements to participant demographics or viewing conditions?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+This is a solid empirical paper with a well-executed large-scale human study and practical contributions (benchmark, toolbox). The continuous corruption robustness framework is sensible and the findings are useful for the community. However, the methodological novelty is limited—the core idea is a straightforward extension of existing work—and the paper lacks mechanistic insights or proposed solutions. The incomplete description of the "two novel human-aware metrics" in the abstract is also concerning. The work is valuable as a benchmark and empirical study but falls short of being a strong accept due to limited technical depth.
+
+**Confidence:**
+3 (moderate)
+
+The assessment is based on the abstract and title alone; full evaluation would require reviewing the complete paper, methodology details, and experimental results.
+
+**Soundness:**
+Good
+
+The empirical study design appears sound (large human participant pool, multiple model types), but without seeing the full paper, it is difficult to assess potential confounds in human evaluation or statistical rigor.
+
+**Presentation:**
+Good
+
+The abstract is well-written and clearly articulates the problem and findings, though the description of the two novel metrics is vague.
+
+**Contribution:**
+Fair
+
+The benchmark and empirical findings are valuable, but the methodological contribution (continuous assessment) is incremental, and the lack of mechanistic insights or proposed

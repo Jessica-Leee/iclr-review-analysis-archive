@@ -1,0 +1,33 @@
+**Review:**
+
+SCALE proposes a collaborative framework that synergizes Specialized Translation Models (STMs) and Large Language Models (LLMs) for machine translation. The core idea is to use STM outputs as part of triplet in-context demonstrations for the LLM, thereby leveraging the LLM's refinement and pivoting abilities while mitigating language bias in LLMs and parallel data bias in STMs. The paper claims significant improvements in low-resource translation settings, with notable gains on Xhosa–English (4 BLEURT improvement) and cross-lingual pivoting scenarios (6 COMET points over few-shot GPT-4 on average).
+
+**Strengths:**
+- **Clear practical motivation and results**: The paper addresses a real problem—combining the strengths of specialized and general models—and demonstrates concrete improvements on challenging low-resource language pairs, with quantified gains (e.g., 2.5 COMET and 3.8 BLEURT over GPT-4 on Xhosa–English).
+- **Comprehensive experimental scope**: Evaluation spans multiple settings (low-resource pairs, pivoting scenarios) and includes analysis of robustness, translation characteristics, and latency, providing a reasonably thorough empirical foundation.
+- **Practical efficiency**: The approach avoids expensive LLM fine-tuning while achieving improvements with compact STMs (600M parameters), making it deployable in resource-constrained settings.
+
+**Weaknesses:**
+- **Limited novelty in method design**: Using model outputs as in-context demonstrations is a straightforward application of existing prompting techniques. The paper does not clearly articulate what is novel beyond combining two existing systems; the "triplet in-context demonstrations" concept is not formally defined or justified.
+- **Insufficient methodological detail**: The abstract lacks specifics on how the STM outputs are selected, formatted, and integrated into prompts. How are the three demonstrations chosen? What prevents the LLM from simply ignoring the STM output? These details are essential for reproducibility and understanding.
+- **Incomplete experimental analysis**: While results are positive, the paper does not provide ablations isolating the contribution of each component (e.g., STM-only, LLM-only, LLM with human translations as demonstrations). Without these, it is unclear whether improvements come from the STM specifically or from simply adding more in-context examples.
+- **Limited scope of baselines and datasets**: The paper compares against GPT-4 and NLLB but does not discuss comparisons with other collaborative or ensemble approaches. The evaluation appears focused on a small set of language pairs; generalization to other low-resource languages is unclear.
+
+**Questions:**
+- How are the three demonstrations in the triplet selected? Is there a principled strategy, or is it random/fixed?
+- What is the computational cost of the STM inference relative to the LLM? Does this offset the savings from avoiding LLM fine-tuning?
+- How sensitive is SCALE to the quality of the STM? What happens with very weak STMs?
+- Can you provide ablations showing the isolated contribution of STM outputs versus simply using human reference translations as demonstrations?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper presents a practical and effective approach with solid empirical results on meaningful low-resource translation tasks. However, the methodological novelty is limited—the core contribution is a straightforward application of in-context learning—and the presentation lacks sufficient detail on design choices and ablations. The experimental validation, while comprehensive in scope, would benefit from deeper analysis of what drives the improvements. The work is competent and useful for practitioners but falls short of making a strong conceptual or methodological contribution expected at a top venue.
+
+**Confidence:** 3 (moderate; assessment based on abstract and claims only; full paper details would refine this)
+
+**Soundness:** Good (empirical results appear credible, but methodological rigor in ablations is unclear)
+
+**Presentation:** Fair (clear motivation and results, but lacks methodological detail and formal definitions)
+
+**Contribution:** Fair (practical contribution is solid, but conceptual/methodological novelty is limited)

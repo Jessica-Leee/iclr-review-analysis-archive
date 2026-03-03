@@ -1,0 +1,18 @@
+{
+  "paper_id": "yTBXeXdbMf",
+  "review_id": "xCIE8KTgm8",
+  "year": 2024,
+  "line": 633,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "PbRL and RLHF are highly related to important practical problems such as tuning large models, and they are also proved to be one of the key designs in the success of LLMs. Therefore, the importance of studying the theoretical information provided by human preference data is significant.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper studies online reward-agnostic Preference-based Reinforcement Learning (PbRL) with linear reward functions, which aims at learning a near-optimal policy with human preferences as feedback. This setting is different from current literature of online PbRL in that the humans are able to get rid of online preferences labeling in the exploration on-the-fly, instead they label the exploratory trajectories after they are complete collected. The paper provides sample efficient algorithms with different reward-agnostic setup: when a model-based reward-free exploration oracle is given, or when the underlying model is linear MDP or low-rank MDP. The theoretical algorithms are complemented with polynomial sample complexity in terms of the MDP parameters and $\\epsilon$. Moreover, the sample complexity can be reduce to $O(\\exp(B_{\\mathrm{adv}}))$ where $B_{\\mathrm{adv}}$ is the $l_\\infty$ norm of the optimal advantage function when action-wise preference in terms of the optimal Q function is provided instead of trajectory-wise preference.",
+  "human_questions": "The previous work Pacchiano et al. studied the online PbRL with a linear reward function. It seems that the sample complexity of this in the reward-free exploratory stage is better than that of the previous work, which is not reward-free setting. What causes this gap between current work and previous work?",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "4 excellent",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

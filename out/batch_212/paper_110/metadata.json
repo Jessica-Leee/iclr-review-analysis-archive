@@ -1,0 +1,18 @@
+{
+  "paper_id": "yuy6cGt3KL",
+  "review_id": "3n7fPHyPO9",
+  "year": 2024,
+  "line": 430,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The problem the authors are addressing is important.  The authors correctly point out that much evaluation in the literature is lacking, often performed on synthetic data and comparing to only a small subset of other methods.  The authors overall approach is very principled and comprehensive.  The chosen CATE estimators seem representative, and the authors seem to have made reasonable steps towards evaluating on semi-realistic data.  The narrative flow of the paper is clear and it's overall well-written.  I also really liked the authors' analysis of the empirical results.  The conclusions they drew in Section 5 are interesting and well-described, suggesting real, useful recommendations for the application of CATE estimators.\n\nBased on authors' response, I have updated my score from a 6 to an 8.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper focuses on evaluating CATE estimators.  The author discuss common CATE estimators and propose some additional estimation metrics.  They then describe an evaluation pipeline, using semi-synthetic data from a few sources, getting CATE estimates from 103 estimators, and evaluating the performance of 34 metrics.  They present results across four classes of datasets, evaluating a large number of metrics and comparing single-level model selection to a novel two-level model selection strategy.  The authors come to a few high-level conclusions, including that doubly-robust and TMLE methods tend to perform well and that two-level model selection performs better than single-level.",
+  "human_questions": "In Section 3.1, the IPTW Switch equation shows using the IPW approach if the propensity score is >= epsilon, and the regression learner when it's < epsilon.  Presumably, epsilon is a small number.  However, the sentence after that equation says that you use IPW \"if the propensity of the observed treatment for that sample is large.\"  It looks like the regression learner is being used when the propensity score is small (< epsilon), which means that IPW is being used whenever the propensity score is just 'not small' (>= epsilon), which is very different from it being 'large'.  Am I misunderstanding something here?\n\nIn Section 4, under \"CATE estimators with well-tuned nuisance models\", the 3rd paragraph start with \"Further for the CATE estimators with final models (f)\" - what does it mean for an estimator to have a 'final model' vs not?",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "4 excellent"
+  }
+}

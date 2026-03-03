@@ -1,0 +1,18 @@
+{
+  "paper_id": "zbOSJ3CATY",
+  "review_id": "Ml56bBhTs2",
+  "year": 2024,
+  "line": 160,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "This paper is well motivated - addressing the vulnerability to adversarial attacks in neural network related methods, including neural ODE.\n\nThe authors design a Game Theoretic Second-Order Neural Optimizer as a robust optimiser for neural ODEs. \n\nThey also provide rigorous, theoretical analysis for the proposed method. The proofs are given in detail. \n\nThe paper is well written.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper studies robust optimisation method for neural ODEs. The authors interpret Neural ODE optimization as a min-max optimal control problem, and then design a Game Theoretic Second-Order Neural Optimizer (GTSONO), based on min-max Differential Dynamic Programming, with convergence guarantees to local saddle points. The authors also conduct experiments to verify the performance of GTSONO.",
+  "human_questions": "Please address the above.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

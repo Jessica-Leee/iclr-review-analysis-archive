@@ -1,0 +1,37 @@
+**Review:**
+
+This paper proposes a Mixture of Experts (MoE) policy representation for learning diverse skills in reinforcement learning. The key innovation is combining a non-linear MoE architecture—where each expert encodes a contextual motion primitive—with a maximum entropy objective and per-expert context distributions modeled as energy-based models (EBMs). The per-expert distributions allow each expert to specialize on a context sub-space while capturing multi-modality and hard discontinuities without requiring environmental pre-knowledge. The authors claim their approach can learn precise and diverse skills on challenging robot simulation tasks.
+
+**Strengths:**
+1. **Well-motivated problem**: The paper addresses a genuine limitation of Gaussian-parameterized RL policies and provides clear motivation for learning diverse, multi-modal skills (e.g., robustness to environmental changes).
+2. **Principled technical approach**: Using energy-based models for per-expert context distributions is a thoughtful design choice that avoids strong distributional assumptions and environmental pre-knowledge requirements.
+3. **Integrated framework**: The combination of MoE, maximum entropy objectives, and EBM-based context distributions into a unified policy learning framework is coherent and well-articulated.
+
+**Weaknesses:**
+1. **Lack of empirical validation**: The abstract provides no experimental results, comparisons to baselines, or quantitative evidence that the approach actually learns diverse skills or outperforms alternatives. Claims about "challenging robot simulation tasks" are unsupported.
+2. **Missing implementation details**: Critical details are absent—how are EBMs trained efficiently during policy gradient updates? How is expert selection differentiable? What is the computational overhead of the MoE + EBM architecture?
+3. **Unclear novelty boundaries**: While the combination is novel, the individual components (MoE in RL, maximum entropy RL, EBMs) are established. The paper does not clearly articulate what is fundamentally new beyond their integration.
+4. **No discussion of related work**: The abstract lacks any reference to prior work on multi-modal RL, skill learning, or mixture-of-experts approaches in RL, making it difficult to assess novelty and positioning.
+
+**Questions:**
+- How does the computational cost of training EBMs scale with the number of experts and context dimensionality?
+- Can you provide quantitative results (success rates, skill diversity metrics) on standard benchmarks?
+- How does the approach compare to simpler alternatives, such as learning a discrete skill selector with standard Gaussian experts?
+- What happens when the true context distribution is unimodal—does the EBM-based approach still work well?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper presents an interesting idea with reasonable motivation, but the complete absence of experimental validation, empirical results, or comparisons to baselines is a critical gap for a venue like ICLR. The technical contribution, while coherent, is primarily a combination of existing techniques without sufficient evidence that the combination is effective or necessary. A full paper with comprehensive experiments would be needed to assess the true merit of this approach.
+
+**Confidence:**
+3 (Low—assessment is limited by the abstract-only format; a full paper may address these concerns)
+
+**Soundness:**
+3 (Fair—the approach is conceptually sound but lacks empirical grounding)
+
+**Presentation:**
+3 (Fair—the abstract is clear but omits critical details and related work)
+
+**Contribution:**
+3 (Fair—the combination of techniques is novel but incremental; impact is undemonstrated)

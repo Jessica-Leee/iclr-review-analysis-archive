@@ -1,0 +1,47 @@
+**Review:**
+
+This paper proposes NodeDup, a simple graph augmentation technique for improving link prediction (LP) performance on low-degree nodes in GNNs. The method duplicates low-degree nodes and creates self-loop-like connections between original and duplicate nodes before standard supervised LP training. The authors frame this as a "multi-view" perspective and claim the approach is plug-and-play, computationally lightweight, and achieves substantial improvements (38.49% on isolated nodes, 13.34% on low-degree nodes) without degrading high-degree node performance.
+
+**Strengths:**
+1. **Clear practical motivation**: The cold-start problem in link prediction is well-motivated and important for real applications like recommendation systems.
+2. **Simplicity and plug-and-play nature**: NodeDup is straightforward to implement and can be applied to existing GNN architectures without modification, making it practically appealing.
+3. **Comprehensive empirical results**: The paper reports improvements across multiple node degree categories (isolated, low-degree, warm) and claims to outperform state-of-the-art cold-start baselines with faster runtime.
+4. **No performance degradation on high-degree nodes**: The method preserves or improves performance on warm nodes, which is important for overall model utility.
+
+**Weaknesses:**
+1. **Limited novelty and shallow mechanistic insight**: Node duplication is a straightforward augmentation technique. The paper lacks deeper analysis of *why* duplication helps—the "multi-view" framing is intuitive but not rigorously justified. Why is duplication superior to other augmentation strategies (e.g., adding synthetic edges, feature perturbation)?
+2. **Insufficient ablation and analysis**: The abstract mentions "augmentation baselines" but provides limited detail on what these are, how they differ from NodeDup, and why NodeDup outperforms them. Critical design choices (e.g., how many duplicates per node, which nodes to duplicate, how to weight duplicate edges) are not discussed.
+3. **Unclear experimental setup and reproducibility concerns**: The abstract does not specify datasets used, baseline GNN architectures, or hyperparameter selection. Without this information, it is difficult to assess the robustness of the results or reproduce them.
+4. **Missing theoretical or empirical justification**: The paper does not explain why duplication specifically helps low-degree nodes or provide evidence that the mechanism is indeed a "multi-view" representation rather than, e.g., simply increasing training signal or regularization.
+
+**Questions:**
+- How sensitive is NodeDup to the number of duplicates per node and the degree threshold for duplication?
+- How does NodeDup compare to simpler baselines such as oversampling low-degree nodes during training or adding synthetic edges?
+- What is the computational cost in terms of memory and training time compared to the baseline GNNs?
+- Can you provide ablation studies isolating the contribution of duplication vs. the self-loop connections?
+- How does the method perform on graphs with different degree distributions or sparsity levels?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses a relevant problem and proposes a simple, practical solution with promising empirical results. However, the contribution is primarily empirical and incremental—node duplication is a straightforward augmentation with limited novelty. The paper lacks sufficient mechanistic insight, rigorous ablation studies, and detailed experimental documentation to meet the standards of a top-tier venue. The "multi-view" framing feels post-hoc rather than principled. With more thorough analysis, clearer experimental details, and deeper investigation into why the method works, this could become a solid contribution.
+
+**Confidence:**
+3 (moderate)
+
+The abstract provides limited experimental detail, making it difficult to assess the full scope and rigor of the work. Confidence would increase with access to the full paper and supplementary materials.
+
+**Soundness:**
+Fair
+
+The core idea is sound and the empirical results appear positive, but the lack of ablation studies, mechanistic justification, and experimental detail raises concerns about the depth of validation.
+
+**Presentation:**
+Good
+
+The abstract is well-written and clearly motivates the problem. However, key experimental details are missing, which limits clarity.
+
+**Contribution:**
+Fair
+
+The contribution is primarily empirical and incremental. While the practical improvements are notable, the novelty of node duplication as an augmentation technique is limited, and the paper does not provide sufficient insight into why the method works or how it relates to broader principles in graph learning.

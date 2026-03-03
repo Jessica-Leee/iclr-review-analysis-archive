@@ -1,0 +1,18 @@
+{
+  "paper_id": "yV6wwEbtkR",
+  "review_id": "QeT4oMilyH",
+  "year": 2024,
+  "line": 618,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "### Simple idea:\n\n> In implementation sense, the idea looks simple and easy to implement this idea; introducing a estimate of the MCMI in Eq (2) is additionally necessary.\n\n### Empirical improvement:\n> It seems that the proposed objective for the teacher model can be integrated with existing knowledge distillation algorithms which mainly focus on the distillation objective in view of \"student\" model. The proposed regularizer for the 'teacher' model seems to be effective in enhancing the performance of the 'student' model trained with existing knowledge distillation algorithms.",
+  "human_weaknesses": "",
+  "human_review_text": "This work  builds upon the insights from the previous study on knowledge distillation [1], which implies that producing a good teacher model \nsimilar to the optimal Bayes class probability $P^{*}_{X}$, is crucial for enhancing the performance of the student model. To convey this message, the authors propose a new training objective for the \"teacher model\" by introducing the empirical estimate of conditional mutual information as a regularizing term (MCMI). \n\nThe authors provide empirical evidence between MCMI and the accuracy of the student model; as the MCMI attains higher values, the the corresponding teach model obtains the highest accuracy. Furthermore, when using the teacher model trained with the MCMI regularizer, the corresponding teacher exhibits improved accuracy in most existing knowledge distillation algorithms. The proposed regularizer leads to improved performance of the student model in zero-shot and few-shot classification tasks  as well.\n\n[1] A Statistical Perspective on Distillation - ICML 21",
+  "human_questions": "* Q1.  Could you elaborately explain why minimizing $I(X , \\hat{Y} | Y)$ can make the teacher model $f$ to be more similar to the optimal bayes classifier ? \n\n\n\n* Q2. It seems that the proposed regularizer requires the pre-trained model as the teacher model and apply the further training to the teacher model with the proposed objective of Eq. (14). How do we set the number of iterations further training? Based on my understanding, since we expect this regularizer to make the teacher model contain additional information as well as to be properly certain (not overconfident), setting the number of iterations is important hyperparameters and might significantly affect the performance of student model.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

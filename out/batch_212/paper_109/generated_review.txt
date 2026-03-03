@@ -1,0 +1,46 @@
+**Review:**
+
+MuseCoco proposes a two-stage pipeline for generating symbolic music from text descriptions: a text-to-attribute understanding stage and an attribute-to-music generation stage. The key innovation is using musical attributes as an explicit bridge, which avoids the need for paired text-to-music data by allowing automatic synthesis of text-attribute pairs and direct extraction of attributes from music. The system reportedly outperforms GPT-4 by substantial margins (45.5% on musicality, 35.2% on controllability, 47.0% on overall score) and includes a 1.2B-parameter variant.
+
+**Strengths:**
+- The two-stage decomposition is well-motivated: it sidesteps expensive paired text-to-music annotation by leveraging automatically synthesized text-attribute pairs and attribute extraction from existing music data, reducing annotation burden.
+- Explicit attribute conditioning provides fine-grained control over musical output, offering both text and attribute-based control modalities for versatility.
+- Large-scale empirical improvements over GPT-4 baseline are reported across multiple metrics (musicality, controllability, overall score), with ~20% improvement in objective control accuracy.
+- The system is positioned as practical for musicians, with generated samples made publicly available.
+
+**Weaknesses:**
+- The abstract provides no methodological detail on the actual architectures, training procedures, or loss functions used in either stage. How are text-attribute pairs synthesized? What model architectures are employed? How is the attribute-to-music generation trained?
+- Comparison is limited to GPT-4 as the "top-performing baseline." No comparison to other symbolic music generation systems, domain-specific baselines, or ablations of the two-stage design is mentioned. The choice of GPT-4 as a primary baseline is also questionable for a specialized music task.
+- Evaluation relies on unspecified metrics ("musicality," "controllability," "overall score"). Without clarity on how these are measured (human evaluation? automated metrics?), the reported improvements are difficult to assess. The 45.5% improvement claim is striking but lacks methodological grounding in the abstract.
+- No discussion of limitations, failure cases, or generalization properties. The abstract does not address whether the approach works across music genres, styles, or attribute ranges.
+
+**Questions:**
+- What are the specific definitions and measurement methods for musicality, controllability, and overall score?
+- How are text-attribute pairs automatically synthesized, and what is the quality/coverage of this synthesis?
+- Why is GPT-4 chosen as the primary baseline rather than domain-specific music generation models?
+- How does performance vary across different music genres, attribute combinations, or description complexities?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper addresses a relevant problem (text-to-music generation) with a sensible architectural choice (explicit attribute bridging), demonstrates strong empirical results, and provides practical value. However, the abstract lacks sufficient methodological detail to fully evaluate the contribution, and the evaluation setup (limited baselines, unclear metrics) raises concerns about the robustness of the claimed improvements. The work appears solid but would benefit from more rigorous experimental design and clearer exposition of methods.
+
+**Confidence:**
+3 (Low–Medium)
+
+The abstract is high-level and omits critical methodological details, making it difficult to assess soundness and novelty with confidence. A full paper review would substantially increase confidence.
+
+**Soundness:**
+Fair
+
+The two-stage approach is conceptually sound, but without details on model architecture, training, and evaluation methodology, soundness cannot be fully assessed. The comparison to GPT-4 alone is insufficient.
+
+**Presentation:**
+Fair
+
+The abstract is clear in motivation and positioning but lacks the technical depth needed to understand the actual contribution. Key details on methods and evaluation are missing.
+
+**Contribution:**
+Good
+
+The use of attributes as an explicit bridge to avoid paired text-to-music data is a useful design choice, and the scale (1.2B parameters) and reported improvements suggest meaningful progress. However, novelty in individual components (text-to-attribute, attribute-to-music) is unclear without more detail.

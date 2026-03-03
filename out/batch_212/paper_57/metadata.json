@@ -1,0 +1,18 @@
+{
+  "paper_id": "zQXX3ZV2HE",
+  "review_id": "5pLSgeN3Zb",
+  "year": 2024,
+  "line": 227,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "+ A novel adversarial attack is defined for human object interaction recognition task. HOI recognition task is a high-level task with respect to object classification or detection tasks. It motivation of this paper makes sense which is to insert an inviable object to mislead the HOI classifier.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposed a new concept for adversarial attack on Human Object Interaction (HOI). Different from adversarial attack on object classification or detection, there was less work focused on HOI attack. In this paper, the main idea is to find a proper region in an image, where an invisible object is inserted and which will mislead the HOI classifier. To this end, three modules are proposed, i.e., Interaction Area Sampling module, Object Category Search module, and Adversarial Instance Generation module.",
+  "human_questions": "Can we conduct a targeted adversarial attack for HOI recognition, which is that we can explicitly choose the target HOI category we want the attack achieves.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

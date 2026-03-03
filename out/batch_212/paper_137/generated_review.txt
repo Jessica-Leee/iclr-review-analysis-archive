@@ -1,0 +1,47 @@
+**Review:**
+
+This paper proposes a novel sampling framework for unnormalized densities based on a smoothing scheme using an isotropic Gaussian kernel with fixed noise scale. The key contribution is decomposing sampling into a sequence of log-concave conditional densities via accumulation of noisy measurements. The algorithm maintains a history of samples (making it non-Markovian overall) but keeps computational overhead light through a running empirical mean. The method generalizes walk-jump sampling, where the "walk" phase becomes a chain of log-concave Markov chains and the "jump" is obtained via empirical Bayes. The authors evaluate their approach using the 2-Wasserstein metric against Langevin MCMC baselines and report an interesting capacity for mode tunneling.
+
+**Strengths:**
+
+1. **Novel theoretical framework**: The decomposition of sampling into log-concave conditionals via noisy measurement accumulation is conceptually interesting and appears technically sound. The use of a fixed noise scale and empirical Bayes for the jump step is elegant.
+
+2. **Practical algorithmic design**: The non-Markovian structure is maintained efficiently through only a running empirical mean, avoiding expensive history tracking. This makes the approach computationally lightweight compared to methods that store full histories.
+
+3. **Interesting empirical phenomena**: The reported mode tunneling capacity is a notable practical advantage over standard Langevin MCMC, suggesting the method may escape local modes more effectively.
+
+4. **Generalization of prior work**: Extending walk-jump sampling to a chain of log-concave Markov chains is a natural and useful generalization.
+
+**Weaknesses:**
+
+1. **Limited experimental validation**: The abstract mentions comparison with "various Langevin MCMC algorithms" and 2-Wasserstein metric evaluation, but provides no concrete results, convergence rates, or detailed experimental setup. Without empirical data, it is difficult to assess practical utility or computational efficiency gains.
+
+2. **Minimal assumptions stated but not formalized**: The abstract claims "minimal assumptions made on the density" but does not specify what these are. The relationship between the original density and the log-concave conditionals needs clarification—under what conditions does this decomposition exist and remain tractable?
+
+3. **Incomplete presentation of core results**: Key theoretical results (convergence guarantees, sample complexity, conditions for log-concavity of conditionals) are absent from the abstract. The paper's theoretical contributions cannot be properly evaluated without these details.
+
+4. **Mode tunneling claim lacks justification**: While mode tunneling is presented as a strength, the mechanism by which the algorithm achieves this is not explained. Is this a consequence of the smoothing scheme, the empirical Bayes jump, or the history tracking? This needs clarification.
+
+**Questions:**
+
+- Under what conditions on the original density are the log-concave conditionals guaranteed to exist?
+- What are the convergence rates (in terms of sample complexity or iterations) compared to standard Langevin MCMC?
+- How sensitive is the algorithm to the choice of fixed noise scale? Is there guidance for setting this hyperparameter?
+- Can you provide concrete numerical results on standard benchmarks (e.g., Gaussian mixtures, Bayesian inference tasks)?
+
+**Overall score:**
+
+5: marginally below the acceptance threshold
+
+The paper presents an interesting theoretical idea with potential practical benefits (mode tunneling, computational efficiency), but the abstract lacks sufficient detail on theoretical guarantees, experimental validation, and key assumptions. For a venue like ICLR, the contribution needs stronger empirical evidence and clearer exposition of the theoretical framework. The work appears promising but requires substantial additional material (convergence analysis, comprehensive experiments, ablation studies) to meet the acceptance bar.
+
+**Confidence:** 3 (moderate)
+
+**Soundness:** 3 (fair)
+The theoretical framework appears plausible but is too sparsely described to assess rigorously. Key assumptions and formal results are missing.
+
+**Presentation:** 2 (poor)
+The abstract is vague on crucial details: no convergence rates, no experimental numbers, no formal statement of assumptions or main theorems.
+
+**Contribution:** 3 (fair)
+The core idea of decomposing via log-concave conditionals and using empirical Bayes is interesting, but the novelty relative to walk-jump sampling and the practical advantages over existing methods are not convincingly demonstrated.

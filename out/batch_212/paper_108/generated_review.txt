@@ -1,0 +1,39 @@
+**Review:**
+
+This paper proposes using synthetic data as a validation set to reduce overfitting and improve model selection in medical imaging, specifically for early cancer detection in CT volumes. The core contribution is twofold: (1) demonstrating that synthetic tumors superimposed onto healthy organs can serve as an effective validation set, and (2) introducing a continual learning framework that trains models on streams of out-domain data with synthetic tumors. The authors report substantial improvements in liver tumor segmentation (DSC from 26.7% to 34.5% in-domain, 31.1% to 35.4% out-domain) and notably improved sensitivity for tiny tumors (<5mm radius: 33.1% to 55.4% in-domain).
+
+**Strengths:**
+- Addresses a practical and important problem in medical imaging where real validation data are limited, sensitive, and often out-of-domain.
+- Clear empirical improvements on both in-domain and out-domain test sets, with particularly compelling gains for small tumor detection—clinically relevant for early cancer detection.
+- The idea of using synthetic data for validation (rather than only augmentation) is intuitive and appears novel in this context.
+- Code availability promised, supporting reproducibility.
+
+**Weaknesses:**
+- The abstract provides no methodological detail on how synthetic tumors are generated or superimposed, making it difficult to assess technical rigor or reproducibility from the abstract alone. The continual learning framework is mentioned but not described.
+- No comparison to standard validation set diversification approaches (e.g., data augmentation on validation, ensemble methods, or other domain adaptation techniques). It is unclear whether improvements stem from synthetic data specifically or simply from a larger/more diverse validation set.
+- Limited scope: evaluation is restricted to liver tumor segmentation in CT. Generalization to other organs, modalities, or tasks is not discussed.
+- The paper lacks ablation studies or analysis of what properties of synthetic data drive the improvements (e.g., does realism matter? diversity? quantity?). The mechanism behind the gains remains opaque.
+- No discussion of potential failure modes or when synthetic validation might hurt performance (e.g., if synthetic tumors are unrealistic).
+
+**Questions:**
+- How are synthetic tumors generated and validated for realism? What is the visual/statistical similarity to real tumors?
+- How does performance scale with the amount of synthetic validation data? Is there a saturation point?
+- How does this approach compare to standard domain adaptation or test-time adaptation baselines?
+- Does the continual learning framework require manual labeling of new out-domain data, or is it fully automatic?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper tackles a relevant clinical problem and demonstrates solid empirical improvements on a meaningful task. However, the abstract lacks sufficient methodological detail, and the evaluation is narrow in scope without clear baselines or ablations. The core idea is sound but the execution and presentation need strengthening to meet the bar for a strong accept. The work would benefit from deeper analysis of why synthetic validation helps and broader experimental validation across domains and tasks.
+
+**Confidence:**
+3 (moderate—assessment based primarily on abstract; full paper would clarify methodological rigor and experimental design)
+
+**Soundness:**
+Good (empirical results are promising and clinically motivated, but methodological details are sparse in the abstract)
+
+**Presentation:**
+Fair (the abstract is clear in motivation but lacks technical depth; the continual learning framework is mentioned but not explained)
+
+**Contribution:**
+Good (using synthetic data for validation is a practical and relatively novel angle, with clear clinical relevance, though the scope is somewhat narrow)

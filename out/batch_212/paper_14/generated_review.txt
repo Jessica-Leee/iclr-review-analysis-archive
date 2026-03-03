@@ -1,0 +1,46 @@
+**Review:**
+
+This paper proposes self-normalised likelihood (SNL), a novel objective for training energy-based models that sidesteps the intractable normalisation constant by introducing a single learnable parameter representing it. The key insight is that SNL forms a lower bound on the true likelihood, and its optimum recovers both the maximum likelihood estimate of model parameters and the normalisation constant. The authors show that SNL is concave in model parameters for exponential family distributions and can be optimised directly via stochastic gradient descent using samples from a crude proposal distribution, avoiding expensive MCMC sampling.
+
+**Strengths:**
+- The core idea is elegant and well-motivated: replacing an intractable normalisation constant with a learnable parameter is conceptually simple yet theoretically grounded. The concavity result for exponential families is a useful theoretical property.
+- The method avoids the computational burden of MCMC sampling during training, which is a genuine practical advantage over traditional maximum likelihood approaches.
+- The paper validates the approach on multiple tasks (low-dimensional density estimation and EBM regression), demonstrating broader applicability.
+- The method is claimed to be simpler to implement and tune than existing techniques, which could improve accessibility.
+
+**Weaknesses:**
+- The abstract provides limited detail on the experimental setup, baselines, and quantitative results. It is unclear which existing techniques are outperformed and by how much. The claim that SNL "outperforms existing techniques" needs concrete evidence (e.g., specific datasets, metrics, and comparison methods).
+- The theoretical contribution, while solid, is somewhat incremental. The concavity result for exponential families is useful but not surprising given the form of the objective. The paper would benefit from deeper analysis of convergence rates or sample complexity.
+- The restriction to "low-dimensional density estimation tasks" and the lack of detail on scalability to high-dimensional problems raises questions about practical impact. Modern EBM applications often involve high-dimensional data.
+- The paper does not discuss potential failure modes or limitations of the approach. For instance, how sensitive is the method to the choice of proposal distribution? What happens if the proposal is very far from the true posterior?
+
+**Questions:**
+- How does SNL perform on high-dimensional datasets (e.g., image generation)? The abstract mentions only low-dimensional tasks.
+- What proposal distributions were used in experiments, and how sensitive are results to this choice?
+- Can you provide quantitative comparisons (e.g., test log-likelihood, KL divergence) against specific baselines on standard benchmarks?
+- How does the computational cost scale with dimension compared to MCMC-based methods?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper presents a theoretically sound and practically motivated approach to a genuine problem in EBM training. The self-normalised likelihood objective is intuitive and the concavity result provides useful theoretical grounding. However, the experimental validation is underspecified in the abstract, and the scope appears limited to low-dimensional problems. The contribution is solid but somewhat incremental. With clearer experimental results and evidence of scalability, this could be a stronger contribution.
+
+**Confidence:**
+3 (moderate)
+
+The abstract alone does not provide sufficient experimental detail to assess the empirical impact. A full paper review would likely adjust this score based on the completeness and strength of the experimental section.
+
+**Soundness:**
+4 (good)
+
+The theoretical framework appears sound, and the concavity result is correctly stated. However, without seeing the full proofs and experimental methodology, a higher confidence is difficult to justify.
+
+**Presentation:**
+3 (fair)
+
+The abstract is clear in its motivation and method description, but lacks concrete experimental results and comparisons. The paper would benefit from more specific claims about which baselines are outperformed and on which metrics.
+
+**Contribution:**
+3 (fair)
+
+The core idea of self-normalisation is elegant and addresses a real problem, but the theoretical novelty is moderate (concavity for exponential families is relatively straightforward), and the experimental scope appears limited. The practical impact depends heavily on scalability and performance gains, which are not clearly demonstrated in the abstract.

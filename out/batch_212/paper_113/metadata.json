@@ -1,0 +1,18 @@
+{
+  "paper_id": "ytGU2iit80",
+  "review_id": "ueaxQ7ss1P",
+  "year": 2024,
+  "line": 441,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- The paper is well-written.\n- The idea is simple and clear. It is supported by experimental results.",
+  "human_weaknesses": "",
+  "human_review_text": "The authors present a method that leverages flow matching loss for the learning of dynamical systems. Notably, the proposed algorithm does not require simulation, leading to a significant reduction in computational cost when modeling dynamical systems. The authors also introduce a novel augmentation strategy.",
+  "human_questions": "1. Have you conducted an ablation study for the augmentation strategy?\n2. What was the reason behind introducing the control functions? Does it simply add to the complexity of potential tasks?\n3. Is the method applicable if the requirements in Theorem 1 are not satisfied? \n4. Have you tried to apply this algorithm to real-life time series that are sampled from an unknown equation?",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

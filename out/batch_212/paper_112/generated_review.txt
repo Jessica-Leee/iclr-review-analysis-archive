@@ -1,0 +1,46 @@
+**Review:**
+
+This paper proposes PolySRL, a method for learning probabilistic representations of stoichiometry in crystalline materials. The key insight is that a single stoichiometric composition can exist in multiple structural forms (polymorphism), introducing inherent uncertainty. Rather than relying on expensive structural information, PolySRL learns a probabilistic representation of stoichiometry that captures this polymorphic uncertainty using available structural data. The method is evaluated on sixteen datasets, demonstrating improvements over baselines and providing uncertainty estimates that reflect polymorphic diversity.
+
+**Strengths:**
+- **Well-motivated problem:** The paper addresses a genuine limitation in materials ML—the computational cost and unavailability of structural information—by proposing a stoichiometry-only approach that accounts for polymorphism through probabilistic representations.
+- **Comprehensive evaluation:** Testing on sixteen datasets provides broad empirical validation and suggests the method generalizes across diverse material properties.
+- **Interpretable uncertainty:** The connection between learned uncertainty and polymorphic structures is intuitive and offers practical value for materials discovery applications.
+- **Clear problem formulation:** The paper articulates the polymorphism challenge clearly and motivates why standard deterministic stoichiometry descriptors are insufficient.
+
+**Weaknesses:**
+- **Limited methodological detail in abstract:** The abstract does not specify the probabilistic framework (e.g., variational formulation, Bayesian approach, or other generative model) or how structural information is leveraged during training. This makes it difficult to assess technical novelty.
+- **Unclear training procedure:** How does the method use "readily available structural information" during training if the goal is to predict from stoichiometry alone at test time? The learning paradigm (supervised, semi-supervised, or otherwise) is not explained.
+- **Missing baseline comparisons:** The abstract mentions "superiority over baselines" but does not name specific competing methods (e.g., other stoichiometry descriptors, graph neural networks, or traditional ML approaches), limiting assessment of relative performance.
+- **Insufficient uncertainty validation:** While the paper claims uncertainties "reveal polymorphic structures," the abstract provides no quantitative evidence (e.g., correlation with the number of known polymorphs, or validation against a polymorphism database).
+
+**Questions:**
+- What is the specific probabilistic model used (e.g., variational autoencoder, Gaussian process, normalizing flow)?
+- How are structural forms incorporated during training, and what is the test-time inference procedure?
+- Can you provide concrete examples showing how learned uncertainties correlate with known polymorphic diversity?
+- How does PolySRL compare quantitatively to other stoichiometry-based and structure-based baselines on standard benchmarks?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper tackles a relevant problem in materials science and proposes a reasonable solution with broad empirical validation. However, the abstract lacks sufficient technical detail to fully evaluate the methodological contribution, and key experimental comparisons are not described. With clarification of the probabilistic framework, training procedure, and more explicit baseline comparisons, this could be a solid contribution. The work is likely to be of interest to the materials ML community, but the presentation needs strengthening for a top-tier venue.
+
+**Confidence:**
+3 (Low–Medium)
+
+The abstract is somewhat vague on technical details, limiting confidence in the assessment. A full paper would likely clarify these concerns.
+
+**Soundness:**
+3 (Fair)
+
+The core idea is sound, but without details on the probabilistic model and training procedure, soundness cannot be fully assessed.
+
+**Presentation:**
+2 (Fair)
+
+The abstract is clear in motivation but lacks sufficient technical specificity for reproducibility and proper evaluation of novelty.
+
+**Contribution:**
+3 (Fair–Good)
+
+The problem is well-motivated and the empirical scope is broad, but the methodological novelty is unclear from the abstract alone. If the probabilistic framework is standard, the contribution may be primarily in application rather than methodology.

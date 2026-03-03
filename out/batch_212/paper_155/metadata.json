@@ -1,0 +1,18 @@
+{
+  "paper_id": "yYylDyLnzt",
+  "review_id": "e1t1lZbgSj",
+  "year": 2024,
+  "line": 599,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The combination of deep reinforcement learning with Dantzig-Wolfe decomposition is novel as far as I know.\n\nThe authors obtained some novel lower bounds for some instances of the 3D bin packing problem.\n\nPromising results are obtained on a dataset of 47 instances.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper proposes an integration of deep reinforcement learning (RL) in a Dantzig-Wolfe decomposition method to solve the 3D bin packing problem. The idea is to replace the solution of the subproblem in the Dantzig-Wolfe decomposition by an RL agent.",
+  "human_questions": "What architecture did you use for your RL agent?\n\nHow did you train it? Which RL algorithm did you use?\n\nCould you include in Table 1 the aggregated results for the other SOTA methods so that it is easier to understand how well the proposed methodology performs?",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "1 poor",
+    "contribution": "2 fair"
+  }
+}

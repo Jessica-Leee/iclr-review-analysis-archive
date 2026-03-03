@@ -1,0 +1,18 @@
+{
+  "paper_id": "zzqn5G9fjn",
+  "review_id": "DwcYUFIxnh",
+  "year": 2024,
+  "line": 5,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- The method is very practical since it is simple and efficient, and it is an appropriate method for training multilingual model.\n- Good analysis on the data efficiency and distance measurement, showing the effectiveness of the proposed method.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper applies federated learning on multilingual scenarios to efficiently parameter-efficient prompt fine-tuning in a manner that preserves user privacy. The idea is to utilize a single global encoder that accumulates the information via federated prompt averaging. Thus, it learns the language patterns without knowing about the user information. They evaluated the experiment on NC and XNLI datasets and found performance improvement over the baseline.",
+  "human_questions": "Questions:\n- Do you have any findings on why multilingual centralized learning is far worse than federated learning in Table 2?\n- How did you tune the training and parameter averaging?\n\nSuggestions:\n- Figure number is missing on Page 2\n\n\"As depicted in Figure , \"\n\n- Missing Figure/Table \n\n\"This translates to over 99% reduction in the communication overhead shown in 3\"\n\n- Typo\n\n\"Finetuning accuracy across different lanugages on the NC task.\"",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

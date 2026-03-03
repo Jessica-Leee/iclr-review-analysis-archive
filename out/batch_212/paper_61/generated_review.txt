@@ -1,0 +1,33 @@
+**Review:**
+
+This paper proposes Error Norm Truncation (ENT), a method for robust training of text generation models on noisy data. The core idea is to truncate noisy examples by considering the distribution of non-target tokens during training, rather than relying solely on negative log-likelihood loss as in prior work. The authors evaluate ENT across language modeling, machine translation, and text summarization tasks, demonstrating improvements over standard training and previous soft/hard truncation baselines. In particular, they show robustness gains of over 2 BLEU points on machine translation when up to 50% synthetic noise is injected.
+
+**Strengths:**
+- The motivation is well-grounded: considering the full distribution of non-target tokens for noise detection is a reasonable refinement over methods that only use NLL.
+- Comprehensive experimental evaluation across three diverse text generation tasks (LM, MT, summarization) strengthens the generality claim.
+- The paper addresses a practically important problem—robustness to web-crawled data noise—that is increasingly relevant as models scale.
+- Empirical results show consistent improvements, with particularly strong gains under high-noise synthetic settings (50% noise injection).
+
+**Weaknesses:**
+- The abstract and summary lack sufficient technical detail to understand how ENT actually estimates data quality from the non-target token distribution. The mechanism for "truncating noisy data" is not clearly explained.
+- No comparison to other recent robust training methods beyond "soft and hard truncation"—the landscape of noise-robust NLP training is broader (e.g., sample reweighting, curriculum learning, data cleaning pipelines).
+- The synthetic noise experiments, while useful, may not fully capture the complexity of real web noise. Results on naturally noisy datasets would strengthen claims about practical robustness.
+- Missing ablation studies or analysis of hyperparameter sensitivity (e.g., truncation threshold selection), which is critical for practitioners adopting the method.
+
+**Questions:**
+- How exactly does ENT compute the "distribution of non-target tokens" and use it to identify noisy examples? Is this a per-example score, and how is the truncation threshold chosen?
+- How does ENT compare to recent data cleaning or sample reweighting approaches in the literature?
+- Can you provide results on naturally noisy datasets (e.g., real web-crawled corpora) rather than only synthetic noise?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper addresses a relevant problem and demonstrates empirical improvements across multiple tasks. However, the presentation of the core method is unclear from the abstract alone, and the evaluation, while broad in scope, relies heavily on synthetic noise and lacks depth in comparison to the wider landscape of robust training methods. The work makes a solid incremental contribution but would benefit from clearer exposition and more thorough analysis.
+
+**Confidence:** 3 (moderate—assessment is limited by the abstract's lack of technical detail)
+
+**Soundness:** 3 (fair—the approach is reasonable, but methodological details and experimental design choices are not fully transparent)
+
+**Presentation:** 2 (fair—the abstract does not clearly explain the core mechanism of ENT)
+
+**Contribution:** 3 (fair—incremental improvement over existing truncation methods, but limited novelty in the core idea)

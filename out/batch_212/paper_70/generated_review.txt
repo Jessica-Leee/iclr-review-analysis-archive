@@ -1,0 +1,46 @@
+**Review:**
+
+This paper addresses the gap between federated learning (FL) and automatic speech recognition (ASR) by establishing the first benchmark for FL with differential privacy (DP) in end-to-end ASR. The authors extend prior FL-ASR work by systematically exploring large transformer models under various conditions (architecture design, seed models, data heterogeneity, domain shift, cohort size), and then apply DP to this setting. To mitigate the severe impact of DP noise on transformer training—attributed to imbalanced gradients in attention blocks—they revive per-layer clipping and provide explanations for why this technique is particularly effective here. The paper reports achieving user-level DP with modest WER degradation (1.3–4.6% absolute) across different population scales.
+
+**Strengths:**
+1. **Timely and practical contribution**: The paper addresses a genuine gap at the intersection of FL, DP, and ASR, establishing the first benchmark and baselines. The focus on large end-to-end transformer models reflects current practice in ASR.
+2. **Systematic exploration**: The investigation of multiple factors (architecture, seed models, heterogeneity, domain shift, cohort size) with practical aggregation budgets provides useful insights for practitioners.
+3. **Technical insight on DP-transformer interaction**: The diagnosis of imbalanced gradients in attention blocks as a key challenge and the revival of per-layer clipping with clear motivation is a solid technical contribution.
+4. **Strong empirical results**: Achieving user-level DP with only 1.3–4.6% WER drop is a meaningful result that demonstrates feasibility of privacy-preserving ASR training.
+
+**Weaknesses:**
+1. **Limited novelty in core techniques**: Per-layer clipping is not new; the contribution is primarily in applying and explaining it for this specific setting rather than proposing novel DP mechanisms.
+2. **Incomplete experimental details**: The abstract lacks specifics on datasets, baselines, and comparison with non-private FL. It is unclear whether the "nearly optimal" claim is relative to centralized training or non-private FL, and what the absolute WER values are.
+3. **Unclear generalization**: The paper does not discuss how findings transfer to other domains, languages, or model architectures beyond the ones tested. The "extrapolation to high/low population scale" is mentioned but not explained.
+4. **Missing ablations and analysis**: The abstract does not clarify the relative importance of per-layer clipping versus other design choices, or provide detailed ablations isolating the effect of each factor (heterogeneity, domain shift, etc.).
+
+**Questions:**
+1. How do the final WER values compare to non-private FL and centralized baselines? What is the absolute performance, not just the drop?
+2. Can you provide more detail on the "extrapolation to high/low population scale" methodology and why different DP budgets are used for each?
+3. How sensitive are the results to the choice of clipping threshold per layer? Was this tuned on a validation set?
+4. Do the findings on per-layer clipping generalize to other domains or languages, or are they specific to the tested ASR setup?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper makes a solid practical contribution by establishing the first FL+DP benchmark for ASR and demonstrating feasibility with reasonable privacy-utility tradeoffs. The systematic exploration and technical insight on per-layer clipping for transformers add value. However, the limited algorithmic novelty, incomplete experimental reporting in the abstract, and lack of deeper analysis of generalization prevent a stronger rating. The work is competent and timely but incremental in its core techniques.
+
+**Confidence:**
+3 (moderate)
+
+The assessment is based on the abstract alone, which limits confidence in judging experimental rigor, completeness of comparisons, and reproducibility. A full paper review would likely increase or decrease confidence.
+
+**Soundness:**
+Good
+
+The approach is methodologically sound: systematic exploration of FL-ASR, application of DP with per-layer clipping, and empirical validation. However, without seeing full experimental details, potential concerns about hyperparameter tuning, statistical significance, and generalization remain.
+
+**Presentation:**
+Fair
+
+The abstract is well-structured and uses the paper's terminology appropriately. However, it lacks sufficient detail on datasets, absolute performance numbers, and the meaning of "extrapolation to high/low population scale," which would aid clarity.
+
+**Contribution:**
+Good
+
+The paper makes a clear contribution by bridging FL, DP, and ASR with the first benchmark and

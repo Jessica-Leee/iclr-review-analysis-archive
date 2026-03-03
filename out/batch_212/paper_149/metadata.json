@@ -1,0 +1,18 @@
+{
+  "paper_id": "ybiwT2yP1c",
+  "review_id": "gmriqxJ2Hm",
+  "year": 2024,
+  "line": 578,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- The benchmark is a nice real-world application on measuring generalization in the field of bioacoustics, which could be interesting for practitioners.\n- Evaluation protocol is simple to follow/apply, i.e. models are used as feature extractors and the task is simple retrieval.\n- A decent number of baselines already evaluated in this setting.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposes a benchmark to measure the generalization capabilities of bird vocalization detection models.\nThe benchmark is composed of existing datasets in the field, one large-scale upstream (i.e. training) dataset and 7 small-scale downstream (evaluation) datasets, which overall evaluate generalization against several challenges, such as domain shift, label shift, limited data and class imbalance.\nModels are trained on the upstream dataset and used as \"embedding models\" (i.e. feature extractors) to solve retrieval tasks using a few labeled instances on the downstream datasets.\n7 recent baseline models are evaluated on this benchmark, including linear models trained on handcrafted features and deep embedding models with EfficientNet, Conformer and Transformer architectures.\nResults show that domain-shift is one of the most challenging generalization factor.",
+  "human_questions": "I would like the authors to address the weaknesses I listed above.\nMy main concerns are related to soundness of the evaluation protocol.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "1 poor",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

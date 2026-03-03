@@ -1,0 +1,37 @@
+**Review:**
+
+This paper proposes Temporal Causal Mechanism Transfer (TCMT), a method for few-shot action recognition that learns a temporal causal mechanism from base data via variational inference and adapts it to novel classes by freezing the causal structure while updating auxiliary variables and the classifier. The core hypothesis is that time-delayed causal relations between latent variables and the mixing function mapping causal variables to action representations are invariant across base and novel domains, enabling efficient transfer with limited samples.
+
+**Strengths:**
+- The use of causal mechanisms as an inductive bias for few-shot learning is conceptually appealing and well-motivated for temporal action recognition, where causal structure should be more stable than raw features across domains.
+- The variational inference framework for learning the temporal causal mechanism is a principled approach that avoids overfitting on limited novel data.
+- The paper addresses a relevant problem (few-shot action recognition) and proposes a concrete solution with clear design choices about what to freeze (causal relations, mixing function) versus what to adapt (auxiliary variables, classifier).
+
+**Weaknesses:**
+- The abstract provides insufficient detail on the actual architecture, variational formulation, and how the causal mechanism is parameterized. Without seeing the full paper, it is unclear how the method differs from standard meta-learning or domain adaptation approaches beyond the causal framing.
+- No ablation studies or analysis are mentioned to validate the core assumption that time-delayed causal relations and mixing functions are truly invariant across base and novel domains. The paper would benefit from empirical evidence isolating the contribution of each frozen component.
+- The experimental validation is described only as "across standard action recognition datasets" with "notable performance improvements," but no specific datasets, baselines, or quantitative results are provided in the abstract. This makes it impossible to assess the magnitude of improvements or statistical significance.
+- The paper lacks discussion of computational complexity, scalability, or failure cases. It is unclear how the method scales to longer videos or how sensitive it is to violations of the invariance assumption.
+
+**Questions:**
+- How is the temporal causal mechanism (latent variables, causal relations, mixing function) explicitly parameterized and learned during the variational inference phase?
+- What specific baselines were compared, and what are the quantitative improvements on standard benchmarks (e.g., miniImageNet, CIFAR-FS for action recognition)?
+- Have you validated empirically that the frozen causal components (time-delayed relations and mixing function) are indeed invariant across base and novel domains, or is this purely an assumption?
+- How does TCMT compare to recent meta-learning methods (e.g., MAML, Prototypical Networks) and domain adaptation approaches in terms of both accuracy and computational cost?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper presents an interesting idea of using causal mechanisms for few-shot action recognition, but the abstract lacks sufficient technical detail, empirical validation, and quantitative results to assess the contribution convincingly. The core assumptions about invariance are not validated, and the experimental section is too vague. With a full paper submission, clearer methodology, ablation studies, and concrete experimental results, this could become a solid contribution.
+
+**Confidence:**
+2 (Low—assessment is limited by the abstract's brevity and lack of quantitative results)
+
+**Soundness:**
+Fair (The conceptual approach is reasonable, but without methodological details and ablations, soundness cannot be fully evaluated.)
+
+**Presentation:**
+Fair (The abstract is clear in intent but lacks technical depth and experimental specificity needed for a full assessment.)
+
+**Contribution:**
+Fair (The idea of causal mechanism transfer is novel for few-shot action recognition, but the contribution's scope and significance are unclear without detailed results and comparisons.)

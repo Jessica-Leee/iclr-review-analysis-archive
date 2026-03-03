@@ -1,0 +1,40 @@
+**Review:**
+
+DISCRET proposes a self-interpretable framework for individual treatment effect (ITE) estimation that identifies similar samples via interpretable rules and uses their treatment effects to estimate ITE for a target sample. The core contribution is a deep reinforcement learning-based rule learning algorithm that aims to balance accuracy with interpretability. The authors evaluate DISCRET across tabular, natural language, and image settings, claiming comparable performance to black-box models while providing more faithful explanations than post-hoc and self-interpretable baselines.
+
+**Strengths:**
+
+- **Addresses an important problem**: The focus on self-interpretability for treatment effect estimation is well-motivated for high-stakes domains like healthcare, where stakeholders need to understand decision drivers.
+- **Broad experimental scope**: Evaluation across multiple modalities (tabular, NLP, image) demonstrates generality of the approach.
+- **Practical motivation**: The design is inspired by how practitioners actually make decisions, grounding the method in real-world reasoning patterns.
+
+**Weaknesses:**
+
+- **Insufficient methodological detail**: The abstract provides no specifics on the rule learning algorithm, the RL formulation, or how rules are generated and selected. Without clarity on these core components, it is impossible to assess technical soundness or novelty.
+- **Vague evaluation claims**: Statements like "comparable performance" and "more faithful explanations" lack quantitative support in the abstract. No concrete metrics, baselines, or datasets are named, making it difficult to evaluate the strength of empirical validation.
+- **Missing related work context**: The abstract does not position DISCRET relative to existing interpretable ITE methods (e.g., causal forests, Bayesian additive regression trees, or other rule-based approaches), leaving novelty unclear.
+- **Scalability and rule complexity not addressed**: For the approach to be practical, the paper must discuss how rule complexity scales with data dimensionality and how many rules are needed for accurate estimation, but these are absent from the abstract.
+
+**Questions:**
+
+- How does the RL-based rule learning algorithm differ from or improve upon existing rule induction methods in causal inference?
+- What is the computational cost of rule learning compared to black-box baselines?
+- How are rules validated to ensure they reflect true causal structure rather than spurious patterns?
+- Can you provide concrete numbers (e.g., RMSE, MAE, or explanation fidelity metrics) comparing DISCRET to named baselines?
+
+**Overall score:**
+4: below the acceptance threshold
+
+The paper tackles a relevant problem and proposes an interesting idea of combining rule-based reasoning with RL for ITE estimation. However, the abstract lacks sufficient technical depth, methodological clarity, and empirical specificity to assess the contribution's validity or impact. The core algorithmic innovation is not explained, and evaluation claims are unsubstantiated. A full paper submission would be needed to properly evaluate soundness and novelty, but the abstract alone does not provide enough information for a positive recommendation.
+
+**Confidence:**
+2 (Low—assessment is limited by sparse technical detail in the abstract)
+
+**Soundness:**
+2 (Fair—core method is not described clearly enough to evaluate)
+
+**Presentation:**
+2 (Fair—abstract is vague on key technical and experimental details)
+
+**Contribution:**
+2 (Fair—novelty relative to existing rule-based and interpretable ITE methods is unclear)

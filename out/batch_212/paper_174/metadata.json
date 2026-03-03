@@ -1,0 +1,18 @@
+{
+  "paper_id": "yNJEyP4Jv2",
+  "review_id": "Vkl2nPj24f",
+  "year": 2024,
+  "line": 671,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "### Significance\n\nI believe that this paper addresses an important problem with a widespread impact on both the technical community as well as society at large. The empirical results show a convincing improvement over the prior works on two different fine-tuning methods and two datasets.\n\nI believe that introducing the target image for the adversarial objective and hence conducting a targeted attack instead of an untargeted one have a large effect on the empirical success of the attack.",
+  "human_weaknesses": "",
+  "human_review_text": "Since diffusion and other advanced generative models have been used to replicate artworks and create fake content, a line work proposes a defense mechanism that adds a kind of adversarial perturbation to the protected images to prevent the adversary from fine-tuning their model on the images. This work proposes a more thorough theoretical formulation of the problem compared to the prior work and relies on this formulation to build an empirically stronger attack.",
+  "human_questions": "1. What are the approximations made on the fourth line of Eq. (22) and in Eq. (23)?\n2. Why are MS-SSIM and CLIP-SIM used as metrics for SDEdit whereas CLIP-IQA score is used for LoRA? The authors allude to this briefly, but it still largely remains unclear to me.\n3. The similarity metrics used in experiments seem to focus on the low-level textured detail rather than the style (please correct if this is not accurate). I am wondering if a better metric is the one that measures \u201cstyle similarity\u201d between the trained and the generated images. This might align better with the artwork and the copyright examples.\n4. For the results reported in Table 1, how many samples or runs are they averaged over? Based on the experiment setup, 100 images are used for training the model in total for each dataset, and they are grouped in a subset of 20. So my understanding is that there are 100/20 = 5 runs where 100 images are generated in each run? Is this correct?\n5. The fine-tuning hyperparameters for LoRA are mentioned in Section 5.1. Does the LoRA fine-tuning during the attack and the testing share the same hyperparameters? What happens when they are different (e.g., the adversary spends iterations during fine-tuning, etc.)? Can the proposed protection generalize?\n6. Have the authors considered any \u201cadaptive attack\u201d where the adversary tries to remove the injected perturbation on the images (e.g., denoising, potentially via another diffusion model) before using them for fine-tuning?",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

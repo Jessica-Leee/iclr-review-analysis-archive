@@ -1,0 +1,35 @@
+**Review:**
+
+This paper proposes a novel interpretation of adaptive gradient methods (e.g., Adam, RMSprop) as steepest descent applied to parameter-scaled networks. The key contribution is leveraging this perspective to develop learning-rate-free adaptive gradient methods, eliminating the need for manual learning-rate tuning—a significant practical challenge in deep learning. The authors claim their approach achieves comparable performance to hand-tuned learning rates across various scenarios, extending prior learning-rate-free methods (which typically target steepest descent) to the adaptive setting.
+
+**Strengths:**
+- The parameter-scaling interpretation provides an elegant theoretical lens for understanding adaptive gradient methods and naturally motivates a learning-rate-free variant.
+- Addresses a genuine practical problem: learning-rate tuning remains a bottleneck in deep learning, and extending learning-rate-free methods to adaptive optimizers (widely used in practice) is valuable.
+- The approach is general and could apply to multiple adaptive methods, suggesting broad applicability.
+
+**Weaknesses:**
+- The abstract provides insufficient detail on the actual algorithm and how parameter scaling translates to a concrete learning-rate-free update rule. The mechanism for eliminating the learning rate is unclear.
+- No experimental details are provided: which datasets, architectures, or baselines are used? How does "comparable performance" quantify—are there error bars, statistical tests? Without these, the empirical claims cannot be evaluated.
+- The paper lacks discussion of related work on learning-rate-free optimization and how this approach compares to existing methods (e.g., recent work on adaptive learning-rate schedules or other parameter-free optimizers).
+- It is unclear whether the method introduces additional hyperparameters or computational overhead in place of the learning rate, which would affect the "learning-rate-free" claim.
+
+**Questions:**
+- Can you provide the explicit update rule for the proposed learning-rate-free adaptive method?
+- What are the experimental settings (datasets, models, training procedures) and how do results compare quantitatively to hand-tuned baselines and other learning-rate-free methods?
+- Does the parameter-scaling interpretation require any modifications to standard adaptive methods, or is it purely a reinterpretation?
+- Are there any additional hyperparameters introduced, and if so, how sensitive is the method to them?
+
+**Overall score:**
+4: below the acceptance threshold. While the core idea of interpreting adaptive methods via parameter scaling is interesting, the abstract lacks sufficient methodological and experimental detail to assess the contribution. The empirical validation is not described, making it impossible to verify the central claims. The paper would benefit from a complete description of the algorithm, comprehensive experiments with proper baselines, and clearer positioning relative to existing learning-rate-free methods.
+
+**Confidence:**
+2–3 (low to moderate). The abstract is too sparse to evaluate the work rigorously; a full paper would be needed to assess soundness and impact.
+
+**Soundness:**
+2 (fair). The conceptual idea is plausible, but without algorithmic details and experiments, soundness cannot be verified.
+
+**Presentation:**
+2 (fair). The abstract is vague on key technical details and experimental validation, making it difficult to understand the actual contribution.
+
+**Contribution:**
+2–3 (fair to poor). The interpretation itself may be novel, but the practical contribution depends entirely on the algorithm and experiments, which are not described.

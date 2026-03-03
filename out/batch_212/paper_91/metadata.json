@@ -1,0 +1,18 @@
+{
+  "paper_id": "z6KS9D1dxt",
+  "review_id": "8Z5SZbUvjd",
+  "year": 2024,
+  "line": 357,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The manuscript is easy to follow. Addressing the robustness of Multi-Agent Reinforcement Learning (MARL) is crucial, particularly for its practical deployment in real-life situations. The introduction of the ex post equilibrium within the BARDec-POMDP framework by the authors offers a thoughtful contribution to the field. The paper includes an in-depth examination of the algorithms it introduces. Furthermore, the empirical findings presented are coherent and compelling.",
+  "human_weaknesses": "",
+  "human_review_text": "The research explores the stability of cooperative multi-agent reinforcement learning when faced with adversarial strategies and disruptions. It introduces the Bayesian Adversarial Robust Decentralized Partially Observable Markov Decision Process (BARDec-POMDP) as a framework for addressing these challenges. The study demonstrates that conventional robust cooperative MARL approaches only achieve an ex interim equilibrium and advances the concept of an ex post equilibrium for BARDec-POMDP, which it argues is superior under worst-case scenarios. To attain this ex post equilibrium, the study presents a novel actor-critic method named EPR-MAPPO. Testing on simple games, the LBF environment, and the StarCraft Multi-Agent Challenge (SMAC) illustrates that EPR-MAPPO outperforms standard models, showcasing resilience against four distinct threat categories.",
+  "human_questions": "How can the proposed method benefit real-world applications? Any concrete examples?",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

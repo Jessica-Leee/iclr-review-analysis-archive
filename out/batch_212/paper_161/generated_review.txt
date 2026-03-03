@@ -1,0 +1,53 @@
+**Review:**
+
+This paper presents ValUES, a systematic evaluation framework for uncertainty estimation methods in semantic segmentation. The work addresses a significant gap between theory and practice by proposing a controlled evaluation environment that studies data ambiguities and distribution shifts, performs systematic ablations of method components, and provides test-beds for five key uncertainty applications: OoD-detection, active learning, failure detection, calibration, and ambiguity modeling. The authors identify three key pitfalls in current literature and use their framework to reveal important findings—notably that uncertainty type separation works on simulated but not real-world data, that score aggregation is a crucial but neglected component, and that ensembles are most robust while test-time augmentation offers a lightweight alternative.
+
+**Strengths:**
+
+1. **Addresses a genuine research gap:** The paper tackles a well-motivated problem—the lack of systematic, comprehensive evaluation of uncertainty methods in semantic segmentation—and clearly articulates three key pitfalls in current practice.
+
+2. **Comprehensive evaluation scope:** The framework covers five predominant downstream applications (OoD-detection, active learning, failure detection, calibration, ambiguity modeling) and includes both simulated and real-world data, providing breadth of validation.
+
+3. **Practical insights with actionable findings:** The empirical results yield concrete, non-obvious conclusions (e.g., the importance of aggregation, the gap between simulated and real-world uncertainty separation) that could influence future method development.
+
+4. **Reproducibility:** Code is made available, supporting transparency and enabling community adoption of the framework.
+
+**Weaknesses:**
+
+1. **Limited novelty in methodology:** The paper is primarily an evaluation framework rather than a novel uncertainty method. While systematic evaluation is valuable, the contribution is largely organizational and empirical rather than introducing new algorithmic or theoretical insights.
+
+2. **Incomplete methodological details:** The abstract does not specify which uncertainty methods are evaluated, how the controlled environment is constructed, or what the systematic ablations entail. Without these details, it is difficult to assess the rigor and completeness of the evaluation design.
+
+3. **Unclear generalization:** The paper focuses exclusively on semantic segmentation. It is unclear whether insights (e.g., the importance of aggregation, the robustness of ensembles) generalize to other dense prediction tasks or classification, limiting the broader impact.
+
+4. **Missing analysis of why findings hold:** While the paper reports that uncertainty type separation fails on real-world data, it does not provide sufficient mechanistic insight into *why* this occurs or how practitioners should adapt their approaches accordingly.
+
+**Questions:**
+
+- Which specific uncertainty methods are included in the evaluation, and were they selected to represent a balanced cross-section of the literature?
+- How is the "controlled environment" for studying data ambiguities constructed? Are synthetic ambiguities realistic proxies for real-world ambiguity?
+- Can you provide more detail on the ablation strategy—which components are ablated and how systematically?
+- Do the findings about aggregation and ensemble robustness hold across different segmentation architectures (e.g., CNNs vs. Vision Transformers)?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper makes a solid contribution by providing a much-needed systematic evaluation framework and revealing practical insights about uncertainty methods in semantic segmentation. However, the limited algorithmic novelty, incomplete methodological exposition in the abstract, and narrow scope (semantic segmentation only) prevent a stronger recommendation. The work is valuable for practitioners and the community but falls short of being a strong accept.
+
+**Confidence:**
+3 (moderate)
+
+**Soundness:**
+Good
+
+The evaluation framework appears well-designed with coverage of multiple applications and data regimes. However, without full methodological details, it is difficult to assess potential biases or gaps in the evaluation design.
+
+**Presentation:**
+Good
+
+The abstract clearly articulates the motivation and key findings, though it lacks sufficient detail on the framework's construction and the specific methods evaluated.
+
+**Contribution:**
+Fair
+
+The contribution is primarily empirical and organizational. While systematic evaluation is valuable, the paper does not introduce novel methods, theory, or surprising algorithmic insights that would elevate it to a strong contribution.

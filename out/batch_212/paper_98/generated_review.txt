@@ -1,0 +1,38 @@
+**Review:**
+
+SubDiff proposes a subgraph latent diffusion model for graph generation that addresses two key challenges: capturing node-level dependencies in discrete geometric data and unifying unconditional and conditional generation. The core contribution is to use subgraphs as minimum units in the diffusion process, supported by a Subgraph Equivariant Graph Neural Network and a Head Alterable Sampling (HAS) strategy that enables different sampling routes for both generative schemes. The authors provide theoretical analysis showing their training objective is equivalent to optimizing the variational lower bound of log-likelihood.
+
+**Strengths:**
+- The motivation is well-articulated: using subgraphs to simplify complex node-level dependencies is intuitive and addresses a genuine challenge in discrete graph diffusion.
+- The proposed Subgraph Equivariant GNN and HAS strategy appear to be novel architectural contributions designed specifically for the problem.
+- The paper claims to unify conditional and unconditional generation through a single framework, which would be a useful contribution if validated empirically.
+- Theoretical grounding via variational lower bound analysis adds rigor to the approach.
+
+**Weaknesses:**
+- The abstract provides insufficient detail on what "subgraph latent embedding with explicit supervision" means or how it concretely bridges conditional/unconditional generation. The mechanism is unclear without seeing the full paper.
+- No experimental results, datasets, baselines, or quantitative comparisons are mentioned in the abstract. It is impossible to assess whether "better performance in both generative schemes" is convincing without seeing the empirical validation.
+- The novelty of applying diffusion models to subgraph-level generation is not clearly positioned relative to existing work on graph diffusion (e.g., GraphGen, DiGress, or other recent methods). The abstract does not cite or differentiate from prior work.
+- The claim that subgraphs "simplify complex dependencies" needs empirical or theoretical justification. It is unclear whether this is always beneficial or whether information loss from aggregation to subgraph level could be problematic.
+
+**Questions:**
+- How are subgraphs defined or extracted? Are they fixed a priori or learned?
+- What is the computational overhead of the Subgraph Equivariant GNN compared to standard graph diffusion approaches?
+- Can you provide concrete examples of how HAS enables unified conditional/unconditional generation?
+- How does SubDiff compare quantitatively to recent graph diffusion baselines on standard benchmarks (e.g., QM9, ZINC, or molecular generation tasks)?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses a relevant problem and proposes a structured approach with theoretical backing, but the abstract lacks sufficient empirical validation and clarity on key technical details to warrant acceptance. The contribution is potentially solid, but without seeing experimental results, baselines, and ablations, it is difficult to assess impact. A full paper with comprehensive experiments would likely strengthen the case considerably.
+
+**Confidence:**
+2–3 (Low to moderate; assessment is limited by the abstract alone and absence of experimental details.)
+
+**Soundness:**
+Fair (The theoretical motivation is reasonable, but empirical validation is absent from the abstract.)
+
+**Presentation:**
+Fair (The abstract is reasonably well-written but lacks sufficient technical detail and experimental grounding.)
+
+**Contribution:**
+Fair to Good (The use of subgraphs and HAS strategy appear novel, but positioning relative to prior graph diffusion work is unclear.)

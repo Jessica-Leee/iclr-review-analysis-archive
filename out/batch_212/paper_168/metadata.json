@@ -1,0 +1,18 @@
+{
+  "paper_id": "yQuF0jslCc",
+  "review_id": "GEm5rks67C",
+  "year": 2024,
+  "line": 647,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The paper introduces some framework to add predictions to the online fractional knapsack problem.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper studies the online fractional knapsack problem in which items arrive online. Upon the arrival of a new item, we need to decide what fraction of the item to accept. In turn, we incur some weight and gain some value both proportional to the fraction of the item we accepted. Items come as a pair of values for their unit weight and value numbers. \n\nAlthough the knapsack problem is to some extent motivated by the applications mentioned in the paper, the assumption that a fraction of an item can be accepted makes the problem less interesting and not very applicable to these settings. When serving online traffic (queries or tasks), it is not acceptable to serve a subset of tasks. Load assignment is different from knapsack optimization. In online advertising, it is not reasonable to ask the sales team of an advertisement company to spend a fraction of their budget on your framework.\n\nAlso in online advertising, many times we are not facing a truly online problem. Negotiations may occur when we have access to all or a big subset (batch) of the requests/items.\n\nMost of the results are focused on providing competitive ratio algorithms in settings that relatively strong prediction signals are provided. For example when the exact value of the cutoff threshold for the offline optimum algorithm is known. There is some novelty in the analysis when they want to figure out how to allocate their budget to items above this threshold and the ones at this threshold to get a better than 2 approximation. But the rest of the analysis is relatively straightforward given they need to plug in the previous algorithms in the literature and see what happens. \n\nThe comparison benchmarks are optimum offline which is standard for online algorithms. However given the strong assumptions such as knowing exactly the cutoff threshold (Theorem 3.1), it may make sense to study the optimum online algorithm and use it for comparison.\n\nThe experiments are based on synthesized data.",
+  "human_questions": "Read the weaknesses part for the main questions. The rest are here:\n\nOther comments: \nPage 1: \u201cIt is well known that no deterministic \u2026\u201d, what about randomized algorithms? \n\nSection 2.2, \u201cThe threshold-based algorithm is shown in Algorithm 1.\u201d I suggest adding a citation to Sun et al. in this sentence to make it clear that Alg 1 is their algorithm and not yours. \n\nParagraph after Prediction Model II: \u201cThe quality of prediction in this c u - ell \u2026\u201d. There seems to be a typo here.\n\nAlgorithm 3 pseudocode: in line 10, add a comment that at this point \\hat{w} is revealed since it is the weight of this new item. BTW, do you have any justification that the values of items are distinct? Line 12 seems to have some extra parenthesis, you probably get a compilation error with this.",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "2: You are willing to defend your assessment, but it is quite likely that you did not understand the central parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

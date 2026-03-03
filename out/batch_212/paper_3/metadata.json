@@ -1,0 +1,18 @@
+{
+  "paper_id": "zyBJodMrn5",
+  "review_id": "umBGrmnYm6",
+  "year": 2024,
+  "line": 12,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- **Topic**: The paper studies an important topic which in my opinion is underexplored in current deep learning research. Especially given the tendency these days to scale training up to vast amounts of data, I believe it is particularly important to design carefully controlled benchmarks that can: evaluate the model\u2019s performance from a critical and cautious standpoint, point to their fundamental limitations (e.g. systematic generalization), and support further research about ways to overcome these.  \n- **Evaluation**: The paper offers both extensive extrinsic evaluation, with performance comparison of various models on the different generalization skills, as well as intrinsic analysis of their internal representations\u2019 degree of alignment to the stimuli.\n- **Clarity**: The writing quality is good and the paper is clear and easy to follow. The paper is well-organized, claims and findings are clearly stated, and useful figures and diagrams are provided.\n- **Related Works**: It does a good job in providing the relevant context, motivation and related works. \n- **Contribution**: The empirical findings of the paper on the benefits and limitations of different inductive biases such as recurrent and attention-based are important and may be of broad interest to the community.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper introduces a new multimodal question answering benchmark for out-of-distribution generalization, specifically covering task compositionality, robustness to distractors and combinatorial generalization. It uses this benchmark to evaluate various models and analyze their performance.",
+  "human_questions": "- **COG task**: It will be useful to discuss the COG task (rather than just mentioning it) before describing the new gCOG one, so that it will be clearer to the reader what are new contributions of the new benchmark compared to COG and the degree of their importance. In the overview diagram I would also recommend showing a sample also from COG to make the differences clearer. \n- **Grid size / generalization**: It could be interesting to vary the size of the grid in training/evaluation and study its impact on model\u2019s performance. \n- **Terminology**: I recommend changing the phrase \u201cDistractor generalization\u201d to one that better conveys it\u2019s about changing the answer distribution. Maybe e.g. answer distribution shift. I also recommend changing the name \u201cSystematic compositional generalization\u201d to \u201ccombinatorial generalization\u201d, to emphasize that the main point is the generalization to permutation, and also to better contrast it with the following \u201cProductive generalization\u201d (which could also be systematic).\n- **Figures**: Would be good to increase the size of the plots in Figure 3b. It will also be good the increase the distance and visual separation between the sub-figures in each figure throughout the paper. \n- In the introduction: \u201cmultimodal question-answer\u201d -> \u201canswering\u201d.\n- \u201cThis design allowed us\u201d -> \u201cThis design allow us\u201d.",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

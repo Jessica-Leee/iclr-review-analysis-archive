@@ -1,0 +1,18 @@
+{
+  "paper_id": "yfdtkYQesu",
+  "review_id": "UhpduiMX1X",
+  "year": 2024,
+  "line": 551,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. This paper uses parameter rescaling to interpret adaptive gradient methods, which could be helpful for further investigating the behavior of adaptive gradient methods.\n2. The proposed learning-rate-free methods can be useful to avoid the hyperparameter tunning in adaptive gradient methods while still achieving fast convergence.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposes a learning rate tuning method for adaptive optimization algorithms. Besides, this paper also proposes a method to interpret adaptive gradient methods as parameter-scaled SGD. Experimental results show that the proposed method can be comparable with adaptive gradient methods with hand-tunned learning rates.",
+  "human_questions": "Please see the weakness section.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

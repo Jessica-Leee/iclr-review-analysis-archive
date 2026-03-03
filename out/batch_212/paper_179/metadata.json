@@ -1,0 +1,18 @@
+{
+  "paper_id": "yLgr02IsXY",
+  "review_id": "EhTe2FG1TE",
+  "year": 2024,
+  "line": 692,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "* MoE is becoming very relevant for the current scaling of models as dense models are impractical at the trillion parameter scale, which makes this work relevant.\n* Code is provided that is an extension of the MegatronLM code.  I skimmed their AMPipe implementation and it seems fairly simple which makes it easier to integrate into existing systems.\n* They test on a variety of model scales and context lengths",
+  "human_weaknesses": "",
+  "human_review_text": "This paper introduces a method to speedup MoE inference and training by moving the pipeline parallelism to begin earlier in the layer's execution.  Specifically, the attention operation is split over queries along the sequence dimension into chunks which can be ran separately, before the same pipelining is applied to the feed forward networks in MoE layer.  This introduces a significant increase in throughput of 10-40% across many different configurations.  Code is provided where they add their AMPipe to the MegatronLM code.",
+  "human_questions": "**Setup** \"As a baseline, we constructed MoE models based on GPT-3\u201d\n* GPT-3 is not an open source model, I believe you mean GPT-2, considering the description of the model in Table 1\n\n**Table 1** I think it would be useful to the reader to add the # of layers and # of parameters to compare the different models\n\n\u201cWith an implementation consisting of more than 1k lines of code (LoCs)\u201d\n* The fact that you provided code is great, but lines of code is not an informative metric.  The optimum number of lines of code is the minimum necessary to have performant and readable code.\n\nIt is worth explicitly defining what \"pipe degree\" is rather than keeping it implicit.  Perhaps say that pipe degree = n and chunk length = N / n, etc.\n\nTypos: \n\u201cunofficially reported to use MoE paradigm.\u201d - - - > \u201cunofficially reported to use the MoE paradigm.\u201d\nFor MoE, sharding the input batch along seqeunce dimension\u201d - - > \u201cFor MoE, sharding the input batch along sequence dimension",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "2: You are willing to defend your assessment, but it is quite likely that you did not understand the central parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

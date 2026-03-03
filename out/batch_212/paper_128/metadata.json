@@ -1,0 +1,18 @@
+{
+  "paper_id": "yldBrD4nYB",
+  "review_id": "l2tKpJF3He",
+  "year": 2024,
+  "line": 499,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The paper is well written and easy to follow.\n\n2. The idea to learn linearly separable latent space is interesting.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper explores making the latent space of VAEs linearly seperable with respect to class labels. They achieve this by modifying the ELBO by adding a cross entropy loss function to predict the class labels from the latent codes. They show the efficacy of their approach on MNIST an colon cancer genomics data.",
+  "human_questions": "Please see weaknesses above.",
+  "human_ratings": {
+    "rating": "1: strong reject",
+    "confidence": "5: You are absolutely certain about your assessment. You are very familiar with the related work and checked the math/other details carefully.",
+    "soundness": "2 fair",
+    "presentation": "1 poor",
+    "contribution": "1 poor"
+  }
+}

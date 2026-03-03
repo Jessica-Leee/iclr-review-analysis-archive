@@ -1,0 +1,18 @@
+{
+  "paper_id": "y5e9fvvBUz",
+  "review_id": "zX53ZYNSBV",
+  "year": 2024,
+  "line": 789,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The problem targeted in this paper is reasonable and practical.\n\n2. The paper is easy to follow.\n\n3. The experimental results are good, though many details are missing.",
+  "human_weaknesses": "",
+  "human_review_text": "Motivated by federated generative models and privacy requirements, this paper proposes a new federated learning scheme. Instead of updating model weights, the authors update a score function for a randomly initialized generator and solely communicate random binary masks. The masks are later used to generate a sub-network for the task. Notably, the network is not trained at all. With the learning scheme, the authors claim it significantly saves communication costs while achieving superior performance in both differentially private (DP) and non-DP settings.",
+  "human_questions": "1. The performance in some experiments is somehow too surprisingly good to convince me. I am not fully convinced that a randomly initialized model without training can outperform a carefully designed and trained generative model. Let alone the score selection criterion is MMD, which is known to be suboptimal for image generation. Is it because of data partitioning? Could the authors elaborate more on this part?\n\nOverall, though the work is a straightforward application of the strong lottery ticket hypothesis, it still could be valuable to the community. However, the authors have to specify all the details, especially regarding the DP part. I am willing to reconsider my score after the discussion with other reviewers and the authors.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

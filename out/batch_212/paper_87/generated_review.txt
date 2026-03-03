@@ -1,0 +1,38 @@
+**Review:**
+
+GETMusic proposes a unified framework for symbolic music generation that addresses the practical problem of generating arbitrary target instrument tracks conditioned on source tracks in a predefined ensemble. The core contribution is twofold: (1) GETScore, a 2D token-based music representation that organizes tracks vertically and time horizontally, and (2) GETDiff, a non-autoregressive diffusion model trained with a masking-based denoising objective where target tracks are corrupted and source tracks provide conditioning. The training procedure randomly assigns tracks as target or source, enabling the model to handle arbitrary source-target combinations at inference time. This is a sensible design that decouples the representation from the generation mechanism and allows flexible composition scenarios.
+
+**Strengths:**
+- The problem formulation is well-motivated: handling arbitrary source-target track combinations in a unified model is more practical than task-specific approaches, and the paper clearly articulates this advantage.
+- The 2D token representation (GETScore) is intuitive and naturally aligns with the structure of multi-track music, making the approach interpretable.
+- The non-autoregressive diffusion framework with masking-based conditioning is a reasonable choice for this setting, avoiding sequential generation bottlenecks.
+- The claim that GETMusic "outperforms prior works proposed for certain specific composition tasks" suggests empirical validation, though details are limited in the abstract.
+
+**Weaknesses:**
+- The abstract provides no quantitative results, baseline comparisons, or dataset information, making it impossible to assess the magnitude of improvements or the experimental rigor. What metrics were used? How many baselines? On which datasets?
+- The novelty is somewhat incremental: 2D token representations for music are not new, and applying diffusion models with masking to multi-track conditioning is a relatively straightforward extension of existing techniques. The paper does not clearly articulate what is fundamentally novel beyond the application.
+- No discussion of computational efficiency, scalability, or how the approach handles variable-length sequences, ensemble sizes, or polyphonic complexity—all critical for practical music generation.
+- The abstract lacks ablation studies or analysis of design choices (e.g., why masking over other corruption strategies? how sensitive is the model to the 2D layout?).
+
+**Questions:**
+- What are the specific quantitative improvements over baselines, and on which standard music generation benchmarks?
+- How does GETMusic handle variable numbers of tracks or different ensemble configurations at test time?
+- What is the computational cost compared to autoregressive or other non-autoregressive baselines?
+- Can the authors provide examples or perceptual evaluation results (e.g., user studies) demonstrating musical quality?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses a practical problem and proposes a reasonable solution, but the abstract lacks sufficient empirical evidence, quantitative results, and clarity on novelty to warrant acceptance at a top venue. The core ideas are sound but incremental, and the experimental validation is not adequately summarized. A full paper with comprehensive experiments, ablations, and comparisons would be needed to assess this work fairly.
+
+**Confidence:**
+2–3 (Low to moderate; assessment is limited by the abstract's lack of experimental detail)
+
+**Soundness:**
+3–4 (Fair to good; the method is sensible but lacks empirical validation in the abstract)
+
+**Presentation:**
+3 (Fair; the abstract is clear in describing the method but omits critical experimental and comparative details)
+
+**Contribution:**
+3 (Fair; the contribution is somewhat incremental—applying diffusion + masking to multi-track music is a natural extension rather than a fundamental advance)

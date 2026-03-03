@@ -1,0 +1,38 @@
+**Review:**
+
+This paper proposes Hybrid Granularity Distribution Estimation (HGDE), a method for few-shot learning that improves upon category-level distribution estimation by incorporating fine-grained instance-level statistics. The core idea is to estimate distributions at both coarse-grained (category) and fine-grained (instance) levels, then fuse these statistics via linear interpolation to better characterize novel categories. The motivation is sound: category-level statistics alone may not capture the representativeness needed for novel categories due to domain discrepancy, while instance-level statistics from nearest base samples can provide more targeted information.
+
+**Strengths:**
+- Clear motivation addressing a real limitation of existing distribution estimation approaches in FSL: the discrepancy between base and novel categories.
+- Simple and interpretable method combining category and instance statistics through linear interpolation, making it easy to integrate into existing FSL frameworks.
+- Empirical validation on four FSL benchmarks demonstrates consistent improvements, and the method's applicability to enhance other FSL methods suggests practical utility.
+- Code availability supports reproducibility.
+
+**Weaknesses:**
+- Limited novelty: the core contribution—combining statistics at different granularities via linear interpolation—is relatively straightforward and incremental. The paper lacks theoretical justification for why this particular fusion strategy is optimal or how the interpolation weight should be chosen.
+- Insufficient methodological detail in the abstract: it is unclear how "nearest base samples" are selected, how the interpolation weight is determined, and whether this is learned or fixed. These details are critical for understanding and reproducing the method.
+- No ablation studies or analysis provided in the abstract to isolate the contribution of instance-level statistics versus the interpolation strategy, making it difficult to assess which components drive improvements.
+- The abstract does not discuss computational overhead or provide comparisons with other data augmentation or distribution estimation baselines, limiting understanding of the method's practical trade-offs.
+
+**Questions:**
+- How is the interpolation weight determined? Is it learned, fixed, or dataset-dependent?
+- What is the computational cost of identifying nearest base samples and estimating instance-level statistics compared to standard category-level DE?
+- Have you conducted ablation studies comparing category-only, instance-only, and hybrid approaches?
+- How sensitive is the method to the choice of distance metric for selecting nearest base samples?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses a reasonable problem and proposes a simple solution with positive empirical results. However, the contribution is incremental (linear interpolation of statistics at two granularities), and the abstract lacks sufficient methodological detail and analysis to convincingly demonstrate why this approach is principled or superior to alternatives. For a venue like ICLR, stronger theoretical motivation, more thorough ablation studies, and clearer positioning relative to related work would be expected.
+
+**Confidence:**
+3 (moderate; assessment is based on abstract only, which limits depth of evaluation)
+
+**Soundness:**
+Fair (the core idea is sensible, but methodological details and justification are missing from the abstract)
+
+**Presentation:**
+Good (the abstract is clearly written and the motivation is well-articulated, though key technical details are omitted)
+
+**Contribution:**
+Poor to Fair (the contribution is incremental; combining statistics via linear interpolation is a straightforward engineering choice rather than a novel insight)

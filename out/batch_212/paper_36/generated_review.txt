@@ -1,0 +1,42 @@
+**Review:**
+
+This paper applies three supervised machine learning algorithms—Logistic Regression, XGBoost Regressor, and Random Forests—to predict genitourinary involvement in gastrointestinal stromal tumor (GIST) patients using a dataset of 170 patients from a Saudi Arabian specialist center (2003–2020). The authors report that the Random Forest model achieved 97.1% accuracy on this task. While the clinical motivation is reasonable, the paper has significant limitations that preclude acceptance at a top-tier machine learning venue. The dataset is very small (n=170) with only 6 positive cases (3.5%), making the reported 97.1% accuracy potentially misleading—a trivial baseline classifier predicting "no GU involvement" for all patients would achieve ~96.5% accuracy. The paper provides no discussion of class imbalance, no cross-validation details, no train/test split methodology, and no comparison to such baselines. Critically, there is no ablation study, feature importance analysis, or investigation of which variables drive predictions. The choice of algorithms appears arbitrary, and the paper lacks standard machine learning rigor: no hyperparameter tuning details, no confidence intervals, no statistical significance testing, and no discussion of overfitting risk on such a small, imbalanced dataset.
+
+The presentation is also problematic for an ML-focused venue. The abstract and paper read as a clinical case study rather than a machine learning contribution; there is minimal discussion of the algorithmic or methodological novelty. The authors acknowledge the need for "larger multicenter studies" and "more powerful algorithms such as deep learning," but this reads as an admission that the current work is preliminary. For ICLR, we expect novel algorithmic insights, rigorous experimental methodology, and clear technical contributions. This paper offers none of these—it is a straightforward application of off-the-shelf classifiers to a small clinical dataset without the depth of analysis or methodological rigor expected.
+
+**Overall score:**
+2: reject, not suitable for ICLR. This is a clinical application paper that lacks machine learning novelty, methodological rigor, and proper experimental validation. It would be more appropriate for a medical informatics or clinical AI venue after substantial revision.
+
+**Confidence:**
+5 (high confidence in this assessment)
+
+**Soundness:**
+1 (poor) – No cross-validation, no baseline comparisons, no handling of severe class imbalance, no statistical testing, high risk of overfitting on tiny dataset.
+
+**Presentation:**
+2 (poor) – Reads as a clinical case study, not an ML paper. Lacks algorithmic detail, feature analysis, and standard ML reporting conventions.
+
+**Contribution:**
+1 (poor) – No novel algorithms, no new insights into prediction or GIST pathology, no methodological innovation. Straightforward application of standard classifiers.
+
+**Strengths:**
+
+- Clear clinical motivation: predicting GU involvement in GIST patients is a legitimate medical problem.
+- Use of multiple algorithms (Logistic Regression, XGBoost, Random Forests) shows some breadth.
+- Histopathologically confirmed diagnoses and structured data collection from a specialist center.
+
+**Weaknesses:**
+
+- **Severe class imbalance and tiny dataset:** Only 6 positive cases out of 170 (3.5%); reported 97.1% accuracy is not meaningful without baseline comparison and proper evaluation metrics (precision, recall, F1, AUC-ROC).
+- **No methodological rigor:** No cross-validation, no train/test split description, no hyperparameter tuning details, no statistical significance testing, no confidence intervals.
+- **No analysis of model behavior:** No feature importance, no ablation study, no investigation of which variables drive predictions, no discussion of overfitting risk.
+- **Missing standard ML practices:** No comparison to trivial baselines, no handling of class imbalance (SMOTE, class weights, etc.), no discussion of why XGBoost Regressor (not classifier) was used for a classification task.
+
+**Questions:**
+
+1. What is the accuracy of a baseline classifier that always predicts "no GU involvement"? How do the reported models compare?
+2. What were the train/test split and cross-validation strategy? Were results averaged over multiple folds?
+3. How were hyperparameters selected for each model? Was any tuning performed?
+4. Which features were most important for the Random Forest model? Did all features contribute meaningfully?
+5. Why was XGBoost Regressor used instead of XGBoost Classifier for a binary classification task?
+6

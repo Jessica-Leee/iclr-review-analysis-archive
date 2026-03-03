@@ -1,0 +1,44 @@
+**Review:**
+
+This paper addresses backdoor attacks in decentralized federated learning (DFL) by proposing Silencer, a dynamic two-stage pruning scheme that leverages distinct patterns in the empirical Fisher information (FI) diagonal of poisoned parameters. The core insight—that adversarial updates exhibit characteristic FI patterns—is interesting and empirically motivated. Silencer combines FI-based parameter pruning during local training with consensus filtering at the global stage to simultaneously defend against poisoning while preserving benign model accuracy. The authors demonstrate consistent improvements over existing defenses across three representative DFL settings.
+
+**Strengths:**
+- Novel observation that poisoned parameters exhibit distinct diagonal FI patterns in DFL, providing a principled signal for defense.
+- Well-motivated two-stage design that addresses a real problem: naive FI-based pruning degrades benign accuracy, and the proposed dynamic approach mitigates this via sparse surrogate models and consensus filtering.
+- Comprehensive experimental validation across multiple DFL settings with consistent improvements claimed over existing defenses.
+- Clear problem formulation in the DFL context, where gossip protocols create a larger attack surface than centralized FL.
+
+**Weaknesses:**
+- Limited theoretical justification for why FI diagonal patterns are invariant across different backdoor attacks and threat models. The paper relies primarily on empirical observation without formal analysis of when and why this property holds.
+- Insufficient detail on the consensus filtering mechanism and how it distinguishes poisoned from benign parameters in practice. The abstract mentions "dummy/poisoned parameters" but does not clarify the filtering criterion or its robustness to adaptive attacks.
+- No discussion of computational overhead or scalability. The two-stage pruning with FI computation and consensus filtering may be expensive; impact on communication and computation costs in DFL is not addressed.
+- Missing ablation studies and sensitivity analysis. It is unclear which components (FI-based pruning vs. consensus filtering) contribute most to defense, and how sensitive the method is to hyperparameters and attack variations.
+
+**Questions:**
+1. How does Silencer perform against adaptive adversaries that are aware of the FI-based detection mechanism and attempt to craft poisoned updates with benign FI patterns?
+2. What is the computational cost of computing empirical Fisher information at each client, and how does it scale with model size and number of local training steps?
+3. Can you provide ablation studies isolating the contribution of the first-stage FI-based pruning versus the second-stage consensus filtering?
+4. How sensitive is the method to the choice of pruning rate and consensus filtering threshold across different datasets and attack scenarios?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper identifies an interesting empirical phenomenon (FI patterns in poisoned updates) and proposes a practical two-stage defense mechanism with demonstrated improvements. However, the lack of theoretical grounding, limited analysis of the consensus filtering mechanism, and absence of ablation studies prevent a stronger assessment. The work makes a solid contribution to an important problem in DFL security, but would benefit from deeper investigation of the proposed mechanisms and their robustness to adaptive attacks.
+
+**Confidence:**
+3 (moderate)
+
+**Soundness:**
+Good
+
+The experimental approach appears sound, but theoretical justification is limited and adaptive attack scenarios are not thoroughly explored.
+
+**Presentation:**
+Good
+
+The paper is generally well-written with clear motivation, though some technical details (especially consensus filtering) could be more explicit.
+
+**Contribution:**
+Good
+
+The FI-based observation is novel for the DFL backdoor defense setting, and the two-stage pruning scheme is a reasonable engineering contribution, though incremental in scope.

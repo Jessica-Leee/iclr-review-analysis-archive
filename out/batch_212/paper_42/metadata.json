@@ -1,0 +1,18 @@
+{
+  "paper_id": "zb3b6oKO77",
+  "review_id": "mTpQglstbn",
+  "year": 2024,
+  "line": 169,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. This paper presented a novel concept of binding mechanism in language models. \n2. The paper provided experiment results based on many datasets, albeit toy data. Figure 3, Tables 1 and 2 supported the main claims of the binding vectors and their additivity property. \n3. The paper was well-written. I found that the definitions and hypotheses were well articulated and precise. It also provided sufficient background to understand the paper.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper studied how language models handle a linkage between entity and attribute tokens. The authors argued that language models used a component of the residual stream of each token as a binding vector to mark entities and their corresponding attributes. The authors also claimed that the binding vectors are simply added to the residual stream.  \n\nTo prove this empirically, the authors presented a series of causal mediation experiment results on binding tasks, such as determining a city in which a person lives or the color of a shape based on a context. The context typically consisted of two to three entity-attribute pairs. First, the authors showed that binding vectors existed by swapping activations of an entity or an attribute. The results showed that binding changed (by means of changing the mean log probability of attributes.) On the other hand, shifting did not affect the mean log prob of the correct attributes -- suggesting that binding vectors are positional independent. The author then estimated the binding differences and showed that the authors could perform addition or subtraction to manipulate the bindings. In addition, the difference vectors are generalized across different binding tasks. But, the authors suggested one task had an alternative binding mechanism.",
+  "human_questions": "1. How many samples did you use to generate Figure 3? (100 or 500)\n1. Were the samples you used to estimate the *differences* the same samples for testing in Table 1? If so, why?",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

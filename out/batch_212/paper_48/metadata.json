@@ -1,0 +1,18 @@
+{
+  "paper_id": "zW1tyw3UFu",
+  "review_id": "bDrDdOWa39",
+  "year": 2024,
+  "line": 191,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The ideas of signal locality, seasonality, and global temporal dependency are quite standard in time series processing. Connecting these notions to corresponding attention mechanisms, especially in the context of Multivariate Time Series (MTV) forecasting, look to be quite new, and one of the major contributions of this work. \n\nOverall, the paper is well organized, clearly written, and it is easy to follow.  The proposed method has been tested on a number of benchmarks, and reported results are found to be promising. In addition, the computational complexity analysis and the attention mechanism ablation study have added some extra points to the work.  The paper exhibits some potential significance in the field of Multivariate Time Series forecasting.",
+  "human_weaknesses": "",
+  "human_review_text": "This article proposes some new attention mechanisms for Transformers in the context of Multivariate Time Series (MTV) forecasting. The main idea is to segregate local, seasonal, and global temporal dependencies and capture them through independent/corresponding attention portfolios. They call their approach sequence-adaptive Dozer Attention, and it comprises three sparse attention components (a) Local (to attend local relationship), (b) Stride (to attend intervals), and (c) Vary (to selectively attend to keys of historical sequence). \n\nThe authors have compared their method with some state-of-the-art methods through nine benchmark datasets. Results look promising;  also, the proposed method shows improved complexity analysis results for certain settings.",
+  "human_questions": "I have a few suggestions which may improve the quality of the paper:\n\n(a) To add Mean Absolute Scaled Error (MASE) in to the evaluation metric mix, (b) To perform some statistical significance tests, so we can be sure the results are not random, (c) We can get rid of the third digit after the decimal point in Table 1 (page 7); this should improve the readability of the content.  \n\nOne question: Did you only try grid search as your HP optimization technique (section 4.1)?",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

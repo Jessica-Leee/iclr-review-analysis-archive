@@ -1,0 +1,18 @@
+{
+  "paper_id": "zUHgYRRAWl",
+  "review_id": "O7PYRUk05p",
+  "year": 2024,
+  "line": 195,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "Proposed a novel multi-stage model.",
+  "human_weaknesses": "",
+  "human_review_text": "A multi-stage VAE model that help generate molecules with conditional properties.",
+  "human_questions": "N/A",
+  "human_ratings": {
+    "rating": "1: strong reject",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

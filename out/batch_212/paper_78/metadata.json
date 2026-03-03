@@ -1,0 +1,18 @@
+{
+  "paper_id": "zCJFTA19K4",
+  "review_id": "IYzuf9di0M",
+  "year": 2024,
+  "line": 304,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "Interesting approach to improve efficiency in code generation.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper proposes a token alignment model to apply in auto-completion task. The proposed method is described well and tested in the code generation task. There are some improvements recommended due to connection to literature and showing evidence that there is a problem that the paper addresses beyond the application of the LMs in code generation. The authors are referred to decoding literature in LM and sequence models in previous tasks for a fair comparison.",
+  "human_questions": "Can the authors find or add in their study evidence through actual experiments on the problem they propose to solve?\nThere are many variants of beam search that could do hierarchical subword/word generation. How do this approach differ from the existing methods?",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "1 poor"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "paper_id": "z0pn0IUDsX",
+  "review_id": "75CnzkrsrT",
+  "year": 2024,
+  "line": 392,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The new setting is meaningful for reducing the cost of manual annotation of new datasets.\n2. This paper presents outstanding results with webly-supervised learning under single-task and continual learning. \n2. This paper extends the webly-supervised learning to continual setting, which is reasonable for real-world application. A new benchmark with ever-changing real-world data is introduced for webly-supervised / name-only continual learning.\n3. Although somewhat counterintuitive, it is interesting to see that a pre-trained model can learn so well with noisy, uncurated data. This paper finds data scale to be the key. \n4. The evaluations in this work are thorough. Multiple fine-grained vision datasets are included. Cost-aware evaluation for CL is used, and the results are significant.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper explores the name-only continual learning, which combines the webly-supervised learning with continual learning using a pre-trained model. In this paper, it is found that training with webly collected data can be comparable or even superior to training with manually annotated datasets. Besides, a new class-incremental dataset to capture real-world trends is introduced.",
+  "human_questions": "See questions in the Weaknesses part.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "4 excellent",
+    "contribution": "3 good"
+  }
+}

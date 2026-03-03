@@ -1,0 +1,37 @@
+**Review:**
+
+This paper proposes SymC, a method that integrates code symmetries—formalized via group-theoretic framework as semantics-preserving transformations—into LLM architectures for program analysis. The core contribution is a novel variant of group-equivariant self-attention that is provably equivariant to code symmetries. The authors evaluate SymC on four program analysis tasks against eight baselines and eight code transformations, demonstrating 30.7% improvement over state-of-the-art code models and showing that SymC maintains invariance to semantics-preserving permutations while models like WizardCoder and GPT-4 violate these invariances at rates of 14% and 43% respectively.
+
+**Strengths:**
+- The core insight—leveraging group-theoretic structure to formalize code semantics and enforce equivariance—is novel and well-motivated. Grounding program analysis in symmetry principles is a principled approach that addresses a genuine limitation of existing code LLMs.
+- The empirical results are strong: 30.7% improvement over state-of-the-art baselines is substantial, and the analysis showing that SymC provably maintains invariance while commercial models violate it provides compelling evidence of the method's correctness.
+- Evaluation across four program analysis tasks and eight code transformations demonstrates breadth, and the generalization to unseen transformations suggests the approach captures genuine semantic structure rather than task-specific patterns.
+
+**Weaknesses:**
+- The abstract provides limited technical detail on the group-equivariant self-attention mechanism itself. How exactly does the architecture enforce equivariance? What is the computational overhead compared to standard attention? These details are essential for reproducibility and understanding the practical feasibility of the approach.
+- The paper lacks clarity on which program analysis tasks are evaluated and how they were selected. Are these standard benchmarks? How representative are they of real-world program analysis needs? Without this context, it is difficult to assess the generality of the improvements.
+- The comparison to GPT-4 and WizardCoder on invariance violations is interesting but somewhat unfair: these models were not designed with symmetry constraints in mind. A more constructive comparison would involve ablations showing which components of SymC contribute most to the improvement, or analysis of failure modes.
+- The abstract does not discuss computational complexity, training data requirements, or scalability. For a method targeting LLMs, these practical considerations are important.
+
+**Questions:**
+- Can you provide more detail on the group-equivariant self-attention mechanism and its computational cost relative to standard attention?
+- Which four program analysis tasks are evaluated, and are they standard benchmarks in the literature?
+- How does performance scale with model size and code length?
+- What is the impact of the equivariance constraint on model expressiveness? Are there semantic properties that cannot be captured under this constraint?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper presents a novel and principled approach to an important problem—improving LLM understanding of program semantics through symmetry constraints. The empirical results are strong and the core idea is sound. However, the abstract lacks sufficient technical and experimental detail to fully evaluate the contribution, and key practical considerations (computational cost, scalability, task selection) are not addressed. With revisions clarifying the method, tasks, and computational trade-offs, this could be a solid accept.
+
+**Confidence:**
+3 (moderate—the abstract is promising but lacks detail needed for high confidence)
+
+**Soundness:**
+Good (the group-theoretic framing is principled; equivariance claims appear well-founded, though full verification requires seeing the technical content)
+
+**Presentation:**
+Fair (the abstract is clear in intent but omits critical technical and experimental details)
+
+**Contribution:**
+Good (novel integration of group theory and equivariance into code LLMs; strong empirical results; addresses a real limitation of existing models)

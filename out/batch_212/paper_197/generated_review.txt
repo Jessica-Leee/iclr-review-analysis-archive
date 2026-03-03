@@ -1,0 +1,44 @@
+**Review:**
+
+This paper extends the bandits with knapsacks (BwK) framework to allow non-monotonic resource utilization—specifically, resources can be replenished as well as consumed. The authors propose a best-of-both-worlds primal-dual template that leverages any suitable primal regret minimizer to handle this generalization. The main contributions are: (i) the first positive results for adversarial inputs, achieving constant competitive ratio α under conditions like B=Ω(T) or constant per-round replenishment; (ii) an instance-independent Õ(T^{1/2}) regret bound under stochastic inputs, complementing existing instance-dependent bounds; and (iii) applications to economic problems.
+
+**Strengths:**
+- The problem generalization is natural and well-motivated: allowing resource replenishment significantly broadens the applicability of BwK to realistic scenarios (e.g., budget recovery, inventory replenishment).
+- The primal-dual template is a principled approach that unifies adversarial and stochastic settings, demonstrating versatility across input models.
+- The paper provides both adversarial guarantees (constant competitive ratio under specified conditions) and stochastic guarantees (instance-independent Õ(T^{1/2}) regret), offering a more complete picture than prior work.
+- The inclusion of applications to economic problems grounds the framework in practical relevance.
+
+**Weaknesses:**
+- The adversarial results require non-trivial conditions (B=Ω(T) or constant per-round replenishment) to achieve constant competitive ratio; the paper does not clearly discuss what happens outside these regimes or provide lower bounds to justify these conditions.
+- The abstract lacks concrete algorithmic details or pseudocode, making it difficult to assess the technical novelty of the primal-dual template itself—it is unclear how substantially the approach differs from standard primal-dual methods in online learning.
+- The stochastic result (Õ(T^{1/2}) instance-independent regret) is presented as complementing existing instance-dependent bounds, but the paper does not provide explicit comparison or clarify when one bound dominates the other.
+- The paper does not discuss computational complexity or provide empirical validation; the practical utility of the framework remains unclear.
+
+**Questions:**
+- What is the competitive ratio or regret bound when B=o(T) and per-round replenishment is not constant? Are there matching lower bounds?
+- How does the primal-dual template differ from existing primal-dual approaches in online learning (e.g., those used in online convex optimization)?
+- Can you provide explicit numerical comparisons between the instance-independent Õ(T^{1/2}) bound and the instance-dependent bounds from prior work on concrete problem instances?
+- Are there empirical results or simulations demonstrating the practical performance of the algorithm?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper addresses a natural and relevant generalization of BwK with a principled approach and provides theoretical guarantees in both adversarial and stochastic settings. However, the presentation lacks algorithmic detail, the adversarial results are conditional, and the absence of empirical validation or lower bounds limits the impact. The work makes a solid theoretical contribution but falls short of being a strong accept.
+
+**Confidence:**
+3 (moderate)
+
+**Soundness:**
+Good
+
+The theoretical contributions appear sound, though the conditional nature of adversarial guarantees and the lack of lower bounds raise questions about tightness.
+
+**Presentation:**
+Fair
+
+The abstract is clear in motivation but lacks sufficient technical detail to fully evaluate novelty. The paper would benefit from more explicit algorithmic exposition and clearer positioning relative to prior work.
+
+**Contribution:**
+Good
+
+The generalization to replenishable resources is natural and the dual-model analysis (adversarial + stochastic) is valuable, but the technical novelty of the primal-dual template itself is not sufficiently highlighted.

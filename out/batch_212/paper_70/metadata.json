@@ -1,0 +1,18 @@
+{
+  "paper_id": "zI6fKENVL8",
+  "review_id": "cY3WuKCUYa",
+  "year": 2024,
+  "line": 275,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The quality of this paper is good, but the originality, clarity and significance indeed need to be improved. \n1.    Originality. This paper proposes to apply DP-federated learning to the ASR task, which has not been done before. However, DP for federated learning has already been done long ago, and this work only tests the algorithm on the data instead of improving the frame. Maybe there is a small originality but it\u2019s not enough for ICLR. \n2.     Quality. This article conducted a substantial number of experiments to investigate the impact of seed models, data heterogeneity, and differential privacy on the performance of federated learning. And the content and structure of the paper are relatively complete.\n3.\tClarify. The content and structure of the article are relatively comprehensive. However, the experiment logic may not be very clear. For example, from the algorithm pseudocode, it appears that this article only combines DP (Differential Privacy) and FedAvg (Federated Averaging). Yet, later in the text, there is an experimental analysis of Scaffold and FedProx, showing that FedProx yields the best results. So, what is the significance of exploring data heterogeneity? The article could benefit from providing a more explicit and coherent explanation of the rationale for the experimental choices and their implications for understanding data heterogeneity.\n4.\tSignificance. Well this work is the first to combine federated learning with differential privacy in the ASR (Automatic Speech Recognition) field, which can be considered pioneering. The choice of this application direction is valid, but it appears that the level of innovation is relatively limited, which might diminish its overall importance.",
+  "human_weaknesses": "",
+  "human_review_text": "In this paper, the authors focus on (i) providing an empirical analysis of FL performance on E2E ASR using a large model trained with the Connectionist Temporal Classification (CTC) loss; (ii) analyzing the impact of key FL parameters, data heterogeneity, and seed models on FL performance in ASR; (iii) formulating a practical benchmark and establishing the first baselines for FL with DP for ASR; and (iv) reviving the per-layer clipping for efficient training of large transformer models even in the presence of DP noise.",
+  "human_questions": "It seems that all experimental results in this paper have not been averaged over multiple runs, which introduces some randomness. \nTable 2 has many \u2018-\u2018. Why not delete the lines that are intractable?",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

@@ -1,0 +1,35 @@
+**Review:**
+
+PRISM proposes a federated framework for training generative models that combines three key ideas: (1) searching for optimal stochastic binary masks over a random network rather than updating weights directly (identifying a "strong lottery ticket"), (2) communicating masks stochastically to reduce communication overhead while guaranteeing differential privacy, and (3) using maximum mean discrepancy (MMD) loss instead of adversarial training for stable performance in heterogeneous settings. The authors claim to be the first to successfully generate images on CelebA and CIFAR10 under distributed and privacy-preserving constraints, with experiments on MNIST, CelebA, and CIFAR10 showing improvements over prior methods in both IID and non-IID scenarios.
+
+**Strengths:**
+- The combination of lottery ticket search with stochastic masking for communication efficiency and privacy is creative and well-motivated. Using MMD loss instead of adversarial training is a sensible choice for federated settings where training stability is critical.
+- The paper addresses multiple important challenges simultaneously: performance, communication cost, privacy preservation, and model size—a comprehensive problem formulation.
+- Claimed results on CelebA and CIFAR10 under federated and privacy-preserving constraints would be a notable empirical contribution if validated.
+- The hybrid aggregation strategy (PRISM-α) offering performance–communication trade-offs adds practical flexibility.
+
+**Weaknesses:**
+- The abstract lacks crucial methodological details. How exactly is the stochastic binary mask optimized? Is this a discrete optimization problem, and if so, how are gradients computed? The connection between "lottery ticket" search and the actual training procedure is unclear.
+- No details on the differential privacy mechanism: how is DP guaranteed when communicating masks? What is the privacy budget (ε, δ), and how does it scale with communication rounds? Without this, the privacy claim is unsubstantiated.
+- The abstract provides no quantitative results, baselines, or metrics. Statements like "outperforms previous methods" and "lowest communication cost" are unverified. Specific numbers (FID, IS, communication rounds, privacy parameters) are essential for assessment.
+- The weight initialization strategy is mentioned as key to model lightweightness but is not explained. How does initialization alone achieve competitive performance without pruning or quantization?
+
+**Questions:**
+1. How is the binary mask optimization performed? Is it continuous relaxation, straight-through estimators, or discrete search?
+2. What is the formal DP guarantee? Please specify ε and δ and explain the mechanism (e.g., Gaussian mechanism, Laplace mechanism).
+3. What are the actual FID/IS scores on CelebA and CIFAR10, and how do they compare quantitatively to prior federated generative models?
+4. How does PRISM perform with varying numbers of clients and degrees of non-IID-ness?
+5. What is the computational cost of mask search compared to standard weight updates?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper tackles an important and timely problem with a creative approach combining lottery tickets, stochastic masking, and MMD-based training. However, the abstract is too vague on critical methodological details (mask optimization, DP mechanism, initialization strategy) and provides no quantitative results or baselines. For a venue like ICLR, concrete experimental validation with clear comparisons, formal privacy analysis, and detailed algorithmic descriptions are essential. The work shows promise but requires substantial clarification and empirical validation before it can be properly evaluated.
+
+**Confidence:** 3 (low—assessment is limited by lack of detail in the abstract)
+
+**Soundness:** 2 (fair—core ideas are reasonable but key technical details are missing or unclear)
+
+**Presentation:** 2 (fair—the abstract is high-level but lacks the specificity needed to understand the method)
+
+**Contribution:** 3 (moderate—the combination of ideas is novel, but without results and details, impact is unclear)

@@ -1,0 +1,18 @@
+{
+  "paper_id": "z4Hcegjzph",
+  "review_id": "ZqdRdaOqup",
+  "year": 2024,
+  "line": 368,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "+ The use of linear algebraic projection technique in both the method and the loss function for reconstruction.\n\n+ The results are achieved better with a considerably smaller number of epochs.\n\n+ The work is well-motivated from the basics and seems reproducible. \n\n+ The transfer learning results are added value to the work as such. \n\n+ The work should be useful as a pre-trainer for several ViT based applications.",
+  "human_weaknesses": "",
+  "human_review_text": "The work proposes to use random projections in the place of masked images for pre-training the ViTs. The work is shown to lead to better performance for classification tasks compared to the MIM methods. The work seems novel enough where they replace binary mask with floating point mask.",
+  "human_questions": "Are there any recent works which have been exempted from comparison?\n\nApart from classification and semantic segmentation, do the authors have results on any other applications?",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

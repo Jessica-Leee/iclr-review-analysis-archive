@@ -1,0 +1,39 @@
+**Review:**
+
+This paper proposes a Federated Prompt Tuning Paradigm for Multilingual Scenarios, combining parameter-efficient fine-tuning with federated learning to address data-sharing restrictions (physical borders) and linguistic differences (linguistic borders) in multilingual LLM adaptation, particularly for low-resource languages. The authors introduce the concept of "language distance" and claim their approach achieves 6.9% higher accuracy than local crosslingual transfer tuning, reduces training parameters by over 99%, and improves cross-lingual generalization.
+
+**Strengths:**
+- The problem is well-motivated: privacy-preserving multilingual fine-tuning for low-resource languages addresses a genuine gap at the intersection of federated learning and multilingual NLP.
+- The framing of "physical borders" (data-sharing restrictions) and "linguistic borders" (linguistic differences) provides clear conceptual organization for the challenges tackled.
+- The reported improvements (6.9% accuracy gain, 99%+ parameter reduction) and emphasis on cross-lingual mutual benefit are promising if validated rigorously.
+- Addressing both privacy and linguistic diversity aligns with important societal goals.
+
+**Weaknesses:**
+- The abstract lacks methodological detail: it does not specify which prompt tuning approach is used (e.g., prefix tuning, LoRA, soft prompts), how federated aggregation is performed, or how "language distance" is formally defined or computed. These are critical for reproducibility and understanding novelty.
+- No experimental details are provided: no datasets, baselines, number of languages, or statistical significance testing are mentioned. The 6.9% improvement claim cannot be assessed without knowing the experimental setup, number of runs, or confidence intervals.
+- The abstract does not clarify what "local crosslingual transfer tuning" baseline entails or why federated prompt tuning should outperform it. The mechanism by which federated learning improves low-resource language performance is not explained.
+- The contribution appears incremental: combining existing techniques (federated learning + prompt tuning) without clear technical novelty. The abstract does not articulate what is novel beyond the application domain.
+
+**Questions:**
+- How is "language distance" defined and computed? Is it based on linguistic typology, script similarity, or learned representations?
+- What is the specific federated aggregation strategy (FedAvg, FedProx, etc.), and how does it handle heterogeneous language data?
+- Which prompt tuning method is used, and why is it chosen over alternatives for the federated setting?
+- What are the datasets, number of languages, and statistical significance of the reported improvements?
+- How does performance scale with the number of participating clients and degree of data heterogeneity?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses an important problem and reports promising empirical results, but the abstract is too vague on methodology, experimental setup, and technical novelty to assess the contribution rigorously. A full paper with detailed methods, comprehensive experiments, and ablations would be needed to determine whether this represents a solid advance or merely an application of existing techniques.
+
+**Confidence:**
+2 (Low—assessment is limited by lack of methodological and experimental detail in the abstract alone)
+
+**Soundness:**
+2 (Fair—the approach is plausible but cannot be evaluated without method and experiment details)
+
+**Presentation:**
+2 (Fair—the abstract is well-motivated but lacks technical specificity and experimental transparency)
+
+**Contribution:**
+2 (Fair—unclear whether the contribution is methodologically novel or primarily an application of existing techniques to a new domain)

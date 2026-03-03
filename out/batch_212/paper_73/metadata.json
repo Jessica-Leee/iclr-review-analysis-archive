@@ -1,0 +1,18 @@
+{
+  "paper_id": "zEkvV65Wi1",
+  "review_id": "qtVe3QBT0e",
+  "year": 2024,
+  "line": 285,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The studied problem is interesting and important. One interesting point of KD for calibration is that KD attempts to change the hard labels in datasests to soft labels, which may correct the noisy supervision for some ambiguous examples and improve calibration for student models.\n\n2. From theoretic perspective, this paper proves that the student models distilled from a well-calibrated teacher are also well-calibrated under the linear classifier assumption. From the empirical perspective, the experiments show some positive results of the help of KD for calibration.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper studies the uncertainty calibration of neural networks under knowledge distillation (KD) framework. First, the authors give a theoretic understanding calibration with KD under the assumption of linear classifier, which says that a well-calibrated teacher can distill a well-calibrated student. Then, the authors give an empirical study of calibration with KD, which involves several training-time calibration techniques. The experiments show that with a well-calibrated teacher, which can be either larger or smaller than the student model, KD can produce student with good calibration than many training-time/post-hoc calibration methods.",
+  "human_questions": "Please refer to the weaknesses section.",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

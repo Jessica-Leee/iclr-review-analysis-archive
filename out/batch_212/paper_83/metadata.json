@@ -1,0 +1,18 @@
+{
+  "paper_id": "z9FXRHoQdc",
+  "review_id": "T5ylW1SgBy",
+  "year": 2024,
+  "line": 325,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The paper introduces a neat method for overcoming some of the weaknesses in current opponent modelling approaches. The paper is both well-written and well structured with good empirical results to support the authors' claims.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper introduces a new opponent modelling tool which differentiates through a constructed opponent that approximates the\nagent's best response policy in a best-response algorithm-like manner. The paper include various empirical evaluations to validate the proposed mechanisms.",
+  "human_questions": "Q1: How does the method compare to other approaches that introduce diversity into opponent modelling such as [1] and [2]?\n\nQ2: Can the authors comment on whether or not (and how) this could be applied in games where the opponent\u2019s rewards are unobserved?\n\nQ3: Although the cooperation regularization method yields a useful tool that does not produce cooperative effects in zero-sum games, its effect in games in which some game states the players ought to behave adversarially and other game states cooperatively (for example the weakest link) is unclear to me. Can the authors shed any light on this?\n\n[1] Perez-Nieves, Nicolas, et al. \"Modelling behavioural diversity for learning in open-ended games.\" International conference on machine learning. PMLR, 2021.\n[2] Yang, Yaodong, et al. \"Multi-agent determinantal q-learning.\" International Conference on Machine Learning. PMLR, 2020.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "4 excellent",
+    "contribution": "2 fair"
+  }
+}

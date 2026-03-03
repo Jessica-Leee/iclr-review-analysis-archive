@@ -1,0 +1,46 @@
+**Review:**
+
+This paper studies online contextual dynamic pricing where customers' purchase decisions depend on product features and price. The authors propose a novel modeling framework that unifies feature-based price elasticity with heteroscedastic valuation, and introduce the Pricing with Perturbation (PwP) algorithm, which achieves an $O(\sqrt{dT\log T})$ regret bound under adversarial context sequences. A matching lower bound of $\Omega(\sqrt{dT})$ is provided, establishing near-optimality up to logarithmic factors.
+
+**Strengths:**
+- The connection between contextual elasticity and heteroscedastic valuation is conceptually interesting and provides a fresh perspective on dynamic pricing problems.
+- The regret analysis is rigorous, with both upper and lower bounds provided, demonstrating near-optimality of the proposed approach.
+- The algorithm is claimed to be computationally efficient, which is important for practical deployment in pricing systems.
+- The framework handles arbitrary adversarial context sequences, making it applicable to realistic settings without distributional assumptions.
+
+**Weaknesses:**
+- The abstract provides limited detail on the actual algorithmic approach (PwP). Without seeing the full paper, it is unclear what perturbation strategy is employed, how it relates to existing techniques (e.g., exploration-exploitation trade-offs in bandit literature), or why this particular method achieves the stated regret bound.
+- No empirical validation is mentioned in the abstract. For a paper on pricing—a domain with clear practical relevance—the absence of experiments on synthetic or real datasets is a significant gap. It is unclear how PwP performs relative to baselines or whether the theoretical improvements translate to practice.
+- The relationship between the heteroscedastic noise model and real customer behavior is not discussed. The modeling choice needs justification: why is heteroscedastic noise the right way to capture valuation uncertainty?
+- The $\log T$ gap between the upper bound $O(\sqrt{dT\log T})$ and lower bound $\Omega(\sqrt{dT})$ is left unresolved. While the authors claim near-optimality, closing this gap would strengthen the contribution.
+
+**Questions:**
+- Can you provide intuition for the PwP algorithm and explain how the perturbation mechanism enables efficient exploration in the pricing setting?
+- What empirical results support the practical utility of the approach? How does PwP compare to standard pricing baselines on realistic datasets?
+- Does the heteroscedastic valuation model align with empirical observations of customer behavior, or is it primarily a theoretical convenience?
+- Is the $\log T$ gap fundamental, or can it be closed with a refined analysis or algorithm?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses a relevant problem and provides solid theoretical contributions (regret bounds and matching lower bounds). However, the lack of empirical validation, limited algorithmic intuition in the abstract, and unresolved logarithmic factors prevent a clear acceptance. For a venue like ICLR, which values both theory and practice, experiments demonstrating the method's effectiveness would be essential. The theoretical results alone, while correct, are not sufficiently novel or surprising to overcome the absence of empirical grounding.
+
+**Confidence:**
+3 (Low–Medium)
+
+The assessment is based solely on the abstract and title. A full paper review would likely adjust the score depending on the clarity of the algorithmic exposition, quality of experiments, and depth of the theoretical insights.
+
+**Soundness:**
+Good
+
+The theoretical framework appears sound (regret bounds and lower bounds are standard in online learning), though without the full paper, subtle issues cannot be ruled out.
+
+**Presentation:**
+Fair
+
+The abstract is clear but lacks sufficient detail on the algorithm and empirical validation. More intuition on PwP and its connection to existing methods would improve clarity.
+
+**Contribution:**
+Fair
+
+The unification of elasticity and heteroscedastic valuation is interesting, and the regret bounds are solid. However, the novelty is incremental without empirical validation or surprising theoretical insights.

@@ -1,0 +1,40 @@
+**Review:**
+
+This paper proposes MathCoder, a method to enhance mathematical reasoning in open-source LLMs by fine-tuning them to generate code-based solutions. The core contribution is twofold: (1) MathCodeInstruct, a dataset generation method that produces high-quality math problems with interleaved natural language, code, and execution results, and (2) a customized supervised fine-tuning and inference approach that enables models to leverage code for mathematical problem-solving. The resulting MathCoder models achieve strong empirical results, reaching 45.2% on MATH and 83.9% on GSM8K, reportedly outperforming GPT-4 on the competition-level MATH dataset.
+
+**Strengths:**
+- Strong empirical results on standard benchmarks (MATH and GSM8K) that substantially exceed prior open-source baselines and reportedly match or exceed closed-source models like GPT-4 and PaLM-2.
+- The idea of interleaving natural language, code, and execution results is intuitive and well-motivated by the success of GPT-4 Code Interpreter, making the approach practical and interpretable.
+- The authors commit to releasing both the MathCodeInstruct dataset and the MathCoder models, which would benefit the community.
+- The method is relatively straightforward to implement and reproduce, reducing barriers to adoption.
+
+**Weaknesses:**
+- The abstract provides insufficient detail on how MathCodeInstruct is generated. It is unclear whether the dataset is synthetically created, curated from existing sources, or uses a hybrid approach. The mechanism for ensuring "high-quality" solutions is not explained.
+- Critical methodological details are missing: How are the models fine-tuned? What is the base model architecture and size? How does the customized inference approach differ from standard decoding? These details are essential for reproducibility and fair comparison.
+- The claim of outperforming GPT-4 on MATH is striking but requires careful scrutiny. Without details on evaluation protocol, potential data contamination, or confidence intervals, this claim is difficult to assess. The abstract does not clarify whether this is on the full MATH test set or a subset.
+- No ablation studies are mentioned. It is unclear which components (dataset quality, interleaving format, fine-tuning strategy, inference approach) contribute most to the improvements, limiting insights into what makes the method effective.
+- The abstract lacks discussion of limitations, failure modes, or analysis of where and why the method works. Comparison with other code-augmented reasoning approaches (e.g., program synthesis, tool use in other domains) is absent.
+
+**Questions:**
+1. How is the MathCodeInstruct dataset generated? Are solutions synthetically created, and if so, what is the generation pipeline?
+2. What is the base model size and architecture? How sensitive are results to this choice?
+3. Can you provide confidence intervals or multiple runs for the reported scores, especially the GPT-4 comparison?
+4. What does the "customized inference approach" entail? Does it involve special prompting, constrained decoding, or other modifications?
+5. Have you conducted ablation studies isolating the contribution of dataset quality, interleaving format, and fine-tuning strategy?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper addresses a relevant problem and demonstrates strong empirical results on important benchmarks. The core idea of leveraging code for mathematical reasoning is sound and well-motivated. However, the abstract is light on methodological detail, and several critical claims (especially outperforming GPT-4) lack sufficient justification or context. The commitment to release data and models is valuable. With a full paper providing ablations, clearer methodology, and careful framing of comparisons, this could be a solid contribution. The empirical strength pushes it slightly above the bar despite presentation concerns in the abstract.
+
+**Confidence:** 3 (medium)
+The abstract alone does not provide enough detail to assess soundness rigorously. A full paper review would substantially increase confidence.
+
+**Soundness:** 3 (fair)
+The core idea is sound, but methodological details are sparse. Claims about outperforming GPT-4 require more careful justification.
+
+**Presentation:** 2 (poor)
+The abstract is dense and omits critical details (dataset generation, model size, inference approach, ablations). This makes it difficult to understand the method fully or assess reproducibility.
+
+**Contribution:** 3 (fair)
+The combination of dataset generation and fine-tuning is incremental. The novelty lies primarily in the application and empirical results

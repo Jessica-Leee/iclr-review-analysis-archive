@@ -1,0 +1,18 @@
+{
+  "paper_id": "zSwH0Wo2wo",
+  "review_id": "UKC1wMR8MD",
+  "year": 2024,
+  "line": 206,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. Implementation of each step are introduced in details in Section 2 (Method) and 3 (Experiment)\n1. The design of three steps in the proposed framework is clearly described in Section 2.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposes a three-step framework  for red-teaming \u201cfrom scratch\u201d in which the adversary does not begin with a way to classify failures. They also construct the CommonClaim dataset of 20,000 statements labeled by humans as common-knowledge-true, common knowledge-false, or neither.",
+  "human_questions": "1. Although it is said that the data and code are available, not the actual location to fetch those resources is not provided. In the supplementary materials, only the code is included.\n\n2. According to the abstract and introduction section, the goal of this work is to red-team from scratch. However, in step 2 of the proposed framework, we still need to choose a label set such that one of the labels represents undesirable outputs.  This indicates the category of undesirable output is pre-defined, which is inconsistent with the goal of this work.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

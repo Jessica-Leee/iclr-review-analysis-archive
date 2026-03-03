@@ -1,0 +1,44 @@
+**Review:**
+
+This paper addresses a practical but underexplored problem in NLP benchmarking: how to fairly rank and evaluate systems when evaluation scores are missing for some systems on some tasks. The authors propose using a compatible partial ranking approach to impute missing data, followed by aggregation via the Borda count method, with two refinements for task-level and instance-level missing scores. They validate the approach on an extended benchmark containing over 131 million scores.
+
+**Strengths:**
+
+1. **Well-motivated problem**: The paper identifies a genuine gap in NLP evaluation methodology. Missing scores due to computational cost, private systems, or incomplete data are common in practice, yet existing benchmarking frameworks assume complete evaluation matrices.
+
+2. **Practical contribution**: The compatible partial ranking + Borda count framework is straightforward and interpretable, making it actionable for practitioners building benchmarks.
+
+3. **Large-scale validation**: The introduction of an extended benchmark with 131 million scores provides substantial empirical grounding and could be a useful resource for the community.
+
+4. **Clear problem formalization**: The paper formalizes what was previously an ad-hoc problem, establishing a foundation for future work.
+
+**Weaknesses:**
+
+1. **Limited methodological novelty**: Compatible partial ranking and Borda count are both well-established techniques. The paper's main contribution is their application to this specific problem rather than novel algorithmic development. The two refinements are mentioned but not detailed in the abstract, leaving their novelty unclear.
+
+2. **Insufficient methodological detail and justification**: The abstract does not explain *why* compatible partial ranking is the right choice for imputation, nor does it discuss alternatives (e.g., matrix completion, regression-based imputation, or other ranking aggregation methods). No comparison with baselines is mentioned.
+
+3. **Unclear validation methodology**: The abstract states the method is validated on "the challenge of missing system evaluation" but does not specify the validation protocol. How are missing scores artificially created? What metrics measure imputation quality? How sensitive is the approach to the pattern and amount of missingness?
+
+4. **Limited scope of evaluation**: The paper appears to focus on ranking systems rather than predicting actual score values. This limits applicability if downstream tasks require precise score estimates rather than ordinal rankings.
+
+**Questions:**
+
+- How does the compatible partial ranking approach compare to standard matrix completion or other imputation baselines?
+- What is the sensitivity of Borda count aggregation to the amount and pattern of missing data (e.g., missing completely at random vs. missing not at random)?
+- Can the authors provide concrete examples showing how the two refinements (task-level and instance-level) differ in practice?
+- How are the extended benchmark scores obtained, and what is the distribution of missingness across systems and tasks?
+
+**Overall score:**
+
+5: marginally below the acceptance threshold
+
+The paper tackles a relevant practical problem and provides a straightforward solution with a large-scale benchmark. However, the methodological contribution is limited—applying existing techniques without strong justification or comparison to alternatives—and the abstract lacks sufficient detail on validation methodology and empirical results. For a venue like ICLR, the work would benefit from deeper methodological innovation, more rigorous experimental validation (including comparisons to baselines), and clearer exposition of the refinements and their impact.
+
+**Confidence:** 3 (moderate; assessment based on abstract alone; full paper may provide more detail)
+
+**Soundness:** 2 (fair; the approach is reasonable but lacks rigorous justification and baseline comparisons)
+
+**Presentation:** 2 (fair; the abstract is clear but omits critical methodological and experimental details)
+
+**Contribution:** 2 (fair; problem formalization is useful, but methodological novelty is limited and validation is underspecified)

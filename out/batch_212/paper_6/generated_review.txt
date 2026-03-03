@@ -1,0 +1,53 @@
+**Review:**
+
+This paper proposes MILE (Mutual Information LogDet Estimator), a method for estimating mutual information via the logdet function of data covariance. The key idea is to approximate data with a Gaussian mixture distribution and derive lower and upper bounds for entropy, then stabilize estimation in high dimensions via a ridge term. The authors claim MILE achieves lower bias and variance than neural network-based MI estimators and demonstrates competitive performance on self-supervised learning tasks.
+
+**Strengths:**
+
+1. **Clear motivation and practical relevance**: The paper addresses a genuine challenge in MI estimation—bias and variance in high dimensions with limited data—and proposes a principled approach using the logdet function rather than relying solely on neural network parameterization.
+
+2. **Theoretical grounding**: The use of Gaussian mixture bounds for entropy and the introduction of a ridge term for stabilization provide a structured approach to the problem, moving away from purely black-box neural estimators.
+
+3. **Comprehensive evaluation claims**: The abstract mentions passing "challenging self-consistency tests" and demonstrating competitive performance on self-supervised learning, suggesting empirical validation across multiple settings.
+
+**Weaknesses:**
+
+1. **Limited clarity on Gaussian mixture assumption**: The paper assumes data can be "approximated well by a Gaussian mixture distribution" but provides no discussion of when this assumption holds, how sensitive the method is to violations, or how to choose the number of mixture components. This is a critical assumption that deserves justification.
+
+2. **Insufficient methodological detail in abstract**: The abstract lacks specifics on how the ridge term is chosen, how the bounds are derived, and how entropy decomposition recovers MI. Without these details, it is difficult to assess the technical soundness or reproducibility of the approach.
+
+3. **Vague empirical claims**: Statements like "significant outperforms" and "well pass" lack quantitative support in the abstract. The paper should specify which baselines are compared, on which datasets, and by how much MILE improves over them.
+
+4. **Missing related work context**: The abstract does not position MILE relative to other recent MI estimators (e.g., variational bounds, contrastive methods, or other covariance-based approaches), making it unclear what is genuinely novel beyond combining logdet with Gaussian mixture bounds.
+
+**Questions:**
+
+- How is the number of mixture components selected, and how does performance degrade if this is misspecified?
+- What is the computational complexity of MILE compared to neural network-based estimators?
+- Can you provide concrete numbers (bias, variance, or MI error) from the self-consistency tests and self-supervised learning experiments?
+- How does the method perform when the Gaussian mixture assumption is violated (e.g., on highly non-Gaussian data)?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper tackles an important problem and proposes a structured alternative to neural MI estimators. However, the abstract lacks sufficient technical detail and empirical specificity to evaluate the contribution convincingly. The Gaussian mixture assumption is central but poorly justified. While the core idea has merit, the presentation and validation need strengthening before acceptance at a top venue.
+
+**Confidence:**
+3 (Low–Medium)
+
+The abstract is too sparse to assess the full contribution with confidence. A complete paper would likely clarify many concerns, but based on the information provided, significant gaps remain.
+
+**Soundness:**
+Fair
+
+The logdet approach is reasonable, but the Gaussian mixture assumption and ridge regularization lack sufficient justification. The theoretical derivation of bounds is not detailed enough to verify.
+
+**Presentation:**
+Fair
+
+The abstract is concise but sacrifices important details. Key concepts (ridge term, bound derivation, mixture component selection) are mentioned without explanation, hindering reproducibility and understanding.
+
+**Contribution:**
+Fair–Good
+
+Combining logdet estimation with Gaussian mixture bounds is a reasonable contribution, but novelty is unclear without proper positioning relative to existing MI estimators. The empirical validation claims are promising but unsubstantiated in the abstract.

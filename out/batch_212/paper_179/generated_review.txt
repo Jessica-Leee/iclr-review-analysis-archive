@@ -1,0 +1,38 @@
+**Review:**
+
+AMPipe addresses a relevant problem in large-scale MoE model training: the quadratic complexity of attention layers ($O(N^2)$) and the linear-but-expensive all-to-all communication in MoE layers ($O(N)$ with large constants) both become bottlenecks at long sequence lengths. The paper proposes Intra-Block Pipelining, which divides and pipelines both attention and MoE layers within a transformer block to overlap computation and communication. The authors report consistent throughput improvements of 23% on average across 56 benchmarks and up to 41% for long sequences, without affecting convergence.
+
+**Strengths:**
+- Addresses a practical and timely problem: existing systems (Tutel, FlashAttention) optimize only one bottleneck, leaving room for joint optimization.
+- Comprehensive evaluation across 56 benchmark cases demonstrates broad applicability.
+- Claims no statistical impact on model convergence, suggesting the optimization is orthogonal to training dynamics.
+- Concrete throughput gains (23% average, 41% peak) are substantial and practically meaningful for large-scale training.
+
+**Weaknesses:**
+- The abstract provides no technical detail on how Intra-Block Pipelining actually works. How exactly are attention and MoE layers divided? What is the pipelining strategy (e.g., how many stages, what is the granularity)?
+- No comparison to other pipelining or scheduling approaches (e.g., pipeline parallelism, gradient checkpointing strategies, or other system-level optimizations). It is unclear whether the gains come from the specific design or from general pipelining principles.
+- Missing critical implementation details: memory overhead, latency impact on individual layers, scalability to very large models or distributed settings, and sensitivity to sequence length and model width.
+- The claim that convergence is unaffected lacks supporting evidence in the abstract (no learning curves, final loss comparisons, or statistical tests cited).
+
+**Questions:**
+- Can you provide a concrete example of how a single transformer block is divided and pipelined? What are the stage boundaries?
+- How does AMPipe compare to standard pipeline parallelism or other scheduling baselines?
+- What is the memory overhead of maintaining pipeline stages? Does it scale with sequence length?
+- How sensitive are the gains to model architecture (e.g., MoE expert count, attention head configuration)?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper tackles a genuine bottleneck in MoE training and reports strong empirical results. However, the abstract is too vague on methodology to fully assess novelty and soundness. A full paper with detailed pipelining design, thorough comparisons, and convergence validation would be needed to confirm the contribution. The practical gains are encouraging, but without technical clarity and ablations, it is difficult to judge whether this represents a significant advance or an incremental engineering improvement.
+
+**Confidence:**
+2–3 (low to moderate; the abstract lacks sufficient technical detail to assess the work rigorously)
+
+**Soundness:**
+Fair (the problem is well-motivated and results are promising, but methodology is opaque in the abstract)
+
+**Presentation:**
+Fair (clear motivation and results, but critical technical content is missing)
+
+**Contribution:**
+Fair to Good (addresses a real problem with strong empirical gains, but novelty and generality are unclear without method details)

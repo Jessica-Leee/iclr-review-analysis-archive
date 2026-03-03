@@ -1,0 +1,18 @@
+{
+  "paper_id": "zDMM4ZX1UB",
+  "review_id": "n5iubmHjds",
+  "year": 2024,
+  "line": 300,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. Formalization of code symmetries as automorphisms of graphs is nice and seems like the correct formalism.\n2. SymC model achieves equivariance to the code symmetries under consideration in a natural way, which is not too different from existing Transformer-based models.\n3. Empirical results show that SymC outperforms strong baselines, while being small and robust to code symmetries.",
+  "human_weaknesses": "",
+  "human_review_text": "This work explores invariance to symmetries in code that do not change the semantics of the code. This notion is formalized via automorphisms of program interpretation graphs. To achieve equivariance (and invariance) to these automorphisms, the authors use a self-attention based model with pairwise features based on an invariant distance matrix.",
+  "human_questions": "1. Could you illustrate example program interpretation graph and program dependence graphs? This would be quite helpful for understanding.\n2. How costly is obtaining the code graphs?\n3. Why does SymC require \"40,162 lines of code\"? I'm curious as to what makes it require so much.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "2: You are willing to defend your assessment, but it is quite likely that you did not understand the central parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "2 fair",
+    "contribution": "3 good"
+  }
+}

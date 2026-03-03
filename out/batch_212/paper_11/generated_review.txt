@@ -1,0 +1,40 @@
+**Review:**
+
+This paper proposes a privacy-preserving method to enhance small language models (SLMs) in medical tasks by leveraging the medical expertise of large language models (LLMs) without directly exposing sensitive patient data. The core approach extracts keywords from medical data and uses these to prompt an LLM to generate medical knowledge-intensive context that simulates clinician reasoning; this context then augments SLM inputs during inference. The method is evaluated on three medical knowledge-intensive tasks, demonstrating up to 22.57% absolute accuracy improvement over baseline SLM fine-tuning and achieving state-of-the-art results in privacy-restricted scenarios.
+
+**Strengths:**
+- **Clear practical motivation**: The paper addresses a genuine tension in healthcare—leveraging LLM capability while respecting data privacy—and proposes a straightforward, implementable solution.
+- **Comprehensive evaluation**: Testing across three medical tasks, few-shot and full training settings, out-of-domain generalization, and two general domain datasets demonstrates breadth of validation.
+- **Significant empirical gains**: Up to 22.57% absolute accuracy improvement is substantial and suggests the method is effective at knowledge transfer.
+- **Privacy-aware design**: Extracting only keywords rather than transmitting full patient records is a sensible privacy safeguard.
+
+**Weaknesses:**
+- **Limited novelty**: The core technique—extracting keywords and prompting an LLM to generate contextual information for downstream use—is relatively straightforward and lacks methodological depth. The paper reads more as an engineering contribution than a research advance.
+- **Insufficient technical detail**: The abstract does not explain how keywords are extracted, how the LLM prompt is designed, or how the generated context is integrated with SLM inputs. Without these specifics, reproducibility and understanding of design choices are compromised.
+- **Unclear privacy analysis**: While keyword extraction is presented as privacy-preserving, the paper provides no formal privacy guarantees, threat model analysis, or discussion of what information keywords might leak. The privacy claim needs rigorous justification.
+- **Missing ablations and baselines**: The paper does not clarify what baselines are used, whether simpler context-augmentation strategies (e.g., retrieval-based) are compared, or which design choices (keyword extraction method, prompt design) matter most.
+- **Generalization concerns**: Although out-of-domain and general domain testing is mentioned, the abstract does not provide details on these results, making it difficult to assess whether improvements are specific to the medical domain or broadly applicable.
+
+**Questions:**
+1. How are keywords extracted from medical data? Are they domain-specific terms, or general frequency-based selection?
+2. What is the exact prompt template used to elicit context from the LLM, and how sensitive are results to prompt design?
+3. Can you provide a formal privacy analysis (e.g., differential privacy bounds) or at least a detailed threat model showing what information an adversary could recover from keywords?
+4. How does the method compare to simpler baselines, such as using retrieved medical documents or generic domain knowledge as context?
+5. What are the specific out-of-domain and general domain results mentioned in the abstract?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper tackles a relevant problem and shows strong empirical results, but the contribution is primarily engineering-focused with limited methodological novelty. The lack of technical depth, insufficient privacy analysis, and missing ablations/comparisons weaken the submission. For a top-tier venue like ICLR, the work would benefit from deeper investigation into why and when the method works, more rigorous privacy guarantees, and clearer positioning relative to existing knowledge-augmentation techniques.
+
+**Confidence:**
+3 (moderate—assessment is based on abstract only; full paper details could shift evaluation)
+
+**Soundness:**
+Fair (the core idea is sensible, but privacy claims lack rigor and technical details are sparse)
+
+**Presentation:**
+Fair (the abstract is clear but omits crucial methodological details needed for reproducibility and understanding)
+
+**Contribution:**
+Poor to Fair (straightforward application of LLM prompting for context generation; limited novelty in method or theory)

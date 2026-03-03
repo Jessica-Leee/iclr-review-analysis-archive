@@ -1,0 +1,18 @@
+{
+  "paper_id": "yAcLwJu9qs",
+  "review_id": "tXILbporjW",
+  "year": 2024,
+  "line": 769,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "+ address of the important problem of robustness to image corruptions\n+ contribution of data: the work contributes with data relative to human-based (large number) assessment of image classification robustness, that might be used to further study the problem",
+  "human_weaknesses": "",
+  "human_review_text": "The authors propose a comparative study of the robustness of neural networks on visual changes (image corruptions) compared to humans, and perform a larg user-study. This work proposes two measures (HMRI and MRSI) to compare results.",
+  "human_questions": "How the augmentations proposed in this paper compare with the continuously changing corruptions of ImageNet-CCC? Why the focus is only wrt ImageNet-C?\n\nHow the models are chosen (criteria, comparative perspective, etc.)?",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "1 poor",
+    "contribution": "2 fair"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "paper_id": "z6n1fKMMC1",
+  "review_id": "nFqXDW0idh",
+  "year": 2024,
+  "line": 353,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "This is a good paper that significantly extends what is known to be achievable in the testable-learning framework. To establish these results, the paper contributes new testing procedures that go beyond the limitations of prior work (Gollakota, Klivans, Kothari, 2023). Additionally, the techniques of this paper have also led to more general results in testable-learning (Gollakota, Klivans, Stavropoulos, Vasilyan, 2023). \n\nThe paper is well-written and easy to read. The authors do a great job discussing prior work, and how the paper fits with related literature.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper is a further exploration of the testable learning framework proposed by Rubinfeld and Vasilyan. The main feature of this framework is that it requires learning algorithms that learn near-optimal predictors whenever the input training sample passes a test (soundness), and also training samples pass the test whenever the distributional assumptions are met (completeness). \n\nThe paper gives polynomial-time testable learning algorithms for halfspaces when the marginal distribution is isotropic log-concave and:\n(a) under Massart noise, guarantee error at most OPT + \\epsilon. [Theorem 4.1]\n(b). under adversarial noise, guarantee error at most O(OPT) + \\epsilon. [Theorem 5.1]",
+  "human_questions": "It would be great if the authors could discuss further the contributions of this paper in light of subsequent work (Gollakota, Klivans, Stavropoulos, Vasilyan, NeurIPS 2023). In particular, can the authors make a case for why the contributions in this paper are beneficial/useful given that more general results have already been published.",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "4 excellent",
+    "presentation": "4 excellent",
+    "contribution": "3 good"
+  }
+}

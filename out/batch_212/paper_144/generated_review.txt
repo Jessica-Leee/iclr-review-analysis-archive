@@ -1,0 +1,34 @@
+**Review:**
+
+This paper addresses the problem of degenerate solutions in graph-based semi-supervised learning under extremely sparse labeled data by proposing Variance-enlarged Poisson Learning (VPL). The core contribution is a variance-enlarged regularization term that induces a Poisson equation on unlabeled data, designed to increase label dispersion and reduce nearly constant label functions. The authors present two streamlined algorithms (V-Laplace and V-Poisson) for classical graph-based methods and extend the framework to graph neural networks via Variance-enlarged Graph Poisson Networks (V-GPN). Theoretical analysis in both discrete and variational cases is provided, with claims that VPL amplifies intra-class connections while dampening inter-class connections.
+
+**Strengths:**
+- The paper identifies a genuine and important problem—degenerate solutions in semi-supervised learning with sparse labels—and proposes an intuitive solution via variance-enlarged regularization.
+- The framework is general and applicable across multiple settings: classical Laplace/Poisson learning and modern graph neural networks.
+- The authors provide theoretical analysis in discrete and variational formulations, offering insight into why the method works.
+- Code availability supports reproducibility.
+
+**Weaknesses:**
+- The abstract lacks concrete experimental results, baselines, or datasets. Without seeing empirical comparisons, it is difficult to assess the practical impact and whether VPL substantially outperforms existing methods.
+- The theoretical contribution is described only at a high level ("elucidate that VPL amplifies intra-class connections"). The abstract does not specify the form of theoretical results (e.g., convergence rates, approximation bounds, or formal statements).
+- The novelty of adding a variance regularization term to induce a Poisson equation, while intuitive, appears somewhat incremental. The abstract does not clearly articulate what prior work exists on variance regularization or Poisson-based semi-supervised learning, making it hard to assess novelty.
+- The presentation is dense and uses multiple method names (VPL, V-Laplace, V-Poisson, V-GPN) without clearly distinguishing their relationships or when each is appropriate.
+
+**Questions:**
+- What are the key experimental datasets and how large is the performance gap compared to recent baselines (e.g., modern graph neural network methods)?
+- Can you provide formal statements of the main theoretical results (e.g., convergence guarantees or approximation error bounds)?
+- How does the variance-enlarged regularization term compare to other regularization strategies (e.g., entropy regularization, confidence-based weighting) in the literature?
+- What is the computational overhead of VPL relative to standard Laplace/Poisson learning?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper tackles a well-motivated problem and proposes a simple, general framework with theoretical backing. However, the abstract provides insufficient detail on empirical validation and theoretical guarantees to fully assess impact. The core idea is sound but appears somewhat incremental. With strong experimental results and clearer theoretical statements (which are likely present in the full paper), this could be a solid contribution to the semi-supervised learning literature.
+
+**Confidence:** 3 (moderate; assessment is limited by the abstract's lack of experimental and theoretical detail)
+
+**Soundness:** Good (the approach is intuitive and theoretically motivated, though formal results are not detailed in the abstract)
+
+**Presentation:** Fair (dense with method names; lacks concrete experimental and theoretical specifics)
+
+**Contribution:** Good (addresses a real problem with a general framework, but novelty appears moderate)

@@ -1,0 +1,18 @@
+{
+  "paper_id": "yzfi15eVI7",
+  "review_id": "4ersSPRieo",
+  "year": 2024,
+  "line": 404,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. iHyperTime is able to synthesize time series and decompose the representation into configurable feature sets: trends- slow components of the signal, seasonality - periods of the signal and residuals.\n\n2. Results show more accurate generation ability than compared GAN and other networks.\n\n3. Training and inference times of ihyperTime appear to be more optimal than other compared approaches.",
+  "human_weaknesses": "",
+  "human_review_text": "The proposed work is concerned with time series generation and introduces an approach into encode the time series in the form of implicit neural representation through a TSNET,  a trend-seasonality-residual representation. The framework is applied to several regular and irregular time-series generation tasks with various percentages of missing data and compared with other approaches.",
+  "human_questions": "1. Recent works show that RNN encoder-decoder with various training strategies such as weak decoder or contrastive or attractive losses can both generate clustered interpretable latent representation and generate sequences. How these models compare with iHyperTime?",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

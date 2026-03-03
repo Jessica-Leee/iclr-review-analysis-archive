@@ -1,0 +1,18 @@
+{
+  "paper_id": "ycF7mKfVGO",
+  "review_id": "4xa41YpNTR",
+  "year": 2024,
+  "line": 574,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "This paper tackles an important problem\u2013off policy evaluation is a critical aspect of deployment of RL systems in many real world contexts. The authors' proposal to use ideas from portfolio optimization is an interesting one, and the proposal to use Sharpe @ k is both intuitive and simple. The authors do a nice job of evaluating their work empirically and demonstrating the properties of the proposal.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper is concerned with defining an appropriate measure for off-policy evaluation. The authors argue that commonly used metrics such as MSE and rank correlation are insufficient because they fail to properly account for risk/return tradeoffs. To remedy this it\u2019s proposed that ideas from portfolio optimization be used. In particular, the authors propose the use of the Sharpe ratio to measure efficiency. A number of empirical results are provided which demonstrate the properties of the Sharpe ratio @ k metric, and compare it to other metrics such as rank correlation and regret.",
+  "human_questions": "It would be useful if the authors could give a description of the settings in which one would prefer Sharpe@k generally. Also, would be useful if the authors could characterize the necessary assumptions on the reward distributions.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

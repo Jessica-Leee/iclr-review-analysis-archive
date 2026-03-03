@@ -1,0 +1,18 @@
+{
+  "paper_id": "z8TW0ttBPp",
+  "review_id": "tQ9BV7IUG6",
+  "year": 2024,
+  "line": 337,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. Improving opensource LLMs is a good research topic. MathCoder noticeably outperforms other opensource LLMs, especially on challenging math benchmarks such as MATH.\n\n2. The ablation studies show some interesting observations, e.g., comparison between models based on Llama-2 and CodeLlama, and predicting the execution results during training degrades the performance.\n\n3. Besides the MathCoder checkpoints, MathCodeInstruct can also be valuable data for the community.",
+  "human_weaknesses": "",
+  "human_review_text": "This work presents MathCoder, a family of open-source LLMs for math problem solving. For training data construction, they first use GPT-4 to generate solutions to GSM8K and MATH problems, where the solutions contain natural language, code and execution results. This dataset is used to train MathCoder-Initial, which is finetuned from Llama-2 or CodeLlama. Afterward, the authors design problem interpolation prompting to generate new training problems with the difficulty between GSM8K and MATH, and use MathCoder-Initial to generate solutions for further finetuning. They evaluate MathCoder on several math benchmarks, and show that MathCoder outperforms other open-source LLMs.",
+  "human_questions": "1. Please explain why using MathCoder-Initial instead of GPT-4 for generating the training targets, and what is the performance if GPT-4 is used for generating the solutions.\n\n2. It would be good to have an ablation where the solutions only contain natural language or code, then we can check how much improvement is obtained by adding different components together in one solution.\n\n3. It would be helpful to have an ablation where the generated data is a mixture of data generated with GSM8K or MATH as the seed data, instead of using interporation.\n\n4. It is helpful to have an analysis on performance with different number of generated training samples, so that we can better understand how much improvement is possible with this approach.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "5: You are absolutely certain about your assessment. You are very familiar with the related work and checked the math/other details carefully.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "paper_id": "za9tj3izLn",
+  "review_id": "VCHap5moiR",
+  "year": 2024,
+  "line": 180,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The design of aggregation function phi.\nExperimental results on node prediction.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposes to integrate the dynamics of opinion defined in some opinion dynamics models such as Degroot model and the Hegeselmann and Krausse model to propose new aggregation equations for GNNs. The authors then combine these dynamics with the Neural ODE paper to train the parameters of the resulting model. The authors report improvement over node prediction tasks, and other tasks over baseline GNNs.\n\nA key contribution of the paper is the design of the phi function which can incorporate homophily and heterophily. However they also introduce two new parameters. While their significance has been explained, how to set those parameters is still not intuitively clear. Specifically, on an unknown graph we may not have any idea about the nature of interactions that led to the graph.\n\nAnother contribution seems to be the integration of the whole model into the neural ODE framework for learning. However, the authors assume familiarity of the reader with this framework. It is very difficult judge the added complexity due to this addition. The authors also do not report training times and depth to which these networks and baseline models can be trained. Also, what about other GNN tasks e.g. link-prediction.\n\nThe author should also compare and contrast the role of other literature on learning of opinion dynamics models using neural networks:\nOkawa, Maya, and Tomoharu Iwata. \"Predicting opinion dynamics via sociologically-informed neural networks.\" In Proceedings of the 28th ACM SIGKDD Conference on Knowledge Discovery and Data Mining, pp. 1306-1316. 2022.",
+  "human_questions": "None.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

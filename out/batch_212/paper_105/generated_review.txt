@@ -1,0 +1,47 @@
+**Review:**
+
+Matcher proposes a novel perception paradigm that leverages off-the-shelf vision foundation models for one-shot segmentation across diverse tasks without task-specific training. The core idea is to use all-purpose feature matching with in-context examples to enable zero-shot or few-shot segmentation. The paper claims strong empirical results: 52.7% mIoU on COCO-20^i (1.6% above prior art) and 33.0% mIoU on a newly proposed LVIS-92^i benchmark (14.4% above a generalist baseline). The authors design three effective components within the Matcher framework to enhance foundation model performance on perception tasks.
+
+**Strengths:**
+- The motivation is compelling: adapting vision foundation models to diverse segmentation tasks without fine-tuning addresses a practical gap between vision and language models.
+- Strong empirical results on established benchmarks (COCO-20^i) and a newly introduced benchmark (LVIS-92^i) demonstrate competitive performance.
+- The approach is general and appears to work across multiple segmentation tasks, suggesting good generalization.
+- Visualization results on open-world images suggest practical applicability.
+
+**Weaknesses:**
+- The abstract provides insufficient technical detail about the "three effective components" and how feature matching is implemented. Without understanding the core methodology, it is difficult to assess novelty and soundness.
+- No comparison of computational cost or inference time against specialist and generalist baselines is mentioned, which is important for practical deployment.
+- The paper introduces a new benchmark (LVIS-92^i) but provides no justification for its design or evidence that it is representative of real-world one-shot segmentation challenges.
+- Limited discussion of failure cases, limitations, or when Matcher underperforms relative to task-specific models.
+- The claim of "segment anything" is overstated given the focus on segmentation tasks; clarity on scope would strengthen the contribution.
+
+**Questions:**
+- What are the three key components of Matcher, and how do they differ from existing feature matching or in-context learning approaches?
+- How does Matcher's inference time and memory footprint compare to specialist and generalist baselines?
+- What is the design rationale for LVIS-92^i, and how was it constructed from LVIS?
+- How sensitive is performance to the choice of in-context example?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper addresses a relevant problem and reports strong empirical results on multiple benchmarks. However, the abstract lacks sufficient methodological detail to fully evaluate novelty and soundness. The introduction of a new benchmark without clear justification and the absence of computational cost analysis are concerns. With clearer exposition of the three core components and more thorough ablation studies, this could be a solid contribution.
+
+**Confidence:**
+3 (low–medium)
+
+The limited technical detail in the abstract makes it difficult to assess the true novelty and soundness of the approach.
+
+**Soundness:**
+Fair
+
+The empirical results are promising, but without detailed methodology, it is hard to verify the soundness of the approach or rule out confounding factors.
+
+**Presentation:**
+Fair
+
+The abstract is well-motivated but lacks sufficient technical depth. Key methodological components are mentioned but not explained.
+
+**Contribution:**
+Good
+
+The idea of using foundation models for one-shot segmentation without fine-tuning is valuable, and the empirical results suggest a meaningful advance. However, the novelty of the specific components is unclear from the abstract alone.

@@ -1,0 +1,18 @@
+{
+  "paper_id": "zMR2dTNdft",
+  "review_id": "8QVXOWXAuP",
+  "year": 2024,
+  "line": 251,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The paper presents a novel approach to understand how symmetries in the loss function of a neural network regardless of their underlying architecture. It enumerates multiple real world application to justify the technique's importance.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper presents a framework that analyze the local and global geometry of neural network with L2 regularization, using the loss symmetries, without any knowledge about the underlying network's architecture. The paper deals with 4 types of symmetries (rescaling, rotation, permutation and mirroring) and describes how each symmetry affects the geometry of the loss landscape with respect to the regularization coefficient. The paper uses the framework to analyze 5 different real world phenomenons and implement one algorithm.",
+  "human_questions": "No questions.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

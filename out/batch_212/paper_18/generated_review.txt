@@ -1,0 +1,40 @@
+**Review:**
+
+This paper addresses the problem of suppressing undesired content in text-to-image diffusion models. The authors propose two complementary techniques: (1) soft-weighted regularization of the text embedding matrix to suppress unwanted content, and (2) inference-time text embedding optimization to further reduce undesired generation while encouraging desired content. The approach is evaluated on both pixel-space (DeepFloyd-IF) and latent-space (Stable Diffusion) models, demonstrating generalizability across architectures.
+
+**Strengths:**
+
+- **Practical problem**: The paper tackles a genuine limitation of current text-to-image models—their difficulty in suppressing explicitly negated content—which is important for user control and safety.
+- **Generalizability**: Validation across both pixel-space and latent-space diffusion models suggests the method is not architecture-specific.
+- **Dual approach**: Combining soft-weighted regularization with inference-time optimization provides a more complete solution than a single technique.
+
+**Weaknesses:**
+
+- **Limited technical novelty**: The core contributions—text embedding regularization and embedding optimization—are relatively straightforward manipulations. The paper lacks detailed technical exposition of how these mechanisms work mechanistically or why they are effective beyond intuition.
+- **Insufficient experimental detail**: The abstract provides no information about quantitative metrics, baselines for comparison, dataset size, or statistical significance. Without these details, it is impossible to assess the empirical validity of the claims.
+- **Vague methodology**: Key aspects remain unclear: What is the specific form of the soft-weighted regularization? How is the inference-time optimization objective formulated? What loss functions are used? The abstract does not provide sufficient clarity on these critical details.
+- **Missing ablation and analysis**: There is no indication of ablation studies comparing the two proposed components, or analysis of failure cases, computational cost, or sensitivity to hyperparameters.
+
+**Questions:**
+
+- What quantitative metrics were used to evaluate suppression effectiveness, and how do the proposed methods compare to existing baselines (e.g., negative prompting, classifier-free guidance with negative prompts)?
+- Can you provide the specific mathematical formulations for soft-weighted regularization and the inference-time optimization objective?
+- How does computational cost scale with the inference-time optimization, and is it practical for real-world deployment?
+- Were ablation studies conducted to isolate the contribution of each component?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses a relevant problem and demonstrates cross-architecture applicability, but the technical contributions are incremental and the experimental validation is not sufficiently detailed in the abstract to support the claims. The lack of clarity on methodology, quantitative results, and comparisons to baselines makes it difficult to assess the true impact of the work. A full paper with comprehensive experiments, clear technical exposition, and thorough comparisons would be needed to meet the acceptance bar.
+
+**Confidence:**
+3 (Low—assessment is limited by the abstract's lack of experimental and methodological detail)
+
+**Soundness:**
+2 (Fair—the core ideas are plausible but lack sufficient technical rigor and experimental validation in the provided text)
+
+**Presentation:**
+2 (Fair—the abstract is somewhat vague on key technical and experimental details)
+
+**Contribution:**
+2 (Fair—the contributions are incremental and lack novelty in terms of the underlying techniques)

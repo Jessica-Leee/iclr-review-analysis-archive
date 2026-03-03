@@ -1,0 +1,18 @@
+{
+  "paper_id": "zH6zBoktYO",
+  "review_id": "NhFFhA6fS3",
+  "year": 2024,
+  "line": 278,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The paper has the following strengths.\n\nFirst, it is well-written. The paper motivates the problem well, experiments are described clearly. Related work descriptions are reasonable (although the paper missed some key citations, e.g., Gr\u00f6ndahl et al.). \n\nSecond, the motivation for building a domain-specific toxicity classifier is well-received.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper presents a self-supervised evaluation approach for toxicity classifiers. The paper cites that due to training data leakage, toxicity classifiers may have an inflated reported performance. Using the proposed approach where inputs are modified using negation and other techniques, the robustness of content classifiers is evaluated.",
+  "human_questions": "My questions are how would the authors respond to my two weaknesses listed above?",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

@@ -1,0 +1,46 @@
+**Review:**
+
+This paper proposes Game Theoretic Second-Order Neural Optimizer (GTSONO), a robust optimizer for neural networks and neural ODEs grounded in min-max Differential Dynamic Programming. The core contribution is reframing Neural ODE optimization as a min-max optimal control problem to improve adversarial robustness. The authors claim computational efficiency via matrix decompositions, convergence guarantees to local saddle points, and empirical improvements in robust accuracy on clean images and compatibility with existing adversarial defenses.
+
+**Strengths:**
+- Novel perspective: Interpreting adversarial robustness through the lens of min-max optimal control and Differential Dynamic Programming is creative and theoretically motivated.
+- Theoretical grounding: The paper provides convergence guarantees to local saddle points, which adds rigor beyond purely empirical claims.
+- Practical benefits: The method demonstrates computational efficiency through efficient matrix decompositions and shows gains when integrated with existing defense techniques.
+- Clear motivation: The connection between game-theoretic optimization and robustness is well-articulated in the abstract.
+
+**Weaknesses:**
+- Insufficient empirical detail: The abstract provides no specifics on datasets, baselines, or quantitative results (e.g., robust accuracy numbers, attack types tested). Claims of "greater robust accuracy" and "performance increase" lack concrete evidence.
+- Limited scope of evaluation: No mention of standard adversarial robustness benchmarks (e.g., CIFAR-10, ImageNet with ℓ∞ or ℓ2 perturbations) or comparison against established robust optimizers (e.g., TRADES, MART, AWP).
+- Unclear practical applicability: While the method is framed for neural ODEs, it is unclear how broadly applicable GTSONO is to standard neural networks or whether the ODE formulation is essential.
+- Convergence guarantees caveat: Convergence to local saddle points is weaker than convergence to global minima; the practical significance of this guarantee in adversarial training is not discussed.
+
+**Questions:**
+- What are the specific robust accuracy improvements (in %) compared to standard SGD and other robust optimizers on standard benchmarks?
+- How does computational cost scale with network size and problem dimension compared to first-order methods?
+- Can you provide ablation studies isolating the contribution of the second-order terms versus the game-theoretic formulation?
+- How does GTSONO perform under strong adaptive attacks that account for the optimizer itself?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper presents an interesting theoretical idea connecting optimal control and adversarial robustness, but the abstract lacks sufficient empirical validation and concrete results to support the claims. For a venue like ICLR, robust experimental evidence on standard benchmarks with detailed comparisons to existing methods is essential. The work would benefit from a full paper submission with comprehensive experiments before acceptance can be recommended.
+
+**Confidence:**
+3 (Low)
+
+The assessment is based solely on the abstract; a full paper would substantially clarify the empirical contributions and practical impact.
+
+**Soundness:**
+3 (Fair)
+
+The theoretical framework appears sound, but without experimental details, it is difficult to assess whether the method delivers on its promises in practice.
+
+**Presentation:**
+3 (Fair)
+
+The abstract is clear in motivation but lacks the specificity needed to evaluate the contribution rigorously (no datasets, baselines, or quantitative results provided).
+
+**Contribution:**
+3 (Fair)
+
+The conceptual contribution (min-max optimal control for robustness) is novel, but the empirical validation and practical impact remain unclear from the abstract alone.

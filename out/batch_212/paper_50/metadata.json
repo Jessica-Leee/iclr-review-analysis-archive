@@ -1,0 +1,18 @@
+{
+  "paper_id": "zUDbPgskDS",
+  "review_id": "mgMhOyNi6U",
+  "year": 2024,
+  "line": 198,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The specifically tailored development of machine learning methods for crystal structures is an important problem with relevance for the society. Because of this also machine learning conferences like ICLR should be open for publications that develop these specific methods. However, this publication has certain weaknesses, please see below.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposes a method for predicting chemical properties of materials. Building on the results of previous work, the method utilizes the line-graph of the crystal graph for message passing. For this, the attention mechanism of the transformer architecture is adapted to the case of 3 nodes of the original graph. These 3 nodes are adjacent nodes in the line graph. Additionally, an additional transformer layer that performs message passing on the complete graph is added. For this module a positional encoding is introduced, which merges 4 different positional encodings.",
+  "human_questions": "Which of the positional encodings are intrinsic and which are extrinsic?",
+  "human_ratings": {
+    "rating": "1: strong reject",
+    "confidence": "5: You are absolutely certain about your assessment. You are very familiar with the related work and checked the math/other details carefully.",
+    "soundness": "1 poor",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

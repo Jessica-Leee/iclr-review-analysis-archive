@@ -1,0 +1,43 @@
+**Review:**
+
+This paper proposes a method for synthesizing images from unseen domains using pre-trained and frozen Denoising Diffusion Probabilistic Models (DDPMs) without additional training. The core contribution is the observation that out-of-distribution (OOD) samples from unseen domains form distinguishable Gaussians in intermediate latent spaces along the denoising chain. The authors leverage this insight to sample from estimated Gaussian priors and apply geometric optimization (using sample-wise distances and angles) to refine OOD latent encodings, enabling domain generalization via latent sampling and geometric optimization on single-domain datasets.
+
+**Strengths:**
+1. **Novel perspective on diffusion model generalization**: The observation that pre-trained DDPMs on single-domain data can synthesize unseen domains without retraining is interesting and challenges the scaling-up paradigm. The theoretical and empirical characterization of OOD samples forming distinguishable Gaussians in latent spaces is a useful insight.
+2. **Comprehensive experimental validation**: The paper evaluates on multiple datasets (AFHQ, CelebA-HQ, LSUN-Church, LSUN-Bedroom) and uses different pre-trained models (DDPM, iDDPM), demonstrating broad applicability.
+3. **Practical utility**: The approach requires no additional training or fine-tuning, making it computationally efficient and practical for deployment with existing pre-trained models.
+
+**Weaknesses:**
+1. **Limited clarity on methodology**: The abstract describes "bi-directional deterministic diffusion and denoising trajectories" and "geometric domain-specific information" but lacks sufficient detail on how these are computed and applied. The geometric optimization procedure (distances, angles) is mentioned but not formally defined or justified.
+2. **Insufficient theoretical justification**: While the paper claims to "theoretically and empirically show" that OOD samples form distinguishable Gaussians, the abstract provides no formal theoretical analysis, derivations, or conditions under which this holds. The connection between this observation and the geometric optimization is unclear.
+3. **Missing quantitative results and baselines**: The abstract provides no quantitative metrics (FID, IS, LPIPS, etc.), no comparison with existing domain generalization or zero-shot synthesis methods, and no ablation studies. It is impossible to assess whether the method actually works or how it compares to alternatives.
+4. **Vague problem formulation**: What exactly constitutes an "unseen domain"? Are these held-out classes within the same dataset, entirely different datasets, or style shifts? The evaluation setup is not clearly described, making reproducibility and impact assessment difficult.
+
+**Questions:**
+1. How are the Gaussian parameters (mean and covariance) estimated from OOD samples in practice? Is this done via maximum likelihood on inverted latents?
+2. What is the computational cost of the geometric optimization relative to standard diffusion sampling?
+3. Can you provide quantitative comparisons (FID, IS) against baselines such as fine-tuning, other zero-shot methods, or domain adaptation techniques?
+4. How sensitive is the method to the choice of intermediate latent space layer? Does performance degrade significantly if the wrong layer is selected?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper presents an interesting observation about diffusion model behavior on OOD data, but the submission is incomplete in its current form. The lack of quantitative results, formal theoretical analysis, clear methodology description, and comparison with baselines makes it difficult to assess the actual contribution and impact. The idea has merit, but the execution and presentation need substantial improvement before publication at a top venue.
+
+**Confidence:**
+3 (Low–Medium)
+
+**Soundness:**
+2 (Fair)
+
+The core insight may be sound, but without formal theory, ablations, and quantitative validation, soundness cannot be properly evaluated.
+
+**Presentation:**
+2 (Fair)
+
+The abstract is vague on key methodological details (geometric optimization, latent inversion, Gaussian estimation) and reads more like a position paper than a complete technical contribution.
+
+**Contribution:**
+2 (Fair)
+
+While the observation about OOD Gaussians is potentially novel, the lack of rigorous validation, baselines, and clear methodology limits the assessed contribution.

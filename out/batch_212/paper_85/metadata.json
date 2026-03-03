@@ -1,0 +1,18 @@
+{
+  "paper_id": "z8Wva86JLB",
+  "review_id": "9U8YExyTVE",
+  "year": 2024,
+  "line": 334,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The paper is clear and I see no issue with the claims made.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper proposes a geometric framework for fairness, where distributions and (learned) conditional distributions are represented as infinite-dimensional vectors, and hypothesis classes as sets. It makes the observation that a model that maximizes accuracy based on observed labels may not always be optimal for fairness.",
+  "human_questions": "What are the practical or theoretical advantages of this framework over the standard probability framework.",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "2 fair",
+    "contribution": "1 poor"
+  }
+}

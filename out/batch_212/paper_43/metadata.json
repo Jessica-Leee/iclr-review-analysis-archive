@@ -1,0 +1,18 @@
+{
+  "paper_id": "zavLQJ1XjB",
+  "review_id": "pAENTEEiwR",
+  "year": 2024,
+  "line": 173,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. This paper is well motivated. The studied point is interesting. It is empirically found that temperature scaling is good for calibrating deep models. However, as pointed out in this paper, it may harm calibration under some conditions.\n\n2. The empirical study shows very supportive results for the theoretic results. Both experiments on synthetic data and real-world data show positive results that temperature scaling cannot work under some conditions.\n\n3. The writing and organization of this paper is very good.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper studies the limitations of the widely used temperature scaling for post-hoc uncertainty calibration. The authors find that under the specific assumption, i.e., the datasets follow a general set of distributions in which the supports of classes have overlaps, the temperature scaling method cannot perform well. Since the temperature scaling has been very successful in post-hoc calibration, this paper is interesting for pointing out its limitations and find under some conditions it provably fails to achieve good calibration. Furthermore, the authors find that the performance of temperature scaling degrades with the amount of overlap between classes, and asymptotically becomes no better than random when there are a large number of classes. This paper also studies a specific training-time calibration technique mixup and finds that it can lead to reasonably good calibration performance under the same conditions.",
+  "human_questions": "Please refer to Weakness section.",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "2: You are willing to defend your assessment, but it is quite likely that you did not understand the central parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "4 excellent",
+    "presentation": "4 excellent",
+    "contribution": "3 good"
+  }
+}

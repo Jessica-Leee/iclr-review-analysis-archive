@@ -1,0 +1,42 @@
+**Review:**
+
+H-Rockmate proposes a hierarchical approach to the neural network re-materialization problem, extending the Rockmate framework to handle non-sequential data-flow graph structures. The core contribution is an automatic decomposition strategy that recursively solves re-materialization scheduling for subgraphs, enabling the framework to work with diverse architectures (U-Nets, encoder-decoder Transformers) while minimizing computational overhead within a given memory budget. The authors claim superior memory-efficiency trade-offs compared to existing approaches and provide a PyTorch-compatible implementation.
+
+**Strengths:**
+- Addresses a genuine practical limitation of prior work (Rockmate's restriction to sequential blocks) with a principled hierarchical decomposition strategy.
+- Demonstrates applicability to architecturally diverse models beyond sequential networks, which is valuable for modern deep learning.
+- Provides a concrete, usable framework integrated with PyTorch, enhancing practical impact.
+- Claims empirical improvements in average training iteration time and peak memory trade-offs over existing re-materialization methods.
+
+**Weaknesses:**
+- The abstract lacks sufficient technical detail about the hierarchical decomposition algorithm itself—how subgraphs are identified, how recursive solutions are combined, and what optimality guarantees (if any) are provided remain unclear.
+- No experimental results, datasets, baselines, or quantitative comparisons are provided in the abstract; claims of "superior memory efficiency" are unsubstantiated without concrete numbers or figures.
+- Limited novelty narrative: the contribution is framed primarily as an engineering extension of Rockmate rather than a fundamental algorithmic advance; the novelty of the hierarchical decomposition strategy is not clearly articulated.
+- Unclear how the approach scales to very large graphs or whether the recursive decomposition introduces its own computational or memory overhead that could offset gains.
+
+**Questions:**
+- What is the computational complexity of the hierarchical decomposition and recursive optimization? How does it compare to the cost of the original Rockmate algorithm?
+- How sensitive is the method to the choice of decomposition strategy? Are there principled guidelines for partitioning the data-flow graph?
+- Can you provide concrete experimental results (e.g., training time, peak memory, model accuracy) on standard benchmarks comparing H-Rockmate to Rockmate and other re-materialization baselines?
+- Does the method provide any theoretical guarantees on the quality of the re-materialization schedule relative to the optimal solution?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses a relevant problem and proposes a reasonable extension to existing work, but the abstract provides insufficient evidence of novelty, technical depth, or empirical validation. For a venue like ICLR, a complete submission would need to clearly articulate the algorithmic contributions of the hierarchical decomposition, provide detailed experimental comparisons with baselines, and demonstrate substantial improvements on realistic models and datasets. The current abstract reads more as a systems contribution or engineering improvement than a research advance with sufficient rigor and evidence for acceptance.
+
+**Confidence:**
+3 (Low)
+The assessment is based solely on the abstract, which lacks experimental results and technical detail. A full paper may contain substantial contributions not evident here.
+
+**Soundness:**
+2 (Fair)
+The core idea of hierarchical decomposition is plausible, but without algorithmic details, complexity analysis, or optimality guarantees, soundness cannot be properly evaluated.
+
+**Presentation:**
+2 (Fair)
+The abstract is readable but lacks technical precision and does not convey the algorithmic novelty or empirical validation necessary for a strong contribution.
+
+**Contribution:**
+2 (Fair)
+The contribution appears to be primarily an engineering extension of Rockmate rather than a fundamental algorithmic or methodological advance. The novelty of the hierarchical decomposition strategy is not clearly articulated or justified.

@@ -1,0 +1,18 @@
+{
+  "paper_id": "yBmMgvaEtO",
+  "review_id": "2oi3pgxOG3",
+  "year": 2024,
+  "line": 755,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "This paper offers an a method alternative to DDOM for diffusion-based black-box optimization. The method is well motivated and the performance is promising.",
+  "human_weaknesses": "",
+  "human_review_text": "This is the second paper on diffusion for black-box optimization. The previous work, DDOM, trains a conditional diffusion model using a reweighted objective function, and samples conditioning on the maximum y in the dataset and use classifier-free guidance.\n\nThe paper proposes to optimize an approximation by first order Taylor expansion and derives a closed-form update formula for the mean and variance of the score, computed by MC sampling. The convergence rate is proven",
+  "human_questions": "See weakness",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "2: You are willing to defend your assessment, but it is quite likely that you did not understand the central parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

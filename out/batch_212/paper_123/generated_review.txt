@@ -1,0 +1,41 @@
+**Review:**
+
+This paper proposes CLLM, a method that combines Large Language Models with a principled data curation process for tabular data augmentation in ultra low-data regimes. The core idea is to leverage LLMs' prior knowledge to generate synthetic tabular data, then apply a curation mechanism based on learning dynamics, confidence, and uncertainty metrics to select high-quality samples. The authors claim superior performance compared to conventional tabular generators and demonstrate that their curation mechanism improves downstream task performance across different generators.
+
+**Strengths:**
+
+- **Timely and well-motivated problem**: Addressing data augmentation in low-data regimes is practically important, especially for resource-constrained settings and domains with limited data availability.
+- **Reasonable methodological approach**: Combining LLM generation with a principled curation process (learning dynamics + confidence/uncertainty) is sensible and avoids naively using all LLM-generated samples.
+- **Claimed broad empirical validation**: The paper reports results on multiple real-world datasets and compares against conventional generators, suggesting comprehensive evaluation.
+- **Interpretability focus**: The authors promise insights into which features enable high-quality augmentation, which adds value beyond pure performance metrics.
+
+**Weaknesses:**
+
+- **Insufficient methodological detail in abstract**: The abstract does not specify what "learning dynamics," "confidence," and "uncertainty metrics" concretely mean or how they are computed. The curation process is described only vaguely as "principled," making it difficult to assess novelty or reproducibility.
+- **Missing experimental details**: No information is provided about datasets used, baselines compared, hyperparameters, or quantitative results. Without concrete numbers or comparisons, the empirical claims cannot be verified.
+- **Unclear novelty**: Using LLMs for data augmentation is not new; the main contribution appears to be the curation mechanism, but its novelty and technical depth are unclear from the abstract alone.
+- **Limited scope of abstract**: The abstract lacks discussion of computational cost (LLM inference can be expensive), scalability to larger datasets, or failure cases. For a method targeting low-resource regions, cost and efficiency are critical.
+
+**Questions:**
+
+1. How exactly are learning dynamics, confidence, and uncertainty metrics defined and computed? Are these standard metrics or novel contributions?
+2. What are the quantitative improvements over baselines, and on how many datasets?
+3. What is the computational cost of CLLM compared to conventional generators, and is it practical for truly resource-constrained settings?
+4. How does performance scale as the low-data regime becomes less extreme (e.g., 100 → 1000 samples)?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses a relevant problem and proposes a reasonable solution, but the abstract provides insufficient detail to assess the technical contribution, novelty, and empirical validation. The curation mechanism is the claimed key innovation, yet it is described only in vague terms. Without concrete experimental results, baseline comparisons, and clear methodological exposition, the contribution cannot be properly evaluated. A full paper with detailed methodology, comprehensive experiments, and quantitative results would be needed to determine acceptance.
+
+**Confidence:**
+2–3 (Low to moderate; assessment is limited by the abstract's lack of specificity)
+
+**Soundness:**
+Fair (The general approach is reasonable, but methodological details are too vague to assess rigor.)
+
+**Presentation:**
+Fair (The abstract is well-written and motivating, but lacks the technical specificity needed for a venue like ICLR.)
+
+**Contribution:**
+Fair (The combination of LLMs with curation is sensible, but novelty is unclear without detailed methodology and comparison to related work.)

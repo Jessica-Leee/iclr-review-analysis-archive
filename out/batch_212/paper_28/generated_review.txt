@@ -1,0 +1,37 @@
+**Review:**
+
+Meta-Transformer proposes a unified framework for multimodal learning that maps raw inputs from 12 diverse modalities (text, images, point clouds, audio, video, X-ray, infrared, hyperspectral, IMU, graphs, tabular, and time-series) into a shared token space, then processes them through a frozen encoder with task-specific heads. The core contribution is demonstrating that a single transformer architecture can handle this breadth of modalities without paired multimodal training data, achieving reasonable performance across fundamental perception, practical application, and data mining tasks.
+
+**Strengths:**
+- **Breadth of scope:** The paper tackles an ambitious problem—unifying 12 distinct modalities in a single framework is a significant engineering and conceptual achievement. The claim of being "the first framework to perform unified learning across 12 modalities with unpaired data" is noteworthy if substantiated.
+- **Practical relevance:** Covering both standard modalities (vision, language, audio) and specialized domains (X-ray, infrared, hyperspectral, IMU) demonstrates real-world applicability.
+- **Frozen encoder design:** Using a frozen encoder is an interesting design choice that could improve generalization and reduce computational overhead during fine-tuning.
+
+**Weaknesses:**
+- **Insufficient methodological detail:** The abstract provides almost no specifics on how the "unified data tokenizer" works for such diverse modalities. How are point clouds, tabular data, and time-series converted to tokens? What is the token dimensionality and vocabulary size? Without these details, reproducibility and technical soundness are difficult to assess.
+- **Lack of quantitative results:** The abstract mentions experiments on "different benchmarks" but provides no numerical results, comparisons to baselines, or ablation studies. Claims like "excels in multimodal understanding" are unsupported without concrete metrics (e.g., accuracy, F1, retrieval mAP).
+- **Unclear training procedure:** How is the frozen encoder obtained? Is it pretrained on a large corpus? If so, on which modalities and data? The statement "without any paired multimodal training data" is ambiguous—does this mean no paired data is used at all, or only during downstream task training?
+- **Missing related work and positioning:** The abstract does not discuss how Meta-Transformer relates to prior unified multimodal frameworks (e.g., CLIP variants, ViLBERT, or other cross-modal models). The novelty relative to existing work is unclear.
+
+**Questions:**
+- How is the shared token space designed and validated? What is the dimensionality and how does it accommodate modality-specific information?
+- Can you provide quantitative comparisons to modality-specific baselines and other unified frameworks on standard benchmarks?
+- What is the computational cost (FLOPs, memory, latency) compared to modality-specific models?
+- How does performance degrade as the number of modalities increases? Is there a saturation point?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses an important problem and claims a broad contribution, but the abstract lacks sufficient technical detail, quantitative validation, and clarity on the method to enable proper evaluation. For a venue like ICLR, a full paper would be expected to provide concrete experimental results, detailed ablations, and clear positioning relative to prior work. The promise to "release well-documented code and pretrained weights" suggests the work may be solid, but the current submission is too preliminary to assess rigorously.
+
+**Confidence:**
+2–3 (Low to moderate; assessment is limited by the abstract's lack of detail and results.)
+
+**Soundness:**
+2–3 (Fair; the core idea is plausible, but methodological details and validation are missing.)
+
+**Presentation:**
+2 (Fair; the abstract is clear in scope but lacks technical depth and specificity.)
+
+**Contribution:**
+3–4 (Moderate; breadth is impressive, but novelty and technical contribution are unclear without comparison to prior work.)

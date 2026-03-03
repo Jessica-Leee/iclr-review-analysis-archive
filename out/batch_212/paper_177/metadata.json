@@ -1,0 +1,18 @@
+{
+  "paper_id": "yMwJiJoadt",
+  "review_id": "ysH3TdRDpN",
+  "year": 2024,
+  "line": 684,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. Some of the proposed components are novel, including PFA and Activate and Pool.\n\n2. Though some other proposed structures are nothing interesting, they work well (e.g., ConvGLU).",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposes a novel attention mechanism, several new components, and a transformer architecture. The motivation for the attention mechanism is combining global perception with local recognition. Reasonable results are reported.",
+  "human_questions": "It is claimed that the proposed pixel-focused attention \"possesses visual priors comparable to convolution.\" So why not just use convolution? Discussions and comparisons are missing.",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "1 poor"
+  }
+}

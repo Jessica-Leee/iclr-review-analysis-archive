@@ -1,0 +1,18 @@
+{
+  "paper_id": "yIKjkRZBrX",
+  "review_id": "NFAg9RkOhu",
+  "year": 2024,
+  "line": 723,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "RL with skills can enable much more efficient learning, and is an important problem. Learning variable length skills should allow for more effective learning. However, I have some concerns regarding this paper - please see weaknesses.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper proposes an approach to learn variable length skills in RL, closely building on SpiRL [1]. This is done using state-action novelty to predict a termination condition for the skills. \n\n\n\n\n\n\n\n\n[1] - Pertsch, Karl, Youngwoon Lee, and Joseph Lim. \"Accelerating reinforcement learning with learned skill priors.\" Conference on robot learning. PMLR, 2021",
+  "human_questions": "Please address questions in the weaknesses section",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

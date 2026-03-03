@@ -1,0 +1,18 @@
+{
+  "paper_id": "yRrPfKyJQ2",
+  "review_id": "XZc49kmjTh",
+  "year": 2024,
+  "line": 641,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "-The paper presents an interesting approach to drug editing that leverages pretrained LLMs. It is interesting to know that non-protein LLMs out of the box can reason about small molecules / proteins / peptides through iterative in-context learning.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper presents an approach to editing small molecules / peptides / proteins by interacting with an out-of-the-box LLM such as ChatGPT Turbo.\n\nThey describe how to prompt the model and then how to give feedback using a small number of supervised examples  using a retrieval and domain feedback module which finds the positive example that is closest to the negative prediction.\n\nThe results are strong across 3 tasks that involve small molecules, peptides and proteins but I have some questions / concerns.",
+  "human_questions": "I am curious as to what baselines the authors think are fair for each task that use similar amounts of supervised data. This is a bit unclear to me in the paper.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

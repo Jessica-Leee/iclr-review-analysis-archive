@@ -1,0 +1,18 @@
+{
+  "paper_id": "ywD00GsxgD",
+  "review_id": "BdkJpB4xZM",
+  "year": 2024,
+  "line": 421,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The authors clearly stated the questions and gaps that need to be addressed and introduced the topic effectively in sections 1 and 2. The question raised is an important one in the field of AI in healthcare. Moreover, the authors provided the code which improves the transparency and reproducibility of their work.",
+  "human_weaknesses": "",
+  "human_review_text": "The authors proposed a strategy of using synthetic data in AI model validation to overcome the issue of limited data in the training set. They generated synthetic liver tumors to demonstrate the performance for early cancer detection in CT volumes. Results were compared using either real or synthetic data in training, validation, and test sets.",
+  "human_questions": "- What do texture and intensity imply in the context of tumors?\n- Considering that only 120 CT volumes remained, how diverse is cohort 7?\n- Apart from tumor size, were there any other differing factors in the healthy CT assembly? Is this cohort representative and diverse?\n- In Figure 2, why are there multiple lines for validation? Were different validation samples selected, and if so, how? \n- In Figure 3, it is challenging to make a direct comparison visually with Figure 2. Unsure which experiment corresponds to which number in Table 2. What data were used for training here?\n- In Figure 5, sensitivity was shown but did the authors look at false positives? \n- In Figure 6, it appears that the out-domain had a higher DSC than the in-domain. Were the test results were based on in-domain or out-domain synthetic-tumor validation?\n- How high is the computational cost?",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "1 poor",
+    "presentation": "2 fair",
+    "contribution": "1 poor"
+  }
+}

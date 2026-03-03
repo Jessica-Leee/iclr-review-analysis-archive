@@ -1,0 +1,18 @@
+{
+  "paper_id": "yID2fdta1Z",
+  "review_id": "6ImM3UBRrm",
+  "year": 2024,
+  "line": 732,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The paper provides some analysis of the robustness of various GNNs, offering valuable insights into their performance under adversarial attacks.\n\n2.  The introduction of the Quasi-Newton IRLS algorithm, which can be integrated into GNNs as feature aggregation layers, is both innovative and practical.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper provides some analysis of the robustness of various GNNs and present a unified perspective to understand their strengths and limitations.  The paper identifies an issue with estimation bias in $\\ell_1$-based robust graph smoothing and proposes a robust and unbiased graph signal estimator to address this bias. The Quasi-Newton IRLS algorithm is introduced, which can be integrated into GNNs as feature aggregation layers.",
+  "human_questions": "1. Can you address and provide clarity on the concerns highlighted in the weaknesses section?\n2. The citation style throughout the manuscript is inconsistent. Can you rectify this?",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

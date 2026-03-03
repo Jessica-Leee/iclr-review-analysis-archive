@@ -1,0 +1,18 @@
+{
+  "paper_id": "yqIJoALgdD",
+  "review_id": "FsImEtGrQ2",
+  "year": 2024,
+  "line": 458,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "+ The paper studies how to reduce the memory footprint of the SNNs during training, which could be an important issue. \n\n+ Though the presentation is not clear, the proposed framework seems to be novel.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper addresses the challenge of memory consumption in the training of Spiking Neural Networks (SNNs). The authors design a special forward and backward computation pattern for SNNs and it does not need to store the intermediate features. Experiments were conducted to show the GPU memory efficiency.",
+  "human_questions": "See my weakness above.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "1 poor",
+    "contribution": "3 good"
+  }
+}

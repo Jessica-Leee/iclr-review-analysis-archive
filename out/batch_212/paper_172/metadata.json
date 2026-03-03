@@ -1,0 +1,18 @@
+{
+  "paper_id": "yONJt6nFc3",
+  "review_id": "ATmu94ISE5",
+  "year": 2024,
+  "line": 663,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "S1: The cold-start problem towards graph data is meaningful and challenging, whose difficulty mainly lies on the isolated and low-degree nodes. The proposed method NodeDup succeeds in improving the prediction capability on the cold node, without damage to the overall performance at meantime.\nS2: Extensive experiments are conducted. The ablation study on duplication times and nodes facilitates the understanding of when NodeDup is effective.\nS3: The compatibility of NodeDup is exceptional. The prediction capability consistently outperforms different types of baselines, when combines with GraphSAGE, GAT, and JKNet encoders.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper presents an augmentation-based method (i.e., NodeDup) tailored for the isolated and low-degree nodes in the link prediction task. The proposed method can not only significantly improve the prediction performance on cold nodes, but also can maintain the overall prediction capability. By simply duplicating the cold nodes, the proposed method exhibits faster running speed than the previous methods based on augmentation. Comparing with the vanilla GNN models, the cold-start models, and the graph data augmentation models, the experimental results are sufficient to demonstrate the superiority of NodeDup. Additionally, NodeDup is a light plug-and-play method which is able to collaborate with almost all decoders and encoders for link prediction task.",
+  "human_questions": "Q1: What is the key innovation of NodeDup? According to the manuscript, it seems that NodeDup is almost the standard node duplicate technique. More discussions about the existing node duplicate works are recommended.\nQ2: What is the main difference between NodeDup(L) and self-loop in GNN? During the experiment, does the GraphSAGE (and GAT, JKNet) baseline introduce self-loop process? If no, the authors may want to add more experimental explanations. If yes, why NodeDup(L) is more effective than vanilla GNN models?\nQ3: Why NodeDup(L) is more effective than NodeDup towards warm nodes in almost all scenarios? From my perspective, the two methods conduct the same operation on the warm nodes. The authors may want to add more discussions.\nQ4: In light of the similarity to self-distillation mentioned in section 3.3, the comparison between NodeDup and self-distillation technique is recommended.",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "5: You are absolutely certain about your assessment. You are very familiar with the related work and checked the math/other details carefully.",
+    "soundness": "2 fair",
+    "presentation": "3 good",
+    "contribution": "1 poor"
+  }
+}

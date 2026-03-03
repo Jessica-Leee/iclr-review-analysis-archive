@@ -1,0 +1,45 @@
+**Review:**
+
+This paper proposes an autonomous agent-based approach to generate task-specific instructions that improve zero-shot reasoning performance of large language models (LLMs) on general language understanding tasks. The core contribution is using an agent to optimize prompting instructions rather than relying on fixed zero-shot reasoning strategies like chain-of-thought. The authors evaluate their method across 29 datasets spanning generation, classification, and reasoning tasks, reporting state-of-the-art zero-shot performance on 20 datasets and substantial improvements over baselines (e.g., 17.0% boost for GPT-3.5 Turbo, 10.4% average improvement over zero-shot chain-of-thought).
+
+**Strengths:**
+- Comprehensive empirical evaluation across 29 diverse datasets demonstrates broad applicability of the approach and strong generalization.
+- Substantial performance gains over competitive baselines, including improvements over zero-shot chain-of-thought and across multiple model scales (Vicuna-13b, Llama-2-70b-chat, GPT-3.5 Turbo).
+- The idea of using an agent to automatically generate task-specific instructions is intuitive and practical, potentially more efficient than manual prompt engineering.
+- Clear presentation of results with concrete performance numbers across multiple model families.
+
+**Weaknesses:**
+- The abstract lacks sufficient methodological detail to understand how the agent generates instructions. What is the agent's architecture, training procedure, and optimization objective? How does it interact with the LLM being optimized?
+- No discussion of computational cost or efficiency. Generating task-specific instructions via an agent likely incurs additional inference overhead; this should be quantified and discussed relative to the performance gains.
+- Missing ablation studies and analysis. Which components of the agent-generated instructions are most important? How sensitive is the method to agent design choices? What do the learned instructions look like qualitatively?
+- Limited comparison to related work. The abstract does not discuss how this approach relates to other instruction-tuning or prompt-optimization methods, making it difficult to assess novelty.
+- Unclear whether improvements are statistically significant or if error bars/confidence intervals are provided across the 29 datasets.
+
+**Questions:**
+1. What is the computational overhead of the agent instruction generation compared to standard zero-shot inference?
+2. Can you provide qualitative examples of agent-generated instructions and analysis of what makes them effective?
+3. How does the method perform if the agent is trained on a different set of tasks than those used for evaluation?
+4. Are the improvements statistically significant, and what is the variance across multiple runs?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper addresses a relevant problem and demonstrates strong empirical results across a large evaluation suite. However, the abstract provides insufficient methodological clarity, and key analyses (ablations, computational cost, statistical significance) are not discussed. The work would benefit from deeper investigation into why and how the agent-generated instructions improve performance, and clearer positioning relative to existing prompt optimization literature. The empirical breadth is a notable strength, but the lack of methodological transparency and analysis prevents a higher rating.
+
+**Confidence:**
+3 (moderate)
+
+**Soundness:**
+Fair
+
+The empirical evaluation appears comprehensive, but without access to the full paper, it is difficult to assess the soundness of the agent design, training procedure, and statistical rigor of the comparisons.
+
+**Presentation:**
+Fair
+
+The abstract is clear in reporting results but lacks sufficient detail about the method itself. A reader cannot fully understand the approach from the abstract alone.
+
+**Contribution:**
+Fair to Good
+
+The idea of using an agent to generate task-specific instructions is reasonable and shows strong empirical results, but the novelty relative to existing prompt optimization and instruction-tuning work is unclear from the abstract.

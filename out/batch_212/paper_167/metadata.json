@@ -1,0 +1,18 @@
+{
+  "paper_id": "yR5QbFv4Xb",
+  "review_id": "WGYoKhlOBn",
+  "year": 2024,
+  "line": 644,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The approach seems theoretically well-grounded; the literature review seems thorough and complete.",
+  "human_weaknesses": "",
+  "human_review_text": "The article presents a new self-interpreting approach called SASANet, having in mind to incorporate Shapley values into the additive self-attribution literature. The approach is compared to black-box approaches and empirically demonstrates their usefulness.",
+  "human_questions": "1 \u2013 When it comes to feature attribution approaches, the time is reported in Table 3, but how does the training time of SASANet compare to others?",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "4 excellent",
+    "contribution": "4 excellent"
+  }
+}

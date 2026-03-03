@@ -1,0 +1,18 @@
+{
+  "paper_id": "zgHamUBuuO",
+  "review_id": "6Mh0iv6bzb",
+  "year": 2024,
+  "line": 138,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. Sparling achieves extreme activation sparsity and promotes learning interpretable representations.\n2. The algorithm shows good localization performance on the provided evaluation datasets.\n3. The idea of using activation sparsity to maintain representation capacity while allowing for sparse interpretable representations is interesting and could be an interesting direction to study for other models.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper presents an algorithm to learn sparse intermediate representations through constraining activations to be sparse. The proposed algorithm relies on a combination of a ``Spatial Sparsity layer'' and ``adaptive sparse training\". The spatial sparsity layer leverages a parametric form of ReLU to control sparsity. The adaptive sparse training anneals the sparsity parameter to encourage learning. The algorithm is evaluated on motif prediction and localization on three datasets.",
+  "human_questions": "Could you elaborate Fig 2? Do the letters represent specific shapes or the digits themselves?",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

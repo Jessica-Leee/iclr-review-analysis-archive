@@ -1,0 +1,18 @@
+{
+  "paper_id": "yNyDvFQNEm",
+  "review_id": "y3SSQ5OusV",
+  "year": 2024,
+  "line": 666,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "This paper proposes a pipeline to reduce the dimensions of node features.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposes a node attribute clustering method by considering the graph structure to measure the distance between node attributes. The authors claim that the contribution of this paper is that they are the first to cluster node attributes by considering graph structure.",
+  "human_questions": "Proposed in Weaknesses",
+  "human_ratings": {
+    "rating": "1: strong reject",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "1 poor",
+    "contribution": "1 poor"
+  }
+}

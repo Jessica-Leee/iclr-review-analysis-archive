@@ -1,0 +1,18 @@
+{
+  "paper_id": "y9wQf6ZWS2",
+  "review_id": "cT5m4Jlhu3",
+  "year": 2024,
+  "line": 773,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "This paper shows that simply regularizing the $Q$-learning with linear function approximation update by penalizing the weights in the 2-norm is enough to guarantee convergence. Even though other works had hinted at this insight, specifically Zhang~2021, in this work the contribution is distilled, in the sense that previous work had not only the ridge regularization but also other additions to the update. \n\nThe paper is clearly written and easy to follow. The switching systems technique used is also less common than just using the o.d.e. analysis, which makes the paper possibly technically more interesting.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper focuses on the problem of instability of $Q$-learning with linear function approximation. The paper shows that the ridge regularization of the parameters is enough to guarantee convergence of $Q$-learning. The quality of the solution is the upper-bounded.",
+  "human_questions": "- do the authors believe the method will be useful in practice, or that the regularization introduced will harm the quality too much? Have the authors performed more experiments to understand this?",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "4 excellent",
+    "presentation": "2 fair",
+    "contribution": "3 good"
+  }
+}

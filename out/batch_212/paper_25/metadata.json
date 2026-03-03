@@ -1,0 +1,18 @@
+{
+  "paper_id": "zkzf0VkiNv",
+  "review_id": "ebzntDaque",
+  "year": 2024,
+  "line": 97,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. Robustness of Deep GM is difficult due to the large output permuation\nspace. This work seems to be the first that aims to attain certifiable\nrobustness for Deep GM.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposes an approach to attain certifiable robustness for deep graph\nmatching (GM) against adversarial inputs. Existing approaches based on\nrandomized smoothing do not work for GM because of the large output\npermutation space. The authors proposed an alternative method called\nCertified Robustness based on Optimal Smoothing Range Search (CR-OSRS).\nThe main idea is to develop a new notion of robustness for permutation\noutputs (based on similarity (5)) and to perturb the input keypoint\npositions by a joint Gaussian distribution (instead of an isotropic\nGaussian distribution). Methods to choose the joint Gaussian\ndistribution and to measure the certified space are also developed.",
+  "human_questions": "1. The main result appears to be Theorem 4.1, which states that, for\nperturbation $(\\delta_1, \\delta_2)$ of keypoint positions within (9),\nthe proposed method guarantees that $g_0(...+\\delta1, +\\delta2)=1$. However, what is the\nsignificance of $g_0(...)=1$? At best, it states that, with another\nrandom perturbation $(\\epsilon_1, \\epsilon_2)$, the probability that the\noutput of $f$ is too far from the corresponding core output is higher\nthan 1/2.  However, it is unclear to me how this claim can connect to\nthe desirable robustness property, i.e., the output of the deep GM is\nrobust against the perturbation $(\\delta_1, \\delta_2)$. Without a clear\nexplanation of this connection, it is difficult for the reader to\nunderstand the meaning and significance of Theorem 4.1. \n\n2. The construction of $B_1$ and $B_2$ in Section 4.2 also needs better\nexplanation. I understand that there are non-zero off-diagonal elements\n$\\sigma \\times b$ right adjacent to the main diagonal.  While this does\ncreate correlation between the perturbation of different keypoints, I am lost\nwhy this is a good choice and what purpose it aims to serve. In\nparticular, these off-diagonal elements correspond to pairs of indices\n$(i,i+1)$. However, with arbitrary indexing of the keypoints, $i$ and\n$i+1$ may correspond to two keypoints that are far away. Thus, I don't\nunderstand why adding correlation between such a pair of keypoints is a\ngood idea. \n\nRelated to this point, equation (10), which is the objective for\noptimizing $B_1$ and $B_2$, also needs more explanation. \n\n3. In Algorithm 2 on page 18 (for optimizing (10)), is Line 11 a\ngradient step? How is the gradient calculated?",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

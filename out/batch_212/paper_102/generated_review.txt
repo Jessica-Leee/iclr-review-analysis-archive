@@ -1,0 +1,34 @@
+**Review:**
+
+This paper proposes sequence-level certainty as a unifying concept for understanding hallucination in knowledge-grounded dialogue generation (KGDG). The authors decompose certainty into two aspects—probabilistic certainty (via log-probability) and semantic certainty (via entailment-based Agreement Score)—and demonstrate empirically that both correlate with reduced hallucination. Building on this observation, they introduce Certainty-based Response Ranking (CRR), a decoding-time method with two variants: Probabilistic CRR (P-CRR), which ranks responses by mean log-probability, and Semantic CRR (S-CRR), which ranks by semantic certainty. The work is validated across three KGDG datasets, three decoding methods, and four models.
+
+**Strengths:**
+1. **Clear conceptual framing**: The decomposition of sequence-level certainty into probabilistic and semantic aspects provides an intuitive lens for understanding hallucination, and the connection between certainty and hallucination is well-motivated.
+2. **Comprehensive empirical validation**: Testing across multiple datasets, decoding methods, and models strengthens the generalizability claims. The inclusion of both probability-based and semantic approaches offers practical flexibility.
+3. **Theoretical contribution**: The paper claims to provide theoretical proof that semantic certainty estimates probabilistic certainty, which could be valuable for black-box scenarios where probabilities are unavailable.
+4. **Practical applicability**: CRR is a simple, decoding-time method that does not require model retraining, making it easy to deploy.
+
+**Weaknesses:**
+1. **Limited novelty of core components**: P-CRR (ranking by log-probability) is a straightforward baseline that has likely been explored in prior work on decoding and uncertainty estimation. The paper does not clearly position this against existing probability-based ranking or confidence estimation methods in NLG.
+2. **Insufficient detail on semantic certainty**: The Agreement Score (AS) based on entailment is introduced without sufficient justification or ablation. How is entailment computed? What entailment model is used? How sensitive is S-CRR to the choice of entailment model? These details are crucial for reproducibility and understanding the method's robustness.
+3. **Theoretical proof not provided in abstract**: The paper claims "theoretical proof" that semantic certainty estimates probabilistic certainty, but the abstract provides no sketch of this proof. Without seeing the actual argument, it is difficult to assess the rigor and significance of this claim.
+4. **Missing comparisons and baselines**: The paper does not compare against other hallucination mitigation methods or uncertainty estimation techniques from the literature (e.g., confidence scores, self-consistency, other semantic similarity measures). This makes it hard to assess the relative merit of CRR.
+5. **Evaluation metrics unclear**: The abstract does not specify how hallucination is measured. Are human annotations used? Automatic metrics? The choice of evaluation metric is critical for validating the main claims.
+
+**Questions:**
+- How does P-CRR compare to existing probability-based decoding strategies (e.g., beam search with length normalization, nucleus sampling)?
+- What is the computational cost of S-CRR, particularly the entailment-based Agreement Score computation?
+- Can you provide a sketch or summary of the theoretical proof linking semantic and probabilistic certainty?
+- How are the three KGDG datasets chosen, and do results hold consistently across all three?
+- What is the inter-annotator agreement or reliability of the hallucination labels used for evaluation?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper addresses a relevant problem and proposes a reasonable solution with broad empirical validation. However, the core technical contributions (especially P-CRR) are relatively incremental, and key methodological details—particularly around semantic certainty and the theoretical claims—are underspecified in the abstract. The work would benefit from clearer positioning relative to prior work on uncertainty and confidence estimation, more thorough ablations, and explicit details on evaluation. The practical utility of the approach and the breadth of experiments push it slightly above the bar, but significant revisions would strengthen the contribution.
+
+**Confidence:** 3 (moderate; assessment is limited by the abstract's lack of detail on key components and evaluation methodology)
+
+**Soundness:** 3 (fair; the empirical approach seems sound, but theoretical claims are not substantiated in the abstract, and methodological details are missing)
+
+**Presentation:** 3 (fair; the abstract is reasonably clear in framing but lacks crucial

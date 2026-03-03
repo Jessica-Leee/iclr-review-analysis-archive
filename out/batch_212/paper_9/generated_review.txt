@@ -1,0 +1,50 @@
+**Review:**
+
+This paper proposes a simple regularization technique for knowledge distillation that operates on student features at the penultimate layer. The core contribution is a loss function that simultaneously (1) aligns the *direction* of student features with teacher class-mean features and (2) encourages student features to have large *norms*. The motivation is well-articulated: while prior KD methods align features via L2 distance or KL-divergence, such alignment does not directly optimize student classification performance. The authors observe empirically that students produce smaller-norm features than teachers, and propose to address both the direction and norm deficits. The method is evaluated on ImageNet, CIFAR-100, and COCO, showing consistent improvements over existing KD baselines.
+
+**Strengths:**
+
+- **Clear motivation and simplicity**: The paper identifies a concrete gap in existing KD methods—that feature alignment does not directly improve classification accuracy—and proposes an intuitive solution using direction and norm regularization. The method is straightforward to implement and integrate into existing KD frameworks.
+- **Comprehensive empirical validation**: Experiments span multiple domains (image classification on ImageNet and CIFAR-100, object detection on COCO) and show consistent improvements when the proposed regularization is applied to various KD baselines, suggesting broad applicability.
+- **Empirical observation of norm deficit**: The observation that student features have notably smaller norms than teacher features is interesting and well-motivated; regularizing norm alongside direction is a natural response.
+- **Practical impact**: The paper demonstrates state-of-the-art KD performance, which is valuable for practitioners.
+
+**Weaknesses:**
+
+- **Limited novelty**: The core technical contribution—regularizing feature direction via alignment to class-mean features and encouraging large norms—is relatively incremental. Direction alignment and norm regularization are not novel concepts individually; their combination, while effective, lacks significant methodological innovation.
+- **Insufficient theoretical or analytical justification**: The paper does not provide principled analysis of why direction and norm regularization should improve classification accuracy. The connection between these two objectives and student classifier performance remains largely empirical. Why is direction alignment to class-means specifically the right choice? How do direction and norm interact?
+- **Incomplete experimental details**: The abstract does not specify the exact form of the loss function, hyperparameter choices, or ablation studies isolating the contribution of direction vs. norm regularization. Without these details, it is difficult to assess the relative importance of each component and reproducibility.
+- **Missing comparisons and analysis**: The paper does not discuss why prior feature-alignment methods (e.g., L2 distance minimization) fail to capture direction and norm, or provide direct comparisons showing that direction + norm regularization outperforms simpler alternatives (e.g., explicit norm matching). Analysis of learned feature distributions would strengthen the claims.
+
+**Questions:**
+
+- What is the exact mathematical form of the proposed loss function? How are direction and norm weighted relative to the standard KD loss?
+- Can you provide ablation studies isolating the contribution of direction alignment vs. norm regularization?
+- How sensitive is the method to hyperparameters controlling the strength of direction and norm regularization?
+- Why is alignment to class-mean features superior to other possible direction-alignment strategies?
+- Do you observe changes in the feature norm distribution of the student during training, and does this correlate with accuracy gains?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper addresses a practical problem in knowledge distillation with a simple and effective solution, backed by solid empirical results across multiple benchmarks. However, the technical novelty is limited—combining direction and norm regularization is intuitive but not particularly innovative—and the paper lacks theoretical insight or detailed ablation studies that would strengthen the contribution. The work is sound and useful for practitioners, but falls short of making a significant methodological advance. It merits acceptance as a solid empirical contribution, though it is not a strong accept.
+
+**Confidence:**
+3 (moderate)
+
+The assessment is based solely on the abstract and title; a full paper review with experimental details, ablations, and loss function specifications would refine this judgment.
+
+**Soundness:**
+Good
+
+The motivation is clear and the empirical validation appears comprehensive, though theoretical justification is absent.
+
+**Presentation:**
+Good
+
+The abstract is well-written and clearly articulates the problem and proposed solution.
+
+**Contribution:**
+Fair
+
+The combination of direction and norm regularization is effective but incremental; individual components are not novel.

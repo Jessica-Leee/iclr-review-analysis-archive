@@ -1,0 +1,38 @@
+**Review:**
+
+This paper studies the online fractional knapsack problem with predictions, extending the classical online knapsack setting by allowing items to be fractionally accepted. The authors propose algorithms that incorporate two forms of prediction: point predictions of the smallest value in the optimal offline solution, and interval predictions providing upper and lower bounds. They provide competitive ratio analyses with matching worst-case lower bounds, introduce a learning-augmented meta-algorithm that balances consistency (performance with good predictions) and robustness (performance without predictions), and validate their approach empirically on synthetic data.
+
+**Strengths:**
+
+- **Novel prediction-augmented framework**: The paper makes a clear contribution by being the first to incorporate predictions into the online fractional knapsack problem, with both point and interval prediction models that are natural and well-motivated.
+- **Theoretical rigor**: The authors provide competitive ratio analyses for their algorithms and establish matching worst-case lower bounds, demonstrating tight characterization of the problem's hardness.
+- **Learning-augmented approach**: The meta-algorithm that combines prediction techniques with a robust baseline to achieve both consistency and robustness is a principled contribution that addresses a key challenge in prediction-augmented algorithms.
+- **Empirical validation with imperfect predictions**: The experiments demonstrate that the algorithms can leverage predictions from machine learning models while maintaining worst-case guarantees, which is practically relevant.
+
+**Weaknesses:**
+
+- **Limited experimental scope**: The numerical experiments are conducted only on synthetic data. Real-world datasets (e.g., e-commerce, resource allocation scenarios) would strengthen the empirical validation and demonstrate practical applicability.
+- **Presentation of prediction models**: While the paper mentions "predictions of the smallest value chosen in the optimal offline solution," the intuition for why this particular quantity is the right prediction target could be explained more clearly. The connection between this choice and the algorithm design could be made more explicit.
+- **Missing algorithmic details**: The abstract does not provide sufficient detail about the actual algorithms (e.g., how predictions are used in the decision rule, the form of the meta-algorithm). This makes it difficult to assess the technical novelty and complexity of the approach.
+- **Comparison baseline**: The paper compares against "a simple greedy prediction algorithm" and a robust baseline, but lacks comparison to other prediction-augmented online algorithms or variants that might be natural baselines for this problem.
+
+**Questions:**
+
+- How sensitive are the algorithms to prediction error? The paper mentions "imperfect predictions" but does not provide a detailed analysis of how prediction quality affects the competitive ratio.
+- Can you provide intuition for why the smallest value in the optimal solution is the right quantity to predict? Are there alternative prediction targets that might be equally or more natural?
+- How do the algorithms scale with the number of items and knapsack capacity in practice? Runtime complexity is not discussed.
+- Could you provide results on real-world knapsack instances (e.g., from benchmark datasets in combinatorial optimization)?
+
+**Overall score:**
+
+6: marginally above the acceptance threshold
+
+The paper makes a solid theoretical contribution by introducing predictions to the online fractional knapsack problem with rigorous analysis and a principled learning-augmented framework. The matching lower bounds and consistency-robustness trade-off are valuable. However, the limited experimental validation (synthetic data only), incomplete algorithmic exposition in the abstract, and lack of real-world evaluation prevent this from being a strong accept. The work would benefit from more comprehensive experiments and clearer presentation of the algorithmic contributions.
+
+**Confidence:** 3
+
+**Soundness:** good
+
+**Presentation:** fair
+
+**Contribution:** good

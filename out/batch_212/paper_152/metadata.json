@@ -1,0 +1,18 @@
+{
+  "paper_id": "yacRhge4zQ",
+  "review_id": "5Yq0QwTe4B",
+  "year": 2024,
+  "line": 589,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "Strengths: \n- The proposed model of multi-agent multi-objective is novel and interesting to study. \n\n- The proposed scenario of SpecGame is well-defined and makes sense.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper studied the problem of multi-agent and multi-objective machine learning (ML) regulation games where there exist separate regulators enforcing privacy and fairness constraints on the learning model. Prior work in trustworthy ML often implicitly assumes that a single entity is in charge of implementing these different objectives, which is not realized in practice. The authors instead proposed SpecGame, a general framework for ML regulation games between three agents: model builder, fairness regulator, and privacy regulator. Since the agents' privacy loss is difficult to estimate in post-processing, the authors also proposed ParetoPlay, i.e. using a pre-calculated Pareto frontier as common knowledge among all agents, to simulate the interactions between agents in a SpecGame and recover equilibria points. Finally, the authors provided experimental results to show the suboptimality of the single-agent model in trustworthy ML and answer questions on how the regulators can achieve the desired equilibrium by changing their incentives after the game has converged.",
+  "human_questions": "- Can the authors clarify the assumption of a pre-calculated Pareto frontier as common knowledge?\n- Can the authors clarify the discrepancy between RQ1 and the contribution claimed at the end of Section 1? \n- Can the authors provide a more detailed description of the experiments in Section 5, as well as the reasoning for choosing the hyperparameters described in Appendix I? Particularly, the step size discount factor and the loss function weightings \\lambda_fair and \\lambda_priv?",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "2 fair",
+    "contribution": "3 good"
+  }
+}

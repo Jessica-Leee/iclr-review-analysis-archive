@@ -1,0 +1,18 @@
+{
+  "paper_id": "ziDFH8TPPK",
+  "review_id": "fEOGUyoqZK",
+  "year": 2024,
+  "line": 118,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "Overall I believe that the paper has great potential for presenting an interesting case study with strong empirical results on this important problem, but in its current form the lack of clarity and details for better understanding the study are severe issues.\n\n- The results seem strong and quite significant gains over physics-based baselines (coming from various meteorological institutions) are reported. I am not familiar with the typhoon track forecasting literature though.\n- Open-sourcing the data will be valuable. When doing so, the authors should put care into making it easily accessible and well-documented\n- Training on NWP data such as UM instead of ERA5 is a good study to make but has limited originality.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper introduces a framework for data-driven typhoon prediction based on cross-attention between encoded representations of the past trajectory points as well as global weather data (geopotential and wind directions). The paper shows good results in forecasting the typhoon trajectories, especially compared to physics-based baselines.",
+  "human_questions": "- First sentence of methods section: 1) There is no index *i* for none of the variables (e.g. it should be $c_i$, I think); 2) $t_p$ is the input sequence **length** (not the input sequence). Similarly for $t_f$; 3) $p$ is given different meanings for $C_p$ and the pressure levels $p \\in P$. This is confusing, can you use different letters, please?\n- Why are geopotential height and wind vectors inputs taken from the output timesteps $i=t_p+1, \\dots, t_p+t_f$? Should it not be $i=1, \\dots, t_p$?\n- 3.1 Preliminaries (not preliminarily)\n- Tone down \"is too large scale to train a model from scratch\". There exist models trained from scratch on ERA5...\n- \"$\\tilde X$ is the forecasting values for ERA5 from time $t$ to $t+t_f$\". Shouldn't it be $t+1$ to $t+t_f$?\n- I don't completely understand how the bias correction phase works, is the UM data matched with ERA5 based on the timestamp?",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "1 poor",
+    "contribution": "2 fair"
+  }
+}

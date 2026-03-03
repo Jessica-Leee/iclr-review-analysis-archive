@@ -1,0 +1,18 @@
+{
+  "paper_id": "zkVm3JqJzs",
+  "review_id": "whqt7vpIBl",
+  "year": 2024,
+  "line": 104,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The paper is easy to read. The idea and the solution are both clearly articulated and the results are convincing. There are theoretical justifications.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper studies conformal prediction as applied to classification problems. It shows that one can significantly reduce the size of the set-valued prediction by removing the miscalibrated probability values in the long tail. This is done by discarding all the probability values except for the maximum softmax probability.",
+  "human_questions": "1. On page 3, just above (4), it stated \"In the APS method (Romano et al., 2019)\". However, are you sure it's not Romano et al., 2020?  The 2019 paper was Conformalized quantile regression.\n\n2. Page 13, right above equation (9), it stated \"i.e., the calibrated threshold $\\tau$, can be obtained by (an equation)\". It is not obvious to me how this result was obtained and some clarification is appreciated. Moreover, what is the asterisk (*) at the end of that equation?",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "4 excellent",
+    "presentation": "4 excellent",
+    "contribution": "4 excellent"
+  }
+}

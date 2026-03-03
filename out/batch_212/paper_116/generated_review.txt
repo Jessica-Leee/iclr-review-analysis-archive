@@ -1,0 +1,38 @@
+**Review:**
+
+This paper introduces Matrix Function Neural Networks (MFNs), a novel architecture that parameterizes non-local interactions through analytic matrix equivariant functions using resolvent expansions. The authors position MFNs as an alternative to message-passing neural networks (MPNNs) and spectral GNNs, claiming advantages in capturing non-local interactions in systems such as conjugated molecules and metals while maintaining computational efficiency through linear scaling with system size. The method is evaluated on standard benchmarks (ZINC, TU datasets) and quantum systems.
+
+**Strengths:**
+- The core idea of using matrix equivariant functions and resolvent expansions to capture non-local interactions is conceptually interesting and addresses a genuine limitation of MPNNs.
+- The paper claims state-of-the-art results on established benchmarks (ZINC, TU datasets), which would be a meaningful empirical contribution if properly validated.
+- The motivation is well-articulated: the paper clearly identifies gaps in existing approaches (MPNNs lack non-locality, spectral GNNs have computational or generalization issues) and proposes a targeted solution.
+- The promise of linear scaling with system size is attractive for practical applications.
+
+**Weaknesses:**
+- The abstract provides insufficient technical detail to assess the soundness of the approach. How exactly are the matrix equivariant functions parameterized? What is the precise form of the resolvent expansion, and how does it ensure equivariance? Without these details, it is difficult to evaluate novelty or correctness.
+- No experimental details, ablations, or comparisons are provided in the abstract. Claims of "state-of-the-art performance" cannot be verified without seeing actual results, baselines, and error bars. The abstract mentions quantum systems but provides no quantitative evidence.
+- The relationship between equivariance and the resolvent expansion is unclear. Why is this particular choice of analytic function appropriate for preserving symmetries? How does it compare to other equivariant architectures (e.g., tensor field networks, higher-order GNNs)?
+- The paper promises to release code and datasets but does not discuss reproducibility details, hyperparameter sensitivity, or computational cost comparisons in practice.
+
+**Questions:**
+- Can you provide the explicit form of the matrix equivariant functions and the resolvent expansion used?
+- How does the claimed linear scaling compare empirically to MPNNs and spectral GNNs on large graphs?
+- What specific quantum systems are tested, and how do results compare to domain-specific baselines?
+- How sensitive is the method to the choice of expansion order or other hyperparameters?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses an important problem and proposes an interesting direction, but the abstract lacks sufficient technical depth and experimental validation to assess the contribution rigorously. The claims are promising but unsubstantiated in the provided text. A full paper with detailed methodology, comprehensive experiments, and ablations would be needed to properly evaluate this work.
+
+**Confidence:**
+2 (Low—assessment is limited by the abstract-only format; a full paper review would be more informative.)
+
+**Soundness:**
+2 (Fair—the core idea is plausible, but technical details are missing, making it impossible to verify correctness or novelty claims.)
+
+**Presentation:**
+3 (Fair—the abstract is well-motivated but lacks the technical specificity needed for a venue like ICLR.)
+
+**Contribution:**
+3 (Fair—the conceptual contribution is interesting, but without experimental validation or detailed methodology, the impact cannot be assessed.)

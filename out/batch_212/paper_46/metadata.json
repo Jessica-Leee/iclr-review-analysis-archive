@@ -1,0 +1,18 @@
+{
+  "paper_id": "zYXFMeHRtO",
+  "review_id": "6WSt8HPEEw",
+  "year": 2024,
+  "line": 183,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "* The paper addressed an important and trendy topic on adapting CLIP models for video recognition tasks. \n\n* The paper is fairly well written. Technical details are clearly described and easy to follow.\n\n* The proposed method is well motivated, and offers a reasonable solution.\n\n* The experiments are extensive. The results are solid.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper addressed the problem of adapting image-based CLIP models to open vocabulary action recognition in videos. The starting point of this paper is an observation that adapting CLIP on a particular video dataset will likely reduce its performance on other distinct datasets. Based on this observation, the authors proposed a method that combines a variant of feature distillation (Residual Feature Distillation) with standard cross entropy loss for adapting CLIP to videos. The proposed method can be attached to existing adaptation methods, and demonstrated strong empirical results on public benchmarks.",
+  "human_questions": "I am a bit confused by how the results were reported for the proposed method in Table 1. Sec 4.2 (implementation details) states that \u201cOtherwise stated, we use VCLIP for conducting experiments.\u201d Is the proposed method (FROSTER) also built on VCLIP in Table 1? If so, VCLIP should be included as a baseline here. If not, a description should be included.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "4 excellent",
+    "contribution": "3 good"
+  }
+}

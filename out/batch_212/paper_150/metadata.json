@@ -1,0 +1,18 @@
+{
+  "paper_id": "ybavRGEmpw",
+  "review_id": "n6ZGHPTrle",
+  "year": 2024,
+  "line": 582,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The paper proposes a framework that is generally applicable and mathematically elegant. The properties of the OT-regularized divergence are nice and the derived algorithm is nice. The paper is well-written and easy to read.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposed adversarial training with optimal-transport-regularized divergence. It is a framework solving distributional robustness optimization problem where the distributional divergence is regularized by optimal transport. The authors comprehensively study the properties of this problem and demonstrate the effectiveness of the derived algorithms.",
+  "human_questions": "The paper is generally well-written and interesting. My questions are the two points in the weakness part. The manuscript will be better with the empirical issues addressed.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

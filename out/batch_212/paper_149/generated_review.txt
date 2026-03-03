@@ -1,0 +1,34 @@
+**Review:**
+
+This paper introduces BIRB, a benchmark for evaluating machine learning generalization in bioacoustics, specifically focused on retrieval of bird vocalizations under distribution shift. The authors propose a baseline system using representation learning and nearest-centroid search to retrieve bird calls from passively-recorded datasets given focal recordings from citizen science data for training. The work addresses an important gap: while generalization and robustness have been extensively studied in vision, realistic benchmarks for audio and bioacoustics remain limited. The paper's core contribution is the benchmark itself—a complex, real-world task that combines multiple sources of distribution shift (recording conditions, species overlap, temporal variation) rather than artificial, controlled shifts studied in prior work.
+
+**Strengths:**
+- **Addresses a genuine need**: The paper correctly identifies that most generalization benchmarks focus on images with synthetic shifts. A realistic bioacoustics benchmark grounded in citizen science data and passive monitoring is a valuable contribution to the community.
+- **Well-motivated problem**: The use case is compelling—training on focal recordings and deploying on passively-recorded audio reflects real deployment scenarios with natural distribution shifts.
+- **Thorough empirical evaluation**: The abstract indicates the authors conduct thorough empirical evaluation and analysis, surfacing open research directions, which suggests careful experimental work.
+
+**Weaknesses:**
+- **Limited methodological novelty**: The baseline system (representation learning + nearest-centroid search) is straightforward and not novel. The paper's primary contribution is the benchmark rather than new methods, which may limit impact for a venue like ICLR that values algorithmic contributions.
+- **Insufficient detail in abstract**: The abstract lacks specifics about benchmark construction, dataset size, number of species, types of distribution shifts included, or quantitative results. It is unclear what makes BIRB "complex" or how it compares to existing audio benchmarks (e.g., ESC-50, AudioSet).
+- **Unclear scope and evaluation metrics**: The abstract does not specify evaluation metrics, baseline performance, or how the benchmark will be released and maintained. For a benchmark paper, clarity on reproducibility and accessibility is essential.
+- **Limited analysis of findings**: While the abstract mentions that evaluation "surfaces open research directions," it does not articulate what those directions are or what insights the baseline system reveals about current limitations.
+
+**Questions:**
+- How many bird species and audio recordings does BIRB contain, and what is the train/test split?
+- What specific types of distribution shift are represented (e.g., recording device, habitat, time of year)?
+- How does the baseline system's performance vary across different shift types, and what does this reveal about current model limitations?
+- Will the benchmark and baseline code be made publicly available?
+- How does BIRB compare in scope and complexity to existing audio generalization benchmarks?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper makes a solid contribution by introducing a realistic, multi-faceted benchmark for an understudied domain (bioacoustics). The motivation is clear and the problem is important for advancing robustness in ML. However, the limited methodological novelty, lack of detail in the abstract about benchmark construction and results, and absence of clear insights from the baseline analysis prevent this from being a strong accept. For ICLR, this is a borderline paper that would benefit from a full submission with detailed results, analysis of failure modes, and clearer articulation of how BIRB advances the field beyond existing benchmarks.
+
+**Confidence:** 3
+
+**Soundness:** Good
+
+**Presentation:** Fair
+
+**Contribution:** Good

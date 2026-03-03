@@ -1,0 +1,45 @@
+**Review:**
+
+This paper addresses the open problem of certifying robustness for deep visual graph matching (GM) against adversarial perturbations. The authors propose CR-OSRS, which extends random smoothing to the GM setting by using a joint Gaussian distribution (rather than isotropic Gaussian) to capture structural information between keypoints, combined with a global optimization algorithm to search for the optimal smoothing range. The method partitions the large permutation output space based on similarity to reduce computational complexity, and introduces two evaluation metrics (sampling and marginal radii) to measure the high-dimensional certified space. Experimental results demonstrate state-of-the-art ℓ₂ certified robustness on GM datasets.
+
+**Strengths:**
+1. **Novel problem formulation**: Extending certified robustness to visual graph matching is a well-motivated and previously unaddressed challenge. The paper clearly articulates two key difficulties—handling paired inputs and large permutation output spaces—and proposes targeted solutions.
+2. **Principled technical approach**: The use of joint Gaussian distributions instead of isotropic smoothing is intuitive and well-justified for capturing keypoint relationships. The global optimization for searching optimal smoothing ranges and output space partitioning based on similarity are reasonable design choices.
+3. **Comprehensive methodology**: The paper combines multiple techniques (data augmentation, similarity-based regularization, output space partitioning) in a coherent framework, and proposes two practical metrics for evaluating the high-dimensional certified space.
+
+**Weaknesses:**
+1. **Limited experimental validation**: The abstract provides no quantitative results (e.g., certified radius values, matching accuracy, computational cost comparisons) or details on which GM datasets were used. Without concrete numbers, it is difficult to assess the practical significance of the improvements or the trade-off between certified robustness and matching performance.
+2. **Unclear technical details**: The abstract does not explain how the joint Gaussian distribution is parameterized, how the global optimization algorithm works, or how the output space partitioning is performed in practice. The two proposed evaluation metrics (sampling and marginal radii) are mentioned but not defined, making it hard to assess their validity.
+3. **Incomplete evaluation of certified space**: While the paper acknowledges that the certified space is "high-dimensional and multivariable," the proposed evaluation methods are only briefly sketched. It remains unclear whether these metrics reliably capture the true robustness guarantee or how they compare to standard certification approaches.
+4. **Missing related work context**: The abstract does not discuss how this work relates to existing certified robustness methods (e.g., randomized smoothing variants, other combinatorial certification approaches) or why prior techniques cannot be directly applied to GM.
+
+**Questions:**
+1. Can you provide concrete certified radius values and matching accuracy numbers on standard GM benchmarks (e.g., SPair-71k, CelebA-PL)?
+2. How is the joint Gaussian distribution parameterized, and what is the computational complexity of the global optimization algorithm?
+3. How do the proposed evaluation metrics (sampling and marginal radii) compare in terms of tightness and computational cost?
+4. What is the certified robustness guarantee formally (e.g., for a given perturbation budget ε, what matching error can be guaranteed)?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper tackles a novel and important problem with a principled approach combining joint Gaussian smoothing, output space partitioning, and optimization-based smoothing range search. However, the abstract lacks sufficient experimental detail and technical clarity to fully assess the contribution's significance. With concrete results and clearer exposition of key technical components, this could be a solid contribution to certified robustness in combinatorial learning.
+
+**Confidence:**
+3 (Low–Medium)
+
+The novelty and problem formulation are clear, but the limited experimental detail and incomplete technical exposition in the abstract make it difficult to assess the soundness and practical impact with high confidence.
+
+**Soundness:**
+3 (Fair)
+
+The overall approach is reasonable, but without detailed technical exposition and experimental validation in the abstract, it is hard to verify the soundness of the certification guarantees and the effectiveness of the proposed metrics.
+
+**Presentation:**
+2 (Poor)
+
+The abstract is dense and omits critical details: no quantitative results, no formal definition of the certified space or evaluation metrics, and insufficient explanation of key technical components (joint Gaussian parameterization, global optimization, output space partitioning).
+
+**Contribution:**
+3 (Fair–Good)
+
+The paper addresses a novel problem and proposes a reasonable combination of techniques, but the contribution's significance cannot be fully assessed

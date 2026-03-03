@@ -1,0 +1,18 @@
+{
+  "paper_id": "yeKQXf08Db",
+  "review_id": "eq7bkxthwD",
+  "year": 2024,
+  "line": 563,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "See summary.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper explores hyperparameter tuning for generalized linear contextual bandits. The foundational concept behind the paper is the OFUL algorithm, where the chosen arm at round $t$ is:\n\n$a_{t}=\\arg\\max_{a\\in [K]}$ $x_{t,a}^{\\top}$ $\\hat \\theta_{t}$ $+\\alpha $ $ ||x_{t,a}||_{V{t}{-1}}$.\n\nWhile setting $\\alpha=\\tilde{\\Theta}(d)$ can yield the worst-case optimal regret bound, this parameter might result in subpar performance in real-world scenarios. \n\nThe primary objective of this paper is to adjust the parameter $\\alpha$ to ensure that the algorithm maintains its theoretical guarantee while also demonstrating good empirical results. Given certain conditions, the paper achieves this goal.",
+  "human_questions": "See above.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "paper_id": "yTY1RtowlY",
+  "review_id": "107FIjfXTl",
+  "year": 2024,
+  "line": 629,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. Performance: Our COP model surpasses the commonly adopted Slot Attention method on the Multi-dSprites and Tetrominoes datasets, setting a new benchmark in performance as measured across all three datasets.\n2. Efficiency: COP demonstrates improved efficiency, boasting superior time and space complexity metrics.\n3. Simplicity: The COP framework operates non-iteratively, streamlining the processing pipeline.",
+  "human_weaknesses": "",
+  "human_review_text": "COP is proposed as a novel method for learning object-centric representations. COP is a simple baseline for abstraction models, using vanilla building blocks like CNN, MaxPool layers, and a modified Cross-Attention. COP is evaluated on standard Object-Centric benchmarks and shows competitive or superior performance compared to other slot attention methods.",
+  "human_questions": "see weakness",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

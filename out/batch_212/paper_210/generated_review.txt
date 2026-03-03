@@ -1,0 +1,37 @@
+**Review:**
+
+This paper proposes IMO (Invariant features Masks for Out-of-Distribution text classification), a method for domain generalization in text classification using pre-trained models. The core idea is to learn sparse mask layers during training that remove irrelevant features while preserving invariant ones, combined with a token-level attention module to focus on predictive tokens. The authors claim substantial improvements over strong baselines across various evaluation metrics and settings.
+
+**Strengths:**
+- The problem of out-of-distribution generalization for text classification is well-motivated and practically important.
+- The approach of learning sparse masks to identify invariant features is intuitive and aligns with domain generalization principles.
+- The paper proposes a combination of feature-level (sparse masks) and token-level (attention) mechanisms, which could be complementary.
+
+**Weaknesses:**
+- The abstract lacks critical methodological details. How exactly are sparse masks learned? What is the optimization objective? Is there a sparsity regularizer? The connection between "greedy layer-wise" in the title and the actual method is unexplained.
+- No experimental details are provided in the abstract: which datasets are used? What are the baseline methods? What are the actual performance numbers? Without these, it is impossible to assess the empirical validity of the claims.
+- The term "invariant features" is used informally. In domain generalization, invariance typically requires formal definition (e.g., features that maintain predictive power across domains). The abstract does not clarify how invariance is enforced or verified.
+- The presentation is vague: "substantially outperforms" is unquantified, and the relationship between the title's emphasis on "greedy layer-wise" learning and the method description is unclear.
+
+**Questions:**
+- How does the sparse mask learning procedure work? Is there a closed-form solution or iterative optimization?
+- What is the sparsity level, and how is it controlled?
+- How do you ensure that masked features are truly invariant across domains, rather than simply removing domain-specific noise?
+- Can you provide concrete experimental results (datasets, baselines, performance numbers) to support the claims?
+
+**Overall score:**
+3: reject, not good enough
+
+The paper addresses a relevant problem but the abstract provides insufficient detail to evaluate the method's novelty, soundness, or empirical contribution. The lack of experimental results, unclear methodology, and vague presentation make it impossible to assess whether this work meets the standards for publication at a top venue. A complete paper with detailed methodology and comprehensive experiments would be needed for proper evaluation.
+
+**Confidence:**
+2 (Low—based only on abstract; full paper review would be more informative)
+
+**Soundness:**
+2 (Poor—insufficient methodological clarity to assess soundness)
+
+**Presentation:**
+2 (Poor—vague terminology, missing key details, unclear connection between title and method)
+
+**Contribution:**
+2 (Poor—novelty unclear; sparse masking and attention mechanisms are not novel individually, and their combination is not well-motivated or explained)

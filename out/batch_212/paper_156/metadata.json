@@ -1,0 +1,18 @@
+{
+  "paper_id": "yYjsH5wktr",
+  "review_id": "2I6pBJO5Am",
+  "year": 2024,
+  "line": 602,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The strength of the paper comes from the emphasis on the two goals related to fairness in the context of GNNs. It is nice to see the effort to derive new approaches for message passing and are fairness-aware (as noted by authors).",
+  "human_weaknesses": "",
+  "human_review_text": "The paper considers the goals of achieving both graph smoothness and fairness in message-passing at the same time. A framework GMMD, as well as the simpler version GMMD-S, is proposed. Theoretical derivations and empirical experiments are also presented.",
+  "human_questions": "__Q1__: w.r.t. the notion of fairness of interest and the motivation behind GMMD\n\nConsidering that there are multiple group-level fairness notions proposed in the algorithmic fairness literature, it would be clearer if the notion of interest can be explicitly noted early on in the paper. The MMD metric utilized in the proposed GMMD framework is for the purpose of quantifying group-wise distribution discrepancies, which indicates that the applicability of GMMD is limited to DP notion of fairness. However, the first appearance of DP notion is in Section 4.2, after introducing the GMMD framework. I am wondering if GMMD is general enough to handle various fairness notions, or DP is the actual motivation behind GMMD framework.\n\n__Q2__: applicability of the framework and theoretical results\n\nThe theoretical results are derived with binary classification and binary sensitive features, and with $K = 2$. The values of the involved constants also seem rather specifically tailored to the aforementioned setting. Additional discussions and clarifications on the takeaway message and the applicability of results would be very helpful.\n\n\n__Minor typos:__\n\n- top of page 2 (first line): \"fairness-ware\"\n\n- bottom of page 2 (last but second line): \"fairness-ware\"\n\n- Section 4.1 (first paragraph): \"on step gradient\"",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

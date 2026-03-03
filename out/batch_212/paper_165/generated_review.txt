@@ -1,0 +1,34 @@
+**Review:**
+
+This paper proposes Lingual-SMoE, a sparse mixture-of-experts approach for multilingual machine translation that incorporates linguistic structure and language complexity into routing decisions. The core contributions are: (1) extracting language representations to group experts according to linguistic hierarchies (e.g., language families), and (2) adaptively determining the number of activated experts per target language based on translation difficulty. The method is evaluated on MMT benchmarks with 16, 50, and 100 language pairs, showing improvements of over 5% BLEU on OPUS-100 compared to dense baselines.
+
+**Strengths:**
+- The motivation is well-articulated: the observation that standard SMoE routing ignores linguistic hierarchies and language-specific complexity is intuitive and addresses a genuine gap in existing MMT approaches.
+- Comprehensive experimental validation across multiple scales (16, 50, 100 language pairs) and architectures strengthens the empirical claims.
+- The idea of adaptive expert allocation per language is practical and aligns well with the intuition that harder languages may benefit from more capacity.
+- Significant improvements (5% BLEU) over dense baselines on a large-scale benchmark (OPUS-100) suggest meaningful gains.
+
+**Weaknesses:**
+- The abstract lacks sufficient technical detail on how language representations are extracted and how experts are grouped. The mechanism for determining "the number of activated experts" adaptively is not clearly explained—is this learned, heuristic-based, or rule-based?
+- No comparison with other recent SMoE variants or language-aware routing methods is mentioned, making it difficult to assess the novelty and relative contribution of this work.
+- The claim that routing "only at the word level" is insufficient is not well-justified; the paper does not explain why language-level routing is necessary or provide ablation studies isolating the contribution of each component.
+- Missing details on computational overhead: while SMoE promises "negligible extra computational overheads," the paper does not report actual training time, memory usage, or inference latency comparisons.
+
+**Questions:**
+- How are language representations extracted? Are they learned end-to-end or derived from external linguistic resources?
+- What is the computational cost of the language-guided routing mechanism compared to standard SMoE?
+- Can you provide ablation studies isolating the contributions of (1) linguistic grouping and (2) adaptive expert allocation?
+- How does performance scale with the number of experts and languages? Are there diminishing returns?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper addresses a relevant problem in MMT with a reasonable solution and demonstrates solid empirical improvements. However, the presentation lacks technical clarity, and the absence of comparisons with related SMoE variants and ablation studies limits confidence in the contribution. With revisions addressing the technical details and more thorough comparisons, this could be a stronger contribution.
+
+**Confidence:** 3 (moderate—limited by sparse technical detail in the abstract)
+
+**Soundness:** 3 (fair—the core ideas are sound, but insufficient detail to fully assess methodology)
+
+**Presentation:** 2 (fair—the abstract is clear in motivation but vague on technical implementation)
+
+**Contribution:** 3 (fair—addresses a gap in MMT, but novelty relative to existing SMoE work is unclear)

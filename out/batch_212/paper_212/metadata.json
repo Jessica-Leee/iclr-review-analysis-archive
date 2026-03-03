@@ -1,0 +1,18 @@
+{
+  "paper_id": "y21ZO6M86t",
+  "review_id": "WrhKZGOkS5",
+  "year": 2024,
+  "line": 825,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_review_text": "The paper proposes a spectral domain self-supervised method for graphs based on a linear combination of low-pass and high-pass information while keeping the graph structure intact. Although the idea of the paper is interesting and novel, the evaluation lacks comparison with recent works along the similar direction. Moreover, the paper is missing some key references such as FAGCN (not a self-supervised method but considers high pass and low pass information in a supervised manner)[1], [2] [3]. It lacks explanations concerned with the intuition behind low-pass and high-pass information in the learning process. \n\n\nTheorem 1 is only for regular graphs for binary classification, how can it be a basis of a much stronger claim of having the high pass information in heterophilic datasets?\n\nHave you considered high-pass encoders for the graphs with large heterophily? What is the performance in such a case of alpha = 0? What about when beta = 0?\n\nWhat about using NT-Xent loss as used in GraphCL as compared to the one used in this paper? What is the intuition of low and high frequency information in the context of the global embedding $g$? \n\nWhile reporting the results for graphCL, what exact method did you use? node/edge-drop or a combination of other methods?\n\n[1] Deyu Bo et al. , \"Beyond Low-frequency Information in Graph Convolutional Networks\", AAAI 2021.\n[2] Amur Ghosh et al. , \"Spectral Augmentations for Graph Contrastive Learning,\" AISTATS 2023.\n[3] W Yang, B Mirzasoleiman, \"Graph Contrastive Learning under Heterophily,\" 2023 Arxiv.\n\n\nAfter response:\n\nI appreciate the efforts authors put to clarify my concerns. Thanks. The authors comment on \"k-regular graph\" restricting the eigenvalues of the normalized Laplacian to [0,2] was unsatisfactory. In fact, it is true for all type of graphs. Such loose statements are not good. Moreover, I was looking for for more intuitions about low pass and high pass questions and comparing against the mean representation, just putting some numbers in order to validate the usefulness of the proposed work seems a bit naive. It would help the paper if frequency domain examples are exploited in simple settings, not just in terms of accuracy numbers after putting a classification head. This paper had a great idea, but could have been much better..",
+  "human_strengths": "please see summary.",
+  "human_weaknesses": "",
+  "human_questions": "Theorem 1 is only for regular graphs for binary classification, how can it be a basis of a much stronger claim of having the high pass information in heterophilic datasets?\n\nHave you considered high-pass encoders for the graphs with large heterophily? What is the performance in such a case of alpha = 0? What about when beta = 0?\n\nWhat about using NT-Xent loss as used in GraphCL as compared to the one used in this paper? What is the intuition of low and high frequency information in the context of the global embedding $g$? \n\nWhile reporting the results for graphCL, what exact method did you use? node/edge-drop or a combination of other methods?",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

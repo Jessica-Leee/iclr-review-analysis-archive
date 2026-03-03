@@ -1,0 +1,18 @@
+{
+  "paper_id": "zSxpnKh1yS",
+  "review_id": "8JzhCCMTSC",
+  "year": 2024,
+  "line": 202,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "There is a long line of work on unsupervised skill learning based on mutual information maximization between states and skills, most of the work being motivated by intuition and empirical performance. This work complements Eysenbach et al. (2022) by providing a rigorous understanding of the properties of the learned skills and provides useful insights. The analysis presented in this work is novel, to the best of my knowledge and comprises a fairly significant advancement of our understanding of this sub-area of RL. The quality of analysis and writing is satisfactory, with sufficient background and context provided before explaining the main results of the paper.\n\n**References:**\n\nBenjamin Eysenbach, Ruslan Salakhutdinov, and Sergey Levine. The information geometry\nof unsupervised reinforcement learning. In The Tenth International Conference on Learning\nRepresentations, ICLR 2022, Virtual Event, April 25-29, 2022. [OpenReview.net](http://openreview.net/), 2022. URL\nhttps://openreview.net/forum?id=3wU2UX0voE.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper analyzes unsupervised skill-learning through a rigorous mathematical lens, focusing on the properties of the learned skills and their usefulness for downstream tasks. Most existing works use mutual information as the skill-learning objective and Eysenbach et al. (2022) provides a mathematical analysis of the same. This work analyzes the mutual information-based skill learning paradigm with a focus on downstream task adaptability via worst-case adaptation cost. This work also introduces a complementary metric called LSEPIN to measure diversity of learned skills. The authors show that maximizing MI or LSEPIN is essentially optimizing the KL divergence between state distributions. As an alternative, they suggest using the Wasserstein metric owing to it being a proper metric, and propose a new skill learning objectives built upon Wasserstein distance.\n\n**References:**\n\nBenjamin Eysenbach, Ruslan Salakhutdinov, and Sergey Levine. The information geometry\nof unsupervised reinforcement learning. In The Tenth International Conference on Learning\nRepresentations, ICLR 2022, Virtual Event, April 25-29, 2022. [OpenReview.net](http://openreview.net/), 2022. URL\nhttps://openreview.net/forum?id=3wU2UX0voE.",
+  "human_questions": "None",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "paper_id": "zhZXk5Ctz2",
+  "review_id": "YsYq0QTA2Y",
+  "year": 2024,
+  "line": 122,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The paper analyzes the drawbacks of the per-pixel loss functions in the RGB space, To alleviate the issues of the tendency to producing blurry blurry, unrealistic textures, the paper proposes an aRGB representation to include the local texture for training. The analyses are sound and profound.  Based on the developed encoder and decoder, the method improves the performance of three image restoration tasks using different kinds of loss functions.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper proposes augmented RGB representation to alleviate the issue that per-pixel loss functions defined in the RGB color space tend to produce blurry, unrealistic textures. The proposed aRGB is designed with a nonlinear mixture-of-experts encoder and a linear decoder to meet two requirements. The experiments are conducted on various loss functions across different image restoration tasks for demonstration.",
+  "human_questions": "1. The authors design a nonlinear mixture-of-experts encoder and a linear decoder for aRGB representation. Can this design principle be applied to guide the architecture design of image restoration networks?\n2. Is the additional en/decoder equivalent to adding an additional branch for learning? I doubt whether the improved performance is yielded by the additional computation overhead.\n3. The widely used dual-domain loss in models, such as MIMOUNet (Cho et al, ICCV'21) and SFNet (Cui et al, ICLR'23), can introduce global information refinement. How does aRGB compare to this loss function? This function does not lead to much computation overhead.\n4. Does aRGB lead to extra computation overhead during training and inference?\n5. Does the proposed the aRGB architecture rely on the dataset trained on?\n6. The reviewer thinks that the performance improvement on GoPro is minimal. For example, only a 0.05 dB PSNR gain is obtained for MPRNet on GoPro. What do the authors think about this?",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "4 excellent",
+    "contribution": "3 good"
+  }
+}

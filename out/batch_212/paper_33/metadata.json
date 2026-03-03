@@ -1,0 +1,18 @@
+{
+  "paper_id": "zgQ0PHeGnL",
+  "review_id": "OwngG4tEZD",
+  "year": 2024,
+  "line": 134,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- this paper predicted a pair of elliptical paraboloids as two proteins' binding interfaces. This idea is interesting.\n\n- this method compared both classical docking method, e.g., HDock and deep-learning based docking method, e.g., EquiDock, Multimer.\n\n- it's glade to see experimental comparison on both general protein complex and antibody-antigen complexes. The last one is important in the field of drug design.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposed a deep learning method called ElliDock on solving rigid proteins docking. Firstly, they use a pair of elliptic paraboloids to estimate docking interfaces and then use equivariant neural network to learn rotation and translation. The first part is interesting. They compared with classical docking method HDock and deep learning based methods, EquiDock, DiffDock-PP, multimer. Experimental results show some minor improvement on these old deep learning baselines and much worse than HDock. My major concern are: 1) they didn't compare with the latest method, 2) the setting is not realistic. see weaknesses i listed as follow.",
+  "human_questions": "- HDock performs much better than ElliDock. I guess the major reason is the input rigid structure is native unbounded structure. However, using native unbound structure as docking method's input is not realistic. What's the performance if you dock predicted structures.\n\n- the pair of elliptical paraboloids are with the same shape. How to handle large protein or samll proteins?",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

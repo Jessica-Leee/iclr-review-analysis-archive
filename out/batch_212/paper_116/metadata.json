@@ -1,0 +1,18 @@
+{
+  "paper_id": "yrgQdA5NkI",
+  "review_id": "8vurddXaP7",
+  "year": 2024,
+  "line": 452,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "Strong empirical results.\n\nMatrix variate formulation and its efficient approximation by the resolvent expansion are novel.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposes MFN, a graph neural network where the intermediate representation takes a matrix form. The matrix form makes the neural network equivariant for a group action where the representation is unitary. An efficient computation based on the power expansion of the matrix is also proposed. The experiments on the molecule datasets show the competitive performance of MFN.",
+  "human_questions": "In experiments:\n- What is L in the caption of Fig 2?\n- It seems H is constructed with Kronecker products as in Eq. (21). What is the actual size of H?",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "2: You are willing to defend your assessment, but it is quite likely that you did not understand the central parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "1 poor",
+    "contribution": "3 good"
+  }
+}

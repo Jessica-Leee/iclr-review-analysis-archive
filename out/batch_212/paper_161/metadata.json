@@ -1,0 +1,18 @@
+{
+  "paper_id": "yV6fD7LYkF",
+  "review_id": "6t12q5vMcH",
+  "year": 2024,
+  "line": 621,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1) The authors ask several good questions such as: separability of aleatoric and epistemic uncertainty; which predictive model and uncertainty measure to use; as well as how choosing the downstream task is important in designing a good UE pipeline. \n2) The authors break down the whole UE pipeline and identify different components well. They also consider the most relevant downstream tasks for UE.\n3) The authors provide a good discussion about existing pitfalls in UE research with respect to each component. They cite good references for this.\n4) The authors conduct thoughtful experiments to study AU/EU, for eg: applying gaussian blur to the toy example and getting multiple raters\u2019 annotations; changing shape/intensity for EU etc.",
+  "human_weaknesses": "",
+  "human_review_text": "In this work, the authors provide an extensive study and guidelines for uncertainty estimation (UE) and its applications. Specifically, they assign terminologies to different components in the UE pipeline and study how each component affects the end result. UE as a field has several ambiguous and poorly proven results, and hence the authors\u2019 work provides a meaningful understanding. They provide extensive empirical results to validate their claims.",
+  "human_questions": "1) Please also see weakness above.\n2) It seems the authors have considered sampling-based methods in their study. How would the discussion be if the method is sampling-free like [2]?\n3) As the authors have considered SSNs, would the discussion for probabilistic methods like Probabilistic UNet [3] be similar or different?\n\n**References**\n\n[2] Postels, Janis, et al. \"Sampling-free epistemic uncertainty estimation using approximated variance propagation.\" Proceedings of the IEEE/CVF International Conference on Computer Vision. 2019.\n\n[3] Kohl, Simon, et al. \"A probabilistic u-net for segmentation of ambiguous images.\" Advances in neural information processing systems 31 (2018).",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "4 excellent",
+    "presentation": "4 excellent",
+    "contribution": "4 excellent"
+  }
+}

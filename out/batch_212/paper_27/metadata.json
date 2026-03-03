@@ -1,0 +1,18 @@
+{
+  "paper_id": "zkE2js9qRe",
+  "review_id": "OdHrnWlEb1",
+  "year": 2024,
+  "line": 108,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The paper proposes BINDER, a novel order embedding approach which embeds the entities at the vertex of a d-dimensional hypercube, which is simple, elegant, compact and explainable.\n\n2. The paper proposes an optimization algorithm for BINDER, which is simple, efficient, and effective, and can be seen as a proxy of gradient descent for the combinatorial space.\n\n3. The experimental results show that BINDER achieves great performance on link prediction and reconstruction tasks.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposes a method called Binder, which is a hierarchical concept representation method through order embedding of binary vectors. The paper explores the importance of order-based representation in natural language understanding and generation, and discusses the strengths and weaknesses of existing approaches. It also describes the geometric constraints imposed by order-based representation and how they capture semantic relationships between concepts. The paper concludes by discussing potential applications of Binder's approach to hierarchical concept representation in practical natural language processing tasks.",
+  "human_questions": "1. You claim that \u201cIn BINDER\u2019s embedding, an \u20181\u2019 in some representation dimension denotes \u201chaving a latent property\u201d. How to verify it through experiments?\n\n2. What are the differences between the proposed optimization method and randomized local search algorithm? What is the novelty of the proposed optimization method?\n\n3. How to ensure the convergence of the proposed optimization algorithms?\n\n4. Why BINDER is better than OE in WordNet Nouns dataset?\n\n5. How is the dimension (in parenthesis) in Table 3 set? Why is the dimension of OE smaller than that of BINDER?\n\n6. Can you provide the experimental results of box embedding?",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

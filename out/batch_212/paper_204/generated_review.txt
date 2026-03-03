@@ -1,0 +1,38 @@
+**Review:**
+
+This paper proposes KernelWarehouse, a rethinking of dynamic convolution that enables the use of significantly larger kernel numbers (n > 100) while maintaining parameter efficiency. The core contribution is a more general framework that exploits convolutional parameter dependencies within and across layers, allowing flexible design under a desired parameter budget. The authors demonstrate strong empirical results across multiple architectures (ResNet18/50, MobileNetV2, ConvNeXt-Tiny) on ImageNet and MS-COCO, achieving competitive accuracy while enabling substantial parameter reduction (up to 65% fewer parameters with 2.29% accuracy improvement on ResNet18).
+
+**Strengths:**
+- **Addresses a real limitation:** The paper identifies a genuine bottleneck in dynamic convolution—the inability to scale kernel numbers significantly due to parameter explosion—and proposes a principled solution through parameter sharing and dependency exploitation.
+- **Strong empirical validation:** Comprehensive experiments across diverse architectures and datasets with consistent improvements. The ability to simultaneously reduce parameters and improve accuracy is noteworthy and practically valuable.
+- **Flexible design framework:** The rethinking of "kernels," "assembling kernels," and "attention function" provides degrees of freedom to trade off expressiveness and efficiency, which is useful for practitioners.
+- **Reproducibility:** The authors provide code, facilitating verification and adoption.
+
+**Weaknesses:**
+- **Limited conceptual clarity in the abstract:** The paper claims to "rethink" fundamental concepts but the abstract does not clearly explain *how* parameter dependencies are exploited or what the concrete mechanism of KernelWarehouse is. The term "KernelWarehouse" itself is not defined, making it difficult to understand the novelty without reading the full paper.
+- **Insufficient detail on methodology:** The abstract lacks specifics on the assembling mechanism, attention function design, and how parameter sharing across layers is achieved. This makes it hard to assess the technical contribution or reproducibility from the abstract alone.
+- **Missing ablation and analysis:** The abstract does not discuss ablation studies isolating the contribution of within-layer vs. cross-layer parameter sharing, or sensitivity to design choices (e.g., how to choose n for a given budget).
+- **Comparison with related work:** No discussion of how KernelWarehouse compares to other parameter-efficient dynamic convolution variants or related efficient convolution methods (e.g., grouped convolutions, depthwise separable convolutions).
+
+**Questions:**
+- How exactly are parameters shared within and across layers? Is this through low-rank factorization, basis functions, or another mechanism?
+- What is the computational overhead of the attention function at inference time, especially with large n?
+- How sensitive is the method to the choice of n and the parameter budget constraint?
+- How does KernelWarehouse compare to simpler baselines like increasing the number of groups in grouped convolutions or using depthwise separable convolutions?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper addresses a meaningful problem in dynamic convolution and demonstrates strong empirical results with practical benefits (parameter reduction + accuracy gain). However, the abstract and likely the paper itself lack sufficient clarity on the core technical contribution. The work appears solid empirically but would benefit from clearer exposition of the mechanism and more thorough ablation studies to isolate the source of improvements.
+
+**Confidence:**
+3 (moderate—assessment is based on abstract and typical ICLR standards; full paper details would refine this)
+
+**Soundness:**
+Good (empirical results are strong and comprehensive, but methodological details are unclear from the abstract)
+
+**Presentation:**
+Fair (the abstract is dense and does not clearly convey the core mechanism; terminology like "KernelWarehouse" is not defined)
+
+**Contribution:**
+Good (addresses a real limitation of dynamic convolution and enables a new regime of operation; practical impact is clear)

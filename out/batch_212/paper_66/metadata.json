@@ -1,0 +1,18 @@
+{
+  "paper_id": "zKgrmMOQjg",
+  "review_id": "QkdEJJF91a",
+  "year": 2024,
+  "line": 261,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The primary contribution of the paper is the proposed Change Detection Model Architecture that combines the best of Transformer model and Siamese network to compare changes across two documents. Assuming the changes are local, the addition of correlation marginalization module on cross-attention and self-cross attention feature maps help introduce a similarity concept.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper presents a technique to detect changes in multi-lingual documents without performing OCR explicitly. It utilizes a unit-level text image-to-image comparison by building a correlation marginalization process on each feature surroundings to detect text-change between source and target documents. \n\nThe proposed network uses an encoder-decoder model. In the encoder, a Siamese network takes in source and target images. Using ResNet as an FPN backbone network, it produces 3 mutli-scale feature pyramid map pairs (of sizes N/2, N/4, N/8). Using ideas from transformers, positional encoding is applied on N/8 feature vector, followed by cross attention and self-cross attention (source and target images). Assuming changes are local, a cross-correlation and marginalization map is constructed from cosine similarity. In the decoder, cross attention and self-cross attention is applied independently on source and target marginalized correlation maps. Dice and binary cross-entropy loss are used as loss functions. \n\nTraining is done with synthetic data. Evaluation is performed across various scripts like English, Korean Russian and Chinese. For segmentation maps, the proposed TCD approach outperforms the others in F1 and IoU scores. TCD also gets the best OCR average F1 results.",
+  "human_questions": "1. How was data generated? Section 4.1 states that 'merged randomly to make concatenated text images'. Does this mean there are random words that don't make sense? \n\n2. Are there only 80k image pairs across 4 languages? They seem too low to train and test a transformer based model. How was training done exactly? Was it per language basis?\n\n3. Was every SOTA model stopped after 200 epochs or they were stopped right before overfitting?\n\n4. No details are provided on how OCR classification is done! Does this mean OCR is applied to only that subset where image pair is classified as same?\n\n Once the paper is rewritten, perhaps more questions would emerge due to a better understanding of the paper.",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "5: You are absolutely certain about your assessment. You are very familiar with the related work and checked the math/other details carefully.",
+    "soundness": "1 poor",
+    "presentation": "1 poor",
+    "contribution": "2 fair"
+  }
+}

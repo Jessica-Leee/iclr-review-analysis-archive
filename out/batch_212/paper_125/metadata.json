@@ -1,0 +1,18 @@
+{
+  "paper_id": "ymR2bz0cEs",
+  "review_id": "w1x5bQF7HH",
+  "year": 2024,
+  "line": 485,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The experimental results demonstrate superior performance over other methods on MPHOI-72 and CAD-120 benchmarks.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper presents a novel *Context Fuser* module leveraging the strengths of the CLIP and BLIP models, incorporates an *Interaction State Reasoner* module, and introduces *Interaction Feature Loss* to address the video Human-Object Interaction (HOI) problem.",
+  "human_questions": "A deeper ablation study focusing on the efficacy of the CLIP and BLIP parts within the Context Fuser is advisable. This would ascertain whether the observed improvements stem from the newly proposed module or merely from the integration of CLIP and BLIP.",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "1 poor",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

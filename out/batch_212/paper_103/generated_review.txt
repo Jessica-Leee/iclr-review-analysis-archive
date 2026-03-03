@@ -1,0 +1,36 @@
+**Review:**
+
+This paper proposes SpyGPT and SpyGame, two evaluation frameworks inspired by word guessing games ("Who is Spy" and "SpyFall") to assess LLM intelligence. SpyGPT evaluates an LLM's expression and disguising abilities by asking it to describe a word in aggressive and conservative modes, then using GPT-4 to verify accuracy. SpyGame extends this to a multi-agent interactive framework where LLMs compete in a language-based board game, requiring both linguistic and strategic reasoning. The authors claim these methods provide scalable, adaptable alternatives to human-annotated benchmarks like AlpacaEval.
+
+**Strengths:**
+- The core idea of using word guessing games as an evaluation proxy is creative and intuitive; the game mechanics naturally incentivize strategic communication and linguistic sophistication.
+- The two-tier approach (SpyGPT for isolated ability assessment, SpyGame for interactive multi-agent dynamics) provides complementary perspectives on LLM capabilities.
+- The framework is claimed to be easy to implement and scalable across multiple domains and languages, addressing real limitations of human-annotated evaluation.
+- The motivation is well-articulated: existing evaluation methods are costly and lack adaptability.
+
+**Weaknesses:**
+- **Validation is insufficient:** The abstract provides no quantitative results, correlation with established benchmarks, or evidence that SpyGPT/SpyGame scores correlate with downstream task performance or human judgments of intelligence. Without empirical validation, it is unclear whether these games actually measure meaningful LLM capabilities.
+- **Circularity concern:** SpyGPT relies on GPT-4 to judge whether descriptions are accurate. This introduces a potential bias toward GPT-4-like reasoning and raises questions about whether the evaluation truly measures the target LLM's abilities or merely its alignment with GPT-4's judgments.
+- **Lack of methodological detail:** The abstract does not explain how game outcomes are scored, how multi-agent interactions are orchestrated, or how results are aggregated into a single intelligence metric. Without these details, reproducibility and comparability are questionable.
+- **Missing comparison to existing work:** The paper does not discuss how SpyGPT/SpyGame relate to or improve upon other game-based or interactive evaluation frameworks, nor does it provide evidence that this approach is superior to simpler alternatives.
+
+**Questions:**
+- How do SpyGPT and SpyGame scores correlate with established LLM benchmarks (e.g., MMLU, GSM8K) or human evaluations of model quality?
+- Why is GPT-4 the oracle for judging description accuracy in SpyGPT? Have you tested other judges or human evaluation?
+- How are multi-agent games scored when outcomes depend on opponent behavior? Is there a principled aggregation method?
+- What is the computational cost compared to existing evaluation methods?
+
+**Overall score:**
+4: below the acceptance threshold. While the core idea is creative and addresses a real problem (scalable LLM evaluation), the paper lacks empirical validation, methodological clarity, and evidence that the proposed games meaningfully measure LLM intelligence. The reliance on GPT-4 as an oracle introduces potential bias. Without quantitative results, correlation studies, or detailed methodology, the contribution remains speculative.
+
+**Confidence:**
+3 (moderate). The abstract is clear in intent but sparse in results and technical detail, making it difficult to assess the actual contribution and validity of the approach.
+
+**Soundness:**
+2 (fair). The conceptual motivation is sound, but the execution appears incomplete: no validation against established metrics, potential circularity in using GPT-4 as judge, and insufficient methodological specification.
+
+**Presentation:**
+3 (fair). The abstract is well-written and the motivation is clear, but critical details (scoring, aggregation, validation) are missing, limiting reproducibility and assessment.
+
+**Contribution:**
+2 (poor to fair). The idea of game-based evaluation is not entirely novel, and the paper does not demonstrate that SpyGPT/SpyGame provide advantages over existing methods. Without empirical evidence of validity or superiority, the contribution is primarily conceptual and incomplete.

@@ -1,0 +1,35 @@
+**Review:**
+
+This paper investigates an understudied aspect of soft-prompt tuning in vision-language models: the role of soft-prompt vector norms. The authors identify a phenomenon called the Low-Norm Effect through corruption experiments, showing that reducing norms of certain learned prompts can enhance VLM performance while increasing them often degrades it. They propose Nemesis, a method to normalize soft-prompt vectors, claiming to be the first systematic investigation of norm properties in soft-prompt tuning for VLMs.
+
+**Strengths:**
+- Addresses a genuinely underexplored question about soft-prompt properties in VLMs, filling a gap in the literature on prompt tuning.
+- The Low-Norm Effect is identified through systematic corruption experiments, providing empirical grounding for the motivation.
+- The proposed method appears simple and practical, potentially offering value to practitioners adapting VLMs like CLIP.
+
+**Weaknesses:**
+- The abstract provides insufficient detail on the actual normalization mechanism and how Nemesis differs from standard normalization techniques (L2, layer norm, etc.). Without clarity on the method itself, it is difficult to assess novelty.
+- No empirical results, datasets, or quantitative comparisons are provided in the abstract. The paper claims to offer "valuable insights" but does not present evidence of performance improvements or downstream task results.
+- The corruption experiments are mentioned but not described. It is unclear what "reducing norms" and "increasing norms" entail operationally, or how the Low-Norm Effect was measured and validated.
+- The acronym "Nemesis" appears forced and does not clearly convey the method's purpose; this is a minor presentation issue but suggests the work may lack polish.
+
+**Questions:**
+- What specific normalization scheme does Nemesis employ, and how does it differ from existing normalization approaches (e.g., L2 normalization, layer normalization)?
+- What are the quantitative improvements on standard benchmarks (e.g., ImageNet, domain generalization tasks) compared to baseline soft-prompt tuning?
+- How does the Low-Norm Effect vary across different VLM architectures and datasets? Is it a universal phenomenon or task/model-dependent?
+- Can the authors provide intuition for *why* lower norms improve performance? Is this related to regularization, gradient flow, or other factors?
+
+**Overall score:**
+4: below the acceptance threshold. While the paper tackles an interesting and underexplored question about soft-prompt norms in VLMs, the abstract lacks sufficient methodological detail and empirical validation. Without concrete results, a clear description of the Nemesis method, or evidence of practical improvements, the contribution cannot be properly evaluated. The work would benefit from detailed experimental results and clearer exposition of the normalization mechanism before being suitable for publication at a top venue.
+
+**Confidence:**
+3 (low). The abstract is sparse on technical and empirical details, making it difficult to assess the true merit of the work. A full paper would be needed to properly evaluate soundness and impact.
+
+**Soundness:**
+2 (fair). The motivation is reasonable, but the methodology is not clearly described in the abstract. The corruption experiments are mentioned but not explained, raising questions about experimental rigor.
+
+**Presentation:**
+2 (fair). The abstract is vague on the core method and results. Key technical details are missing, and the acronym choice feels unmotivated. Clearer exposition is needed.
+
+**Contribution:**
+2 (poor). While investigating soft-prompt norms is novel, the abstract does not articulate what Nemesis actually does beyond "normalize soft-prompt vectors"—a description that could apply to many existing techniques. Without empirical validation or clear methodological novelty, the contribution is unclear.

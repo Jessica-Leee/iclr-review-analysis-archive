@@ -1,0 +1,18 @@
+{
+  "paper_id": "zEhTnQZB3D",
+  "review_id": "loTFYyMa2o",
+  "year": 2024,
+  "line": 289,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The paper introduces an effective way to use LLMs for CRL. The experiments and ablation studies to demonstrate the advantages of LLIT over baselines. \n\nI think the research topic is interesting, and CRL is an important area to be explored. It seems that LLMs can provide some guidance as it contains rich prior knowledge.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper proposes a method for continual RL that leverages LLMs to infer task-related information and tips in natural language. The proposed method, LLIT, uses the inferred tips to train an auxiliary reward model that guides the policy optimization. Besides, LLIT uses a prompt pool to capture semantic correlations among tasks and extract policy sub-networks for each task. The paper evaluates LLIT on several CRL benchmarks and shows that it outperforms existing methods in terms of stability, plasticity, and generalization.",
+  "human_questions": "It is unclear how is the auxiliary reward model trained. Section 3.2 first mentions that auxiliary reward signal can be generated from parsed tips. But it also says there is an auxiliary reward model.",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

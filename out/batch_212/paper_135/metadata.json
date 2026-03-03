@@ -1,0 +1,18 @@
+{
+  "paper_id": "yisfNWUEsD",
+  "review_id": "6cs5hV3ira",
+  "year": 2024,
+  "line": 526,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. This work is comprehensive, with both the main experiment and the analysis experiment effectively conveying the author's perspective. The writing is clear and well-structured.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposes a framework to combine Large Language Models (LLMs) and Specialized Translation Models (STMs). Specifically, The authors first sample translation candidate from a STM. Then they combine 1) source sentence, 2) STM's translation and 3) ground-truth reference into a triplet. By providing 10 triplets as demonstrations, LLMs learn through in-context learning and refine STM's translation. Further experiments show its superiority in low-resource translation and continual learning.",
+  "human_questions": "1. Why not conduct translation experiments on languages with slightly higher resources, such as German, French, or Chinese? In these languages, the improvements of SCALE may be limited.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

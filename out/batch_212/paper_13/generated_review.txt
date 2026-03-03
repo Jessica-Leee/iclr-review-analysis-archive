@@ -1,0 +1,43 @@
+**Review:**
+
+FABRIC proposes a training-free method for personalizing diffusion-based text-to-image models through iterative human feedback. The core contribution is a technique that conditions the diffusion process on feedback images by exploiting self-attention layers in popular diffusion architectures, enabling users to iteratively refine generation results toward their preferences without retraining the model. The authors introduce a comprehensive evaluation methodology to assess performance on this task and demonstrate that generation quality improves over multiple feedback rounds.
+
+**Strengths:**
+
+- **Practical and accessible approach**: The training-free nature of FABRIC is a significant advantage, making it immediately applicable to existing widely-used diffusion models without requiring fine-tuning or architectural modifications.
+- **Clear problem motivation**: Incorporating iterative human feedback into generative models is a well-motivated direction with direct applications to personalized content creation and user experience.
+- **Comprehensive evaluation**: The paper introduces a rigorous evaluation methodology specifically designed for assessing generative models with human feedback, which is a useful contribution to the field.
+- **Iterative improvement**: Demonstrating that results improve over multiple feedback rounds provides evidence that the approach meaningfully optimizes toward user preferences.
+
+**Weaknesses:**
+
+- **Limited technical novelty**: The core mechanism—conditioning via self-attention layers—is relatively straightforward and lacks substantial algorithmic innovation. The abstract does not describe novel technical insights or theoretical contributions.
+- **Insufficient methodological detail**: The abstract provides minimal information about how feedback images are used to condition the diffusion process, what specific self-attention modifications are made, or how the approach handles conflicting feedback across iterations.
+- **Evaluation methodology unclear**: While the paper claims to introduce a "comprehensive evaluation methodology," the abstract does not specify what metrics are used, how user preferences are quantified, or whether human studies validate the approach.
+- **Missing experimental details**: The abstract does not report quantitative results, baseline comparisons, or ablation studies. It is unclear how FABRIC compares to alternative feedback incorporation strategies or whether improvements are statistically significant.
+- **Generalization concerns**: No discussion of failure cases, limitations, or how the method performs across diverse user preferences and image domains.
+
+**Questions:**
+
+- How exactly are feedback images incorporated into the self-attention computation? Are they concatenated, used as keys/values, or processed differently?
+- What is the computational overhead of FABRIC compared to standard diffusion sampling?
+- How does FABRIC handle conflicting feedback across iterations, and what happens when user preferences are inconsistent?
+- Were human studies conducted to validate that the method actually optimizes toward user preferences, or is this inferred from automated metrics?
+- How does FABRIC compare quantitatively to other feedback-based personalization approaches?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses a relevant problem and proposes a practical solution, but the abstract reveals limited technical novelty, insufficient methodological detail, and a lack of concrete experimental validation. While the training-free nature and iterative feedback mechanism are appealing, the contribution feels incremental without clear evidence of significant improvements or insights. A full paper with detailed methodology, comprehensive experiments, and human evaluation would be needed to assess the true impact of this work.
+
+**Confidence:**
+3 (Low confidence; assessment is based solely on the abstract, which lacks sufficient technical and experimental detail)
+
+**Soundness:**
+2 (Fair; the core idea is reasonable but methodological details are missing, making it difficult to assess technical soundness)
+
+**Presentation:**
+2 (Fair; the abstract is clear in motivation but vague on method and results, limiting reproducibility and understanding)
+
+**Contribution:**
+2 (Poor to Fair; the contribution appears incremental—applying existing self-attention mechanisms to feedback conditioning without substantial novelty or validation)

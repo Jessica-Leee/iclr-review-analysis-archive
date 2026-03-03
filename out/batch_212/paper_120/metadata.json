@@ -1,0 +1,18 @@
+{
+  "paper_id": "ypAT2ixD4X",
+  "review_id": "7t4MXGoVyu",
+  "year": 2024,
+  "line": 466,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "This paper explores missing potential for random parameter sharing in deep neural networks. The early results, such as [Chen et al 2015][hashing], demonstrated competitive performance at the time but the method has received less attention since. It would be valuable for the field to have a comprehensive exploration of the potential of this direction of research.\n\nThe improvements to ROAST presented are well motivated and address clear shortcomings of an existing method. They are a good contribution to the field.\n\nThe theory investigating random parameter sharing presented in 5 theorems is a useful insight into how random parameter sharing works and will be useful to future work in this area. It seems likely that future research may focus on other alternative hashing methods and will benefit by performing similar analysis.\n\n[hashing]: https://arxiv.org/abs/1504.04788",
+  "human_weaknesses": "",
+  "human_review_text": "Stable-RPS is an extension of ROAST, which is a method for sharing parameters using hashing. Parameters are mapped from a shared parameter array into each layer, along with a sign and scaling factor. The paper addresses the stability of ROAST and ensuring that the original performance of the model is maintained at 1x compression (Pareto-continuity). Modifications:\n\n1. A gradient scaling function depending on the scaling factors applied when ROAST maps parameters to layers from the global store\n2. A better hash function that ensures Pareto-continuity\n\nThe authors then demonstrate that this method of parameter sharing is competitive with contemporary pruning methods.\nThe authors also include various theoretical results to explain this improved performance.",
+  "human_questions": "Why is there no discussion of the main limitation of random parameter sharing methods versus pruning methods: that they do not reduce the numpy of floating point operations required, while pruning methods do? If pruning methods and RPS perform similarly up to compression factors of 100x then pruning has a significant edge in saving FLOPs. When would RPS really be competitive?\n\nAre there any experimental results on networks other than ResNet-20 or VGG-11? For the same parameter budget there are now many network architectures that perform much better. In other words, where would MobileNet or EfficientNet be placed on Figure 3? Unfortunately, as the compression ratio increases the network quickly enters regions where the accuracy is not worthwhile.\n\nExperimental results are demonstrated on CIFAR-10, CIFAR-100 and Tiny-ImageNet. Would it be possible to explore this method on a contemporary large scale model? What would a scaling law for random parameter sharing look like?",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "2: You are willing to defend your assessment, but it is quite likely that you did not understand the central parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

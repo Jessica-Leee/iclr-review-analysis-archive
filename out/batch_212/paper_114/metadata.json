@@ -1,0 +1,18 @@
+{
+  "paper_id": "ysue5S6cVS",
+  "review_id": "B1gcRTxllM",
+  "year": 2024,
+  "line": 445,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "To improve the robustness against backdoor defenses, the paper proposes a simple and effective sampling choosing strategy for backdoor attacks. Also, the proposed method can be integrated into various backdoor attacks to improve the robustness. The paper analyzes the proposed method theoretically, indicating the rationality of proposed method.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper explores the strategies of choosing samples to inject triggers for training backdoor models. To improve the robustness against backdoor defenses, the paper proposes a confidence-driven sampling strategy for backdoor attacks. Specifically, the proposed method chooses samples with lower confidence scores to inject triggers, making the backdoored models difficult to be defended. Extensive experiments show the effectiveness of proposed method.",
+  "human_questions": "Does the proposed method perform better against defenses depending on outlier detection than other backdoor defense methods?\n\nIn Figure 1, the paper shows the visualizations of two dirty-label attacks. Is there same observations for clean-label attacks?\n\nIn Table 1, 2 and 3, the proposed method achieves lower ASRs compared to Random and FUS under the condition of \"No Defenses\". Could the authors provide more explanations about the results?",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

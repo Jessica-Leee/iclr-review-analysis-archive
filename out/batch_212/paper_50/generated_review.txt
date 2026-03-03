@@ -1,0 +1,35 @@
+**Review:**
+
+CrysToGraph proposes a transformer-based geometric graph network designed to capture both short-range and long-range dependencies in crystalline systems. The core contribution is combining transformer-based graph convolution blocks for local interactions with graph-wise transformer blocks for long-range dependencies, addressing a known limitation of standard GNNs in modeling crystals. The authors report state-of-the-art results on MatBench benchmark datasets.
+
+**Strengths:**
+- Clear motivation: the paper identifies a genuine limitation of GNNs for crystals—difficulty capturing long-range interactions due to depth constraints—and proposes a principled solution combining local and global transformer mechanisms.
+- Relevant application domain: crystal property prediction is an important problem where symmetry and long-range order are physically meaningful, making the architectural choice well-motivated.
+- Empirical validation on established benchmarks: evaluation on MatBench provides a standardized comparison point against existing methods.
+
+**Weaknesses:**
+- Insufficient technical detail: the abstract provides no specifics on how "transformer-based graph convolution blocks" and "graph-wise transformer blocks" are implemented, their interaction, or how they differ from prior work combining transformers and GNNs. The method description is too vague to assess novelty or reproducibility.
+- Missing ablation studies and analysis: without ablations isolating the contribution of short-range vs. long-range components, or analysis of what long-range patterns the model learns, it is unclear which design choices drive performance gains.
+- Limited scope of results: the abstract mentions only "state-of-the-art results on MatBench" without quantitative comparisons, error margins, or details on which tasks improved and by how much. No discussion of computational cost or scalability.
+- Lack of crystal-specific design justification: while the motivation mentions symmetry and ionic bonding, the abstract does not explain how the architecture exploits or respects crystal symmetries (e.g., equivariance properties), which would strengthen the contribution.
+
+**Questions:**
+- How do the transformer-based graph convolution blocks differ from existing transformer-GNN hybrids (e.g., GraphTransformer, Transformer-M)?
+- What is the computational complexity compared to baseline GNNs, and how does it scale with crystal size?
+- Can you provide quantitative improvements (with error bars) on key MatBench tasks?
+- Does the model respect crystal symmetries (e.g., rotational or translational equivariance)?
+
+**Overall score:**
+4: below the acceptance threshold. While the motivation is sound and the application domain is relevant, the paper lacks sufficient technical depth, experimental rigor, and novelty justification in its current form. The abstract reads more as a position statement than a complete contribution. Substantial additional detail on the method, thorough ablations, and quantitative comparisons are needed.
+
+**Confidence:**
+3: The assessment is based only on the abstract, which provides limited information. A full paper might address these concerns, but the current submission is too preliminary to evaluate fairly.
+
+**Soundness:**
+2: fair. The motivation is reasonable, but without method details or ablations, soundness cannot be properly assessed.
+
+**Presentation:**
+2: fair. The abstract is clear in motivation but vague in technical content, making it difficult to understand the actual contribution.
+
+**Contribution:**
+2: fair. The idea of combining local and global transformers for crystals is reasonable but not sufficiently novel or detailed to assess as a strong contribution.

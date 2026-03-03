@@ -1,0 +1,18 @@
+{
+  "paper_id": "z01BwvD41e",
+  "review_id": "b5CYPu1rxK",
+  "year": 2024,
+  "line": 401,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The idea of using games to assess LLMs is interesting and unique, as it introduces multiple agents and an active environment.\n2. The paper is well-written and easy to understand. The authors carefully designed the game, and the model bias evaluation adds insight and fairness to the evaluation process.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper proposes a method for assessing language models by leveraging word guessing games, specifically the SpyFall game. The authors tested the ability of LLMs to generate world descriptions and intentional disguise descriptions, and introduced the framework of the SpyGame, which includes agent actions and voting. The authors also conducted model bias evaluations to ensure fairness and accuracy in the evaluation process.",
+  "human_questions": "1. Why was SpyFall chosen as the game for the evaluation, and what unique properties does it have compared to other language games?\n2. How did the authors handle the potential for mistakes from the host agents, and what measures were taken to ensure accuracy in the evaluation process?\n3. In the robustness study, how does the seed affect the results, and how was the robustness of GPT-4 and GPT-3.5-turbo evaluated as hosts?\n4. In Table 1, why are the results of the model evaluation and human evaluation seemingly reversed? How do the evaluation results align with human evaluation?",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "4 excellent",
+    "contribution": "2 fair"
+  }
+}

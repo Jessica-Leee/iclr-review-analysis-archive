@@ -1,0 +1,18 @@
+{
+  "paper_id": "zlkXLb3wpF",
+  "review_id": "S0GjQTr3qO",
+  "year": 2024,
+  "line": 89,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "+Fast pathwise gradients are certainly necessary for normalizing flows,\nand the current work provides this with a large improvement over the\nprior work in terms of computational speed.\n\n+The method improves in both walltime and efficiency.\n\n+The method allows both forward and reverse KL training.",
+  "human_weaknesses": "",
+  "human_review_text": "This work deals with improving the pathwise gradient\nestimator in the context of variational inference\nusing normalizing flow based models (i.e., they\nwant a fast method for computing the \"sticking the landing\"\nestimator by Roeder).\nIn particular, they are looking at deriving pathwise gradients\nfor the log probability term of the normalizing flow.\nComputing this efficiently is non-trivial due to the\nmodification to the probability caused by a change of coordinates\nthat requires computing the determinant of the Jacobian.\n\nThey derive a faster method for computing the pathwise gradient in\nthis setting for coupling flows (the most widely used normalizing\nflow). The improvement in computational speed ranges between 1.3 times\nto 8 times (takes 1.4 - 2.3 times the standard estimator that has a\nhigher variance, so doesn't work as well). The improvement is\nespecially large for implicitly invertible coupling flows, but more\nmodest for explicitly invertible coupling flows.\n\nTheir formulation allows computing the pathwise gradient for\nboth the forward and reverse KL, allowing to also perform\nmaximum likelihood training.\n\nExperiments were performed on a multimodal Gaussian distribution as\nwell as physics settings: U(1) gauge theory and $\\phi^4$ lattice\nmodel.",
+  "human_questions": "I have a naive question about computing the pathwise gradient of the\nreverse KL. In equation (2), it seems to me that we could rewrite the\nequation by using the Jacobian of the forward transform based on the\ninverse function theorem, so that the $+\\log |\\textup{det} ~ dT^{-1}/dx|$ term\nbecomes $- \\log |\\textup{det}~dT/dx_0|$. Then we could compute the quantity and\nuse backprop to get the pathwise gradient. Am I misunderstanding, or\nwhy would this not work? Is the computation of the Jacobian too\ncostly?\n\n\"Path gradients have the appealing property that they are unbiased and\nhave lower variance compared to standard estimators, thereby promising\naccelerated convergence (Roeder et al., 2017; Agrawal et al., 2020;\nVaitl et al., 2022a;b).\"  -> Other estimators are also unbiased. The\nsentence makes it seem like they aren't. Also, the \"have lower\nvariance\" is not always true. I suggest revising to make the sentence\ncorrect, e.g., making it \"tend to have lower variance\".",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

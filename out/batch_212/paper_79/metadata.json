@@ -1,0 +1,18 @@
+{
+  "paper_id": "zBgAlcIoZP",
+  "review_id": "bvnrUM8mjf",
+  "year": 2024,
+  "line": 308,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "Significance: the paper addresses the important problem of modeling and controlling PDEs. The proposed method is effective. \n\nNovelty: the method seems to be novel within the field of neural PDEs. I'm not sure if similar methods (nonlinear autoencoding and control) have been proposed in the robotic control. The component that encourages the model to be exponentially stable is important and novel.\n\nSoundness: the method is demonstrated to outperform the important baseline of deep Koopman and DeepROM.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper introduces a method that uses a learned reduced-order model to control PDEs. The paper first shows a close connection between the solution from a linear autoencoder and that of dynamic mode decomposition with control. The paper then extends it to the nonlinear domain and introduce a method for control. Experiments demonstrate the effectiveness of the method.",
+  "human_questions": "N/A",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

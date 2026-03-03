@@ -1,0 +1,46 @@
+**Review:**
+
+This paper proposes a novel loss function for neural network training that incorporates functional a posteriori error estimates, enabling the network to learn additional physical fields that yield rigorous error majorants after cheap postprocessing. The approach is grounded in the theory of functional a posteriori error estimates and is demonstrated on elliptic problems across multiple architectures (physics-informed neural networks, physics-informed neural operators, neural operators, and classical regression). The key contribution is a systematic framework for constructing such loss functions for diverse PDEs, with the practical benefit of obtaining certified upper bounds on solution error alongside competitive or improved accuracy.
+
+**Strengths:**
+- **Novel integration of classical theory with modern learning:** The connection between functional a posteriori error estimates and neural network training is creative and well-motivated. Obtaining rigorous error bounds as a byproduct of training is a valuable practical contribution.
+- **Generality across architectures:** The method is demonstrated on a diverse set of approaches (PINNs, PINOs, neural operators, classical architectures), suggesting broad applicability.
+- **Theoretical grounding:** The approach is built on established functional a posteriori error theory, providing a principled foundation rather than ad-hoc design.
+- **Practical utility:** Cheap recovery of high-quality error bounds after training addresses a real need in scientific computing where certification is important.
+
+**Weaknesses:**
+- **Limited experimental scope:** The abstract mentions only elliptic problems. No details are provided on problem complexity, dimensionality, or how the method scales. Comparison with existing error estimation or uncertainty quantification methods is absent.
+- **Insufficient methodological detail:** The abstract does not explain what "additional physical fields" are learned or how the postprocessing stage works. The construction of the loss function from functional a posteriori error theory is not sketched, making it difficult to assess novelty or reproducibility.
+- **Unclear performance gains:** The paper claims "better or comparable accuracy" but provides no quantitative results, error bars, or statistical significance testing in the abstract. It is unclear whether the method trades off accuracy for certification or achieves both simultaneously.
+- **Missing ablations and analysis:** No discussion of computational overhead, sensitivity to hyperparameters, or failure modes. The claim of "cheap" postprocessing is unsubstantiated.
+
+**Questions:**
+- How does the computational cost of the proposed loss function compare to standard training? Is the postprocessing truly negligible?
+- How do the error bounds compare quantitatively to other uncertainty quantification or error estimation methods (e.g., Bayesian approaches, ensemble methods)?
+- Can the method handle nonlinear or time-dependent PDEs, or is it restricted to elliptic problems?
+- What is the overhead of learning additional physical fields, and how sensitive is the method to their initialization?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper presents an interesting and theoretically motivated idea with potential practical value. The integration of functional a posteriori error estimates into neural network training is novel and the promise of certified error bounds is compelling. However, the abstract lacks sufficient experimental validation, methodological clarity, and quantitative comparisons to strongly support the claims. The work would benefit from detailed numerical results, broader problem classes, and explicit comparisons with existing error estimation approaches. As presented, the contribution is promising but not yet fully convincing.
+
+**Confidence:**
+3 (moderate)
+
+The assessment is limited by the abstract's brevity and lack of quantitative results. A full paper review would likely adjust the score based on experimental details and theoretical exposition.
+
+**Soundness:**
+Good
+
+The theoretical foundation in functional a posteriori error estimates is solid, and the general approach is sound. However, without seeing the full derivations and experiments, soundness cannot be fully verified.
+
+**Presentation:**
+Fair
+
+The abstract is clear in intent but lacks sufficient detail on the method and results. Key concepts (additional physical fields, postprocessing, loss function construction) are mentioned but not explained.
+
+**Contribution:**
+Good
+
+The idea of systematically incorporating a posteriori error estimates into neural network training is novel and addresses a real need. The generality across architectures is a strength, though the scope appears limited to elliptic problems.

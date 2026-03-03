@@ -1,0 +1,1953 @@
+{
+  "num_papers": 214,
+  "by_category": {
+    "marginally_below": {
+      "overlaps": [
+        0.2977,
+        0.2246,
+        0.1784,
+        0.1446,
+        0.2281,
+        0.1695,
+        0.2637,
+        0.1413,
+        0.1429,
+        0.0846,
+        0.3924,
+        0.0793,
+        0.1877,
+        0.454,
+        0.2959,
+        0.1658,
+        0.4976,
+        0.1838,
+        0.1717,
+        0.3668,
+        0.1937,
+        0.2979,
+        0.1624,
+        0.3394,
+        0.367,
+        0.2884,
+        0.2415,
+        0.1965,
+        0.1707,
+        0.1754,
+        0.3277,
+        0.1464,
+        0.1691,
+        0.2442,
+        0.2133,
+        0.3111,
+        0.1275,
+        0.1865,
+        0.0876,
+        0.1867,
+        0.1232,
+        0.3205,
+        0.177,
+        0.2181,
+        0.2825,
+        0.2704,
+        0.1661,
+        0.4152,
+        0.3102,
+        0.1856,
+        0.2119,
+        0.4087,
+        0.116,
+        0.2191,
+        0.3192,
+        0.29,
+        0.4225,
+        0.3445,
+        0.3741,
+        0.2375,
+        0.2953,
+        0.1634,
+        0.2947,
+        0.1455
+      ],
+      "mean": 0.240853125
+    },
+    "marginally_above": {
+      "overlaps": [
+        0.3503,
+        0.3649,
+        0.2879,
+        0.2952,
+        0.1499,
+        0.2013,
+        0.2427,
+        0.3336,
+        0.165,
+        0.1749,
+        0.1886,
+        0.2273,
+        0.4012,
+        0.2585,
+        0.2823,
+        0.2796,
+        0.1793,
+        0.1348,
+        0.1895,
+        0.2873,
+        0.2077,
+        0.1515,
+        0.5046,
+        0.2708,
+        0.1832,
+        0.252,
+        0.244,
+        0.2376,
+        0.2224,
+        0.2355,
+        0.2306,
+        0.1898,
+        0.1361,
+        0.3862,
+        0.2896,
+        0.1673,
+        0.2336,
+        0.2286,
+        0.3215,
+        0.2232,
+        0.2239,
+        0.2905,
+        0.3484,
+        0.3934,
+        0.536,
+        0.3363,
+        0.3262,
+        0.1442,
+        0.3136,
+        0.2977,
+        0.2371,
+        0.1974,
+        0.1485,
+        0.2809,
+        0.2693,
+        0.1708,
+        0.2572,
+        0.2373,
+        0.2148,
+        0.2032,
+        0.0862,
+        0.1516,
+        0.2733
+      ],
+      "mean": 0.25155079365079364
+    },
+    "reject": {
+      "overlaps": [
+        0.4092,
+        0.3549,
+        0.4106,
+        0.1382,
+        0.2429,
+        0.3352,
+        0.2261,
+        0.1932,
+        0.3105,
+        0.3547,
+        0.3982,
+        0.1645,
+        0.2167,
+        0.2248,
+        0.2737,
+        0.2751,
+        0.1548,
+        0.2362,
+        0.2643,
+        0.2714,
+        0.2228,
+        0.2072,
+        0.1199,
+        0.1939,
+        0.2495,
+        0.3061,
+        0.1986,
+        0.2723,
+        0.191,
+        0.1769,
+        0.2151,
+        0.292,
+        0.3811,
+        0.1622,
+        0.063,
+        0.16,
+        0.1615,
+        0.121,
+        0.2923,
+        0.1885,
+        0.2052,
+        0.4002,
+        0.1869,
+        0.3615,
+        0.3652,
+        0.2055,
+        0.1181,
+        0.2549,
+        0.28,
+        0.1475,
+        0.2504,
+        0.1859,
+        0.2712,
+        0.1634
+      ],
+      "mean": 0.24122222222222223
+    },
+    "accept": {
+      "overlaps": [
+        0.2301,
+        0.1485,
+        0.2393,
+        0.0914,
+        0.2473,
+        0.3153,
+        0.4491,
+        0.1646,
+        0.076,
+        0.2121,
+        0.2371,
+        0.1979,
+        0.282,
+        0.1989,
+        0.2708,
+        0.1417,
+        0.3913,
+        0.3687,
+        0.2699,
+        0.1631,
+        0.2857,
+        0.2255,
+        0.2003,
+        0.3744,
+        0.3208,
+        0.2795,
+        0.1828,
+        0.2364,
+        0.3425,
+        0.2037,
+        0.2896,
+        0.1532,
+        0.1689
+      ],
+      "mean": 0.24116363636363636
+    }
+  },
+  "results": [
+    {
+      "index": 0,
+      "line": 0,
+      "paper_id": "zzv4Bf50RW",
+      "category": "marginally_below",
+      "topical_overlap": 0.2977,
+      "out_dir": "out/batch_400/paper_0"
+    },
+    {
+      "index": 1,
+      "line": 5,
+      "paper_id": "zzqn5G9fjn",
+      "category": "marginally_below",
+      "topical_overlap": 0.2246,
+      "out_dir": "out/batch_400/paper_1"
+    },
+    {
+      "index": 10,
+      "line": 39,
+      "paper_id": "ztuCObOc2i",
+      "category": "marginally_above",
+      "topical_overlap": 0.3503,
+      "out_dir": "out/batch_400/paper_10"
+    },
+    {
+      "index": 100,
+      "line": 389,
+      "paper_id": "z1WiEHnjQs",
+      "category": "marginally_above",
+      "topical_overlap": 0.3649,
+      "out_dir": "out/batch_400/paper_100"
+    },
+    {
+      "index": 101,
+      "line": 392,
+      "paper_id": "z0pn0IUDsX",
+      "category": "marginally_above",
+      "topical_overlap": 0.2879,
+      "out_dir": "out/batch_400/paper_101"
+    },
+    {
+      "index": 102,
+      "line": 397,
+      "paper_id": "z0B4GJuRjo",
+      "category": "reject",
+      "topical_overlap": 0.4092,
+      "out_dir": "out/batch_400/paper_102"
+    },
+    {
+      "index": 103,
+      "line": 401,
+      "paper_id": "z01BwvD41e",
+      "category": "marginally_below",
+      "topical_overlap": 0.1784,
+      "out_dir": "out/batch_400/paper_103"
+    },
+    {
+      "index": 104,
+      "line": 404,
+      "paper_id": "yzfi15eVI7",
+      "category": "marginally_above",
+      "topical_overlap": 0.2952,
+      "out_dir": "out/batch_400/paper_104"
+    },
+    {
+      "index": 105,
+      "line": 408,
+      "paper_id": "yzRXdhk2he",
+      "category": "marginally_above",
+      "topical_overlap": 0.1499,
+      "out_dir": "out/batch_400/paper_105"
+    },
+    {
+      "index": 106,
+      "line": 412,
+      "paper_id": "yxKZGQLzOP",
+      "category": "marginally_above",
+      "topical_overlap": 0.2013,
+      "out_dir": "out/batch_400/paper_106"
+    },
+    {
+      "index": 107,
+      "line": 416,
+      "paper_id": "ywGSgEmOYb",
+      "category": "reject",
+      "topical_overlap": 0.3549,
+      "out_dir": "out/batch_400/paper_107"
+    },
+    {
+      "index": 108,
+      "line": 421,
+      "paper_id": "ywD00GsxgD",
+      "category": "reject",
+      "topical_overlap": 0.4106,
+      "out_dir": "out/batch_400/paper_108"
+    },
+    {
+      "index": 109,
+      "line": 426,
+      "paper_id": "yvxDJ8eyBu",
+      "category": "accept",
+      "topical_overlap": 0.2301,
+      "out_dir": "out/batch_400/paper_109"
+    },
+    {
+      "index": 11,
+      "line": 44,
+      "paper_id": "ztpy1gsUpT",
+      "category": "marginally_above",
+      "topical_overlap": 0.2427,
+      "out_dir": "out/batch_400/paper_11"
+    },
+    {
+      "index": 110,
+      "line": 430,
+      "paper_id": "yuy6cGt3KL",
+      "category": "accept",
+      "topical_overlap": 0.1485,
+      "out_dir": "out/batch_400/paper_110"
+    },
+    {
+      "index": 111,
+      "line": 434,
+      "paper_id": "yuYMJQIhEU",
+      "category": "reject",
+      "topical_overlap": 0.1382,
+      "out_dir": "out/batch_400/paper_111"
+    },
+    {
+      "index": 112,
+      "line": 438,
+      "paper_id": "yuGqe96t9O",
+      "category": "accept",
+      "topical_overlap": 0.2393,
+      "out_dir": "out/batch_400/paper_112"
+    },
+    {
+      "index": 113,
+      "line": 441,
+      "paper_id": "ytGU2iit80",
+      "category": "accept",
+      "topical_overlap": 0.0914,
+      "out_dir": "out/batch_400/paper_113"
+    },
+    {
+      "index": 114,
+      "line": 445,
+      "paper_id": "ysue5S6cVS",
+      "category": "marginally_above",
+      "topical_overlap": 0.3336,
+      "out_dir": "out/batch_400/paper_114"
+    },
+    {
+      "index": 115,
+      "line": 448,
+      "paper_id": "yroyhkhWS6",
+      "category": "accept",
+      "topical_overlap": 0.2473,
+      "out_dir": "out/batch_400/paper_115"
+    },
+    {
+      "index": 116,
+      "line": 452,
+      "paper_id": "yrgQdA5NkI",
+      "category": "marginally_below",
+      "topical_overlap": 0.1446,
+      "out_dir": "out/batch_400/paper_116"
+    },
+    {
+      "index": 117,
+      "line": 455,
+      "paper_id": "yrLwQ7VQ7h",
+      "category": "marginally_below",
+      "topical_overlap": 0.2281,
+      "out_dir": "out/batch_400/paper_117"
+    },
+    {
+      "index": 118,
+      "line": 458,
+      "paper_id": "yqIJoALgdD",
+      "category": "marginally_below",
+      "topical_overlap": 0.1695,
+      "out_dir": "out/batch_400/paper_118"
+    },
+    {
+      "index": 119,
+      "line": 462,
+      "paper_id": "yqAToOgxgf",
+      "category": "marginally_above",
+      "topical_overlap": 0.165,
+      "out_dir": "out/batch_400/paper_119"
+    },
+    {
+      "index": 12,
+      "line": 48,
+      "paper_id": "zt8bb6vC4m",
+      "category": "reject",
+      "topical_overlap": 0.2429,
+      "out_dir": "out/batch_400/paper_12"
+    },
+    {
+      "index": 120,
+      "line": 466,
+      "paper_id": "ypAT2ixD4X",
+      "category": "marginally_above",
+      "topical_overlap": 0.1749,
+      "out_dir": "out/batch_400/paper_120"
+    },
+    {
+      "index": 121,
+      "line": 470,
+      "paper_id": "yozwqhIHXj",
+      "category": "marginally_above",
+      "topical_overlap": 0.1886,
+      "out_dir": "out/batch_400/paper_121"
+    },
+    {
+      "index": 122,
+      "line": 474,
+      "paper_id": "yoVq2BGQdP",
+      "category": "reject",
+      "topical_overlap": 0.3352,
+      "out_dir": "out/batch_400/paper_122"
+    },
+    {
+      "index": 123,
+      "line": 478,
+      "paper_id": "ynguffsGfa",
+      "category": "accept",
+      "topical_overlap": 0.3153,
+      "out_dir": "out/batch_400/paper_123"
+    },
+    {
+      "index": 124,
+      "line": 481,
+      "paper_id": "ymjI8feDTD",
+      "category": "marginally_above",
+      "topical_overlap": 0.2273,
+      "out_dir": "out/batch_400/paper_124"
+    },
+    {
+      "index": 125,
+      "line": 485,
+      "paper_id": "ymR2bz0cEs",
+      "category": "reject",
+      "topical_overlap": 0.2261,
+      "out_dir": "out/batch_400/paper_125"
+    },
+    {
+      "index": 126,
+      "line": 489,
+      "paper_id": "ym0ubZrsmm",
+      "category": "accept",
+      "topical_overlap": 0.4491,
+      "out_dir": "out/batch_400/paper_126"
+    },
+    {
+      "index": 127,
+      "line": 495,
+      "paper_id": "ylhiMfpqkm",
+      "category": "marginally_above",
+      "topical_overlap": 0.4012,
+      "out_dir": "out/batch_400/paper_127"
+    },
+    {
+      "index": 128,
+      "line": 499,
+      "paper_id": "yldBrD4nYB",
+      "category": "reject",
+      "topical_overlap": 0.1932,
+      "out_dir": "out/batch_400/paper_128"
+    },
+    {
+      "index": 129,
+      "line": 502,
+      "paper_id": "ylHLVq0psd",
+      "category": "reject",
+      "topical_overlap": 0.3105,
+      "out_dir": "out/batch_400/paper_129"
+    },
+    {
+      "index": 13,
+      "line": 52,
+      "paper_id": "zsfrzYWoOP",
+      "category": "marginally_below",
+      "topical_overlap": 0.2637,
+      "out_dir": "out/batch_400/paper_13"
+    },
+    {
+      "index": 130,
+      "line": 508,
+      "paper_id": "ykhRO1mAg3",
+      "category": "marginally_above",
+      "topical_overlap": 0.2585,
+      "out_dir": "out/batch_400/paper_130"
+    },
+    {
+      "index": 131,
+      "line": 511,
+      "paper_id": "ykW3hvy6DL",
+      "category": "marginally_below",
+      "topical_overlap": 0.1413,
+      "out_dir": "out/batch_400/paper_131"
+    },
+    {
+      "index": 132,
+      "line": 514,
+      "paper_id": "ykEixGIJYb",
+      "category": "accept",
+      "topical_overlap": 0.1646,
+      "out_dir": "out/batch_400/paper_132"
+    },
+    {
+      "index": 133,
+      "line": 518,
+      "paper_id": "yjX303Smre",
+      "category": "marginally_above",
+      "topical_overlap": 0.2823,
+      "out_dir": "out/batch_400/paper_133"
+    },
+    {
+      "index": 134,
+      "line": 522,
+      "paper_id": "yiyDi50xx6",
+      "category": "reject",
+      "topical_overlap": 0.3547,
+      "out_dir": "out/batch_400/paper_134"
+    },
+    {
+      "index": 135,
+      "line": 526,
+      "paper_id": "yisfNWUEsD",
+      "category": "marginally_above",
+      "topical_overlap": 0.2796,
+      "out_dir": "out/batch_400/paper_135"
+    },
+    {
+      "index": 136,
+      "line": 529,
+      "paper_id": "yiPtWSrBrN",
+      "category": "marginally_below",
+      "topical_overlap": 0.1429,
+      "out_dir": "out/batch_400/paper_136"
+    },
+    {
+      "index": 137,
+      "line": 533,
+      "paper_id": "yiMB2DOjsR",
+      "category": "marginally_above",
+      "topical_overlap": 0.1793,
+      "out_dir": "out/batch_400/paper_137"
+    },
+    {
+      "index": 138,
+      "line": 537,
+      "paper_id": "yhvtZdqBNm",
+      "category": "marginally_below",
+      "topical_overlap": 0.0846,
+      "out_dir": "out/batch_400/paper_138"
+    },
+    {
+      "index": 139,
+      "line": 541,
+      "paper_id": "yhrWPZs6On",
+      "category": "marginally_below",
+      "topical_overlap": 0.3924,
+      "out_dir": "out/batch_400/paper_139"
+    },
+    {
+      "index": 14,
+      "line": 55,
+      "paper_id": "zrxlSviRqC",
+      "category": "marginally_below",
+      "topical_overlap": 0.0793,
+      "out_dir": "out/batch_400/paper_14"
+    },
+    {
+      "index": 140,
+      "line": 544,
+      "paper_id": "yhBLUzHE9r",
+      "category": "marginally_below",
+      "topical_overlap": 0.1877,
+      "out_dir": "out/batch_400/paper_140"
+    },
+    {
+      "index": 141,
+      "line": 548,
+      "paper_id": "ygxTuVz9eU",
+      "category": "marginally_above",
+      "topical_overlap": 0.1348,
+      "out_dir": "out/batch_400/paper_141"
+    },
+    {
+      "index": 142,
+      "line": 551,
+      "paper_id": "yfdtkYQesu",
+      "category": "marginally_below",
+      "topical_overlap": 0.454,
+      "out_dir": "out/batch_400/paper_142"
+    },
+    {
+      "index": 143,
+      "line": 555,
+      "paper_id": "yf8MaCjs4j",
+      "category": "marginally_below",
+      "topical_overlap": 0.2959,
+      "out_dir": "out/batch_400/paper_143"
+    },
+    {
+      "index": 144,
+      "line": 559,
+      "paper_id": "yeeVBMDAwy",
+      "category": "marginally_above",
+      "topical_overlap": 0.1895,
+      "out_dir": "out/batch_400/paper_144"
+    },
+    {
+      "index": 145,
+      "line": 563,
+      "paper_id": "yeKQXf08Db",
+      "category": "marginally_below",
+      "topical_overlap": 0.1658,
+      "out_dir": "out/batch_400/paper_145"
+    },
+    {
+      "index": 146,
+      "line": 566,
+      "paper_id": "ye3NrNrYOY",
+      "category": "marginally_below",
+      "topical_overlap": 0.4976,
+      "out_dir": "out/batch_400/paper_146"
+    },
+    {
+      "index": 147,
+      "line": 570,
+      "paper_id": "ycv2z8TYur",
+      "category": "marginally_above",
+      "topical_overlap": 0.2873,
+      "out_dir": "out/batch_400/paper_147"
+    },
+    {
+      "index": 148,
+      "line": 574,
+      "paper_id": "ycF7mKfVGO",
+      "category": "marginally_below",
+      "topical_overlap": 0.1838,
+      "out_dir": "out/batch_400/paper_148"
+    },
+    {
+      "index": 149,
+      "line": 578,
+      "paper_id": "ybiwT2yP1c",
+      "category": "marginally_below",
+      "topical_overlap": 0.1717,
+      "out_dir": "out/batch_400/paper_149"
+    },
+    {
+      "index": 15,
+      "line": 58,
+      "paper_id": "zrCybZXxC8",
+      "category": "marginally_below",
+      "topical_overlap": 0.3668,
+      "out_dir": "out/batch_400/paper_15"
+    },
+    {
+      "index": 150,
+      "line": 582,
+      "paper_id": "ybavRGEmpw",
+      "category": "marginally_below",
+      "topical_overlap": 0.1937,
+      "out_dir": "out/batch_400/paper_150"
+    },
+    {
+      "index": 151,
+      "line": 586,
+      "paper_id": "yarUvgEXq3",
+      "category": "marginally_above",
+      "topical_overlap": 0.2077,
+      "out_dir": "out/batch_400/paper_151"
+    },
+    {
+      "index": 152,
+      "line": 589,
+      "paper_id": "yacRhge4zQ",
+      "category": "marginally_below",
+      "topical_overlap": 0.2979,
+      "out_dir": "out/batch_400/paper_152"
+    },
+    {
+      "index": 153,
+      "line": 592,
+      "paper_id": "yZJapMWdHZ",
+      "category": "marginally_above",
+      "topical_overlap": 0.1515,
+      "out_dir": "out/batch_400/paper_153"
+    },
+    {
+      "index": 154,
+      "line": 595,
+      "paper_id": "yZBpnKpBCw",
+      "category": "marginally_below",
+      "topical_overlap": 0.1624,
+      "out_dir": "out/batch_400/paper_154"
+    },
+    {
+      "index": 155,
+      "line": 599,
+      "paper_id": "yYylDyLnzt",
+      "category": "reject",
+      "topical_overlap": 0.3982,
+      "out_dir": "out/batch_400/paper_155"
+    },
+    {
+      "index": 156,
+      "line": 602,
+      "paper_id": "yYjsH5wktr",
+      "category": "marginally_below",
+      "topical_overlap": 0.3394,
+      "out_dir": "out/batch_400/paper_156"
+    },
+    {
+      "index": 157,
+      "line": 607,
+      "paper_id": "yXklOV0ZIv",
+      "category": "marginally_above",
+      "topical_overlap": 0.5046,
+      "out_dir": "out/batch_400/paper_157"
+    },
+    {
+      "index": 158,
+      "line": 611,
+      "paper_id": "yW0hLmwq4f",
+      "category": "marginally_below",
+      "topical_overlap": 0.367,
+      "out_dir": "out/batch_400/paper_158"
+    },
+    {
+      "index": 159,
+      "line": 615,
+      "paper_id": "yVJd8lKyVX",
+      "category": "marginally_above",
+      "topical_overlap": 0.2708,
+      "out_dir": "out/batch_400/paper_159"
+    },
+    {
+      "index": 16,
+      "line": 62,
+      "paper_id": "zqXTZ3B7fU",
+      "category": "reject",
+      "topical_overlap": 0.1645,
+      "out_dir": "out/batch_400/paper_16"
+    },
+    {
+      "index": 160,
+      "line": 618,
+      "paper_id": "yV6wwEbtkR",
+      "category": "marginally_above",
+      "topical_overlap": 0.1832,
+      "out_dir": "out/batch_400/paper_160"
+    },
+    {
+      "index": 161,
+      "line": 621,
+      "paper_id": "yV6fD7LYkF",
+      "category": "accept",
+      "topical_overlap": 0.076,
+      "out_dir": "out/batch_400/paper_161"
+    },
+    {
+      "index": 162,
+      "line": 625,
+      "paper_id": "yTbAGlu4jR",
+      "category": "marginally_above",
+      "topical_overlap": 0.252,
+      "out_dir": "out/batch_400/paper_162"
+    },
+    {
+      "index": 163,
+      "line": 629,
+      "paper_id": "yTY1RtowlY",
+      "category": "marginally_above",
+      "topical_overlap": 0.244,
+      "out_dir": "out/batch_400/paper_163"
+    },
+    {
+      "index": 164,
+      "line": 633,
+      "paper_id": "yTBXeXdbMf",
+      "category": "marginally_above",
+      "topical_overlap": 0.2376,
+      "out_dir": "out/batch_400/paper_164"
+    },
+    {
+      "index": 165,
+      "line": 637,
+      "paper_id": "ySS7hH1smL",
+      "category": "accept",
+      "topical_overlap": 0.2121,
+      "out_dir": "out/batch_400/paper_165"
+    },
+    {
+      "index": 166,
+      "line": 641,
+      "paper_id": "yRrPfKyJQ2",
+      "category": "marginally_above",
+      "topical_overlap": 0.2224,
+      "out_dir": "out/batch_400/paper_166"
+    },
+    {
+      "index": 167,
+      "line": 644,
+      "paper_id": "yR5QbFv4Xb",
+      "category": "marginally_above",
+      "topical_overlap": 0.2355,
+      "out_dir": "out/batch_400/paper_167"
+    },
+    {
+      "index": 168,
+      "line": 647,
+      "paper_id": "yQuF0jslCc",
+      "category": "reject",
+      "topical_overlap": 0.2167,
+      "out_dir": "out/batch_400/paper_168"
+    },
+    {
+      "index": 169,
+      "line": 651,
+      "paper_id": "yQUbpAHbIZ",
+      "category": "marginally_above",
+      "topical_overlap": 0.2306,
+      "out_dir": "out/batch_400/paper_169"
+    },
+    {
+      "index": 17,
+      "line": 66,
+      "paper_id": "zqVvdn0NQM",
+      "category": "reject",
+      "topical_overlap": 0.2248,
+      "out_dir": "out/batch_400/paper_17"
+    },
+    {
+      "index": 170,
+      "line": 654,
+      "paper_id": "yQDFsuG9HP",
+      "category": "marginally_above",
+      "topical_overlap": 0.1898,
+      "out_dir": "out/batch_400/paper_170"
+    },
+    {
+      "index": 171,
+      "line": 658,
+      "paper_id": "yPEY9gvwoj",
+      "category": "accept",
+      "topical_overlap": 0.2371,
+      "out_dir": "out/batch_400/paper_171"
+    },
+    {
+      "index": 172,
+      "line": 663,
+      "paper_id": "yONJt6nFc3",
+      "category": "reject",
+      "topical_overlap": 0.2737,
+      "out_dir": "out/batch_400/paper_172"
+    },
+    {
+      "index": 173,
+      "line": 666,
+      "paper_id": "yNyDvFQNEm",
+      "category": "reject",
+      "topical_overlap": 0.2751,
+      "out_dir": "out/batch_400/paper_173"
+    },
+    {
+      "index": 174,
+      "line": 671,
+      "paper_id": "yNJEyP4Jv2",
+      "category": "reject",
+      "topical_overlap": 0.1548,
+      "out_dir": "out/batch_400/paper_174"
+    },
+    {
+      "index": 175,
+      "line": 676,
+      "paper_id": "yNAlwBoDcg",
+      "category": "marginally_below",
+      "topical_overlap": 0.2884,
+      "out_dir": "out/batch_400/paper_175"
+    },
+    {
+      "index": 176,
+      "line": 680,
+      "paper_id": "yN4Wv17ss3",
+      "category": "marginally_below",
+      "topical_overlap": 0.2415,
+      "out_dir": "out/batch_400/paper_176"
+    },
+    {
+      "index": 177,
+      "line": 684,
+      "paper_id": "yMwJiJoadt",
+      "category": "reject",
+      "topical_overlap": 0.2362,
+      "out_dir": "out/batch_400/paper_177"
+    },
+    {
+      "index": 178,
+      "line": 688,
+      "paper_id": "yMMIWHbjWS",
+      "category": "marginally_below",
+      "topical_overlap": 0.1965,
+      "out_dir": "out/batch_400/paper_178"
+    },
+    {
+      "index": 179,
+      "line": 692,
+      "paper_id": "yLgr02IsXY",
+      "category": "marginally_above",
+      "topical_overlap": 0.1361,
+      "out_dir": "out/batch_400/paper_179"
+    },
+    {
+      "index": 18,
+      "line": 70,
+      "paper_id": "zpVPhvVKXk",
+      "category": "marginally_above",
+      "topical_overlap": 0.3862,
+      "out_dir": "out/batch_400/paper_18"
+    },
+    {
+      "index": 180,
+      "line": 696,
+      "paper_id": "yLClGs770I",
+      "category": "accept",
+      "topical_overlap": 0.1979,
+      "out_dir": "out/batch_400/paper_180"
+    },
+    {
+      "index": 181,
+      "line": 701,
+      "paper_id": "yKksu38BpM",
+      "category": "accept",
+      "topical_overlap": 0.282,
+      "out_dir": "out/batch_400/paper_181"
+    },
+    {
+      "index": 182,
+      "line": 706,
+      "paper_id": "yKC6Jd0CsP",
+      "category": "reject",
+      "topical_overlap": 0.2643,
+      "out_dir": "out/batch_400/paper_182"
+    },
+    {
+      "index": 183,
+      "line": 709,
+      "paper_id": "yJdj2QQCUB",
+      "category": "marginally_below",
+      "topical_overlap": 0.1707,
+      "out_dir": "out/batch_400/paper_183"
+    },
+    {
+      "index": 184,
+      "line": 713,
+      "paper_id": "yIv4SLzO3u",
+      "category": "reject",
+      "topical_overlap": 0.2714,
+      "out_dir": "out/batch_400/paper_184"
+    },
+    {
+      "index": 185,
+      "line": 717,
+      "paper_id": "yINucFNbcZ",
+      "category": "marginally_above",
+      "topical_overlap": 0.2896,
+      "out_dir": "out/batch_400/paper_185"
+    },
+    {
+      "index": 186,
+      "line": 723,
+      "paper_id": "yIKjkRZBrX",
+      "category": "reject",
+      "topical_overlap": 0.2228,
+      "out_dir": "out/batch_400/paper_186"
+    },
+    {
+      "index": 187,
+      "line": 727,
+      "paper_id": "yIEKq72cTE",
+      "category": "marginally_below",
+      "topical_overlap": 0.1754,
+      "out_dir": "out/batch_400/paper_187"
+    },
+    {
+      "index": 188,
+      "line": 732,
+      "paper_id": "yID2fdta1Z",
+      "category": "marginally_below",
+      "topical_overlap": 0.3277,
+      "out_dir": "out/batch_400/paper_188"
+    },
+    {
+      "index": 189,
+      "line": 737,
+      "paper_id": "yGdoTL9g18",
+      "category": "reject",
+      "topical_overlap": 0.2072,
+      "out_dir": "out/batch_400/paper_189"
+    },
+    {
+      "index": 19,
+      "line": 74,
+      "paper_id": "zopJyLgKJU",
+      "category": "marginally_below",
+      "topical_overlap": 0.1464,
+      "out_dir": "out/batch_400/paper_19"
+    },
+    {
+      "index": 190,
+      "line": 741,
+      "paper_id": "yF19SY1i8M",
+      "category": "marginally_below",
+      "topical_overlap": 0.1691,
+      "out_dir": "out/batch_400/paper_190"
+    },
+    {
+      "index": 191,
+      "line": 745,
+      "paper_id": "yCYnKMHX3u",
+      "category": "marginally_below",
+      "topical_overlap": 0.2442,
+      "out_dir": "out/batch_400/paper_191"
+    },
+    {
+      "index": 192,
+      "line": 748,
+      "paper_id": "yC2waD70Vj",
+      "category": "marginally_below",
+      "topical_overlap": 0.2133,
+      "out_dir": "out/batch_400/paper_192"
+    },
+    {
+      "index": 193,
+      "line": 752,
+      "paper_id": "yC2jjvYVzb",
+      "category": "accept",
+      "topical_overlap": 0.1989,
+      "out_dir": "out/batch_400/paper_193"
+    },
+    {
+      "index": 194,
+      "line": 755,
+      "paper_id": "yBmMgvaEtO",
+      "category": "marginally_above",
+      "topical_overlap": 0.1673,
+      "out_dir": "out/batch_400/paper_194"
+    },
+    {
+      "index": 195,
+      "line": 759,
+      "paper_id": "yBZd6mCWXd",
+      "category": "marginally_below",
+      "topical_overlap": 0.3111,
+      "out_dir": "out/batch_400/paper_195"
+    },
+    {
+      "index": 196,
+      "line": 762,
+      "paper_id": "yBP36xQhZl",
+      "category": "marginally_below",
+      "topical_overlap": 0.1275,
+      "out_dir": "out/batch_400/paper_196"
+    },
+    {
+      "index": 197,
+      "line": 765,
+      "paper_id": "yBIJRIYTqa",
+      "category": "marginally_above",
+      "topical_overlap": 0.2336,
+      "out_dir": "out/batch_400/paper_197"
+    },
+    {
+      "index": 198,
+      "line": 769,
+      "paper_id": "yAcLwJu9qs",
+      "category": "reject",
+      "topical_overlap": 0.1199,
+      "out_dir": "out/batch_400/paper_198"
+    },
+    {
+      "index": 199,
+      "line": 773,
+      "paper_id": "y9wQf6ZWS2",
+      "category": "accept",
+      "topical_overlap": 0.2708,
+      "out_dir": "out/batch_400/paper_199"
+    },
+    {
+      "index": 2,
+      "line": 9,
+      "paper_id": "zz61V8bIab",
+      "category": "marginally_below",
+      "topical_overlap": 0.1865,
+      "out_dir": "out/batch_400/paper_2"
+    },
+    {
+      "index": 20,
+      "line": 78,
+      "paper_id": "znjaiy1Z9q",
+      "category": "accept",
+      "topical_overlap": 0.1417,
+      "out_dir": "out/batch_400/paper_20"
+    },
+    {
+      "index": 200,
+      "line": 777,
+      "paper_id": "y8dHnNEcJu",
+      "category": "accept",
+      "topical_overlap": 0.3913,
+      "out_dir": "out/batch_400/paper_200"
+    },
+    {
+      "index": 201,
+      "line": 781,
+      "paper_id": "y886UXPEZ0",
+      "category": "marginally_above",
+      "topical_overlap": 0.2286,
+      "out_dir": "out/batch_400/paper_201"
+    },
+    {
+      "index": 202,
+      "line": 785,
+      "paper_id": "y6TIwYucUC",
+      "category": "marginally_below",
+      "topical_overlap": 0.0876,
+      "out_dir": "out/batch_400/paper_202"
+    },
+    {
+      "index": 203,
+      "line": 789,
+      "paper_id": "y5e9fvvBUz",
+      "category": "marginally_below",
+      "topical_overlap": 0.1867,
+      "out_dir": "out/batch_400/paper_203"
+    },
+    {
+      "index": 204,
+      "line": 794,
+      "paper_id": "y4bvKRvUz5",
+      "category": "marginally_below",
+      "topical_overlap": 0.1232,
+      "out_dir": "out/batch_400/paper_204"
+    },
+    {
+      "index": 205,
+      "line": 800,
+      "paper_id": "y3qpL2Ioys",
+      "category": "marginally_below",
+      "topical_overlap": 0.3205,
+      "out_dir": "out/batch_400/paper_205"
+    },
+    {
+      "index": 206,
+      "line": 804,
+      "paper_id": "y3dqBDnPay",
+      "category": "marginally_above",
+      "topical_overlap": 0.3215,
+      "out_dir": "out/batch_400/paper_206"
+    },
+    {
+      "index": 207,
+      "line": 808,
+      "paper_id": "y3CsNQal2l",
+      "category": "accept",
+      "topical_overlap": 0.3687,
+      "out_dir": "out/batch_400/paper_207"
+    },
+    {
+      "index": 208,
+      "line": 812,
+      "paper_id": "y3BuJotSKl",
+      "category": "marginally_below",
+      "topical_overlap": 0.177,
+      "out_dir": "out/batch_400/paper_208"
+    },
+    {
+      "index": 209,
+      "line": 815,
+      "paper_id": "y33lDRBgWI",
+      "category": "marginally_above",
+      "topical_overlap": 0.2232,
+      "out_dir": "out/batch_400/paper_209"
+    },
+    {
+      "index": 21,
+      "line": 82,
+      "paper_id": "zmV50sislh",
+      "category": "reject",
+      "topical_overlap": 0.1939,
+      "out_dir": "out/batch_400/paper_21"
+    },
+    {
+      "index": 210,
+      "line": 818,
+      "paper_id": "y2qZhSTtzU",
+      "category": "reject",
+      "topical_overlap": 0.2495,
+      "out_dir": "out/batch_400/paper_210"
+    },
+    {
+      "index": 211,
+      "line": 821,
+      "paper_id": "y2D8aW4son",
+      "category": "marginally_below",
+      "topical_overlap": 0.2181,
+      "out_dir": "out/batch_400/paper_211"
+    },
+    {
+      "index": 212,
+      "line": 825,
+      "paper_id": "y21ZO6M86t",
+      "category": "marginally_below",
+      "topical_overlap": 0.2825,
+      "out_dir": "out/batch_400/paper_212"
+    },
+    {
+      "index": 213,
+      "line": 829,
+      "paper_id": "y1AJUwqsla",
+      "category": "marginally_below",
+      "topical_overlap": 0.2704,
+      "out_dir": "out/batch_400/paper_213"
+    },
+    {
+      "index": 22,
+      "line": 86,
+      "paper_id": "zmJDzPh1Dm",
+      "category": "accept",
+      "topical_overlap": 0.2699,
+      "out_dir": "out/batch_400/paper_22"
+    },
+    {
+      "index": 23,
+      "line": 89,
+      "paper_id": "zlkXLb3wpF",
+      "category": "accept",
+      "topical_overlap": 0.1631,
+      "out_dir": "out/batch_400/paper_23"
+    },
+    {
+      "index": 24,
+      "line": 93,
+      "paper_id": "zlcktbqv6b",
+      "category": "marginally_below",
+      "topical_overlap": 0.1661,
+      "out_dir": "out/batch_400/paper_24"
+    },
+    {
+      "index": 25,
+      "line": 97,
+      "paper_id": "zkzf0VkiNv",
+      "category": "marginally_below",
+      "topical_overlap": 0.4152,
+      "out_dir": "out/batch_400/paper_25"
+    },
+    {
+      "index": 26,
+      "line": 104,
+      "paper_id": "zkVm3JqJzs",
+      "category": "accept",
+      "topical_overlap": 0.2857,
+      "out_dir": "out/batch_400/paper_26"
+    },
+    {
+      "index": 27,
+      "line": 108,
+      "paper_id": "zkE2js9qRe",
+      "category": "reject",
+      "topical_overlap": 0.3061,
+      "out_dir": "out/batch_400/paper_27"
+    },
+    {
+      "index": 28,
+      "line": 113,
+      "paper_id": "zjBO4a1LxR",
+      "category": "marginally_below",
+      "topical_overlap": 0.3102,
+      "out_dir": "out/batch_400/paper_28"
+    },
+    {
+      "index": 29,
+      "line": 118,
+      "paper_id": "ziDFH8TPPK",
+      "category": "reject",
+      "topical_overlap": 0.1986,
+      "out_dir": "out/batch_400/paper_29"
+    },
+    {
+      "index": 3,
+      "line": 12,
+      "paper_id": "zyBJodMrn5",
+      "category": "accept",
+      "topical_overlap": 0.2255,
+      "out_dir": "out/batch_400/paper_3"
+    },
+    {
+      "index": 30,
+      "line": 122,
+      "paper_id": "zhZXk5Ctz2",
+      "category": "marginally_above",
+      "topical_overlap": 0.2239,
+      "out_dir": "out/batch_400/paper_30"
+    },
+    {
+      "index": 31,
+      "line": 126,
+      "paper_id": "zhJDD85QHD",
+      "category": "reject",
+      "topical_overlap": 0.2723,
+      "out_dir": "out/batch_400/paper_31"
+    },
+    {
+      "index": 32,
+      "line": 130,
+      "paper_id": "zhINOCrrqI",
+      "category": "marginally_above",
+      "topical_overlap": 0.2905,
+      "out_dir": "out/batch_400/paper_32"
+    },
+    {
+      "index": 33,
+      "line": 134,
+      "paper_id": "zgQ0PHeGnL",
+      "category": "reject",
+      "topical_overlap": 0.191,
+      "out_dir": "out/batch_400/paper_33"
+    },
+    {
+      "index": 34,
+      "line": 138,
+      "paper_id": "zgHamUBuuO",
+      "category": "reject",
+      "topical_overlap": 0.1769,
+      "out_dir": "out/batch_400/paper_34"
+    },
+    {
+      "index": 35,
+      "line": 142,
+      "paper_id": "zfLf2qniFH",
+      "category": "marginally_above",
+      "topical_overlap": 0.3484,
+      "out_dir": "out/batch_400/paper_35"
+    },
+    {
+      "index": 36,
+      "line": 146,
+      "paper_id": "zeobgjmUCc",
+      "category": "reject",
+      "topical_overlap": 0.2151,
+      "out_dir": "out/batch_400/paper_36"
+    },
+    {
+      "index": 37,
+      "line": 150,
+      "paper_id": "zec5DTsCLv",
+      "category": "reject",
+      "topical_overlap": 0.292,
+      "out_dir": "out/batch_400/paper_37"
+    },
+    {
+      "index": 38,
+      "line": 153,
+      "paper_id": "ze7DOLi394",
+      "category": "accept",
+      "topical_overlap": 0.2003,
+      "out_dir": "out/batch_400/paper_38"
+    },
+    {
+      "index": 39,
+      "line": 157,
+      "paper_id": "zdboax4dlK",
+      "category": "reject",
+      "topical_overlap": 0.3811,
+      "out_dir": "out/batch_400/paper_39"
+    },
+    {
+      "index": 4,
+      "line": 15,
+      "paper_id": "zxPDdw8koz",
+      "category": "accept",
+      "topical_overlap": 0.3744,
+      "out_dir": "out/batch_400/paper_4"
+    },
+    {
+      "index": 40,
+      "line": 160,
+      "paper_id": "zbOSJ3CATY",
+      "category": "marginally_above",
+      "topical_overlap": 0.3934,
+      "out_dir": "out/batch_400/paper_40"
+    },
+    {
+      "index": 41,
+      "line": 163,
+      "paper_id": "zbKcFZ6Dbp",
+      "category": "marginally_above",
+      "topical_overlap": 0.536,
+      "out_dir": "out/batch_400/paper_41"
+    },
+    {
+      "index": 42,
+      "line": 169,
+      "paper_id": "zb3b6oKO77",
+      "category": "marginally_above",
+      "topical_overlap": 0.3363,
+      "out_dir": "out/batch_400/paper_42"
+    },
+    {
+      "index": 43,
+      "line": 173,
+      "paper_id": "zavLQJ1XjB",
+      "category": "accept",
+      "topical_overlap": 0.3208,
+      "out_dir": "out/batch_400/paper_43"
+    },
+    {
+      "index": 44,
+      "line": 176,
+      "paper_id": "zamGHHs2u8",
+      "category": "accept",
+      "topical_overlap": 0.2795,
+      "out_dir": "out/batch_400/paper_44"
+    },
+    {
+      "index": 45,
+      "line": 180,
+      "paper_id": "za9tj3izLn",
+      "category": "marginally_below",
+      "topical_overlap": 0.1856,
+      "out_dir": "out/batch_400/paper_45"
+    },
+    {
+      "index": 46,
+      "line": 183,
+      "paper_id": "zYXFMeHRtO",
+      "category": "marginally_above",
+      "topical_overlap": 0.3262,
+      "out_dir": "out/batch_400/paper_46"
+    },
+    {
+      "index": 47,
+      "line": 187,
+      "paper_id": "zWqr3MQuNs",
+      "category": "marginally_above",
+      "topical_overlap": 0.1442,
+      "out_dir": "out/batch_400/paper_47"
+    },
+    {
+      "index": 48,
+      "line": 191,
+      "paper_id": "zW1tyw3UFu",
+      "category": "marginally_above",
+      "topical_overlap": 0.3136,
+      "out_dir": "out/batch_400/paper_48"
+    },
+    {
+      "index": 49,
+      "line": 195,
+      "paper_id": "zUHgYRRAWl",
+      "category": "reject",
+      "topical_overlap": 0.1622,
+      "out_dir": "out/batch_400/paper_49"
+    },
+    {
+      "index": 5,
+      "line": 19,
+      "paper_id": "zxOFe1mx26",
+      "category": "reject",
+      "topical_overlap": 0.063,
+      "out_dir": "out/batch_400/paper_5"
+    },
+    {
+      "index": 50,
+      "line": 198,
+      "paper_id": "zUDbPgskDS",
+      "category": "reject",
+      "topical_overlap": 0.16,
+      "out_dir": "out/batch_400/paper_50"
+    },
+    {
+      "index": 51,
+      "line": 202,
+      "paper_id": "zSxpnKh1yS",
+      "category": "accept",
+      "topical_overlap": 0.1828,
+      "out_dir": "out/batch_400/paper_51"
+    },
+    {
+      "index": 52,
+      "line": 206,
+      "paper_id": "zSwH0Wo2wo",
+      "category": "marginally_below",
+      "topical_overlap": 0.2119,
+      "out_dir": "out/batch_400/paper_52"
+    },
+    {
+      "index": 53,
+      "line": 210,
+      "paper_id": "zSN6mXz6VF",
+      "category": "marginally_below",
+      "topical_overlap": 0.4087,
+      "out_dir": "out/batch_400/paper_53"
+    },
+    {
+      "index": 54,
+      "line": 216,
+      "paper_id": "zRkM6UcA22",
+      "category": "marginally_below",
+      "topical_overlap": 0.116,
+      "out_dir": "out/batch_400/paper_54"
+    },
+    {
+      "index": 55,
+      "line": 220,
+      "paper_id": "zRMXQMyyM8",
+      "category": "marginally_below",
+      "topical_overlap": 0.2191,
+      "out_dir": "out/batch_400/paper_55"
+    },
+    {
+      "index": 56,
+      "line": 224,
+      "paper_id": "zQwNAZ1cMT",
+      "category": "reject",
+      "topical_overlap": 0.1615,
+      "out_dir": "out/batch_400/paper_56"
+    },
+    {
+      "index": 57,
+      "line": 227,
+      "paper_id": "zQXX3ZV2HE",
+      "category": "marginally_below",
+      "topical_overlap": 0.3192,
+      "out_dir": "out/batch_400/paper_57"
+    },
+    {
+      "index": 58,
+      "line": 231,
+      "paper_id": "zOo8qtyuf6",
+      "category": "marginally_below",
+      "topical_overlap": 0.29,
+      "out_dir": "out/batch_400/paper_58"
+    },
+    {
+      "index": 59,
+      "line": 236,
+      "paper_id": "zOjW6yVYkE",
+      "category": "reject",
+      "topical_overlap": 0.121,
+      "out_dir": "out/batch_400/paper_59"
+    },
+    {
+      "index": 6,
+      "line": 23,
+      "paper_id": "zwcRnM8lD6",
+      "category": "reject",
+      "topical_overlap": 0.2923,
+      "out_dir": "out/batch_400/paper_6"
+    },
+    {
+      "index": 60,
+      "line": 240,
+      "paper_id": "zNzVhX00h4",
+      "category": "marginally_above",
+      "topical_overlap": 0.2977,
+      "out_dir": "out/batch_400/paper_60"
+    },
+    {
+      "index": 61,
+      "line": 244,
+      "paper_id": "zMvMwNvs4R",
+      "category": "marginally_above",
+      "topical_overlap": 0.2371,
+      "out_dir": "out/batch_400/paper_61"
+    },
+    {
+      "index": 62,
+      "line": 248,
+      "paper_id": "zMoNrajk2X",
+      "category": "accept",
+      "topical_overlap": 0.2364,
+      "out_dir": "out/batch_400/paper_62"
+    },
+    {
+      "index": 63,
+      "line": 251,
+      "paper_id": "zMR2dTNdft",
+      "category": "marginally_above",
+      "topical_overlap": 0.1974,
+      "out_dir": "out/batch_400/paper_63"
+    },
+    {
+      "index": 64,
+      "line": 255,
+      "paper_id": "zMPHKOmQNb",
+      "category": "accept",
+      "topical_overlap": 0.3425,
+      "out_dir": "out/batch_400/paper_64"
+    },
+    {
+      "index": 65,
+      "line": 258,
+      "paper_id": "zLwCT9srfo",
+      "category": "reject",
+      "topical_overlap": 0.1885,
+      "out_dir": "out/batch_400/paper_65"
+    },
+    {
+      "index": 66,
+      "line": 261,
+      "paper_id": "zKgrmMOQjg",
+      "category": "reject",
+      "topical_overlap": 0.2052,
+      "out_dir": "out/batch_400/paper_66"
+    },
+    {
+      "index": 67,
+      "line": 265,
+      "paper_id": "zIrpuifCJW",
+      "category": "marginally_below",
+      "topical_overlap": 0.4225,
+      "out_dir": "out/batch_400/paper_67"
+    },
+    {
+      "index": 68,
+      "line": 268,
+      "paper_id": "zIJFG7wW2d",
+      "category": "marginally_below",
+      "topical_overlap": 0.3445,
+      "out_dir": "out/batch_400/paper_68"
+    },
+    {
+      "index": 69,
+      "line": 271,
+      "paper_id": "zI6mMl7UmW",
+      "category": "marginally_below",
+      "topical_overlap": 0.3741,
+      "out_dir": "out/batch_400/paper_69"
+    },
+    {
+      "index": 7,
+      "line": 28,
+      "paper_id": "zwU9scoU4A",
+      "category": "marginally_above",
+      "topical_overlap": 0.1485,
+      "out_dir": "out/batch_400/paper_7"
+    },
+    {
+      "index": 70,
+      "line": 275,
+      "paper_id": "zI6fKENVL8",
+      "category": "reject",
+      "topical_overlap": 0.4002,
+      "out_dir": "out/batch_400/paper_70"
+    },
+    {
+      "index": 71,
+      "line": 278,
+      "paper_id": "zH6zBoktYO",
+      "category": "reject",
+      "topical_overlap": 0.1869,
+      "out_dir": "out/batch_400/paper_71"
+    },
+    {
+      "index": 72,
+      "line": 282,
+      "paper_id": "zFWKKYz2yn",
+      "category": "marginally_below",
+      "topical_overlap": 0.2375,
+      "out_dir": "out/batch_400/paper_72"
+    },
+    {
+      "index": 73,
+      "line": 285,
+      "paper_id": "zEkvV65Wi1",
+      "category": "reject",
+      "topical_overlap": 0.3615,
+      "out_dir": "out/batch_400/paper_73"
+    },
+    {
+      "index": 74,
+      "line": 289,
+      "paper_id": "zEhTnQZB3D",
+      "category": "reject",
+      "topical_overlap": 0.3652,
+      "out_dir": "out/batch_400/paper_74"
+    },
+    {
+      "index": 75,
+      "line": 292,
+      "paper_id": "zEOnlJaRKp",
+      "category": "marginally_above",
+      "topical_overlap": 0.2809,
+      "out_dir": "out/batch_400/paper_75"
+    },
+    {
+      "index": 76,
+      "line": 296,
+      "paper_id": "zEHGSN8Hy8",
+      "category": "marginally_above",
+      "topical_overlap": 0.2693,
+      "out_dir": "out/batch_400/paper_76"
+    },
+    {
+      "index": 77,
+      "line": 300,
+      "paper_id": "zDMM4ZX1UB",
+      "category": "marginally_above",
+      "topical_overlap": 0.1708,
+      "out_dir": "out/batch_400/paper_77"
+    },
+    {
+      "index": 78,
+      "line": 304,
+      "paper_id": "zCJFTA19K4",
+      "category": "reject",
+      "topical_overlap": 0.2055,
+      "out_dir": "out/batch_400/paper_78"
+    },
+    {
+      "index": 79,
+      "line": 308,
+      "paper_id": "zBgAlcIoZP",
+      "category": "marginally_above",
+      "topical_overlap": 0.2572,
+      "out_dir": "out/batch_400/paper_79"
+    },
+    {
+      "index": 8,
+      "line": 31,
+      "paper_id": "zwMfg9PfPs",
+      "category": "accept",
+      "topical_overlap": 0.2037,
+      "out_dir": "out/batch_400/paper_8"
+    },
+    {
+      "index": 80,
+      "line": 312,
+      "paper_id": "zAdUB0aCTQ",
+      "category": "reject",
+      "topical_overlap": 0.1181,
+      "out_dir": "out/batch_400/paper_80"
+    },
+    {
+      "index": 81,
+      "line": 317,
+      "paper_id": "z9ySIS1inA",
+      "category": "reject",
+      "topical_overlap": 0.2549,
+      "out_dir": "out/batch_400/paper_81"
+    },
+    {
+      "index": 82,
+      "line": 321,
+      "paper_id": "z9Xb6fADe4",
+      "category": "marginally_below",
+      "topical_overlap": 0.2953,
+      "out_dir": "out/batch_400/paper_82"
+    },
+    {
+      "index": 83,
+      "line": 325,
+      "paper_id": "z9FXRHoQdc",
+      "category": "marginally_below",
+      "topical_overlap": 0.1634,
+      "out_dir": "out/batch_400/paper_83"
+    },
+    {
+      "index": 84,
+      "line": 329,
+      "paper_id": "z8q8kBxC5H",
+      "category": "marginally_above",
+      "topical_overlap": 0.2373,
+      "out_dir": "out/batch_400/paper_84"
+    },
+    {
+      "index": 85,
+      "line": 334,
+      "paper_id": "z8Wva86JLB",
+      "category": "reject",
+      "topical_overlap": 0.28,
+      "out_dir": "out/batch_400/paper_85"
+    },
+    {
+      "index": 86,
+      "line": 337,
+      "paper_id": "z8TW0ttBPp",
+      "category": "marginally_above",
+      "topical_overlap": 0.2148,
+      "out_dir": "out/batch_400/paper_86"
+    },
+    {
+      "index": 87,
+      "line": 341,
+      "paper_id": "z80CwkWXmq",
+      "category": "marginally_above",
+      "topical_overlap": 0.2032,
+      "out_dir": "out/batch_400/paper_87"
+    },
+    {
+      "index": 88,
+      "line": 345,
+      "paper_id": "z7usV2BlEE",
+      "category": "marginally_above",
+      "topical_overlap": 0.0862,
+      "out_dir": "out/batch_400/paper_88"
+    },
+    {
+      "index": 89,
+      "line": 349,
+      "paper_id": "z7K2faBrDG",
+      "category": "reject",
+      "topical_overlap": 0.1475,
+      "out_dir": "out/batch_400/paper_89"
+    },
+    {
+      "index": 9,
+      "line": 35,
+      "paper_id": "zvTnwY5uS7",
+      "category": "marginally_below",
+      "topical_overlap": 0.2947,
+      "out_dir": "out/batch_400/paper_9"
+    },
+    {
+      "index": 90,
+      "line": 353,
+      "paper_id": "z6n1fKMMC1",
+      "category": "accept",
+      "topical_overlap": 0.2896,
+      "out_dir": "out/batch_400/paper_90"
+    },
+    {
+      "index": 91,
+      "line": 357,
+      "paper_id": "z6KS9D1dxt",
+      "category": "marginally_above",
+      "topical_overlap": 0.1516,
+      "out_dir": "out/batch_400/paper_91"
+    },
+    {
+      "index": 92,
+      "line": 360,
+      "paper_id": "z62Xc88jgF",
+      "category": "reject",
+      "topical_overlap": 0.2504,
+      "out_dir": "out/batch_400/paper_92"
+    },
+    {
+      "index": 93,
+      "line": 364,
+      "paper_id": "z4qWt62BdN",
+      "category": "reject",
+      "topical_overlap": 0.1859,
+      "out_dir": "out/batch_400/paper_93"
+    },
+    {
+      "index": 94,
+      "line": 368,
+      "paper_id": "z4Hcegjzph",
+      "category": "accept",
+      "topical_overlap": 0.1532,
+      "out_dir": "out/batch_400/paper_94"
+    },
+    {
+      "index": 95,
+      "line": 371,
+      "paper_id": "z3mPLBLfGY",
+      "category": "marginally_below",
+      "topical_overlap": 0.1455,
+      "out_dir": "out/batch_400/paper_95"
+    },
+    {
+      "index": 96,
+      "line": 375,
+      "paper_id": "z3dfuRcGAK",
+      "category": "marginally_above",
+      "topical_overlap": 0.2733,
+      "out_dir": "out/batch_400/paper_96"
+    },
+    {
+      "index": 97,
+      "line": 378,
+      "paper_id": "z3L59iGALM",
+      "category": "accept",
+      "topical_overlap": 0.1689,
+      "out_dir": "out/batch_400/paper_97"
+    },
+    {
+      "index": 98,
+      "line": 382,
+      "paper_id": "z2avrOUajn",
+      "category": "reject",
+      "topical_overlap": 0.2712,
+      "out_dir": "out/batch_400/paper_98"
+    },
+    {
+      "index": 99,
+      "line": 385,
+      "paper_id": "z282NEQDbF",
+      "category": "reject",
+      "topical_overlap": 0.1634,
+      "out_dir": "out/batch_400/paper_99"
+    }
+  ]
+}

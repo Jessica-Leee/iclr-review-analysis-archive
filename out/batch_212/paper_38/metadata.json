@@ -1,0 +1,18 @@
+{
+  "paper_id": "ze7DOLi394",
+  "review_id": "CmYGaqyrCP",
+  "year": 2024,
+  "line": 153,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "Understanding how models learn is an important topic in modern deep learning. Authors build the new framework to describe feature learning from the different perspective which allows to describe recently observed phenomenas. I think that this new perspective provides a valuable contribution to the community and can facilitate further developments in this area. In addition, I personally liked the construction of a natural dataset on which deep ensemble is not well-calibrated in-distribution and where GDE fails.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper proposes the interaction tensor which is a binary 3-dimensional tensor T describing the presence of certain features in both model and data point, i.e., if $T_{tmn} = 1$ implies that $t_{th}$ feature is present in both $m_{th}$ model and $n_{th}$ data point. The construction of the interaction tensor is based on the correlation analysis between PCA-reduced features of penultimate layers of the collection of models on the given dataset. Authors utilize this interaction tensor to empirically analyze properties of feature learning and propose a feature learning model based on their observations. Using this feature learning model they focus on analysing recently proposed Generalization Disagreement Equality and given which conditions GDE can arise.",
+  "human_questions": "1. Given that construction of interaction tensor depends on thresholding ($\\gamma_{corr}$ and $\\gamma_{data}$), how important are these hyperparameters? How to properly set them?\n2. Currently theoretical framework analyzes binary classification, does the analysis extend to multi-class classification?\n3. Does the framework allow for introducing distribution shifts and etc?",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "2: You are willing to defend your assessment, but it is quite likely that you did not understand the central parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

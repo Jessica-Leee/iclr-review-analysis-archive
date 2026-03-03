@@ -1,0 +1,18 @@
+{
+  "paper_id": "y2qZhSTtzU",
+  "review_id": "RHIArVNk4l",
+  "year": 2024,
+  "line": 818,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_review_text": "This paper studies out-of-distribution text classification from a single source domain. The main idea is to learn sparse mask layers that filter out spurious features while retaining invariant features. The masks are learned through the joint optimization of three loss terms: a cross-entropy loss for classification, a sparsity loss that enforces sparse masks, and a cosine-similarity loss that encourages the mask layers to extract label-specific features. The network is trained in a sequential manner from the top layer to the bottom layer. Theoretical analysis shows that given a set of causal and non-causal features. The empirical evaluation is done on binary and multi-class classification. Compared with a variety of language models including LLMs (few-shot in-context), the proposed method demonstrates superior performance on several datasets.",
+  "human_strengths": "- The studied problem is important to real-world applications of language models.\n- The empirical results seem strong. A great variety of language models are compared with the proposed method on a number of datasets. The advantage of the proposed method is demonstrated clearly.\n- The paper is overall well written and easy to understand.",
+  "human_weaknesses": "",
+  "human_questions": "- Does the result of the current theory hold if there is some unobserved selection variable between $Y$ and some non-causal variables?\n- Is there any fundamental difference between the proposed method and [1]? If so, what is it?\n- What are the causal graphs referred to on page 5 with \"Fig. ??\"?",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

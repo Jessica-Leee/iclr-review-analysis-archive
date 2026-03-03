@@ -1,0 +1,18 @@
+{
+  "paper_id": "zmV50sislh",
+  "review_id": "kxHLuutewr",
+  "year": 2024,
+  "line": 82,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "Symmetry is an important property in MILPs but is rarely considered in GNN-based methods for solving MILPs. It is good to introduce this topic to the community. The writing is clear. The ideas of adding differentiable features and using orbit loss (or symmetry-aware loss) make sense (they are standard in handling symmetry and have been used in other problems). The numerical results show that the approach is promising.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper studies GNNs for solving MILPs and considers the symmetric properties of MILPs (i.e., switching some variables does not essentially change the problem). The proposed methods include: 1) adding additional features (positional embedding) to differentiate variables that are symmetric; 2) defining the loss function for an orbit of the symmetry group, not just a point. The approach is tested on two datasets and compared with other methods. Some numerical advantages are reported by the authors.",
+  "human_questions": "None.",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

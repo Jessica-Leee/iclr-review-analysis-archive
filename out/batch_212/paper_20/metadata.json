@@ -1,0 +1,18 @@
+{
+  "paper_id": "znjaiy1Z9q",
+  "review_id": "uJrRsUktGu",
+  "year": 2024,
+  "line": 78,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "With a strong clarity of exposition the strength of the paper lies in its clear story-line, which is complemented by strong evaluations on established benchmarks. Including a strong outperformance of the approach on the BLEU, CodeBLEU, Rogue-L, METEOR, CodeBERTScore, and OMPScore, as well as the more close to practice measurement of execution time.\n\nThe clear explanation of intuitions behind decisions, and the GNN-guidance make the paper very easy to understand, and is refreshing in its clarity. In addition the key contribution of the paper, the GNN-guidance to provide context to the LLM-query, is clearly pointed out and illustrated what this means for the prompts in practice.\n\nThe strong performance across all benchmarks only backs this contribution up further.",
+  "human_weaknesses": "",
+  "human_review_text": "In AutoParLLM the authors introduce a new guidance technique for prompting large language models for code to parallelize a presented piece of software by inserting OpenMP directives. To better measure the parallelization performance the authors additionally introduce a new evaluation metric called OMP-Score to better capture the preferences of parallelized code. The guiding graph neural network first learns the control flow, data flow, and call flow of the program, before feeding this additional context to the large language model, which is being prompted to parallelize the presented piece of code.\n\nThe guidance with graph neural networks produces consistently better results across established evaluation metrics, as well as the new OMP-Score across a set of 4 of the most commonly used large language models for code with CodeGen, CodeLLama, and the commonly used GPT-3.5, and GPT-4. Human evaluation of the OMP-Score with 2 experienced software engineers shows good alignment between the rating through OMP-Score, and the human rating of produced results.",
+  "human_questions": "- With the strong outperformance of AutoParLLM on the established evaluation metrics, as well as OMPScore, how would the authors explain that the average speed on the execution time is closer to 2-3%?\n- Taking CodeLlama as an example, would it be possible to additionally repeat the evaluation for the different sizes of CodeLlama available to verify that the authors claim holds across differently sized models?\n- Only having focussed on OpenMP CPU-parallelization, do you see this approach extending to OpenMP device offloading, where there is much less code available?",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "5: You are absolutely certain about your assessment. You are very familiar with the related work and checked the math/other details carefully.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "4 excellent"
+  }
+}

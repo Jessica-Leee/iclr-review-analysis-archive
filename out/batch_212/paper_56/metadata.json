@@ -1,0 +1,18 @@
+{
+  "paper_id": "zQwNAZ1cMT",
+  "review_id": "JeOKPRfsY2",
+  "year": 2024,
+  "line": 224,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The setting is online and now has several objectives compared to 1 in prior work; so the problem studied by the authors is quite an interesting one, and appears new in the literature.\n2. The provided two main experiments appear well-illustrated and executed (Caveat: unfortunately they only illustrate two objectives --- note that the paper's algorithm works for more than two, with the curse of dimensionality kicking in pretty fast (at rate K^{1/(p-1)}), so it appears important to see how quickly the algorithm may become practically infeasible as a function of the growing dimension of the objective); and, furthermore, given my objections on the theoretical side of the paper listed below, it should have had many more interesting experiments on other tasks to sway me with its empirical contribution).",
+  "human_weaknesses": "",
+  "human_review_text": "The paper provides an online solution to the problem of inverse multiobjective optimization. In the setting handled, observations corrupted by a bounded amount of noise are revealed sequentially in rounds 1, 2, ... Two algorithms are given (one with theoretical guarantees, and the other one without theoretical guarantees but faster in practice), and an illustration of their performance is given in a couple experiments (synthetic QP and portfolio optimization). The theoretical guarantee for the first algorithm provides an O(sqrt((T)) bound on the regret subject to several assumptions on the structure of the problem --- in particular, compared to prior work multiple objectives (and multiple constraints) are possible to handle.",
+  "human_questions": "1. Why is Assumption 3.3 stated as it is? Its statement is not particularly well justified at the moment, and the only purpose it seems to have in the proofs is to imply that the idealized loss l is convex. However, the reader wouldn't know this unless the appendix is thoroughly checked. Once again, barring a misunderstanding on my part, this might appear to be an instance of deliberate obfuscation for the purposes of the review process.\n2. Assumption 3.3 should be endowed with more examples, simply because while the authors promise \"Examples are given in Appendix\", but the corresponding section of the appendix contains just one simple --- and not worked out --- example, which says \"Although tedious, one can check that one can check [sic] that Assumption 3.3 a is indeed satisfied\".\n3. More depth in the experimental section would be required to change my overall evaluation of the paper; e.g. along the lines I've indicated in the Strengths section.\n4. What is the purpose of including, and elaborating on, the KKT-based program for solving for the implicit update 3, if it is both more interpretable and parallelizable to solve K parallel problems as in 4?\n5. Please disambiguate where l versus l_K are used (as noted above), and ideally I would like to see a more useful analysis of l vs. l_K than currently provided.",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

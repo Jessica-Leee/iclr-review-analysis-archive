@@ -1,0 +1,18 @@
+{
+  "paper_id": "yIv4SLzO3u",
+  "review_id": "BPm0zRA3Hj",
+  "year": 2024,
+  "line": 713,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- The authors propose to utilize current weight averaging and bounded model update techniques to achieve a better balance between stability and plasticity.",
+  "human_weaknesses": "",
+  "human_review_text": "The submission proposes to tackle the class-incremental learning problem with inter-task and intra-task weight averaging. The former facilitates the incorporation of previous knowledge so as to counter catastrophic forgetting, while the latter enhances the performance of the current task model. They further include the bounded parameter update to regularize the parameter changes, which strengthens the effect of avoiding forgetting. They validate their method on multiple class-incremental datasets and achieve competitive results.",
+  "human_questions": "As shown in the weakness section.",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "1 poor"
+  }
+}

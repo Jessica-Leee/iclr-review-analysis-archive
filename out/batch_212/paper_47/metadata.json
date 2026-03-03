@@ -1,0 +1,18 @@
+{
+  "paper_id": "zWqr3MQuNs",
+  "review_id": "ZLw6gshf3L",
+  "year": 2024,
+  "line": 187,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. Training data detection is an important problem to explore.\n\n2. The proposed method does not need any reference model, which is easy to implement.\n\n3. The experimental results show some advantage.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper presents a method to detect training data in LLMs, based on the assumption of \"an unseen example tends to contain a few outlier words with low probabilities, whereas a seen example is less likely to contain words with such low probabilities.\" Experiments on one wiki dataset verify the advantage of the proposed method over some baselines.",
+  "human_questions": "See above review",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

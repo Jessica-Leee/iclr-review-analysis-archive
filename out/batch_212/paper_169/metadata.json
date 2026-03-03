@@ -1,0 +1,18 @@
+{
+  "paper_id": "yQUbpAHbIZ",
+  "review_id": "WxbKIHQEnF",
+  "year": 2024,
+  "line": 651,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "Bivariate causal discovery is an important, fundamental problem in causal inference. This paper advances the literature by providing an algorithm that uses a variant of maximal correlation to learn nonlinear functions of the PNL model. A major contribution of this paper is a systematic study of how to use maximal correlation based methods for causal discovery. Experimental results seem comprehensive in the sense that they cover a wide variety of datasets both simulated and real, barring a few concerns that I elaborate in the following section.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper considers bivariate causal discovery without confounders. Under the assumption that the true model follows the post-nonlinear (PNL) model, prior work does causal discovery by learning the functions f_1,f_2 and then using some dependence measure to compare the dependence between the residuals and the input under both hypotheses. This paper proposes an alternate two-stage method, where the first stage learns the functions using a soft-version of HGR maximal correlation regularized by a dependency measure (Renyi, 1959) and the second stage is an independence test between the residual and the input. The dependency measure regularization is motivated by pointing out the con of maximal correlation that it doesn't provide usable residuals for the downstream independence test. Experimental results show that the proposed method is competitive w.r.t existing methods.",
+  "human_questions": "1) The authors repeatedly use the word \"meaningful\" (pg 5, under eq 9, pg 6, first para in 4.1) while criticizing existing methods without providing much explanation as to what is \"meaningful\". While the usage in pg 5 is backed by the observation that residuals can be matched to arbitrary noise profiles, other usages are unclear. These assertions seem important but without knowing the meaning it's unclear what the criticism means.\n2) Is it supposed to be < -\\delta in Line 3 in Algorithm 2? \n3) Is there any ablation study done to determine the parameters of the RFF?",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

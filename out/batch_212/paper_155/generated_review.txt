@@ -1,0 +1,36 @@
+**Review:**
+
+This paper proposes a hybrid approach to the 3D bin packing problem by combining Dantzig-Wolfe decomposition with deep reinforcement learning. The key idea is to decompose the full problem into a set partition problem (solved by CPLEX) and a 3D knapsack problem (solved by an RL agent), thereby reducing the agent's action space and episode length. The trained agent is then used iteratively in a column generation procedure at inference time. Additionally, the authors use the Dantzig-Wolfe formulation with CPLEX solving both master and sub-problems to improve lower bounds on benchmark instances.
+
+**Strengths:**
+- **Well-motivated problem decomposition**: The use of Dantzig-Wolfe decomposition to reduce the learning problem's complexity is sensible and addresses a real challenge in applying RL to large combinatorial problems. Removing bin selection from the action space and limiting episodes to single-bin packing is a principled simplification.
+- **Dual contribution**: The paper provides both an RL-based solution method and an improved lower bound approach, offering value from multiple angles.
+- **Empirical validation on standard benchmark**: Results are reported on 47 instances, showing improvements on 28 instances for the RL approach and 17 instances for the lower bound approach.
+
+**Weaknesses:**
+- **Limited novelty in core techniques**: The paper combines existing methods (Dantzig-Wolfe decomposition, column generation, standard RL, CPLEX) without introducing novel algorithmic or learning-theoretic contributions. The application is domain-specific but the technical innovation is incremental.
+- **Incomplete experimental analysis**: The abstract provides only win counts (28/47, 17/47) without reporting solution quality metrics (e.g., gap to optimality, average improvement percentage), computational time comparisons, or statistical significance. It is unclear whether improvements are substantial or marginal.
+- **Lack of methodological detail and ablation**: The abstract does not describe the RL architecture, training procedure, or hyperparameters. No ablation studies are mentioned to justify design choices (e.g., why this decomposition over alternatives?).
+- **Missing comparison with related work**: The paper mentions "SOTA lower bounds" and "RL solutions found in the literature" but provides no detailed comparison or discussion of how this approach differs from or improves upon prior hybrid methods for bin packing.
+- **Unclear generalization**: It is not evident whether the approach generalizes to other variants of bin packing or combinatorial optimization problems, limiting the impact of the contribution.
+
+**Questions:**
+- What are the average solution quality improvements (in percentage gap or absolute value) on the 28 instances where the RL approach wins?
+- How does computational time compare between the RL-based column generation and the baseline RL agent?
+- What RL architecture and training procedure were used? Were any hyperparameter studies conducted?
+- How does this approach compare quantitatively to recent neural combinatorial optimization methods or other hybrid RL-optimization approaches?
+
+**Overall score:**
+4: below the acceptance threshold. While the problem is relevant and the decomposition strategy is reasonable, the paper lacks sufficient novelty, methodological depth, and experimental rigor for a top-tier venue. The contribution is primarily an application of existing techniques, and the experimental evaluation is too sparse to convincingly demonstrate the value of the approach.
+
+**Confidence:**
+3 (moderate). The assessment is based on the abstract alone; a full paper might provide more detail that could strengthen the contribution, but the abstract suggests limited novelty and incomplete evaluation.
+
+**Soundness:**
+Fair. The decomposition approach is sound in principle, but without full methodological details and ablations, it is difficult to assess the rigor of the experimental validation.
+
+**Presentation:**
+Fair. The abstract clearly describes the method, but lacks sufficient detail on RL components, experimental setup, and quantitative results needed for evaluation.
+
+**Contribution:**
+Poor to Fair. The contribution is primarily an application of Dantzig-Wolfe decomposition and column generation to 3D bin packing with RL. While sensible, it lacks algorithmic novelty and the empirical gains are not convincingly demonstrated.

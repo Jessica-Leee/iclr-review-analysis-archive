@@ -1,0 +1,18 @@
+{
+  "paper_id": "zFWKKYz2yn",
+  "review_id": "7F5zwLPM4a",
+  "year": 2024,
+  "line": 282,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "This paper establishes its conclusion through solid empirical investigations. By varying rule-extraction methods, languages, architectures, and a bunch of hyper-parameters, this paper gives some valuable information on RNNs' performance in these types of tasks, and how consistent they are. These results could in turn give some valuable feedback to the theoretical community, where the motivation of these questions is from.\n\nA possible potential for the approach investigated in this work is that it could serve as inspiration for the design of tasks to understand the capability of other types of neural networks that could potentially receive context-free language as inputs (say when context-free language is used to evaluate language models' ability).",
+  "human_weaknesses": "",
+  "human_review_text": "This paper is an empirical study on the capability and stability of rule extraction of deterministic finite automata (DFA) of multiple regular languages by a number of RNNs. Results show that second-order RNNs like O2RNN have better stability in extracting DFAs than first-order ones like GRUs and LSTMs, validating prior theoretical work. The results also show that quantization-based approaches extract fewer states than equivalence query methods. In addition, this paper also contains many comparison analyses for the effects of different architecture hyperparams on rule extractions.",
+  "human_questions": "See above weaknesses.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "1 poor",
+    "contribution": "2 fair"
+  }
+}

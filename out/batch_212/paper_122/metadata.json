@@ -1,0 +1,18 @@
+{
+  "paper_id": "yoVq2BGQdP",
+  "review_id": "YxlAsxfifv",
+  "year": 2024,
+  "line": 474,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The fairness metric in multi-agent RL has not been extensively studied. This paper extends the UCB and Pessimism, two standard techniques of online and offline RL to this new problem.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper explores the concept of fairness in multi-agent systems in unknown environments, casting the problem as a multi-agent Markov Decision Processes (MDPs) with a fairness-related objective function. The authors propose a Reinforcement Learning (RL) approach that maximizes fairness objectives such as Proportional Fairness and Maximin Fairness. When representing the policy in terms of the visitation measure, this paper shows that the optimal policy can be solved via convex optimization in the space of visitation measures. Based on this observation, a UCB-based online RL algorithm and a pessimism-based offline RL algorithm are proposed.",
+  "human_questions": "1. Given existing works on UCB-based and pessimism-based RL, what are the technical novelties?\n\n2. Can you run some toy-ish experiments to showcase the performance of the algorithm? In simulation experiments, how do we measure fairness-related regret?",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

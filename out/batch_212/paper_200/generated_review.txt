@@ -1,0 +1,32 @@
+**Review:**
+
+This paper proposes SemPLeS, a framework for weakly-supervised semantic segmentation (WSSS) that leverages CLIP to improve pseudo mask generation. The core idea is to learn semantic prompts via Contrastive Prompt Learning and Class-associated Semantic Refinement, enabling better alignment between segmented regions and target object categories while suppressing background confusion. Rather than relying solely on CAM-like heatmaps, the method uses the CLIP space to enhance semantic matching, producing higher-quality pseudo masks for training segmentation models.
+
+**Strengths:**
+- Clear motivation: the paper identifies a concrete limitation of existing WSSS methods (incomplete object capture and background confusion) and proposes a targeted solution using CLIP's semantic space.
+- Comprehensive evaluation: reported SOTA results on standard benchmarks (PASCAL VOC and MS COCO) with semantic visualization of learned prompts, demonstrating both quantitative gains and interpretability.
+- Well-motivated technical approach: Contrastive Prompt Learning and Class-associated Semantic Refinement are intuitive mechanisms for learning discriminative prompts that suppress irrelevant backgrounds.
+
+**Weaknesses:**
+- Limited methodological novelty: the core contribution—learning prompts to better align CLIP embeddings with segmentation targets—is relatively incremental. The paper does not clearly articulate what is fundamentally new beyond applying existing prompt learning ideas to WSSS.
+- Insufficient technical detail in the abstract: the abstract does not explain how Contrastive Prompt Learning and Class-associated Semantic Refinement work mechanistically, making it difficult to assess the technical depth or novelty without the full paper.
+- Unclear comparison with related work: the abstract does not discuss how this approach differs from or improves upon other recent CLIP-based or prompt-learning methods for segmentation or WSSS.
+- Missing ablation and analysis: while the abstract mentions semantic visualization, there is no discussion of ablation studies isolating the contribution of each component (Contrastive Prompt Learning vs. Class-associated Semantic Refinement) or failure cases.
+
+**Questions:**
+- How does the computational cost of learning prompts in CLIP space compare to standard CAM-based pseudo-labeling approaches?
+- Can you provide more detail on how Class-associated Semantic Refinement specifically suppresses background regions? Is this done via negative prompts or a different mechanism?
+- How sensitive is the method to the choice of prompt initialization and the hyperparameters controlling the contrastive and refinement objectives?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper addresses a relevant problem in WSSS and demonstrates strong empirical results on established benchmarks. The use of CLIP for semantic alignment is well-motivated, and the reported SOTA performance suggests practical value. However, the methodological novelty is modest—applying prompt learning to WSSS is a natural extension rather than a fundamental advance—and the abstract lacks sufficient technical detail to fully assess the contribution. The work is solid and likely to be of interest to the WSSS community, but it falls short of being a strong accept without clearer articulation of its technical innovations and more thorough ablation studies.
+
+**Confidence:** 3 (moderate)
+
+**Soundness:** 4 (good)
+
+**Presentation:** 3 (fair)
+
+**Contribution:** 3 (fair)

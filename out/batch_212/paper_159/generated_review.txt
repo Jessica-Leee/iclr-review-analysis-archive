@@ -1,0 +1,33 @@
+**Review:**
+
+This paper proposes Hybrid Sharing Query (HSQ), a transformer-based model that applies mixture-of-experts architecture to multi-label image classification. The core contribution is framing multi-label classification as a multi-task learning problem and addressing label heterogeneity (negative transfer between labels) through a fusion expert framework that combines task-specialized experts with shared experts. The authors claim HSQ achieves state-of-the-art performance on two benchmark datasets with simultaneous improvements across most labels.
+
+**Strengths:**
+- The problem formulation is well-motivated: framing label heterogeneity as negative transfer in multi-task learning is intuitive and provides a principled perspective on a known challenge in multi-label classification.
+- The mixture-of-experts approach is a reasonable architectural choice for balancing task-specific and shared representations, which aligns naturally with the multi-task framing.
+- The paper reports extensive experiments on benchmark datasets and claims state-of-the-art results with improvements across most labels, suggesting practical effectiveness.
+
+**Weaknesses:**
+- The abstract provides insufficient technical detail about the fusion expert framework and how it specifically mitigates label heterogeneity. The mechanism by which task-specialized and shared experts are combined remains unclear without seeing the full paper.
+- No ablation studies or analysis are mentioned in the abstract, making it difficult to assess which components (mixture-of-experts, fusion framework, transformer backbone) drive the improvements.
+- The claim of "simultaneous improvements across most labels" is vague—it is unclear whether this means all labels improve, a majority improve, or improvements are measured in aggregate. This needs precise definition and justification.
+- Limited scope: evaluation on only two benchmark datasets is relatively narrow for validating a general method. Generalization to other multi-label datasets or domains is not discussed.
+
+**Questions:**
+- How does the fusion expert framework explicitly address negative transfer between labels? What is the mathematical formulation?
+- What is the computational overhead of the mixture-of-experts architecture compared to baseline methods?
+- Can you provide ablation studies isolating the contribution of task-specialized experts, shared experts, and the fusion mechanism?
+- How does performance scale with the number of labels? Are there failure cases where certain label pairs exhibit strong negative transfer?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses a relevant problem and proposes a reasonable solution, but the abstract lacks sufficient technical depth and methodological clarity to evaluate the contribution rigorously. The experimental validation appears solid in scope but is limited to two datasets. Without seeing the full paper, it is difficult to assess whether the fusion expert framework is sufficiently novel or whether the improvements are primarily due to the transformer backbone and mixture-of-experts, which are well-established techniques. The work would benefit from clearer exposition of the core technical contribution and more comprehensive ablation studies.
+
+**Confidence:** 2–3 (Low to moderate; assessment is based solely on the abstract, which lacks technical detail)
+
+**Soundness:** Fair (The problem and approach are reasonable, but technical details are insufficient to verify soundness.)
+
+**Presentation:** Fair (The abstract is clear in motivation but vague in method and results; key technical details are missing.)
+
+**Contribution:** Fair (The combination of mixture-of-experts with multi-label classification is incremental; novelty depends on the specific design of the fusion expert framework, which is not explained.)

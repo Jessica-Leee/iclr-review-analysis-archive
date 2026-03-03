@@ -1,0 +1,18 @@
+{
+  "paper_id": "zamGHHs2u8",
+  "review_id": "Yqn2Sc9Ssb",
+  "year": 2024,
+  "line": 176,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The paper presents an elegant unification of previous explanations and observations of the CPE as being due to underfitting. It explains both the role of prior or likelihood misspecification as well as addresses the observed CPE when using data augmentations, which is really remarkable.\n2. The experiments are cleverly designed and convey some great insights into the CPE.\n3. The paper is well-written, and the authors do a great job of explaining ideas and results that are quite abstract.\n4. The paper is original and of high technical quality. It seems bound to become extremely significant for understanding the CPE and will therefore be of great interest to the ICLR community.",
+  "human_weaknesses": "",
+  "human_review_text": "The authors investigate the cause of the cold posterior effect (CPE) and argue that it is due to model underfitting. They do this both analytically and empirically; they show theoretically that the CPE implies underfitting and further construct experiments to analyse the influence of likelihood and prior misspecification as well as data augmentation. They conclude that each of these settings induces a CPE only if they cause the posterior to underfit. They further show that the CPE exists even for models that allow for exact Bayesian inference and that a \"warm\" posterior effect can occur too when the likelihood is misspecified. Together, these results explain why certain priors and likelihoods can lead to a CPE, as well as why larger models suffer less from the CPE.",
+  "human_questions": "**Questions**  \n1. Your results indicate that larger model capacities should be less susceptible to the CPE since they are less likely to underfit. However, Wenzel et al. (2020), figure 11, actually show the opposite, namely that increasing the depth of an MLP has no effect on the CPE, and that increasing the width makes the effect more pronounced. Do you have any thoughts on this?\n2. I am trying to understand what the next steps for research on this topic might be. Did you observe any situations where underfitting could not explain the CPE?\n3. Do you have any suggestions for future work?\n\n\n**Suggestions**  \n- Minor thing: the plots seem to have been rasterised with such high resolution that my pdf viewer struggles. I would suggest using vector graphics instead.",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "4 excellent",
+    "presentation": "3 good",
+    "contribution": "4 excellent"
+  }
+}

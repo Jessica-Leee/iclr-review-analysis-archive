@@ -1,0 +1,18 @@
+{
+  "paper_id": "zec5DTsCLv",
+  "review_id": "eSMl7Krd4C",
+  "year": 2024,
+  "line": 150,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- This paper proposes an approach to rewriting prompts tailored to users based on their history, which is interesting.\n- This paper suggests future research direction for personalized and user-centric artificial intelligence.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper introduces a new dataset called Personalized Image-Prompt (PIP), which consists of multiple user-specific image-prompt pairs, and presents a method for rewriting personalized text prompts based on user histories.",
+  "human_questions": "- In the evaluation method, such as the Text-Alignment section, the authors calculate the CLIP score between the generated image and the user's original prompt. Given that the main goal of this paper is to rewrite prompts that better encapsulate user preferences based on their history, what is the specific reason for including this evaluation method?",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "1 poor",
+    "contribution": "2 fair"
+  }
+}

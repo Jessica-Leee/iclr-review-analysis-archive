@@ -1,0 +1,18 @@
+{
+  "paper_id": "yJdj2QQCUB",
+  "review_id": "eQcmKQeUJl",
+  "year": 2024,
+  "line": 709,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- The problem of solving for transferable position and structural encoding is of high importance and relevance in the graph machine learning area.\n- The paper shows extensive experiments on a variety of different datasets to validate the method of transferability across different graph types.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper introduces GPSE a method to extract position and structural encodings (pse) from graphs. It can also be applied to other graph modelling tasks without the explicit need to compute the pse. The methos adopts a self-supervision style to train GPSE comprised of an encoder module which extracts the features and then passes through the decoder (MLP) to obtain the final embeddings. The loss is calculated against each of the six pse which is the target. For training, they use the MolPCBA dataset and test it against different molecular and node classification datasets.",
+  "human_questions": "- Section 2.2 talks more about the general effect of over-smoothing and squashing in graph neural networks, but it is not clear what this has to do with the method of learning effective position encoding for graphs. Why is it relevant to the problem?\n- In Table 4 GPSE shows better performance on MoleculeNet dataset where it is mentioned that GPSE is at a comparative disadvantage but is this due to the nature of the dataset or the importance of structural and position to the specific dataset? It will be interesting to observe what will be the effect of GINE+{LapPE/RWSE} vs GPSE. \n- Why are results from other datasets like (ClinTox MUV HIV) not included in Table 4 as GraphLoG is evaluated on these datasets? \n- Why are GNN models used as a baseline for testing the extreme OOD node-classification benchmarks (table 6) instead it will be interesting to see how transformer+GPSE will perform on the dataset as they don't have the inductive bias of GNNs. \n- The paper [1] has a similar research question and method to GPSE, can the authors help me understand the difference? \n- For SSL the methods are generally pre-trained and then fine-tuned on down-stream tasks, whereas in GPSE the base model GINE is augmented with learned pse and trained from scratch, how does this comparison seem to stand out? The comparison to the baseline of GINE from Hu et al. (2020b) is fair, but how can it be compared to SSL techniques? \n\n\n[1] GRAPH NEURAL NETWORKS WITH LEARNABLE STRUCTURAL AND POSITIONAL REPRESENTATIONS (ICLR 22)",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "5: You are absolutely certain about your assessment. You are very familiar with the related work and checked the math/other details carefully.",
+    "soundness": "3 good",
+    "presentation": "1 poor",
+    "contribution": "2 fair"
+  }
+}

@@ -1,0 +1,49 @@
+**Review:**
+
+This paper proposes Diffusion Visual Programmer (DVP), a neuro-symbolic framework for image translation that embeds a condition-flexible diffusion model within a GPT architecture to orchestrate a sequence of visual programs (computer vision models) for tasks such as RoI identification, style transfer, and position manipulation. The authors claim three main contributions: (1) condition-flexible translation via instance normalization to reduce sensitivity to manual guidance, (2) enhanced in-context reasoning by converting high-dimensional concepts into low-dimensional symbols (e.g., [Prompt], [RoI object]), and (3) improved controllability and explainability through explicit symbolic representations at each programming stage.
+
+**Strengths:** The core idea of combining diffusion models with symbolic visual programming is conceptually appealing and addresses a real need for interpretability and controllability in image translation. The framing of image translation as a sequence of explicit symbolic steps is intuitive and could enable more transparent editing workflows. The paper claims to outperform concurrent methods on unspecified benchmarks.
+
+**Weaknesses:** The abstract provides insufficient technical detail to assess the soundness of the approach. Critical information is missing: (1) How exactly is the condition-flexible diffusion model "embedded within the GPT architecture"? What is the precise architectural integration? (2) How does instance normalization specifically achieve condition-flexibility, and what is the theoretical or empirical justification? (3) The paper claims "extensive experiments" but provides no quantitative results, dataset names, baselines, or metrics in the abstract. (4) The symbolic representation scheme ([Prompt], [RoI object]) is mentioned but not formally defined or justified. (5) No ablation studies or failure case analyses are discussed. The abstract reads more as a position statement than a complete technical contribution, making it difficult to evaluate the actual novelty and validity of the method.
+
+**Assessment:** While the high-level vision of neuro-symbolic image translation is interesting, the abstract lacks the technical depth and empirical evidence needed for a strong contribution. The absence of concrete experimental results, architectural details, and methodological justification raises concerns about whether the work is sufficiently developed and validated for a top-tier venue. The paper would benefit from detailed descriptions of the DVP architecture, formal definitions of the symbolic representations, and comprehensive quantitative comparisons with baselines.
+
+---
+
+**Overall score:**
+4: below the acceptance threshold (insufficient technical detail and empirical validation in the abstract to assess contribution rigorously)
+
+**Confidence:**
+2 (Low—the abstract is too vague to make a confident assessment; a full paper review would be needed)
+
+**Soundness:**
+2 (Fair—core ideas are plausible but lack sufficient technical justification and empirical support in the provided text)
+
+**Presentation:**
+2 (Fair—the abstract is high-level and motivational but lacks concrete technical content, architectural details, and experimental results)
+
+**Contribution:**
+2 (Fair—the conceptual contribution (neuro-symbolic image translation) is interesting, but the technical novelty and validation are unclear)
+
+---
+
+**Strengths:**
+
+- **Conceptually appealing integration:** Combining diffusion models with symbolic visual programming for interpretable image translation addresses a real need for controllability and explainability in generative models.
+- **Clear motivation:** The framing of image translation as a sequence of explicit symbolic steps (RoI identification, style transfer, position manipulation) is intuitive and could enable more transparent user control.
+- **Multi-faceted approach:** The paper attempts to address multiple desiderata (condition-flexibility, in-context reasoning, controllability) in a unified framework.
+
+---
+
+**Weaknesses:**
+
+- **Lack of technical detail:** The abstract does not explain how the diffusion model is "embedded within the GPT architecture" or provide architectural diagrams/equations. The role of instance normalization in achieving condition-flexibility is asserted but not justified.
+- **No empirical validation:** The abstract claims "extensive experiments" and "remarkable performance" but provides no quantitative results, dataset names, baseline comparisons, or metrics. This is a critical omission for assessing impact.
+- **Undefined symbolic representations:** The symbolic scheme ([Prompt], [RoI object]) is mentioned but not formally defined. How are these symbols generated, manipulated, and integrated with the diffusion model?
+- **Missing ablations and analysis:** No ablation studies, failure cases, or analysis of when/why the method works are discussed, making it impossible to assess the contribution of individual components.
+
+---
+
+**Questions:**
+
+1. Can you provide the specific architectural details of how the diffusion model is integrated with the GPT backbone? Are there

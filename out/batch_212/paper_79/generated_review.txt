@@ -1,0 +1,48 @@
+**Review:**
+
+This paper proposes a deep autoencoding framework for reduced-order modeling and control of spatiotemporal PDEs. The key contribution is establishing a connection between linear autoencoding optimization and dynamic mode decomposition with control (DMDc), then extending this to a nonlinear deep autoencoding architecture. The authors combine the learned reduced-order model with stability-constrained deep neural networks for controller design, operating from time-series data without knowledge of the governing equations. The approach is validated on reaction-diffusion and fluid flow systems.
+
+**Strengths:**
+
+1. **Theoretical grounding**: The paper provides analytical justification for the connection between linear autoencoding optimization and DMDc, offering theoretical insight into why the autoencoding formulation is appropriate for this problem.
+
+2. **Practical framework**: The method addresses a relevant problem—data-driven reduced-order modeling and control of PDEs—and operates without requiring knowledge of governing equations, which is valuable for complex systems.
+
+3. **Systematic progression**: The natural extension from linear to nonlinear (deep) autoencoders is well-motivated and provides a clear methodological pathway.
+
+4. **Dual objective**: Combining both modeling and control design within a unified framework is appealing and demonstrates broader applicability.
+
+**Weaknesses:**
+
+1. **Limited experimental validation**: The abstract mentions applications to "reaction-diffusion systems and fluid flow systems" but provides no quantitative results, comparison baselines, or performance metrics. Without concrete empirical evidence, it is difficult to assess whether the approach offers practical advantages over existing methods (e.g., POD-based reduced-order models, other data-driven approaches).
+
+2. **Insufficient methodological detail**: The abstract lacks specifics on how stability-constrained deep neural networks are designed and integrated with the learned reduced-order model. The mechanism for enforcing stability constraints and their impact on control performance remains unclear.
+
+3. **Missing related work and positioning**: The paper does not discuss how it relates to existing data-driven control methods, other autoencoder-based dimensionality reduction approaches, or recent neural operator methods (e.g., DeepONet, FNO). This makes it difficult to assess novelty and positioning within the broader literature.
+
+4. **Scalability and generalization concerns**: No discussion of computational complexity, scalability to high-dimensional systems, or generalization to unseen dynamics or operating regimes. These are critical for practical deployment.
+
+**Questions:**
+
+1. How does the proposed approach compare quantitatively to POD-based reduced-order models and DMDc on the same test cases?
+2. What is the computational cost of training the deep autoencoder versus constructing a POD basis?
+3. How sensitive is the controller design to the quality of the learned reduced-order model?
+4. Can the method handle time-varying or parameter-dependent systems?
+5. What is the dimension of the reduced-order model relative to the full system for the reported applications?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses a relevant problem and proposes a theoretically motivated approach, but the abstract provides insufficient empirical validation and methodological clarity to support acceptance at a top venue. The connection to DMDc is interesting, but without concrete experimental results, performance comparisons, and detailed descriptions of the stability-constrained control design, the practical contribution remains unclear. The work would benefit from comprehensive experiments with quantitative metrics and comparisons to established baselines.
+
+**Confidence:**
+3 (moderate—assessment is based on abstract only; full paper may contain more details)
+
+**Soundness:**
+3 (fair—theoretical connection is plausible, but empirical validation is absent from the abstract)
+
+**Presentation:**
+3 (fair—the abstract is reasonably clear but lacks sufficient detail on methods and results)
+
+**Contribution:**
+3 (fair—the connection between autoencoding and DMDc is interesting, but novelty and impact are difficult to assess without experimental evidence)

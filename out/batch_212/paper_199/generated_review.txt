@@ -1,0 +1,41 @@
+**Review:**
+
+This paper proposes RegQ, a regularized variant of Q-learning designed to achieve convergence under linear function approximation, a setting where standard Q-learning is known to diverge. The core contribution is showing that adding an appropriate regularization term ensures convergence, with stability analysis grounded in switching system models. The authors provide convergence guarantees and an error bound characterizing the solution quality, and demonstrate empirically that RegQ converges in environments where standard Q-learning diverges.
+
+**Strengths:**
+
+- **Addresses a well-known problem:** The instability of Q-learning with linear function approximation is a fundamental issue in RL, and a principled solution with theoretical guarantees is valuable.
+- **Theoretical contribution:** The paper provides convergence proofs and an error bound, offering concrete guarantees rather than heuristic fixes.
+- **Novel analytical tool:** The use of switching system models for stability analysis appears to be a fresh perspective on this classical problem.
+- **Empirical validation:** Experiments demonstrating convergence in settings where Q-learning diverges provide concrete evidence of the method's utility.
+
+**Weaknesses:**
+
+- **Limited novelty in the core idea:** Regularization is a standard technique for stabilizing learning algorithms; the main contribution reduces to identifying an appropriate regularization strength, which feels incremental.
+- **Incomplete experimental evaluation:** The abstract mentions experiments but provides no details on scale, baselines, or comparison to other stabilization methods (e.g., gradient TD, other regularized approaches). Without seeing the full paper, it is unclear whether the empirical validation is comprehensive.
+- **Error bound interpretation unclear:** The abstract states an error bound is given but does not characterize its tightness or practical implications. Does the bound suggest the regularized solution is close to the optimal value function?
+- **Missing practical guidance:** How is the regularization strength chosen in practice? Is it problem-dependent, and if so, how sensitive is performance to this choice?
+
+**Questions:**
+
+- How does the regularization strength scale with problem dimension and other parameters? Is there a principled way to set it without problem-specific tuning?
+- How does RegQ compare empirically to other stabilization methods (e.g., gradient TD variants, other regularized Q-learning approaches)?
+- What is the relationship between the error bound and the optimal value function? Is the bound tight?
+- Can you provide intuition for why switching system models are the right tool for this analysis?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper makes a solid theoretical contribution to a well-known problem, with convergence guarantees and a fresh analytical perspective. However, the core idea—adding regularization—is straightforward, and the abstract lacks sufficient detail on experimental scope and practical applicability. The work is sound and addresses a real problem, but feels somewhat incremental without stronger empirical validation or deeper insight into the regularization mechanism.
+
+**Confidence:**
+3 (moderate; assessment is limited by the abstract-only format; full paper details on experiments and error bound interpretation would refine this score)
+
+**Soundness:**
+Good (theoretical claims appear well-grounded; switching system analysis is a principled approach; empirical validation is mentioned but not detailed)
+
+**Presentation:**
+Fair (abstract is clear but lacks experimental and practical details; error bound characterization is vague)
+
+**Contribution:**
+3 (solid but incremental; regularization is standard; main novelty is in the analysis tool and identifying the right regularization for this setting)

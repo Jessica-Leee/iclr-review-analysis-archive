@@ -1,0 +1,18 @@
+{
+  "paper_id": "z62Xc88jgF",
+  "review_id": "Y0ysDtRU5i",
+  "year": 2024,
+  "line": 360,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. By the theory from functional a posteriori error analysis, using Astral loss gives theoretical guarantee that the output of neural network is the exact solution in the sense that their distance is zero in some function space.\n\n2. Astral loss can be computed explicitly for common PDE problems. The authors use elliptic equation as an example.\n\n3. Some experiments are done to compare Astral loss with the commonly used residual loss using different models/equations.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper propose a loss function for training PINNs with theoretically guaranteed error bounds. Experiments are done for verifying their claims.",
+  "human_questions": "See weaknesses.",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "1 poor",
+    "contribution": "2 fair"
+  }
+}

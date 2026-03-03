@@ -1,0 +1,18 @@
+{
+  "paper_id": "yozwqhIHXj",
+  "review_id": "6QokFmdT9c",
+  "year": 2024,
+  "line": 470,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- Overall, the paper is well-organized and easy to follow. The figures and tables are informative.\n\n- The performance of the proposed method is promising. Figures 4, 6 clearly demonstrate the superiority of DVP.\n\n- The ablation study and system analysis are clear and informative, making it easy to see the effectiveness of different parts, such as instance normalization, and prompter.",
+  "human_weaknesses": "",
+  "human_review_text": "In this paper, the authors propose a new framework called Diffusion Visual Programmer (DVP) for image translation tasks. It follows the diagram that first identifies the instructed target region and then translates it into the targeted domain. In particular, the authors use instance normalization for context-flexible translation, avoiding adjusting guidance manually. Besides, the authors decouple the concepts in feature space into simple symbols and then deal with the symbols with visual programming. Qualitative and qualitative results show that DVP outperforms other state-of-the-art methods, providing more reliable, controllable, and interpretable image translation.",
+  "human_questions": "- I have questions about the learning process of the 1\u00d71 conv layer in equation (5). How is it exactly trained? And is it sensitive to the training sample size?\n- Will instance normalization also work in text-to-image tasks? It will be interesting to see if it could generate higher fidelity images with semantic meaning more aligned with the provided text prompts.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

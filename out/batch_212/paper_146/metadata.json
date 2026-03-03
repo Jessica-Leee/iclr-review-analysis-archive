@@ -1,0 +1,18 @@
+{
+  "paper_id": "ye3NrNrYOY",
+  "review_id": "Jog8hPpouU",
+  "year": 2024,
+  "line": 566,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. Originality: The idea of learning and transferring a temporal causal mechanism is highly original. Causal representation learning has not been applied in this way for few-shot action recognition before. Modeling latent causal variables, time-delayed transitions, and mixing functions is creative.\n\n2. Quality: The method is technically sound, with reasonable assumptions justified from first principles of causality. Experiments across multiple datasets demonstrate state-of-the-art accuracy and efficiency. The ablation study provides insight into design choices.\n\n3. Clarity: Overall the paper is clearly written and easy to follow. The background gives sufficient context, and the methodology explains the approach in detail. More intuition could be provided for how the causal mechanism aids adaptation.\n\n4. Significance: This provides a new paradigm for few-shot video understanding based on causal representation learning. The ability to adapt models with fewer updates could enable deploying action recognition systems to new domains with limited labeled data. Limitations around temporal delays and auxiliary variables indicate interesting directions for future work.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposes Temporal Causal Mechanism Transfer (TCMT), a new method for few-shot action recognition in videos. The key ideas and contributions are:\n\n- TCMT learns a generative model of a temporal causal process from the base data. This includes a transition function that models time-delayed causal relations between latent variables, and a mixing function that generates action representations from the latent variables.\n\n- For adaptation on novel data, TCMT updates an auxiliary context variable that captures distribution shifts between base and novel data, along with the classifier weights. The transition and mixing functions remain fixed. \n\n- TCMT is evaluated on standard few-shot action recognition benchmarks and achieves state-of-the-art or comparable accuracy with fewer parameter updates during adaptation. \n\n- The effectiveness of TCMT is attributed to the transferability of the learned causal mechanism. Ablations validate the benefits of modeling temporal relations and using auxiliary variables.\n\n- The approach demonstrates the promise of causal representation learning for few-shot action recognition. Limitations include assumptions on temporal delays and difficulty inferring the auxiliary variables.\n\nIn summary, the key contribution is a new few-shot learning method based on learning and transferring temporal causal mechanisms, which is shown to be accurate and efficient for adapting models to new action recognition tasks with limited labeled video data.",
+  "human_questions": "Please see the 'weaknesses' above.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "2 fair",
+    "contribution": "3 good"
+  }
+}

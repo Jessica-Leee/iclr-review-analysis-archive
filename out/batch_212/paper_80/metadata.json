@@ -1,0 +1,18 @@
+{
+  "paper_id": "zAdUB0aCTQ",
+  "review_id": "QjO4enyXLX",
+  "year": 2024,
+  "line": 312,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- The paper proposes a comprehensive benchmark with evaluation results on a wide-set of tasks",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposes a benchmark for LLM as Agents. The paper selects a variety of text-based benchmarks and evaluates a series of models on this setting.",
+  "human_questions": "1) Have you tried seeing the results of each method assuming a small number of demonstrations to fine-tune each LLM to each domain?\n2) What is the sensitivity of the performance of each LLM to chosen prompts? It seems like prompts used for evaluation are very complex and it would be good to understand how they were chosen and how prompts would effect the performance of each LLM.\n3) Can the authors come up with a method to try tackle all of these benchmarks?\n4) Can the authors explain more why the chosen set of text benchmarks comprehensively evaluate the ability of LLMs to act as agents? For instance, why isn't there a benchmark to test multiagent interaction between LLMs?",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

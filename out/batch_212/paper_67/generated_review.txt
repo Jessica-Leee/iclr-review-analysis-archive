@@ -1,0 +1,35 @@
+**Review:**
+
+This paper investigates how noise injection at different levels (latent space and input) affects deep learning performance by framing the problem through information entropy. The authors categorize noise into positive noise (PN), which reduces task complexity as measured by information entropy, and harmful noise (HN), which increases it. They claim to provide theoretical justification for why PN can improve performance on supervised vision tasks (CNNs and ViTs) and report achieving >95% top-1 accuracy on ImageNet.
+
+**Strengths:**
+- The core observation that noise can be beneficial under certain conditions is intuitive and potentially valuable for practitioners.
+- Extensive experiments on both CNNs and ViTs, with results on a large-scale dataset (ImageNet), suggest broad applicability.
+- The framing of noise effects through information entropy offers a potentially unifying perspective on when and why noise helps.
+
+**Weaknesses:**
+- The abstract lacks concrete methodological details: how exactly is noise injected, what is the injection mechanism, and how is "positive noise" operationalized in practice? The distinction between PN and HN is defined post-hoc based on performance rather than a priori design principle.
+- The claim of "theoretical proof" is vague and unsupported in the abstract. What is the formal theorem, what are its assumptions, and how does it connect to the empirical noise injection procedure?
+- The >95% ImageNet result is presented without context: is this state-of-the-art, and how does it compare to existing noise-based regularization methods (e.g., dropout, mixup, data augmentation)? The novelty relative to classical regularization is unclear.
+- The paper conflates information entropy (a property of data distributions) with task complexity, but the abstract does not clarify how entropy is computed, measured, or optimized during training. The connection between entropy reduction and performance gain needs rigorous justification.
+
+**Questions:**
+- Can you provide the formal statement of the theoretical result and its proof sketch?
+- How does the proposed method differ from existing noise-injection and regularization techniques in deep learning?
+- What is the baseline accuracy on ImageNet, and how does the >95% result compare to recent state-of-the-art?
+- How is information entropy computed or estimated during training, and is it directly optimized or only measured post-hoc?
+
+**Overall score:**
+4: below the acceptance threshold. While the paper addresses an interesting question about the role of noise in deep learning, the abstract lacks sufficient methodological clarity, theoretical rigor, and comparative context to assess the novelty and impact. The core claims need stronger justification and clearer positioning relative to existing work on regularization and noise in neural networks.
+
+**Confidence:**
+3 (moderate). The abstract is somewhat vague on key technical details, making it difficult to fully evaluate the contribution. A full paper review would likely clarify these concerns.
+
+**Soundness:**
+2 (fair). The theoretical claims are not substantiated in the abstract, and the empirical setup is underspecified. The connection between entropy and performance is asserted but not rigorously established.
+
+**Presentation:**
+2 (fair). The abstract is verbose but lacks concrete details about the method. Key concepts (positive noise, information entropy, task complexity) are not precisely defined.
+
+**Contribution:**
+2 (poor). Without clear differentiation from existing regularization and noise-injection methods, and without rigorous theory or comprehensive empirical comparison, the contribution is unclear and potentially incremental.

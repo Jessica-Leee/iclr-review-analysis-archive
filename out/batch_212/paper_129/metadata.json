@@ -1,0 +1,18 @@
+{
+  "paper_id": "ylHLVq0psd",
+  "review_id": "PzBP6xZdWX",
+  "year": 2024,
+  "line": 502,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The proposed training noise schedule improves FIDs.\n\nThe proposed sampling noise schedule improves FIDs.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper investigates the noise schedule of diffusion models.\n* The authors introduce a training noise schedule according to a metric \"weighted signal-to-noise-ratio (WSNR)\". It improves FID of latent diffusion models on FFHQ-128/-256 and ImageNet-256.\n* The authors propose a sampling noise schedule which slightly improves FID on CIFAR-10 and FFHQ-64 with 35 network evaluations per image.",
+  "human_questions": "This paper proposes a training method and a sampling method. How do they affect the performance when applied together?\n\nWhat is the number of evaluation points?\n\nHow much is the difference in wall clock between 35 network evaluations with the proposed method and typical number of network evaluations with other methods?\n\nPlease consult Weaknesses for improving the paper.",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "1 poor",
+    "presentation": "1 poor",
+    "contribution": "2 fair"
+  }
+}

@@ -1,0 +1,36 @@
+**Review:**
+
+HyperRep proposes a self-supervised multimodal representation learning method that combines hypergraph-based modeling with a multimodal fusion information bottleneck principle. The core idea is to capture high-order inter- and intra-modality correlations using hypergraphs while constraining the solution space through an information bottleneck objective to improve multimodal fusion. The authors evaluate their approach on four public datasets across three downstream tasks and report competitive results against state-of-the-art methods.
+
+**Strengths:**
+
+- **Well-motivated problem**: The observation that existing multimodal self-supervised methods overlook high-order correlations is reasonable, and using hypergraphs to model these relationships is a sensible direction.
+- **Comprehensive evaluation**: Testing on multiple datasets and downstream tasks (four datasets, three tasks) demonstrates breadth of validation.
+- **Principled approach**: Combining hypergraph modeling with information bottleneck principles provides a theoretically grounded framework for multimodal fusion.
+
+**Weaknesses:**
+
+- **Insufficient technical detail in abstract**: The abstract lacks specifics on how the hypergraph is constructed, how the information bottleneck is formulated, and what the actual learning objective is. Critical algorithmic details are missing, making it difficult to assess the technical novelty or soundness.
+- **No ablation or analysis**: The abstract provides no evidence of ablation studies isolating the contribution of hypergraph modeling versus the information bottleneck component, nor does it discuss computational complexity or scalability.
+- **Vague comparison claims**: The phrase "consistently delivers competitive results" is weak; the abstract does not specify whether HyperRep achieves state-of-the-art performance, marginal improvements, or merely comparable results.
+- **Limited novelty discussion**: While combining hypergraphs with information bottleneck is reasonable, the abstract does not clearly articulate what is novel beyond applying existing techniques to multimodal learning.
+
+**Questions:**
+
+- How is the hypergraph constructed from multimodal data? Are there learnable parameters for hyperedge formation?
+- What is the explicit form of the information bottleneck objective, and how does it differ from prior multimodal information bottleneck work?
+- Can you provide ablation results showing the individual contribution of hypergraph modeling and the information bottleneck constraint?
+- What is the computational overhead compared to baseline methods?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses a relevant problem and proposes a reasonable combination of techniques, but the abstract is too sparse on technical detail to evaluate the contribution rigorously. The lack of ablation studies, unclear novelty claims, and vague performance statements ("competitive results" rather than clear improvements) prevent a higher rating. A full paper submission with detailed methodology, ablations, and clearer performance comparisons would be needed to assess this work fairly.
+
+**Confidence:** 2–3 (Low to moderate; assessment is limited by the abstract's brevity and lack of technical specifics.)
+
+**Soundness:** Fair (The general approach is plausible, but without methodological details, soundness cannot be verified.)
+
+**Presentation:** Fair (The abstract is clear in motivation but lacks the technical precision needed for a venue like ICLR.)
+
+**Contribution:** Fair (Combining hypergraphs with information bottleneck for multimodal learning is incremental without clearer novelty or empirical evidence of substantial improvements.)

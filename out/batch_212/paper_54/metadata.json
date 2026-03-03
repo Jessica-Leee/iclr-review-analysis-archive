@@ -1,0 +1,18 @@
+{
+  "paper_id": "zRkM6UcA22",
+  "review_id": "NRPlwPikYA",
+  "year": 2024,
+  "line": 216,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "I like the topics this paper explores. Instead of directly consuming raw and messy 3D data, we could represent that data using neural representation, which will make the network design much easier. \n\nThe presented method achieves the significantly improved results compared with baselines. Although the proposed method is not novel -- simply replacing MLP with the more effective triplane, it shows better performance than the network that takes in raw discrete 3D dataset, which suggests a new paradigm to deal with 3D data.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper presents a method to encode discrete 3D information into the effective continuous triplane, allowing for the larger vision transformer to perceive in 3D. The paper validates their methods in both classification and segmentation tasks -- much better then previous version that used MLP.",
+  "human_questions": "Please address the question above",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "4 excellent"
+  }
+}

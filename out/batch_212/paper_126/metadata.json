@@ -1,0 +1,18 @@
+{
+  "paper_id": "ym0ubZrsmm",
+  "review_id": "w7p7jKJVma",
+  "year": 2024,
+  "line": 489,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "Originality >> SSOD uses image backgrounds as natural proxies for OOD samples, which is a novel perspective in the field.\n\nQuality >> The best paper I read in a while, both in terms of problem statement/formulation and execution (exemplar experimental analysis).\n\nClarity >> The paper is well-articulated - clearly presents the research problem, the proposed solution, and the insights from the conducted experiments. Also, the authors seem to have made an effort to ensure that the concepts are accessible to anyone, regardless of their expertise in OOD detection.\n\nSignificance >> By proposing a general probabilistic framework, the paper unifies various existing approaches under a single interpretative lens, on top of SSOD that offers an evident advancement for OOD detection (relevant problem).",
+  "human_weaknesses": "",
+  "human_review_text": "The paper addresses the task of out-of-distribution detection in image classification tasks. The authors identify two main challenges the existing methods are facing, namely the absence of a unified perspective to interpret existing techniques and the need for natural OOD supervision to enhance model robustness without the necessity of explicit OOD data collection. Towards this end, the authors introduce a novel probabilistic framework that provides a unified interpretation of many existing OOD detection methods and the SSOD model that efficiently leverages the CNNs properties (retain spatial information) to create a distinction between ID and OOD samples. The paper's contributions are substantiated through extensive experiments (both is terms of benchmarks, as well as proper evaluation w.r.t state-of-the-art methods). SSOD shows consistent improvements in OOD detection metrics over previous methods, highlighting the model's effectiveness in recognizing and handling OOD samples without the need for additional OOD data.",
+  "human_questions": "No further questions, besides addressing the weaknesses mentioned above.",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "4 excellent",
+    "presentation": "4 excellent",
+    "contribution": "3 good"
+  }
+}

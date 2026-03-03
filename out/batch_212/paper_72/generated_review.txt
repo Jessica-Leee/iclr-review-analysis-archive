@@ -1,0 +1,32 @@
+**Review:**
+
+This paper presents a large-scale empirical study comparing two symbolic rule extraction methodologies—quantization-based approaches (k-means and SOM) and equivalence query methods (L*) applied to RNNs. The authors trained 3600 RNN models across four cell types (LSTM, GRU, O2RNN, MIRNN) on Tomita and Dyck grammars, extracting 18,000 DFAs to assess stability across 10 initialization seeds. The key finding is that quantization methods and O2RNN cells produce more stable DFA extractions than L* and other RNN architectures, particularly on partially trained networks and Dyck languages, where L* exhibits instability in state count (>100 states) and accuracy (16–22% standard deviation).
+
+**Strengths:**
+- Comprehensive experimental design with 3600 models and 10 seeds provides robust statistical grounding for stability claims.
+- Clear empirical demonstration that quantization methods outperform L* on partially trained RNNs and Dyck languages, with concrete metrics (state count, accuracy deviation).
+- Systematic evaluation across multiple RNN cell types and grammar families (Tomita and Dyck) strengthens generalizability.
+- The focus on stability—measured as standard deviation across seeds—addresses a practical concern often overlooked in rule extraction literature.
+
+**Weaknesses:**
+- **Limited novelty:** The paper is purely empirical; no new methods, theoretical insights, or algorithmic improvements are proposed. It compares existing techniques without explaining *why* quantization is more stable or proposing solutions.
+- **Lack of mechanistic insight:** The abstract provides no analysis of the underlying causes of L*'s instability or O2RNN's superiority. Why does quantization handle partial training better? This limits actionable insights.
+- **Presentation and scope unclear:** The abstract reads as a technical report of experimental results rather than a research contribution. No discussion of implications, limitations, or recommendations for practitioners is evident.
+- **Missing methodological details:** No mention of hyperparameter selection, statistical significance testing, or how "stability" relates to practical utility in downstream tasks. The choice of 10 seeds and specific grammars is not justified.
+
+**Questions:**
+- What is the computational cost comparison between quantization and L* methods? Does stability come at a performance trade-off?
+- Can the authors provide intuition or analysis for why O2RNN consistently produces stable DFAs?
+- How do these findings generalize to real-world sequence tasks beyond synthetic grammars?
+- Were any statistical tests (e.g., confidence intervals, significance tests) applied to compare methods?
+
+**Overall score:**
+4: below the acceptance threshold. While the experimental study is thorough and the empirical findings are clear, the paper lacks novelty, theoretical contribution, and mechanistic insight. It reads as a technical report comparing existing methods rather than advancing the field. For a top-tier venue like ICLR, the work would benefit from proposing improvements to rule extraction, explaining the observed phenomena, or demonstrating practical impact beyond synthetic grammars.
+
+**Confidence:** 4 (high confidence in assessment; the limitations are clear from the abstract alone)
+
+**Soundness:** 3 (fair—large-scale experiments are well-designed, but lack of statistical testing and mechanistic analysis weakens rigor)
+
+**Presentation:** 2 (poor—reads as a results summary; lacks narrative structure, motivation, and implications)
+
+**Contribution:** 2 (poor—purely empirical comparison of existing methods with no novel techniques or theoretical insights)

@@ -1,0 +1,18 @@
+{
+  "paper_id": "zmJDzPh1Dm",
+  "review_id": "w5zyKrQ9Qf",
+  "year": 2024,
+  "line": 86,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1\u3001The paper is the first study to discuss the influence of soft-prompt toward VLM.\n2\u3001The paper conducted REPLACE and RESCALE to discuss the normalization of soft-prompt, and proposed Nemesis including two normalization losses to improve the effectiveness of soft-prompt.\n3\u3001The paper has conducted a lot of experiments to prove the effectiveness of the method.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper discussed the influence of soft-prompt to VLM, introduced REPLACE and RESCALE corruption affecting VLM, and proposed two normalization loss improving the performance of soft-prompt. The authors conducted a lot of experiments to confirm the effectiveness of method.",
+  "human_questions": "1\u3001The paper proposes two normalization methods, while only testing the effects of PEN and PAN on the experimental results respectively. Why cannot both types of losses be used simultaneously? If there is a contradiction between the two losses, it is recommended that the authors discuss the differences. If the two losses are similar, can the two losses be unified? If the two losses gain from different perspective, should relevant experiments be provided?\n2\u3001Can author discuss application circumstance of two normalization methods? In practical applications, what kind of normalization loss should we choose for what situation? Suggest the authors to discuss.",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "4 excellent",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

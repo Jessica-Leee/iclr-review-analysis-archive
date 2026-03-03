@@ -1,0 +1,34 @@
+**Review:**
+
+Vision ELECTRA (VE) adapts the ELECTRA pre-training framework from NLP to vision by combining masked image modeling with adversarial discrimination at both image and patch levels. The method uses a generator (MAE or SimMIM) to reconstruct masked patches, augmented with Gaussian noise in the latent space for diversity, and trains a hierarchical discriminator to distinguish original from reconstructed images and patches. The authors report strong results on ImageNet-1K (83.43% top-1 accuracy with ViT-B, a 1.17% improvement over baselines) and demonstrate transfer effectiveness on segmentation and detection tasks.
+
+**Strengths:**
+- Clear motivation and intuitive extension of ELECTRA to vision with a well-defined hierarchical discrimination loss that captures both macro (full image) and micro (patch-level) contextual information.
+- Solid empirical results on ImageNet-1K and transfer tasks (segmentation, detection), with reported improvements over baselines under fair comparison conditions.
+- The addition of Gaussian noise in the generator's latent space to enhance diversity is a reasonable design choice that differentiates the approach from direct ELECTRA translation.
+- Comprehensive evaluation across multiple downstream tasks demonstrates practical applicability.
+
+**Weaknesses:**
+- Limited novelty: the core contribution is primarily an architectural adaptation of an existing NLP method to vision. The hierarchical discrimination loss, while sensible, is a relatively straightforward extension.
+- Insufficient ablation studies: the abstract does not discuss ablations isolating the contribution of individual components (e.g., the Gaussian noise injection, the hierarchical loss structure, or the choice of generator). It is unclear which design choices drive the improvements.
+- Comparison fairness concerns: the claim of "fair comparisons" and "continual pre-training" is mentioned but not clearly explained. The 1.17% improvement margin, while notable, lacks context on statistical significance and variance across runs.
+- Missing analysis of computational cost and training efficiency relative to baselines, which is important for practical adoption.
+
+**Questions:**
+- What is the computational overhead of the hierarchical discriminator compared to standard MAE/SimMIM pre-training?
+- How sensitive is the method to the Gaussian noise injection variance? Is this ablated?
+- Can you provide error bars or confidence intervals for the reported improvements?
+- How does performance scale with different model sizes (ViT-S, ViT-L) and does the hierarchical loss provide consistent gains across scales?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper presents a competent adaptation of ELECTRA to vision with reasonable empirical results and multi-task validation. However, the novelty is incremental—primarily an architectural transplant with one added component (Gaussian noise)—and the paper lacks sufficient ablation studies and analysis to fully justify the design choices. The improvements are solid but not exceptional, and the presentation of experimental setup and fairness claims could be more rigorous. The work is technically sound and makes a useful contribution to vision pre-training, but falls short of being a strong accept due to limited conceptual novelty and incomplete experimental analysis.
+
+**Confidence:** 3
+
+**Soundness:** Good
+
+**Presentation:** Good
+
+**Contribution:** Fair

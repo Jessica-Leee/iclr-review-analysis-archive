@@ -1,0 +1,33 @@
+**Review:**
+
+This paper addresses unsupervised reinforcement learning (URL) by analyzing and improving Mutual Information Skill Learning (MISL). The authors provide theoretical analysis showing that skill diversity and separability are critical for downstream task adaptation, then propose a novel disentanglement metric LSEPIN and establish an information-geometric connection to task adaptation cost. Building on this, they introduce WSEP, which replaces KL divergence with Wasserstein distance in the geometric framework, and further propose PWSEP, a Wasserstein distance-based algorithm claimed to discover all potentially optimal initial policies.
+
+**Strengths:**
+1. **Clear theoretical motivation**: The paper identifies concrete limitations of MISL (lack of guarantees on diversity and separability) and provides principled analysis of why these properties matter for downstream adaptation.
+2. **Novel geometric perspective**: The information-geometric connection between the proposed LSEPIN metric and task adaptation cost is a meaningful contribution that bridges unsupervised skill learning and downstream performance.
+3. **Systematic progression**: The move from LSEPIN to WSEP to PWSEP shows a coherent development, with each step motivated by geometric properties and theoretical justification.
+
+**Weaknesses:**
+1. **Limited empirical validation**: The abstract provides no details on experimental results, datasets, or baselines. Without concrete empirical evidence that WSEP and PWSEP outperform MISL and other URL methods on standard benchmarks, the practical impact remains unclear.
+2. **Incomplete presentation of key claims**: The claim that PWSEP can "theoretically discover all potentially optimal initial policies" is stated without proof sketch or intuition in the abstract. The conditions under which this holds and its computational feasibility are not discussed.
+3. **Missing implementation details**: No discussion of how LSEPIN is computed in practice, computational complexity of the proposed methods, or scalability to high-dimensional state/action spaces.
+4. **Unclear novelty of Wasserstein substitution**: While replacing KL with Wasserstein distance is presented as novel, the motivation beyond "better geometric properties" is vague. Why Wasserstein specifically? What geometric advantages does it provide over other divergences?
+
+**Questions:**
+- How does WSEP compare empirically to MISL and other recent URL methods (e.g., DIAYN, Proto-RL) on standard benchmarks?
+- What is the computational overhead of PWSEP compared to WSEP and MISL?
+- Can you provide a concrete example or proof sketch of how PWSEP discovers "all potentially optimal initial policies"?
+- How sensitive are the methods to hyperparameters, particularly those related to the Wasserstein distance computation?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper makes solid theoretical contributions with a principled information-geometric analysis and proposes reasonable algorithmic improvements. However, the complete absence of empirical validation in the abstract is a significant concern for a venue like ICLR, which values both theory and practice. The claims about PWSEP discovering all optimal policies need stronger justification. The paper would benefit from comprehensive experiments demonstrating that the proposed methods yield better downstream task adaptation than existing URL approaches.
+
+**Confidence:** 3 (moderate—assessment is limited by lack of experimental details in the abstract)
+
+**Soundness:** 3 (fair—theoretical framework appears reasonable but lacks empirical grounding; key claims need verification)
+
+**Presentation:** 3 (fair—abstract is dense and some key concepts (LSEPIN, geometric properties) lack sufficient intuition)
+
+**Contribution:** 3 (fair—theoretical analysis is meaningful but incremental; practical impact undemonstrated)

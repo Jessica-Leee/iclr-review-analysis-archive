@@ -1,0 +1,37 @@
+**Review:**
+
+This paper addresses fairness in multi-agent finite-horizon episodic MDPs under unknown environments by proposing an RL approach that replaces the classical objective of maximizing the sum of individual value functions with a fairness function to ensure equitable rewards. The core technical contribution is an online convex optimization approach that maintains a confidence bound of the unknown environment and constrains the policy to this confidence region. The authors establish sub-linear regret bounds and provide PAC guarantees, along with an offline RL algorithm with optimality gap bounds and a policy-gradient variant to reduce computational complexity.
+
+**Strengths:**
+1. **Well-motivated problem**: Fairness in multi-agent RL is practically important and underexplored in the unknown environment setting; the paper correctly identifies that classical Bellman's equation does not hold when deviating from sum-of-rewards maximization.
+2. **Theoretical contributions**: The paper provides multiple theoretical guarantees—sub-linear regret for the online setting, PAC bounds, and optimality gap analysis for the offline setting—suggesting a comprehensive treatment.
+3. **Methodological diversity**: Proposing both an online convex optimization approach and a policy-gradient variant demonstrates awareness of computational trade-offs.
+
+**Weaknesses:**
+1. **Limited clarity on fairness formulation**: The abstract mentions "a fairness function" but does not specify what this function is (e.g., Gini coefficient, max-min fairness, lexicographic ordering). Without this definition, it is difficult to assess the novelty and practical applicability of the approach.
+2. **Insufficient empirical validation**: The abstract mentions "simulation experiments" but provides no details on domains, baselines, or quantitative results. For a paper claiming practical efficacy, the lack of concrete experimental evidence is a significant gap.
+3. **Missing algorithmic details**: The abstract does not explain how the confidence bound is constructed, how the online convex optimization is solved, or how the policy-gradient method is derived. These are essential for reproducibility and understanding the technical contribution.
+4. **Unclear relationship to prior work**: The abstract does not position the work relative to existing fairness-aware RL or multi-agent RL literature, making it difficult to assess novelty and incremental contribution.
+
+**Questions:**
+1. What specific fairness function is used (e.g., min-max, Gini, entropy-based)? How sensitive are the results to this choice?
+2. Can you provide concrete experimental results comparing the proposed approach to baseline methods on standard multi-agent benchmarks?
+3. How does the computational complexity of the online convex optimization scale with the number of agents and state/action space size?
+4. How does the sub-linear regret bound compare quantitatively to existing multi-agent RL algorithms in terms of dependence on problem parameters?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper tackles an important and timely problem with a theoretically grounded approach. However, the abstract lacks sufficient detail on the fairness formulation, algorithmic specifics, and empirical validation. For a venue like ICLR, the absence of concrete experimental results and unclear presentation of the core technical contributions make it difficult to assess the practical impact and novelty. With substantial revisions clarifying the fairness objective, providing detailed algorithms, and including comprehensive experiments, this work could become a solid contribution.
+
+**Confidence:**
+3 (Low—assessment is limited by the abstract's lack of detail; a full paper review might substantially change this verdict.)
+
+**Soundness:**
+2 (Fair—theoretical claims are stated but cannot be fully evaluated without seeing proofs and algorithmic details.)
+
+**Presentation:**
+2 (Fair—the abstract is vague on key definitions and methods; critical details are missing.)
+
+**Contribution:**
+2 (Fair—the problem is well-motivated, but the novelty and scope of the technical contribution are unclear without more specifics on the fairness formulation and how it differs from prior work.)

@@ -1,0 +1,18 @@
+{
+  "paper_id": "zxPDdw8koz",
+  "review_id": "FIEt83bv0b",
+  "year": 2024,
+  "line": 15,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- Easy to read. Good experiments and ablation. \n- It is great to see that by using experts and doing contrastive task-specific loss, the performance on downstream task improve, and CLIP maintains its versatility and obtain comparable performance on zero-shot classification\n- The method is simple and efficient.",
+  "human_weaknesses": "",
+  "human_review_text": "In this work, the authors augment the capabilities of CLIP with task-specific experts that help to improve its representation for the downstream tasks. Those experts are well-known models from model zoos used to create hard pseudo-labels on web-scale noisy image-text datasets.",
+  "human_questions": "- What is the proof that CLIP is more robust to dataset distribution shifts? Reference, experiments?\n- Why Mask R-CNN needs LR milestones and gamma?",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

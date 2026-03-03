@@ -1,0 +1,38 @@
+**Review:**
+
+This paper proposes forward gradient training (FGT), a method for supervised learning in spiking neural networks that aims to improve biological plausibility and neuromorphic hardware compatibility by avoiding backpropagation through time. The key idea is to use unidirectional forward propagation across layers with direct feedback signals from the top layer for spatial credit assignment, combined with momentum feedback connections to reduce variance. The authors claim FGT achieves performance comparable to backpropagation while enabling forward and online training when combined with eligibility traces.
+
+**Strengths:**
+- Addresses a genuine problem: backpropagation through time in SNNs is difficult to implement on neuromorphic hardware and lacks biological plausibility. A forward-only training method is a worthwhile research direction.
+- The combination of forward gradients with momentum feedback to reduce variance is a reasonable technical contribution.
+- The paper claims extensive experiments on both fully connected and convolutional networks across static and neuromorphic datasets, suggesting broad empirical validation.
+- The motivation to enable on-chip SNN training is timely and practically relevant.
+
+**Weaknesses:**
+- The abstract provides insufficient technical detail to assess the core contribution. How exactly do "direct feedback signals from the top layer" differ from existing feedback alignment or random feedback methods? The claim of "more theoretical guarantee" is stated but not substantiated in the abstract.
+- The comparison baseline is unclear: the paper claims "better performance compared with random feedback methods" but does not specify which methods or provide quantitative results in the abstract. Without concrete numbers, it is difficult to assess whether performance gains are significant.
+- The relationship between FGT and online training methods (via eligibility traces) is mentioned but not clearly explained. How do these components integrate, and what is the contribution of FGT specifically versus the combination?
+- The abstract lacks discussion of computational cost, convergence properties, or theoretical analysis. For a method claiming "more theoretical guarantee," the absence of formal statements is concerning.
+
+**Questions:**
+- What is the precise form of the feedback signal used in FGT, and how does it differ mathematically from feedback alignment or other random feedback approaches?
+- Can you provide quantitative comparisons (accuracy, convergence speed) against backpropagation and random feedback methods on at least one benchmark?
+- What is the computational overhead of FGT relative to backpropagation, and does it scale to large networks?
+- What specific theoretical guarantees does FGT provide, and under what conditions do they hold?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper tackles an important problem and proposes a plausible solution, but the abstract lacks sufficient technical clarity and empirical evidence to support the claims. The absence of concrete experimental results, unclear differentiation from prior feedback-based methods, and vague theoretical contributions make it difficult to assess the significance of the work. A revised submission with detailed methodology, explicit comparisons, and quantitative results would be needed to meet the acceptance bar.
+
+**Confidence:**
+3 (Low—assessment is limited by the abstract's lack of technical detail and experimental specifics)
+
+**Soundness:**
+2 (Fair—the core idea seems reasonable, but insufficient detail is provided to evaluate soundness rigorously)
+
+**Presentation:**
+2 (Fair—while the motivation is clear, the technical contribution and results are not clearly articulated in the abstract)
+
+**Contribution:**
+2 (Fair—the contribution relative to existing feedback-based and online learning methods is unclear)

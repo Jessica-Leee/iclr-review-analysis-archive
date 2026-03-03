@@ -1,0 +1,34 @@
+**Review:**
+
+This paper addresses the problem of directly processing neural fields for downstream tasks such as classification and part segmentation. The key contribution is demonstrating that tri-plane hybrid neural field representations—which decompose a 3D field into three 2D feature planes—encode rich information that can be effectively processed by standard deep-learning architectures. The authors establish an extensive benchmark covering occupancy fields, signed/unsigned distance fields, and radiance fields, showing that processing tri-planes achieves task performance substantially better than methods operating on large MLPs while approaching the performance of explicit representations (point clouds, meshes).
+
+**Strengths:**
+- **Well-motivated problem:** The paper identifies a genuine gap in the literature—while tri-planes have emerged as effective neural field representations, their direct processing for downstream tasks has not been systematically studied. This is a natural and timely direction.
+- **Comprehensive benchmark:** The inclusion of diverse field types (occupancy, distance, radiance) and the first investigation of radiance field processing for these tasks provides valuable empirical grounding.
+- **Practical significance:** Achieving performance nearly on par with explicit representations while maintaining the advantages of neural fields (compact storage, continuous representation) is a meaningful contribution.
+- **Clear motivation:** The paper articulates well why processing tri-planes is preferable to processing large MLPs (avoiding weight space dimensionality, symmetries, and initialization sensitivity).
+
+**Weaknesses:**
+- **Limited methodological novelty:** The core contribution appears to be applying standard deep-learning machinery to tri-plane representations. The paper does not propose novel architectures or techniques; rather, it validates that existing methods work well on tri-plane data. This is somewhat incremental.
+- **Insufficient technical detail in abstract:** The abstract does not clarify what "standard deep-learning machinery" means or how tri-planes are processed (e.g., are they concatenated, processed independently, fused in a specific way?). This limits understanding of the technical contribution.
+- **Missing experimental details:** The abstract provides no quantitative results, baseline comparisons, or dataset specifications. It is unclear how much better tri-plane processing is compared to MLP processing or how close to explicit representations the method truly gets.
+- **Unclear scope of evaluation:** While the benchmark is described as "extensive," the abstract does not specify which datasets, how many tasks, or what metrics are used. The claim of "almost on par" with explicit representations needs concrete numbers.
+
+**Questions:**
+- What specific neural network architectures are used to process the tri-plane representations, and how do they differ from those used for MLPs?
+- Can you provide quantitative comparisons (e.g., accuracy gaps) between tri-plane processing, MLP processing, and explicit representation methods?
+- How sensitive are the results to the choice of tri-plane resolution and feature dimensionality?
+- Do you analyze which aspects of the tri-plane structure (e.g., spatial locality, low-rank structure) contribute most to the improved performance?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper makes a solid empirical contribution by systematically studying tri-plane processing for neural field tasks and establishing a comprehensive benchmark. The motivation is clear and the problem is timely. However, the methodological novelty is limited—the core finding is that standard architectures work well on tri-planes, which is somewhat expected given their structured nature. The abstract lacks sufficient technical and experimental detail to fully assess the magnitude of the contribution. For acceptance, the full paper would need to provide detailed ablations, thorough comparisons, and clear insights into why tri-planes are amenable to standard processing. The work is competent and addresses a gap, but falls short of being a strong accept without more substantial technical or empirical insights.
+
+**Confidence:** 3 (moderate—assessment is limited by the abstract-only format; full paper details would refine this judgment)
+
+**Soundness:** Good (the approach is sensible and the problem well-motivated, though technical details are sparse)
+
+**Presentation:** Fair (the abstract is clear in motivation but lacks sufficient technical and experimental specificity)
+
+**Contribution:** Fair to Good (solid empirical study with practical value, but limited algorithmic novelty)

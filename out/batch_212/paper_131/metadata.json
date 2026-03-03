@@ -1,0 +1,18 @@
+{
+  "paper_id": "ykW3hvy6DL",
+  "review_id": "pIsDuTPYjH",
+  "year": 2024,
+  "line": 511,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "* This paper proposes a new optimization algorithm for logistic regression that can achieve a faster directional convergence rate.\n* This paper points out a new property called centripetal velocity, which can be used in studying the implicit bias of other models such as homogeneous models.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper develops a new algorithm for the logistic regression problem, which can provably achieve much faster directional convergence compared to GD and NGD. The key idea is to progressively rescale the model parameter at a proper rate to maintain a non-degenerate centripetal velocity. Finally, the margin maximization rate can be improved.",
+  "human_questions": "* Does the algorithm need to use the information of the margin?\n* What's the convergence when $R_k$ is not exponential in $k$?\n* In Section 7.2, what are the choices of $R_k$ and $T_k$?",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

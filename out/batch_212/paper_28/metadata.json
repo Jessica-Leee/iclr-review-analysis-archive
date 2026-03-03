@@ -1,0 +1,18 @@
+{
+  "paper_id": "zjBO4a1LxR",
+  "review_id": "3eo1O0mnK0",
+  "year": 2024,
+  "line": 113,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1 To address the challenge of learning from multiple modalities, the authors propose a unified pipeline that includes a modality-specialist for data-to-sequence tokenization, a modality-shared encoder for extracting representations across modalities, and task-specific heads for downstream tasks. This provides a comprehensive solution for multimodal learning.\n\n2 To showcase the capabilities of the Transformer in multimodal learning, a wide range of modalities and tasks were utilized for training, highlighting the significant potential of Transformer architecture in multimodal learning and achieving acceptable results.\n\n3 While the performance on individual modality tasks may be lacking, the advantages of the model become evident in multimodal tasks, surpassing state-of-the-art methods.",
+  "human_weaknesses": "",
+  "human_review_text": "Due to the information gap between different modalities, there is no unified model for multimodal problems. This paper addresses this issue by exploring the advantages of the Transformer architecture in multimodal feature learning. To map the original data to a shared token space for feature learning, this paper employs different tokenization methods for different modalities, and uses a pretrained and frozen Transformer encoder as the backbone. Task-specific heads are proposed for different tasks. Different from early work, paired data is not used in the feature learning process, making it the first framework to attempt feature learning on 12 different modalities. Experimental results show that the Meta-Transformer can handle fundamental single-modality cognitive task to some extent, demonstrating its potential in real-world applications and data mining. The Transformer architecture exhibits certain advantages in multimodal learning.",
+  "human_questions": "Please refer to the weaknesses above.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

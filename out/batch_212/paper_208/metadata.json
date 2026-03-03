@@ -1,0 +1,18 @@
+{
+  "paper_id": "y3BuJotSKl",
+  "review_id": "l6AP7mIcGx",
+  "year": 2024,
+  "line": 812,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_review_text": "Making a model robust requires knowledge of allowable noise threshold, which is difficult to quanitfy apriori, and still faces a harsh trade-off betwen accuracy and robustness in practice. Out-of-distribution detectors are difficult to learn for complex datasets since there is usually a benign noise coefficient in observable data. Shortcuts (or Trapdoors) are a task-specific technique for robustifying models without having to specify the allowable noise. Some drawbacks of these techniques are computational complexity and loss of alignment with the main classifier (due to requiring an extra classifier for OOD detection). The authors propose a technique named Targeted Manifold Manipulation (TMM) based on modifying the gradient flow from the manifold around each genuine data point. The key concept is to force perturbed data points to fall into a new \"Trapclass\" label instantiated as a ring in the space around the data point. \n\nThe formulation assumes there is a clean dataset which can be used for synthesizing two new datasets, the robust and trap datasets. The robust dataset is created by applying perturbation artifacts sampled from a predetermined distribution (e.g., uniform) to each sample. The trap dataset is created by overlaying patches (triggers) onto clean instances, which then force the trapped instance to classify as the newly created Trapclass. Multiple triggers are created per image to create the trap-ring effect, each varied by both spatial location coordinates and norm. The classifier observes the three datasets and is tuned by a loss function factorized by each respective dataset. The defense achieves a high detection rate and the base classifier suffers minimal impact to the accuracy.",
+  "human_strengths": "* The investigated problem is relevant to the broader research community - investigating computationally feasible DNN defenses which are robust to adaptive adversaries, while preserving the benign accuracy. \n* The buildup to methodology was well-written and motivated by shortcomings of previous work. The visualizations help provide a clear intuition of the methodology to the reader.\n* The authors compared with strong white-box baseline attack (AutoAttack) and a black-box attack. There is an analysis of an adaptive attack where the adversary has knowledge of the trigger placement and Trapclass. \n* The computational complexity is better than baseline detection methods which rely on separate classifiers. \n* The authors demonstrate on a variety of small-scale data that the detection accuracy of TMM is superior to Mahalanobis and LID detectors. \n* The proposed technique does not require knowledge of the clean test sample for detection.",
+  "human_weaknesses": "",
+  "human_questions": "* Can the authors check TMM in the presence of a poisoning adversary?\n* What is the effect of the genuine data quality on the final detection accuracy? \n* How much extra data is necessary to train with TMM?\n* Is TMM feasible on high-scale data? Would detection accuracy degrade due to extra sparse dimensions?",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "2 fair",
+    "contribution": "3 good"
+  }
+}

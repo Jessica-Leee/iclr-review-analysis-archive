@@ -1,0 +1,37 @@
+**Review:**
+
+This paper proposes Targeted Manifold Manipulation, a defense against adversarial attacks that works by planting trapdoors on the data manifold and assigning them a special "Trapclass" label. The core idea is that low-perturbation attacks will be trapped in these regions and thus easily detected, while high-perturbation attacks escape but move far from the manifold where they can be identified by the absence of trapdoors. The authors claim their approach avoids training a separate detection model and achieves ~99% attack detection with minimal clean accuracy drop across six attacks and four datasets.
+
+**Strengths:**
+- The conceptual approach of manipulating the adversarial distribution rather than learning separate detectors is intuitive and potentially more elegant than post-hoc detection methods.
+- Evaluation covers multiple state-of-the-art attacks and standard benchmarks (four datasets), suggesting reasonable empirical scope.
+- The claim of maintaining semantic alignment with the original classifier by avoiding a separate detection model is appealing from a model interpretability perspective.
+- The method appears to handle both low and high perturbation budgets through a unified mechanism.
+
+**Weaknesses:**
+- The abstract lacks critical implementation details: How are trapdoors concretely constructed and planted during training? How is the manifold locally manipulated without affecting clean data distribution? These are fundamental to reproducibility and understanding feasibility.
+- No discussion of computational overhead or training complexity. Manifold manipulation during training could be expensive, and this cost is not addressed.
+- The claim that out-of-distribution data can be "easily detected by noting the absence of trapdoors" is vague. What is the detection threshold? How sensitive is detection to the density and placement of trapdoors? How does this scale with dimensionality?
+- Missing ablation studies and comparisons to related defense methods (e.g., certified defenses, other detection-based approaches). The paper does not position itself relative to existing work or justify why this approach is superior.
+- The assumption that attacks will either fall into trapdoors or move far from the manifold may not hold for adaptive attacks that are aware of the defense mechanism. No discussion of robustness to adaptive adversaries.
+- Evaluation on "semantic-preserving, non-attack perturbations" is mentioned but not detailed—what perturbations are tested, and how many false positives occur?
+
+**Questions:**
+1. How exactly are trapdoors constructed and integrated into the training objective? What is the mathematical formulation?
+2. What is the computational cost of manifold manipulation during training compared to standard training?
+3. How does detection performance degrade as perturbation budget increases? Is there a clear separation between "trapped" and "escaped" regimes?
+4. How does the method perform against adaptive attacks that know about the trapdoor defense?
+5. What is the false positive rate on benign out-of-distribution data (e.g., different datasets or natural distribution shifts)?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper presents an interesting conceptual contribution, but the abstract lacks sufficient technical detail and rigor for a venue like ICLR. The core mechanism—how trapdoors are planted and how manifold manipulation is enforced locally—is not clearly explained. The evaluation, while covering multiple attacks and datasets, does not include comparisons to related defenses or ablation studies. The vulnerability to adaptive attacks and the scalability of the trapdoor-based detection mechanism are not addressed. With more detailed methodology, stronger baselines, and analysis of failure modes, this could become a solid contribution.
+
+**Confidence:** 3
+
+**Soundness:** 2 (fair)
+
+**Presentation:** 2 (fair)
+
+**Contribution:** 2 (fair)

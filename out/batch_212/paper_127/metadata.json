@@ -1,0 +1,18 @@
+{
+  "paper_id": "ylhiMfpqkm",
+  "review_id": "PPvxDenmKA",
+  "year": 2024,
+  "line": 495,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The paper introduces a novel approach for reward-free pre-training and fine-tuning of GFlowNets, which can serve as a foundation for further research of GFlowNet pretraining.\n2. The paper provides a thorough description of the proposed approach, including the formulation of the problem, the training procedures, and the evaluation metrics. The experiments are well-designed and conducted, and the results are presented clearly.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper  proposes the outcome-conditioned GFlowNet (OC-GFN) for reward-free pre-training and fine-tuning of GFlowNets in order for efficient adaptation to downstream tasks. OC-GFN is learnt to reach any specified outcome, and an amortized predictor is learnt to approximate an intractable marginal required for fine-tuning. The paper provides extensive experimental results to validate the effectiveness of their proposed approach.",
+  "human_questions": "1. How does the proposed approach perform compared to existing methods for pre-trained models or RL methods besides DQN? and what about the computation cost of these methods?\n2. Is the trained GAFlowNet necessary? What about its performance and how does it influence the results?",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

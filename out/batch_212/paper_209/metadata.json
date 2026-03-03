@@ -1,0 +1,18 @@
+{
+  "paper_id": "y33lDRBgWI",
+  "review_id": "1DScnbxrW8",
+  "year": 2024,
+  "line": 815,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_review_text": "The paper proposes an interesting idea, named AdjointDPM, merging Diffusion Models and techniques from Neural ODE literature. The core offering of the paper is a way of backpropagating gradients of any loss computed using the output of a (trained) Diffusion model. Specifically the authors used the well-known Adjoint Backpropagation method from Neural ODE, which is a backprop algorithm with $\\mathcal{O}(1)$ memory w.r.t the *discretization* of the ODE solver.\n\nThe authors applied their AdjointDPM method on three tasks that either require gradients w.r.t initial state $X_T$ of the reverse process, all intermediate states $\\\\{ X_t \\\\}\\_{t=1}^T$ of the reverse process or the parameters $\\theta$ of denoising model $\\epsilon_{\\theta}(\\cdot)$. They showed good performance in terms of quantitative metrics and also showed qualitative results.",
+  "human_strengths": "The proposal of the paper is overall good, theoretically sound and shown to have worked well.\n\n- Theoretically, it makes sense to use the Adjoint method on the reverse ODE.\n- The authors exploited the semi-linear nature of the ODE even in the Adjoint backprop, following DPM-Solver/DEIS.",
+  "human_weaknesses": "",
+  "human_questions": "I have the following questions for the authors.\n\n- I am confused about section 3.4. That is not AdjointDPM \u2014 that is just unconditional generation with an already known sampler (DEIS, which used Adam-Bashforth) that exploits the semi-linear nature. What part of this is your contribution ? Am I missing something here ?\n- In the \u201csecurity auditing\u201d application, what exactly is the guidance $L$ ? What is the meaning of \u201cdistance between a harmful prompt and a prediction score\u201d ? Also, what exactly is the NSFW filter $f(\\cdot)$ ? Can you provide more details please ?\n\nMinor questions or suggestions:\n\n- The unnumbered eq b/w Eq. 5 & 6 \u2014 what is the meaning of that line (\u201dSimilarly, for $\\theta$, we can regard ..\u201d) ?\n- \u201cadjoint state $\\mathbf{a}(t) = ..$, which represents how the loss depends on the state ..\u201d \u2192 \u201cadjoint state $\\mathbf{a}(t)$ = .., which represents how the loss **changes w.r.t the** state ..\u201d.\n- The AdjointDPM eq. 8 shows gradient w.r.t $t$ \u2014 is it acutally used anywhere ?\n- Why is it called \u201cvocabulary expansion\u201d ? I still don\u2019t get it.\n- \u201cSecurity Auditing\u201d is just fancy name for Adversarial Samples ?",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "5: You are absolutely certain about your assessment. You are very familiar with the related work and checked the math/other details carefully.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

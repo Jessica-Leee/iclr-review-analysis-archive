@@ -1,0 +1,38 @@
+**Review:**
+
+This paper proposes the Quadratic Synchronization Rule (QSR), a theory-grounded method for dynamically setting the local computation steps $H$ in distributed deep learning with local gradient methods. The key insight is that $H$ should scale as $\frac{1}{\eta^2}$ as the learning rate $\eta$ decays during training, rather than treating $H$ as a fixed hyperparameter. The authors validate QSR on ImageNet with ResNet and ViT architectures, demonstrating consistent accuracy improvements and substantial wall-clock time reductions (e.g., 26.7 to 20.2 hours on 16 GPUs) compared to standard data-parallel training.
+
+**Strengths:**
+- The core contribution is well-motivated: the paper identifies that $H$ selection is non-trivial and proposes a principled, dynamic rule grounded in theory rather than treating it as a static hyperparameter.
+- Comprehensive empirical validation on large-scale benchmarks (ImageNet) with multiple architectures (ResNet, ViT) and different numbers of GPUs (16, 64) demonstrates practical impact.
+- Significant practical gains: achieving both faster training time and higher test accuracy (1.16% and 0.84% improvements) is a strong result for practitioners.
+- The $\frac{1}{\eta^2}$ scaling rule is simple and easy to implement, making it accessible for practitioners.
+
+**Weaknesses:**
+- The abstract mentions "theory-grounded" but provides no details on the theoretical justification or derivation of the $\frac{1}{\eta^2}$ rule. Without seeing the full paper, it is unclear whether the theory is rigorous, under what assumptions it holds, or how it relates to existing convergence analyses of local SGD.
+- Limited discussion of how QSR compares to other recent adaptive synchronization strategies or whether the rule generalizes beyond the tested settings (e.g., different optimizers, datasets, or model sizes).
+- No ablation studies or sensitivity analysis provided in the abstract; it is unclear how sensitive the method is to the proportionality constant or whether the rule requires tuning for different problem settings.
+- The paper does not discuss potential failure modes or scenarios where the quadratic rule might underperform, limiting confidence in its generality.
+
+**Questions:**
+- What is the theoretical justification for the $\frac{1}{\eta^2}$ scaling? Does it follow from convergence analysis of local SGD, and under what assumptions?
+- How does QSR perform on other datasets (CIFAR-10, etc.) or with other optimizers (SGD, AdamW variants)?
+- Is the proportionality constant in $H \propto \frac{1}{\eta^2}$ problem-dependent, or is a universal constant sufficient?
+- How does QSR compare quantitatively to other recent adaptive or learned synchronization strategies?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper addresses a practical and relevant problem in distributed deep learning with a simple, implementable solution backed by large-scale experiments showing real improvements in both accuracy and training time. However, the lack of theoretical detail in the abstract and limited discussion of generalization and comparisons to related work prevent a stronger endorsement. The empirical results are strong enough to merit publication, but the contribution would be significantly strengthened by clearer theoretical motivation and broader experimental analysis.
+
+**Confidence:**
+3 (moderate; assessment is based on abstract only; full paper may clarify theoretical foundations and experimental scope)
+
+**Soundness:**
+Good (the empirical validation is thorough, but theoretical soundness cannot be fully assessed from the abstract)
+
+**Presentation:**
+Good (the abstract is clear and well-structured, though theoretical details are missing)
+
+**Contribution:**
+Good (a practical, implementable method with demonstrated impact, though novelty relative to existing adaptive synchronization strategies is unclear)

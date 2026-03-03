@@ -1,0 +1,18 @@
+{
+  "paper_id": "yCYnKMHX3u",
+  "review_id": "Cr6QayOmD5",
+  "year": 2024,
+  "line": 745,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The proposed idea of layered generation, i.e. decomposing prompts and then guiding the global prompt with each local prompt in the image generation process is very interesting. This is more attractive from practical (e.g. industrial) use cases and is potentially widely applicable as the proposed method doesn\u2019t require additional training and the accurate segmentation masks.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper presents a new framework for simultaneous control over the global contexts and the local details in T2I without requiring additional training or fine-tuning. The key idea of the paper in attaining  detailed visual control is to decompose the complex prompts into manageable concepts and controlling object details while preserving global contexts. Experiments demonstrate the utility of the proposed approach in both generation and editing settings.",
+  "human_questions": "Please see weaknesses",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

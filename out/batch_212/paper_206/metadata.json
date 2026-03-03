@@ -1,0 +1,18 @@
+{
+  "paper_id": "y3dqBDnPay",
+  "review_id": "uIqyfPlMD2",
+  "year": 2024,
+  "line": 804,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_review_text": "This paper presents a self-supervised representation learning method on multimodal data based on hypergraph-based learning called HyperRep by combining the strength of hypergraph-based modeling with a self-supervised multimodal fusion information bottleneck principle. The extensive experiments on four public datasets including three downstream tasks demonstrate the advantages of the proposed method, which are also validated by the comparison with the state-of-the-art approaches.",
+  "human_strengths": "1.\tThe idea of using hypergraph-based self-supervised multimodal representation learning is interesting as it captures the high-order relationships in multimodal data.\n2.\tCompared to most multimodal learning work using semi-supervised approaches which requires additional label information, the proposed approach is employing self-supervised learning. The derived hypergraph attention module and propagation is a good extension from current approaches.\n3.\tThe author also introduced multimodal fusion information bottleneck (MFB) principle, in order to maximize the mutual information between the instance and each modality. The corresponding upper bound and lower bound are derived.\n4.    The experimental evaluation is detailed and extensive.",
+  "human_weaknesses": "",
+  "human_questions": "1 The author needs to distinguish the work better with the previous work especially many module presented in this paper such as hypergraph attention module has been published before. So a reference shoud be given and explain the difference if there is any.\n\n2.While the lower bound and upper bound are derived, it is important to show how to leverage these bounds for optimization.\n\n3.The contribution of the paper is not very clear.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

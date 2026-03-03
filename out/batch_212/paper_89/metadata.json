@@ -1,0 +1,18 @@
+{
+  "paper_id": "z7K2faBrDG",
+  "review_id": "wd0L81rW2q",
+  "year": 2024,
+  "line": 349,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "I very much approve of the style of the experiment.\nAnd I applaud all efforts to measure human-based distances.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper concerns itself with perceptual measures, in particular the perceptual distance between images showing what to me look like \"noise\" images each with a dominant spatial frequency. A theoiry is developed, and then tested experimentally.",
+  "human_questions": "What does the parameter \"s\" mean?\n\nI do not understand the experiment. Three stimulli were presented with s1 < s2 < s3.  I suppose this means the parameter s somehow orders the stimulli, but I don't know how.  Then participants are required to pair either (s1,s2) or (s2,s3). Why remove the (s1,s3) option? (It's removal may bias results.)\n\nOverall, I get the impression the the authors have conducted perceptually experiments (on a very low number of participants) and that this paper is probably better suited to one of the perceptual psychology forums.  But, I found it hard to read, so I could very easily be wrong.",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

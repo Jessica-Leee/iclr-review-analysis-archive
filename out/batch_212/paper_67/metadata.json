@@ -1,0 +1,18 @@
+{
+  "paper_id": "zIrpuifCJW",
+  "review_id": "kt29EuvCAy",
+  "year": 2024,
+  "line": 265,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "Strengths:\n- This paper challenges the notion that noise always hampers deep learning models, showcasing its potential as a positive influence.\n- It offers theoretical insights, distinguishing noise impact at different levels, aiding in optimizing task complexity.\n- Experiments on both CNNs and Vision Transformers are conducted.",
+  "human_weaknesses": "",
+  "human_review_text": "This research investigates the impact of noise-induced entropy changes in deep learning systems, focusing on computer vision tasks. While noise is traditionally seen as detrimental, this study demonstrates that specific noise, termed positive noise (PN), can enhance deep learning model performance by reducing task complexity defined by information entropy. The study introduces a distinction between positive noise (beneficial) and harmful noise (detrimental) and shows that proactive injection of positive noise significantly improves accuracy, achieving over 95% on ImageNet. Besides, this paper explores three types of noises. But the difference of positive noises on different kinds of noise types lacks discussion.",
+  "human_questions": "For each type of noise, there will exist positive noises. What are their difference and influences?",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

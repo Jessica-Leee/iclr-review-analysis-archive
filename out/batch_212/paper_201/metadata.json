@@ -1,0 +1,18 @@
+{
+  "paper_id": "y886UXPEZ0",
+  "review_id": "aH9NAcSiXe",
+  "year": 2024,
+  "line": 781,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- The proposed approach is straightforward yet effective in enhancing performance on domain-specific tasks, which has potential applicability to other models and domains.\n- The experiments include three representative domains and six mining tasks, which may have sufficient coverage in terms of domains and tasks.\n- The paper is well-written and easy to follow.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper introduces an approach for continuing the pretraining of Large Language Models (LLMs) on domain-specific corpora. Initially, the authors find that conventional domain-adaptive pretraining enhances knowledge probing while detrimentally affecting the model's prompting ability. Subsequently, they propose transforming domain-specific documents into a reading-comprehension style format. In this format, certain sentences are altered via mining patterns to pose NLP tasks such as summarization and commonsense reasoning, accompanied by their respective answers. The experiments, spanning the biomedical, finance, and law domains, demonstrate that the proposed approach yields marginal improvements in the performance of LLMs on domain-specific tasks.",
+  "human_questions": "- Texts in corpora may possess their own document structure, and mining NLP tasks could potentially disrupt it, impacting readability and coherence. Have the authors manually verified whether their transformation is effective without compromising the integrity of the text?",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

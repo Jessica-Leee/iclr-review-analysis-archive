@@ -1,0 +1,18 @@
+{
+  "paper_id": "yC2jjvYVzb",
+  "review_id": "UsGw3XaiSq",
+  "year": 2024,
+  "line": 752,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "+ The problem of addressing distribution shifts in the testing dataset is addressed when spurious correlations are present.\n+ The idea of using different models for different inputs is very neat.\n+ The proposed algorithm is simple and very intuitive and has a nice formal intuition.\n+ The performance of the proposed algorithm is validated using 4 datasets, illustrating its superior performance compared to existing works.\n+ The proposed algorithm improves classification performance in real-world scenarios that are prevalent with distribution shifts and spurious correlations.\n+ The paper is in general well-written and makes it easy for the reader to understand both the problem statement and the solution.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper studies the problem of confidence-based model selection in an effort to address the issue of distribution shifts in the testing phase by equally considering invariant and shortcut features. Given multiple base classifiers trained on the source dataset, the COSMOS algorithm is proposed that (1) first clusters test examples in K clusters, and (2) then uses a confidence score to select one out of the base classifiers to perform classification of the examples for each cluster. The performance of the proposed algorithm is evaluated on 4 datasets  and compared with methods that use only invariant features, only shortcut features and ensemble methods.",
+  "human_questions": "(1) It would be great if the authors discuss how the proposed method differs from the problem of dynamic or instance-wise classifier selection, and depending on the relevance, they will consider extending their related work section accordingly.\n\n(2) I am a little bit confused about the relationship between the index variable of the subpopulation and the label. Initially, I thought that the test set could be split into subpopulations based on the possible values of the labels. However, as I continued reading, it seems that subpopulations are not necessarily constructed based on the possible values of the labels. In this case, what is the meaning of subgroups and how do you justify this?\n\n(3) Can you explain what is the meaning of the invariance assumptions in Sec. 3?\n\nMinor:\n(a) I believe there is a small typo in notation. Namely, shouldn't p_{T_i} be p_{T^i} in Sec. 3 or am I confused?\n(b) In pg. 5, dist(.) should be properly defined as a divergence measure.\n(c) The statistics of the datasets (e.g., number of instances, features, etc) are not reported.",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "4 excellent",
+    "presentation": "3 good",
+    "contribution": "4 excellent"
+  }
+}

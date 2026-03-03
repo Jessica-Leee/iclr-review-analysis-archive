@@ -1,0 +1,42 @@
+**Review:**
+
+This paper addresses an important gap in evaluating feature attribution methods: existing faithfulness benchmarks assume neural networks learn to use exactly the designed ground-truth features, but provide no guarantee this occurs. The authors propose AttributionLab, a controlled synthetic environment where both the data and network weights are explicitly designed so that the precise input features relevant to the network's decisions are known. This allows direct evaluation of whether attribution methods recover the true features used by the model, serving as a sanity check and laboratory for studying attribution methods.
+
+**Strengths:**
+
+1. **Addresses a genuine methodological gap**: The observation that prior work (designing data but not network weights) leaves a critical assumption unvalidated is insightful and well-motivated. Explicitly controlling both data and network weights is a principled solution.
+
+2. **Clear conceptual contribution**: The idea of a controlled synthetic environment for attribution evaluation is intuitive and useful. If an attribution method fails on simple, fully-controlled scenarios, it signals unreliability in complex settings.
+
+3. **Practical utility**: AttributionLab can serve as a filtering tool and diagnostic laboratory, helping identify and improve problematic attribution methods.
+
+**Weaknesses:**
+
+1. **Insufficient methodological detail in abstract**: The abstract does not explain *how* weights are manually set or what class of networks/data designs are considered. Without clarity on the construction procedure, it is unclear whether the approach generalizes beyond toy problems or whether the controlled setting remains representative of realistic scenarios.
+
+2. **Limited empirical validation presented**: The abstract mentions that AttributionLab is "effective in filtering out attribution methods" but provides no concrete results, comparisons, or case studies. Which methods fail? By how much? What improvements were identified? These details are essential to assess impact.
+
+3. **Unclear scope and generalizability**: It is not evident whether AttributionLab covers diverse network architectures, feature interactions, or data distributions. A controlled environment that is too simplistic may not reveal failures relevant to real-world applications.
+
+4. **Missing related work context**: The abstract does not position this work relative to other faithfulness evaluation frameworks (e.g., perturbation-based methods, other synthetic benchmarks). The novelty relative to existing controlled evaluation approaches is unclear.
+
+**Questions:**
+
+- What classes of network architectures and weight configurations does AttributionLab support?
+- How do results on AttributionLab correlate with faithfulness on real datasets?
+- Which existing attribution methods does the benchmark filter out, and what patterns of failure emerge?
+- Can the controlled environment reveal actionable insights for improving attribution methods?
+
+**Overall score:**
+
+6: marginally above the acceptance threshold
+
+The paper identifies a real methodological problem and proposes a reasonable solution with clear conceptual merit. However, the abstract lacks sufficient empirical validation, methodological detail, and evidence of practical impact to warrant a stronger assessment. With concrete results, detailed methodology, and demonstrated utility in improving attribution methods, this could be a solid contribution to the interpretability literature.
+
+**Confidence:** 3 (limited by abstract-only review; full paper would clarify scope and results)
+
+**Soundness:** Good (the core idea is sound, but methodological details are underspecified)
+
+**Presentation:** Fair (clear motivation, but lacks concrete examples and results)
+
+**Contribution:** Good (addresses a genuine gap, though scope and impact remain unclear)

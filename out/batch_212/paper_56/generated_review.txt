@@ -1,0 +1,41 @@
+**Review:**
+
+This paper proposes an online learning framework based on inverse multi-objective optimization to learn parameters (objective functions or constraints) of multi-objective decision-making models from sequentially arrived decisions. The authors develop two online learning algorithms with implicit update rules designed to handle noisy data and prove convergence at a stated rate under regularity conditions. The approach is evaluated on both synthetic and real-world datasets, demonstrating robustness to noise.
+
+**Strengths:**
+
+1. **Well-motivated problem**: Learning multi-objective program parameters from noisy sequential decisions is a practically relevant problem that bridges inverse optimization and online learning.
+2. **Theoretical contribution**: The paper provides convergence analysis under regularity conditions, offering theoretical grounding for the proposed approach.
+3. **Robustness to noise**: The implicit update rules are designed to handle measurement noise and bounded rationality, which is important for real-world applicability.
+4. **Empirical validation**: Testing on both synthetic and real-world datasets demonstrates practical utility.
+
+**Weaknesses:**
+
+1. **Incomplete convergence rate statement**: The abstract states convergence "at a rate of" but the rate itself is missing—this is a critical omission that prevents proper assessment of the theoretical contribution's strength.
+2. **Limited methodological novelty**: The paper combines existing techniques (inverse optimization + online learning) without clearly articulating what is fundamentally novel beyond this combination. The implicit update rules are mentioned but not sufficiently detailed in the abstract.
+3. **Insufficient experimental detail**: The abstract provides no specifics on datasets, baselines, or quantitative results. It is unclear how the proposed algorithms compare to existing methods or what performance gains are achieved.
+4. **Presentation clarity**: Key technical details are absent from the abstract (e.g., what are the "regularity conditions"? How do the two algorithms differ?), making it difficult to assess the contribution's scope and significance.
+
+**Questions:**
+
+1. What is the exact convergence rate, and how does it compare to rates in related online learning or inverse optimization literature?
+2. How do the two proposed algorithms differ, and when should each be preferred?
+3. What are the specific regularity conditions required for convergence?
+4. How do the proposed methods compare quantitatively to baseline approaches on the real-world datasets?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses a relevant problem and claims both theoretical and empirical contributions, but the abstract is too incomplete to properly evaluate the work. The missing convergence rate, vague description of the algorithms, and lack of experimental details are significant concerns. With a more complete submission and clearer exposition of novelty, this could be a solid contribution.
+
+**Confidence:**
+2–3 (Low to moderate; assessment is limited by incomplete information in the abstract)
+
+**Soundness:**
+Fair (Theoretical claims are stated but cannot be fully evaluated without the convergence rate and regularity conditions; empirical validation is mentioned but not detailed)
+
+**Presentation:**
+Fair (Key technical details and results are missing from the abstract, hindering clarity and assessment)
+
+**Contribution:**
+Fair (The combination of inverse multi-objective optimization with online learning is reasonable, but novelty over existing work is not clearly articulated, and the specific algorithmic contributions are underspecified)

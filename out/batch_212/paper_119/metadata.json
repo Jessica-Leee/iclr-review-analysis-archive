@@ -1,0 +1,18 @@
+{
+  "paper_id": "yqAToOgxgf",
+  "review_id": "Kak7M15QLo",
+  "year": 2024,
+  "line": 462,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- The idea of using an old architecture and building on top of it is unique and interesting.\n- The paper does a good job at analyzing various components by building on top of an old architecture.\n- The paper does a very dense evaluation to analyze a lot of components in the neural net training by testing over multiple datasets and having various architectures as baselines.\n- The paper is well written.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper proposes to analyse various components in neural net training by building on top of a 30 year old architecture Pi-Sigma. Instead of coming up with novel components they propose to use previously used techniques to add it to the architecture.  After a lot of ablations they conclude that the most important components towards improvement are the i) optimizer ii) normalization iii) data augmentation and iv) depth of the neural net",
+  "human_questions": "Some qs are in the Weakness section.\n- Can authors compare on the benchmarks on which Pi-Sigma paper had shown their result? This will help realise if the improvements are indeed benchmark specific or general.\n- What is the role of convolutions vs MLP mixer. I think the standard convention is that if u have less data you should do convolution, however this is not clearly indicated from the author's experiments.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

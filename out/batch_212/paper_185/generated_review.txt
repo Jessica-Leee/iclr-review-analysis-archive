@@ -1,0 +1,38 @@
+**Review:**
+
+This paper addresses a practical limitation of conformal prediction—the tendency to produce large prediction sets—by proposing test-time augmentation (TTA) to improve efficiency while maintaining probabilistic coverage guarantees. The core idea is straightforward: replace a classifier's predicted probabilities with probabilities aggregated over a set of augmentations, then apply standard conformal scoring methods. The approach is model-agnostic, requires no retraining, and reportedly reduces prediction set sizes by up to 30% across three datasets, three models, and two conformal scoring methods.
+
+**Strengths:**
+- **Practical and flexible**: The method can be composed with any conformal score and any base classifier, making it broadly applicable. The requirement for no model retraining is a significant practical advantage.
+- **Empirical breadth**: The evaluation spans multiple datasets, models, and conformal methods, providing reasonable evidence of generality. The paper explicitly studies when and why TTA helps.
+- **Clear motivation**: The paper identifies and articulates why conformal methods produce large sets, providing intuition for the proposed solution.
+- **Computational efficiency**: TTA is noted as computationally efficient, which is important for practical deployment.
+
+**Weaknesses:**
+- **Limited novelty**: Test-time augmentation is a well-established technique in deep learning. Applying it to conformal prediction, while useful, is relatively incremental. The paper does not clearly articulate what is novel beyond combining two existing ideas.
+- **Incomplete theoretical analysis**: The paper provides insights into why large sets persist but lacks formal analysis of how TTA affects coverage guarantees or set size reduction. It is unclear whether coverage is always maintained or only empirically observed.
+- **Evaluation scope**: While the paper claims evaluation across "three datasets," the abstract does not specify which datasets or provide detailed results. The claim of "up to 30%" reduction is vague without baselines or statistical significance testing. Missing comparisons to other set-size reduction methods (e.g., adaptive conformal prediction, other post-hoc techniques).
+- **Presentation gaps**: The abstract does not explain *how* probabilities are aggregated over augmentations (e.g., averaging, voting) or what augmentations are used. These details are critical for reproducibility and understanding the method's applicability.
+
+**Questions:**
+- How are augmentations selected, and does performance depend on the choice of augmentation strategy?
+- Is coverage always maintained, or are there settings where TTA violates the probabilistic guarantee?
+- How does TTA compare to other set-size reduction methods in conformal prediction (e.g., adaptive conformal prediction, threshold optimization)?
+- What is the computational overhead of TTA relative to the base classifier?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper makes a solid practical contribution by demonstrating that test-time augmentation can reduce prediction set sizes in conformal prediction while maintaining coverage. The approach is simple, broadly applicable, and empirically validated across multiple settings. However, the novelty is limited (combining two existing techniques), theoretical insights are shallow, and the evaluation, while spanning multiple settings, lacks detail and comparison to relevant baselines. The work is useful for practitioners but represents an incremental advance rather than a significant methodological or conceptual contribution.
+
+**Confidence:**
+3 (moderate; assessment is limited by the abstract's lack of detail on datasets, baselines, and results)
+
+**Soundness:**
+Good (the method is sound and empirically validated, but theoretical guarantees are not rigorously analyzed)
+
+**Presentation:**
+Fair (the abstract is clear in motivation but lacks critical implementation details and experimental specifics)
+
+**Contribution:**
+Fair (practical but incremental; combining existing techniques without strong novelty or theoretical depth)

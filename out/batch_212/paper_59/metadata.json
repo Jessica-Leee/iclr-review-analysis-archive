@@ -1,0 +1,18 @@
+{
+  "paper_id": "zOjW6yVYkE",
+  "review_id": "MGIKLtiGBx",
+  "year": 2024,
+  "line": 236,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The idea of zero-shot video generation with pretrained image generation is worthwhile to explore, which can maximally maintain and leverage the generation ability of the 2D model.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposes an approach for generating smooth videos from trained text-to-image model without finetuning. The approach contains two parts, one is about constructing noise across frames that stays relatively consistent; the other is about changing the self-attention layers of 2D U-Net to cross-frame attention accumulated over time. Results show that the method can generate reasonable moving videos.",
+  "human_questions": "See comments above",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "5: You are absolutely certain about your assessment. You are very familiar with the related work and checked the math/other details carefully.",
+    "soundness": "1 poor",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

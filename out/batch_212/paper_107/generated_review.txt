@@ -1,0 +1,36 @@
+**Review:**
+
+This paper proposes that fine-tuning and a newly proposed super-fine-tuning method can effectively mitigate backdoor attacks in machine learning models while preserving utility. The core contribution is demonstrating that simple, computationally efficient fine-tuning operations—which are already standard practice—can serve as a strong defense against backdoors across three machine learning paradigms. The authors contrast this with existing complex defense mechanisms that often require substantial computational overhead or degrade model performance.
+
+**Strengths:**
+
+- **Practical simplicity and accessibility**: The proposed approach leverages fine-tuning, an ubiquitous and easy-to-adopt training operation, making it immediately deployable without specialized infrastructure or expertise.
+- **Broad empirical scope**: Evaluation across three machine learning paradigms suggests generality of the approach.
+- **Clear motivation**: The paper identifies a real gap—existing defenses are often complex and resource-intensive—and offers a pragmatic alternative.
+
+**Weaknesses:**
+
+- **Limited novelty**: Fine-tuning as a defense mechanism is not new; the paper does not clearly articulate what is fundamentally novel beyond applying an existing technique. The "super-fine-tuning" variant is mentioned but not formally defined or justified in the abstract.
+- **Insufficient technical detail**: The abstract provides no description of the methodology, hyperparameter choices, or how super-fine-tuning differs from standard fine-tuning. Without these details, reproducibility and understanding of the contribution are compromised.
+- **Incomplete threat model and evaluation**: The abstract does not specify which backdoor attacks are considered, whether adaptive attacks (where the attacker knows the defense) are evaluated, or how the defense compares quantitatively to existing methods. Claims of "strong defense performance" lack concrete metrics.
+- **Missing analysis of failure modes**: There is no discussion of when or why fine-tuning might fail to remove backdoors, or what properties of backdoors make them vulnerable to this defense.
+
+**Questions:**
+
+- How does super-fine-tuning differ formally from standard fine-tuning? What are the key hyperparameter modifications?
+- Are adaptive attacks (where the adversary is aware of the fine-tuning defense) evaluated? If not, how robust is the approach?
+- What is the quantitative comparison to existing defenses in terms of backdoor removal rate and utility preservation?
+- Does the defense work equally well across different backdoor trigger types (e.g., pixel patterns, semantic triggers)?
+
+**Overall score:**
+4: below the acceptance threshold
+
+The paper addresses a practical problem and proposes a simple solution, but the contribution lacks sufficient novelty and technical depth for a top-tier venue. The abstract does not adequately describe the methodology or provide evidence of superiority over existing approaches. Stronger empirical validation, clearer technical exposition of super-fine-tuning, and evaluation against adaptive attacks would be necessary to meet the acceptance bar.
+
+**Confidence:** 3 (moderate—assessment is limited by the abstract's lack of technical detail)
+
+**Soundness:** 2 (fair—the core idea is reasonable, but without methodological details and comprehensive evaluation, soundness cannot be fully assessed)
+
+**Presentation:** 2 (fair—the abstract is clear in motivation but lacks essential technical and experimental details)
+
+**Contribution:** 2 (poor—applying an existing technique without clear novelty or formal innovation; super-fine-tuning is mentioned but not defined)

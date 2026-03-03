@@ -1,0 +1,18 @@
+{
+  "paper_id": "zMoNrajk2X",
+  "review_id": "a8rzVamHtp",
+  "year": 2024,
+  "line": 248,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "This is a good paper for conditional diffusion models. Its merits span the following aspects:\n\n1. The proposed method is intuitive and does not require further finetuning on pretrained diffusion models. This allows for improving a wide range of models and samplers. The straightforward approach should be amenable to the broader audience of ICLR.\n2. This work also provides a theoretical explanation for CADS. I found this explanation helpful. It should be added to the main paper using the extra granted page after acceptance.\n3. Decent experimental results. The proposed sampler offers consistent improvements over the baseline diffusion models.\n4. Detailed ablation studies. The ablation studies clearly show the influence of hyperparameters introduced in this sampler.\n5. Writing clarity. This paper is well presented. The methods and experiment sections are well organized. Please move Appendix C. to the main article.",
+  "human_weaknesses": "",
+  "human_review_text": "Although diffusion models are known for good mode coverage, the sample diversity of conditional diffusion models is still challenging when sampling at a high classifier-free guidance (CFG) scale. This work examines the conditional diffusion models and attributes this problem to how the conditional information should be mixed into the reverse diffusion process. \n\nTo tackle this problem, it introduces an annealed sampling scheme for conditional generation, Conditional Annealed Diffusion Sampler (CADS). The core principle of CADS is to gradually increase the strength of conditional information in the reverse time diffusion process, letting the unconditional score model explore better data modes in the early stage (noisy region) and guiding the sampling converge to the conditional distribution using the conditional information in the final stage (data region).\n\nThis work conducted detailed experiments on class-conditional generation, pose-to-image generation, identity-conditioned face generation, and text-to-image generation. CADS consistently improves the sample diversity of baseline conditional diffusion models without retraining.",
+  "human_questions": "1. How does this work determine where to add noises to the conditional information? For example, CADS mostly injects noises into the embeddings. However, for the pose-to-image generation, this work adopts the noise injection to the pose image. Is there a guidance to choose the position for conditional noise injection? What if inject noises into the internal layers of the conditional information extractor? What if we also adopt the embeddings noise injection scheme for the face-to-image generation? In other words, how large can the influence of noise injection position be regarding different choices?\n2. Notably, the experiments in this work utilize relatively large sampling steps (>= 100 NFEs). Will the proposed sampler deteriorate at a limited number of function evaluations? How does the conditional generation under CADS change along different sampler steps/NFEs?",
+  "human_ratings": {
+    "rating": "8: accept, good paper",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "4 excellent",
+    "contribution": "3 good"
+  }
+}

@@ -1,0 +1,34 @@
+**Review:**
+
+This paper presents a comprehensive empirical and theoretical comparison of randomized parameter-sharing (RPS) against pruning and smaller-model baselines for neural network compression. The authors identify and fix critical stability and Pareto-continuity issues in the state-of-the-art RPS method ROAST, proposing STABLE-RPS as an improved variant. The core claim is that RPS, being data and model-agnostic, consistently outperforms moderately informed pruning strategies (MAG, SNIP, SYNFLOW, GRASP) and smaller models across compression ranges, with particular advantages in high-compression regimes. The paper also provides theoretical analysis establishing RPS superiority for linear models.
+
+**Strengths:**
+- Comprehensive empirical evaluation across multiple compression techniques and settings, providing a useful benchmark for practitioners.
+- Clear identification and provable resolution of concrete technical issues (stability and Pareto-continuity) in ROAST, with proposed fixes in STABLE-RPS.
+- Theoretical contribution establishing RPS advantages for linear models, grounding the empirical observations.
+- Data and model-agnostic nature of RPS is a genuine practical advantage over architecture-specific pruning methods.
+
+**Weaknesses:**
+- The comparison against highly informed pruning (LTR) is limited; the paper claims RPS superiority in "high compression settings" but does not thoroughly characterize the boundary or provide detailed analysis of when each method dominates.
+- Limited novelty in the core RPS mechanism itself; the main contribution is fixing known issues in ROAST rather than introducing fundamentally new ideas. The fixes, while useful, appear incremental.
+- The theoretical analysis is restricted to linear models, which significantly limits its relevance to deep neural networks where the empirical claims are made. The gap between linear theory and nonlinear practice is not adequately bridged.
+- Presentation could be clearer: the abstract mentions "provably address" issues but does not specify what the proofs entail or their assumptions. The scope of "high compression scenarios" where RPS excels needs more precise definition.
+
+**Questions:**
+- Can you provide a more detailed characterization of the compression regimes where RPS outperforms LTR versus where LTR remains competitive?
+- How do the stability improvements in STABLE-RPS scale with model size and dataset complexity? Are there failure modes?
+- Can the linear model theory be extended or adapted to provide insights for nonlinear networks, or is the gap fundamental?
+- How sensitive is STABLE-RPS to the specific hyperparameters you identify as problematic in ROAST?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper makes a solid empirical contribution with useful practical fixes to an existing method, supported by comprehensive experiments. However, the novelty is somewhat limited (primarily engineering improvements to ROAST), and the theoretical insights do not extend convincingly to the nonlinear setting where the claims are strongest. The work is technically sound and addresses a relevant problem, but lacks the conceptual depth or surprising insights expected for a strong accept. It would be a reasonable addition to the conference proceedings as a thorough empirical study with practical value.
+
+**Confidence:** 3 (moderate—assessment based on abstract and claims; full paper details on experimental setup, hyperparameter sensitivity, and theoretical proofs would refine this)
+
+**Soundness:** Good (empirical evaluation appears rigorous; theoretical claims are stated carefully as applying to linear models; fixes to ROAST are described as provable, though proofs are not shown in the abstract)
+
+**Presentation:** Fair (clear motivation and problem statement, but some imprecision in claims like "high compression scenarios" and limited detail on the nature of the fixes)
+
+**Contribution:** Fair to Good (comprehensive benchmark and practical fixes are valuable, but limited conceptual novelty; theory-practice gap is a concern)

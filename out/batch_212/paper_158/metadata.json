@@ -1,0 +1,18 @@
+{
+  "paper_id": "yW0hLmwq4f",
+  "review_id": "WNZhHb8iKN",
+  "year": 2024,
+  "line": 611,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "+ Investigating the influential factors when utilizing synthetic data for training is both interesting and valuable for a wide range of tasks.\n\n+ A multitude of experiments have been conducted to examine the impact of various factors on the effectiveness of using synthetic data in training for human detection in UAV-view images \n\n+ The discussions and findings have the potential to offer valuable insights into optimizing the utilization of synthetic data during training",
+  "human_weaknesses": "",
+  "human_review_text": "This paper is focused on maximizing the impact of synthetic data during training. It explores the sim2real transformation and discusses three key factors that influence its quality: real data, the selection of synthetic data, and the synthetic data pool. The study examines how these factors affect the effectiveness of synthetic data in improving model performance and enhancing domain generalization abilities. Additionally, the paper introduces a new evaluation metric designed to measure the distribution gap between two datasets. Using human detection in UAV-view images as the target task, the paper provides a lot of discussions and findings regarding the use of synthetic data in training.",
+  "human_questions": "See Weaknesses",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

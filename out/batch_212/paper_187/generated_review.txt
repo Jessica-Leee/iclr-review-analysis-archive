@@ -1,0 +1,49 @@
+**Review:**
+
+This paper proposes FLOT (Federated Learning Optimal Transport), a Byzantine-robust aggregation framework for defending federated learning against data poisoning attacks. The method combines Wasserstein barycentric aggregation with a loss function-based rejection (LFR) mechanism and dynamic weighting to suppress malicious updates while maintaining model accuracy. The authors evaluate FLOT on four benchmark datasets (GTSRB, KBTS, CIFAR10, EMNIST) and claim improvements over existing baselines under single and multi-client attack scenarios, along with a proof of Byzantine resilience.
+
+**Strengths:**
+- Addresses a practically important problem: Byzantine robustness in federated learning without restrictive assumptions (i.i.d. data, strong convexity).
+- Proposes a concrete technical approach combining Wasserstein barycentric aggregation with LFR and dynamic weighting, which is intuitive and well-motivated.
+- Evaluates on multiple datasets and attack settings (single and multi-client), demonstrating empirical improvements over baselines.
+- Claims to provide theoretical Byzantine resilience guarantees, adding rigor to the empirical validation.
+
+**Weaknesses:**
+- The abstract lacks sufficient detail on the dynamic weighting scheme and how it optimizes the Wasserstein barycentric aggregation. The mechanism for balancing robustness and accuracy is unclear.
+- No discussion of computational overhead: Wasserstein barycentric computation can be expensive; scalability to large numbers of clients is not addressed.
+- Limited novelty in individual components: Wasserstein distance and rejection mechanisms are known techniques. The contribution appears primarily in their combination, which feels incremental.
+- The abstract does not specify the nature of the Byzantine resilience proof (e.g., convergence rate, conditions under which it holds) or how it compares to prior theoretical results in robust FL.
+- Missing important experimental details: no mention of attack types beyond "data poisoning," no ablation studies to isolate the contribution of LFR vs. dynamic weighting, and no comparison with recent robust aggregation methods (e.g., Krum, Multi-Krum, Median).
+- The claim that FLOT "serves as a robust client selection technique under no attack" is vague and unsupported in the abstract.
+
+**Questions:**
+- What is the computational complexity of the Wasserstein barycentric aggregation, and how does it scale with the number of clients?
+- Can you provide the explicit form of the dynamic weighting scheme and explain how it is optimized?
+- What specific Byzantine resilience guarantees does FLOT provide (e.g., convergence rate, fraction of Byzantine clients tolerated)?
+- How does FLOT compare to recent robust aggregation methods like Krum, Multi-Krum, or coordinate-wise median on the same datasets?
+- What types of data poisoning attacks are considered (label flipping, feature perturbation, etc.), and how sensitive is FLOT to attack strength?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper tackles an important problem and proposes a reasonable solution combining existing techniques. However, the abstract reveals insufficient technical depth, missing experimental comparisons with relevant baselines, and unclear theoretical contributions. The work would benefit from more detailed exposition of the method, comprehensive ablation studies, and rigorous comparison with state-of-the-art robust aggregation methods before it meets the acceptance bar for a top-tier venue.
+
+**Confidence:**
+3 (Low–Medium)
+
+The assessment is based solely on the abstract and title, which lack sufficient detail to fully evaluate the technical soundness and novelty. A full paper review could substantially change this verdict.
+
+**Soundness:**
+2 (Fair)
+
+While the general approach is reasonable, the abstract does not provide enough detail to assess the soundness of the dynamic weighting scheme, the LFR mechanism, or the Byzantine resilience proof. The lack of ablation studies and missing comparisons with relevant baselines raise concerns about empirical validation.
+
+**Presentation:**
+2 (Fair)
+
+The abstract is somewhat vague on key technical details (dynamic weighting, optimization procedure, Byzantine resilience guarantees). Important experimental and methodological information is omitted, making it difficult to assess the contribution clearly.
+
+**Contribution:**
+2 (Fair)
+
+The contribution appears to be primarily a combination of known techniques (Wasserstein barycentric aggregation, rejection mechanisms). While the combination may be novel, the incremental nature of the contribution and lack of clear theoretical or empirical advances over recent robust FL methods limit its significance.

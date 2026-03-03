@@ -1,0 +1,18 @@
+{
+  "paper_id": "yC2waD70Vj",
+  "review_id": "88bDPNR93J",
+  "year": 2024,
+  "line": 748,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "The paper is relatively well written and it extends the previous theories in linear RNN. While heuristically it is not difficult to show that a popular RNN, such as LSTM or GRU, has an exponentially decaying memory, by approximating the internal state of the RNN with a relaxation equation, this manuscript provides a robust proof about such behavior.",
+  "human_weaknesses": "",
+  "human_review_text": "The authors provides an inverse approximation theory for a certain class of nonlinear recurrent neural network (RNN), showing that, for the class of nonlinear RNN to approximate the sequence, the sequence should have an exponential decaying memory structure. It demonstrates the difficulties of RNN in learning and representing a longer-time dependence in the data.",
+  "human_questions": "NA",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "2: You are willing to defend your assessment, but it is quite likely that you did not understand the central parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

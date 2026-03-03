@@ -1,0 +1,18 @@
+{
+  "paper_id": "z9ySIS1inA",
+  "review_id": "PBmhoeFaUL",
+  "year": 2024,
+  "line": 317,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- To my knowledge, the proposed activation function is novel. It has not been introduced in this form.\n- The paper's general direction is exciting and interesting.\n- The experimental section reports improved performance on smaller subsets of the training data.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper proposes a complex valued scattering representation and a new complex activation function the H-CReLU. The proposed architecture is evaluated in the CIFAR 10, CIFAR 100 and an MRI patch classification dataset. The experimental section reports improved performance on smaller subsets of the training data.",
+  "human_questions": "- The introduction claims current complex representations are limited to modelling the channel dimension. Why would a possibly three-dimensional complex convolutional network model, i.e. as introduced by Trabelsi et al., only model only the channel dimension? The wavelet transform is based on the convolution operation. If a fixed wavelet filter can model multichannel interactions, why can't the learnable kernels from Trabelsi et al.? \n\n- Have other existing complex activation functions, like the Hirose-activation [5], been considered?\n\n- The first sentence of the abstract promises manifold geometry and group theory. Is there some in the paper?\n\n[5] Complex-valued neural networks, A Hirose, Advances and Applications, 2013 Wiley Online Library",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "1 poor",
+    "contribution": "2 fair"
+  }
+}

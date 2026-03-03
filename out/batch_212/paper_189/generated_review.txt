@@ -1,0 +1,33 @@
+**Review:**
+
+This paper proposes Residual Factorized Fourier Neural Operator (Res-F-FNO) for 3D turbulence simulation, extending the Factorized Fourier Neural Operator (F-FNO) with residual connections to recover small-scale dynamics lost through Fourier mode truncation. The authors additionally introduce a skip-corrector mechanism trained to predict turbulence behavior over extended time intervals, and adopt a modified training strategy using random time steps as initial conditions to accelerate convergence. The method is evaluated on flow dynamics around a cube, achieving >30% error reduction over F-FNO and >50% error reduction over 100 time steps when using the skip-corrector.
+
+**Strengths:**
+- Clear practical improvements: the reported error reductions (30% over F-FNO, 50% with skip-corrector) are substantial and address a real problem in neural operator-based PDE solvers—error accumulation over long rollouts.
+- Well-motivated architectural choices: the use of residual connections to recover truncated Fourier modes is intuitive and grounded in the observation that standard F-FNO loses small-scale dynamics.
+- Efficient training strategy: the random time-step initialization approach is a simple but potentially valuable contribution that reduces training iterations needed for convergence.
+
+**Weaknesses:**
+- Limited experimental scope: evaluation is restricted to a single application (flow around a cube). Generalization to other 3D turbulent flows, different geometries, or other PDE systems is not demonstrated, limiting claims about the method's broad applicability.
+- Insufficient methodological detail and ablation studies: the abstract does not clarify how residual connections are specifically integrated into F-FNO, what the skip-corrector architecture is, or how it differs from standard error-correction approaches. No ablation studies are mentioned to isolate the contribution of each component (residual connections vs. skip-corrector vs. training strategy).
+- Missing comparisons and baselines: no comparison with other error-correction or long-rollout methods (e.g., iterative refinement, ensemble approaches, or other recent neural operator variants). Comparison is limited to F-FNO alone.
+- Lack of theoretical or empirical justification: why residual connections specifically recover small-scale dynamics is not rigorously justified. The skip-corrector's design and training procedure are not explained, making reproducibility difficult.
+
+**Questions:**
+- How does Res-F-FNO perform on other 3D turbulent flow problems beyond the cube geometry? 
+- What is the computational overhead of the skip-corrector, and how does it scale with time interval length?
+- Can you provide ablation studies isolating the contributions of residual connections, skip-corrector, and the modified training strategy?
+- How does the skip-corrector compare to simpler error-correction baselines (e.g., retraining on predicted states, or ensemble averaging)?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses a relevant problem (error accumulation in neural operator rollouts) and proposes intuitive solutions with promising empirical results. However, the evaluation is too narrow (single application), methodological details are insufficient for reproducibility, and the lack of ablation studies and broader comparisons weakens the contribution. For a venue like ICLR, the work would benefit from: (1) evaluation on multiple 3D turbulent flow problems, (2) detailed ablation studies, (3) comparison with other error-correction methods, and (4) clearer exposition of the skip-corrector design. The paper reads more as an application-specific engineering contribution than a general methodological advance.
+
+**Confidence:** 3 (moderate)
+
+**Soundness:** 2 (fair)
+
+**Presentation:** 2 (fair)
+
+**Contribution:** 2 (fair)

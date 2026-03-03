@@ -1,0 +1,31 @@
+**Review:**
+
+This paper investigates the impact of three factors on sim2real transformation effectiveness: (i) the real reference data used to calculate domain gap, (ii) selection of synthetic data to avoid transformation quality degradation, and (iii) the synthetic data pool from which selection occurs. The authors introduce a distribution gap measurement method based on normalized Mahalanobis distances and claim to uncover important findings about maximizing synthetic data utility for both improved learning performance and domain generalization. However, the abstract provides insufficient detail about the actual methodology, experimental setup, datasets, baselines, or quantitative results to assess the paper's contributions rigorously.
+
+**Strengths:**
+- The paper addresses a practically important problem: understanding how to effectively leverage synthetic data in training while managing domain gap.
+- The motivation is clear—synthetic data offers scalability but requires careful integration to realize performance gains.
+- Proposing a formal metric (normalized Mahalanobis distance-based distribution gap) for measuring dataset divergence is a reasonable contribution toward quantifying domain shift.
+
+**Weaknesses:**
+- The abstract is vague about the actual technical contributions and methodology. What specific algorithms or strategies are proposed for selecting synthetic data or real reference data? How does the proposed distribution gap metric differ from existing domain divergence measures (e.g., MMD, Wasserstein distance, CORAL)?
+- No experimental results, datasets, or baselines are mentioned. Without concrete empirical validation, it is impossible to assess whether the claimed "important findings" are novel, significant, or well-supported.
+- The framing suggests this is primarily an empirical study of existing sim2real techniques rather than a methodological advance. The abstract does not clarify what new methods or insights are being introduced beyond investigating known factors.
+- The claim that findings "have never been investigated or have been used previously without accurate understanding" is strong but entirely unsupported in the abstract.
+
+**Questions:**
+- What are the specific "important findings" discovered? Can you provide concrete examples or quantitative results?
+- How does your Mahalanobis distance-based metric compare empirically to standard domain divergence measures on standard benchmarks?
+- Which sim2real transformation methods are evaluated, and on which datasets (e.g., sim2real benchmarks like CLEVR, GTA→Cityscapes)?
+- What is the novelty relative to prior work on synthetic data selection, domain adaptation, and sim2real transfer?
+
+**Overall score:**
+3: Reject, not good enough. The abstract lacks sufficient technical detail, experimental results, and clarity about novel contributions to permit a fair assessment. While the problem is relevant, the paper reads as a position statement rather than a complete research contribution. Substantial additional information about methodology, baselines, and empirical findings is needed.
+
+**Confidence:** 2 (Low—the abstract is too sparse to evaluate the work fairly)
+
+**Soundness:** 2 (Poor—no methodology or results are presented)
+
+**Presentation:** 2 (Poor—the abstract is vague and does not convey the technical approach or findings)
+
+**Contribution:** 2 (Poor—the novelty and specific contributions are unclear)

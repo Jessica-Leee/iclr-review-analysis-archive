@@ -1,0 +1,18 @@
+{
+  "paper_id": "y2D8aW4son",
+  "review_id": "Uyh0dYh6Pc",
+  "year": 2024,
+  "line": 821,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_review_text": "This work proposes a Student-like Pattern Memory Network (SPM-Net) for multivariate time series forecasting. The network introduces two memory modules to help describe channel dependencies in MTS. Following previous transformer works, experiments are performed on ETT, weather, electricity, exchange, and illness datasets.",
+  "human_strengths": "- The use of episodic pattern memory from lifelong learning is interesting.\n- The paper includes ablation studies on each component of SPM-Net.",
+  "human_weaknesses": "",
+  "human_questions": "See Weaknesses.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "5: You are absolutely certain about your assessment. You are very familiar with the related work and checked the math/other details carefully.",
+    "soundness": "2 fair",
+    "presentation": "1 poor",
+    "contribution": "2 fair"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "paper_id": "yiyDi50xx6",
+  "review_id": "BUoC8Q686E",
+  "year": 2024,
+  "line": 522,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1.\tThis paper is generally clearly written.\n2.\tThe proposed lazy aggregate-on and stale updates are simple and easy to implement.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper studies vertical federated learning with graph data, where clients train a model based on partial features of the same set of samples they possess. The authors propose a model-splitting method and a communication-efficient algorithm, GLASU, which adopts lazy aggregation and stale updates to reduce communication overhead while ensuring convergence guarantees.",
+  "human_questions": "1.\tCould the authors explain in Table 2 why K=2 can achieve better accuracy than K=4?\n2.\tIn the experiment settings, all the clients uniformly sample 80% of the edges from the whole graph, ensuring that each client has almost all the information of the graph. Would the proposed method still work under an unbalanced situation, such as when the number of edges follows a non-iid distribution?\n3.\tThe test accuracy curve for GAT exhibits significant fluctuations. Does that imply that GLASU is sensitive to the GNN backbone or the neighborhood aggregation method?",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

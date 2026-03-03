@@ -1,0 +1,18 @@
+{
+  "paper_id": "ztpy1gsUpT",
+  "review_id": "9sLDVBo2SI",
+  "year": 2024,
+  "line": 44,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. This paper focuses on a very important research topic in the field of medicine: how to effectively extract more useful information from incomplete text under the conditions of privacy protection. The author has made full use of the domain knowledge in LLM to effectively fine-tune the SLM, which ensures that the lightweight models can achieve high accuracy.\n\n2. This paper presents rich and comprehensive experiments. Beyond basic decision-making tasks, it also explores solutions for few-shot experiments and out-of-distribution (OOD) model generalization using the methods discussed in this paper.\n\n3. This paper fully utilizes the rich domain knowledge in LLMs to expand the knowledge base of medical reports, achieving excellent diagnostic accuracy even while ensuring privacy protection.",
+  "human_weaknesses": "",
+  "human_review_text": "In situations where text data is subject to privacy protection constraints, this paper designs a small-scale language model to perform diagnoses of diseases. Utilizing the rich prior medical knowledge in LLM, the approach involves generating a medical knowledge-intensive context using privacy-protected text. This generated context, along with key terms extracted from the text and questions, is then input into the SLM, which is fine-tuned during training. Experiments across multiple datasets demonstrate that this fine-tuning process effectively enhances the accuracy of the diagnostic model.",
+  "human_questions": "1. The experimental datasets in this paper are all question-and-answer test datasets, and whether the methods of this paper are applicable to medical report datasets requires additional experimentation. This is because in medical reports, how to generate high-quality questions using other LLM interfaces is a question worth studying.\n\n2. Large language models provide additional domain knowledge, but in the context of specific medical tasks, will the direct transfer of knowledge from LLMs to SLMs lead to incorrect information leakage into SLMs? How can we ensure that LLMs only enhance information relevant to the current medical issue without introducing additional errors or irrelevant information? This is a very important issue in the medical field, as it directly relates to patient diagnosis.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "3 good"
+  }
+}

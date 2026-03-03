@@ -1,0 +1,52 @@
+**Review:**
+
+This paper introduces Graphex Mean Field Games (GXMFGs), extending the MFG and Graphon MFG frameworks to handle sparse graph topologies by leveraging the graph-theoretic concept of graphexes. The authors argue that existing GMFG approaches are limited to dense graphs and thus fail to capture realistic sparse networks (e.g., power-law graphs). They propose a hybrid graphex learning algorithm that exploits the structure of sparse graphs—specifically the distinction between a highly connected core and sparse periphery—and provide theoretical analysis alongside empirical validation on synthetic and real-world networks.
+
+**Strengths:**
+- **Well-motivated problem:** The observation that graphons capture only dense graphs while most real networks are sparse is valid and important. Extending MFGs to sparse settings addresses a genuine gap between theory and practice.
+- **Novel theoretical framework:** Introducing graphexes as the appropriate limiting objects for sparse graph sequences is a principled contribution. The connection to desirable properties (small-world, power-law degree distributions) is well-articulated.
+- **Tailored algorithmic approach:** The hybrid learning algorithm that leverages core-periphery structure is intuitive and appears designed specifically for the GXMFG setting, rather than applying off-the-shelf methods.
+- **Comprehensive scope:** The paper combines theoretical analysis, algorithm design, and empirical validation on both synthetic and real networks.
+
+**Weaknesses:**
+- **Limited experimental detail and comparison:** The abstract mentions "comparison shows that our GXMFG learning algorithm successfully extends MFGs" but provides no specifics on baselines, datasets, metrics, or quantitative results. Without concrete numbers, it is impossible to assess whether improvements are significant or marginal.
+- **Unclear algorithmic novelty:** While the hybrid approach is motivated by the problem structure, the abstract does not explain what the algorithm actually does or how it differs technically from existing MFG/GMFG learning methods. The learning procedure itself remains opaque.
+- **Theoretical guarantees underspecified:** The abstract mentions "theoretical analysis" but does not state what guarantees are proved (convergence rate, sample complexity, approximation error, etc.), making it hard to assess the theoretical contribution's strength.
+- **Presentation and accessibility:** The paper relies heavily on graph-theoretic concepts (graphexes, graphons) without sufficient intuition in the abstract. The connection between sparse graph structure and the proposed algorithm design is not clearly explained.
+
+**Questions:**
+- What are the explicit convergence rates or sample complexity bounds provided by the theoretical analysis?
+- How does the computational complexity of the hybrid algorithm scale with network size and sparsity compared to existing MARL and MFG baselines?
+- What are the quantitative improvements (e.g., in terms of equilibrium approximation error, wall-clock time, or scalability) over GMFG and MARL methods on the tested networks?
+- Can the authors provide intuition for why the core-periphery decomposition is the right way to exploit sparsity, rather than other structural properties?
+
+---
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper addresses a relevant problem (sparse graphs in MFGs) with a principled approach (graphexes) and proposes a tailored algorithm. However, the abstract lacks sufficient experimental detail, algorithmic clarity, and theoretical specificity to fully justify acceptance. The contribution is solid in motivation and scope, but the execution and validation need stronger presentation and more concrete results to be compelling.
+
+**Confidence:**
+3 (Low–Medium)
+
+The assessment is limited by the abstract's lack of experimental numbers, algorithmic details, and explicit theoretical guarantees. A full paper review would likely adjust this score significantly in either direction.
+
+**Soundness:**
+Good
+
+The problem formulation and motivation are sound. The use of graphexes as limiting objects for sparse graphs is theoretically principled. However, without seeing the full proofs and experimental methodology, soundness cannot be rated higher.
+
+**Presentation:**
+Fair
+
+The abstract is well-structured and uses the paper's terminology consistently, but it lacks sufficient detail on the algorithm, experiments, and theory to be fully clear. Key results and comparisons are missing.
+
+**Contribution:**
+Good
+
+Extending MFGs to sparse graphs via graphexes is a meaningful contribution. The hybrid algorithm tailored to core-periphery structure is novel. However, the contribution's impact depends on the strength of empirical results and theoretical guarantees, which are not adequately summarized.
+
+**Strengths:**
+- Addresses a genuine gap: sparse graphs are ubiquitous but not handled by existing GMFG theory.
+-

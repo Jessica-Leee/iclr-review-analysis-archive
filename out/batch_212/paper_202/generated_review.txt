@@ -1,0 +1,33 @@
+**Review:**
+
+SPI-GAN proposes a GAN-based denoising method that aims to reduce the computational cost of score-based generative models (SGMs) while maintaining comparable sampling quality and diversity. The core contribution is the introduction of straight-path interpolation, a simpler denoising trajectory that replaces the complex forward/reverse processes of SGMs. The method combines a GAN architecture with a continuous mapping neural network to imitate this denoising path, with the stated goal of achieving faster sampling than SGMs on standard benchmarks (CIFAR-10, CelebA-HQ-256, LSUN-Church-256).
+
+**Strengths:**
+- The motivation is clear and timely: reducing the sampling complexity of diffusion models while maintaining quality is an important practical problem.
+- The paper targets a well-defined comparison (SGMs vs. GANs) on established benchmarks, suggesting empirical validation across multiple datasets.
+- The proposed straight-path interpolation concept offers a potentially simpler alternative to the standard diffusion process.
+
+**Weaknesses:**
+- The abstract lacks crucial technical detail about what "straight-path interpolation" actually means mathematically. Without a formal definition, it is impossible to assess the novelty or soundness of the core contribution.
+- No quantitative results, comparisons, or ablation studies are provided in the abstract. Claims that SPI-GAN is "one of the best-balanced models" are unsupported by any metrics (FID, IS, sampling time, etc.).
+- The relationship between the GAN component and the denoising path is unclear. How does the GAN loss interact with the straight-path objective? Why is a GAN necessary rather than, say, a direct regression approach?
+- The abstract does not discuss related work on GAN-based diffusion hybrids or other recent attempts to accelerate diffusion sampling (e.g., consistency models, progressive distillation), making it difficult to position the novelty.
+
+**Questions:**
+- Can you provide a formal mathematical definition of straight-path interpolation and explain how it differs from standard linear or geodesic interpolations in diffusion models?
+- What are the quantitative FID, IS, and wall-clock sampling time comparisons against SGMs and recent fast-sampling baselines?
+- How does the GAN discriminator contribute to learning the denoising path, and what is the training stability like compared to standard diffusion or GAN training?
+- Have you performed ablations to isolate the contribution of straight-path interpolation versus the GAN architecture?
+
+**Overall score:**
+4: below the acceptance threshold
+
+The paper addresses a relevant problem, but the abstract provides insufficient technical detail and no empirical evidence to support its claims. The core novelty (straight-path interpolation) is not defined clearly enough to evaluate, and the lack of quantitative results makes it impossible to assess whether the method actually achieves its stated goals. A full paper with formal definitions, comprehensive experiments, and detailed comparisons is needed.
+
+**Confidence:** 3
+
+**Soundness:** 2 (poor)
+
+**Presentation:** 2 (poor)
+
+**Contribution:** 2 (poor)

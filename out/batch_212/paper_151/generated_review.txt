@@ -1,0 +1,46 @@
+**Review:**
+
+This paper proposes a "safe" collaborative filtering method that prioritizes tail performance—recommendation quality for less-satisfied users—by minimizing conditional value at risk (CVaR) rather than average loss. The authors extend implicit alternating least squares (iALS), the most scalable baseline for web-scale recommender systems, to incorporate CVaR optimization while maintaining computational efficiency. The motivation is well-articulated: tail performance matters for fairness, class imbalance, and user retention in personalized recommendation.
+
+**Strengths:**
+- Clear problem motivation: focusing on tail performance (low-satisfaction users) is practically relevant for recommender systems and underexplored compared to average-case optimization.
+- Principled approach: using CVaR as the optimization objective is a theoretically grounded choice for risk-sensitive learning.
+- Practical algorithmic contribution: extending iALS to handle CVaR optimization while preserving scalability is non-trivial and valuable for practitioners.
+- Empirical validation on real-world datasets demonstrates both improved tail performance and competitive computational efficiency.
+
+**Weaknesses:**
+- The abstract provides insufficient detail on the algorithmic innovation. How exactly does the method extend iALS to optimize CVaR? What are the key technical modifications, and do they introduce approximations or guarantees?
+- Limited scope of evaluation description: the abstract mentions "real-world datasets" but does not specify which datasets, baselines, or metrics are used. Comparison to other tail-aware or risk-sensitive recommendation methods is not mentioned.
+- No discussion of convergence properties, approximation quality, or theoretical analysis of the CVaR-iALS extension. Does the method converge to a local optimum? What is the approximation error?
+- The claim of "excellent tail performance" and "competitive computational efficiency" is not substantiated in the abstract; specific numerical results or improvements are absent.
+
+**Questions:**
+1. How does the CVaR optimization modify the alternating least squares updates? Are there closed-form solutions, or does the method require inner optimization loops?
+2. Which datasets and baselines are used in the empirical evaluation? How does performance compare to other fairness-aware or risk-sensitive recommendation methods?
+3. Does the method provide any theoretical guarantees on convergence or approximation quality relative to full CVaR minimization?
+4. How sensitive is the method to the choice of CVaR level (α)? Is there guidance on setting this hyperparameter?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper addresses a relevant problem and proposes a practical solution, but the abstract lacks sufficient technical depth and empirical detail to assess the contribution's novelty and impact. The core algorithmic innovation—how CVaR is incorporated into iALS—is not clearly described, and the empirical validation is only vaguely referenced. For a venue like ICLR, a full paper would need to provide rigorous algorithmic exposition, comprehensive experiments with clear baselines and metrics, and theoretical or empirical justification of the approach's advantages. The abstract alone does not provide enough evidence of a strong contribution.
+
+**Confidence:**
+2 (Low)
+
+The assessment is based solely on an abstract with limited technical and experimental detail. A full paper review would likely yield a different verdict.
+
+**Soundness:**
+2 (Fair)
+
+The problem is well-motivated and CVaR is a principled objective, but without details on the algorithm, approximations, or convergence properties, soundness cannot be fully evaluated.
+
+**Presentation:**
+2 (Fair)
+
+The abstract is clearly written and well-motivated, but it lacks the technical specificity and empirical detail needed to assess the contribution. Key algorithmic and experimental details are missing.
+
+**Contribution:**
+2 (Fair)
+
+Extending iALS to CVaR optimization is potentially useful, but the novelty and significance are unclear without algorithmic details. The contribution may be incremental (a straightforward adaptation of iALS) or substantial (a novel algorithmic insight)—the abstract does not clarify which.

@@ -1,0 +1,18 @@
+{
+  "paper_id": "y1AJUwqsla",
+  "review_id": "vSF26t0oFV",
+  "year": 2024,
+  "line": 829,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_review_text": "In this paper, the authors propose a Context-aware State Representation Learning (CaStRL) framework where state representation is encouraged to incorporate context information for better downstream control tasks, together with a tailored attention mechanism for the Video-Swin Transformer for sequence learning. It is shown that the proposed approach with the pretraining + fine-tuning strategy can leverage limited demonstration data to improve imitation learning for the Atari games in a cross-task transfer setup.",
+  "human_strengths": "+ The proposed approach is simple yet effective on the shown cross-task transfer setup on 2D game environments\n+ The authors have done extensive ablation studies on the pertaining strategies of their proposed method",
+  "human_weaknesses": "",
+  "human_questions": "- Aside from the points in \"weaknesses\", please clarify if the DT as the baseline is trained with the same budget as in the fine-tuning stage only of the proposed method. While I understand that it is hard to compare the baseline (w\\o pertaining) fairly with the proposed method (pretraining + fine-tuning), it might be necessary to show the results of the baseline with larger fine-tuning computation budgets (e.g., train longer) to see how large the benefits are from pretraining with the proposed method.\n- Missing some reference to related work. For instance, [1] also adopts the idea of context-aware representation learning for Transformer-based sequence learning in control tasks (using additional prompt tokens with a slightly different setup, though).\n\n[1] Chain-of-thought Predictive Control",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

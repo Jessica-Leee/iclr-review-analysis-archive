@@ -1,0 +1,18 @@
+{
+  "paper_id": "yzRXdhk2he",
+  "review_id": "Cqr3IsMoZF",
+  "year": 2024,
+  "line": 408,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. The target task in this method is interesting to me. How be become a vision generalist is a hotspot in nowadays community. Matcher follows SegGPT to transfer off-the-shelf VFMs into a general segmentation model.\n\n2. This work constructs several new benchmarks for one-shot or few-shot in-context segmentation. They are challenging and meaningful to future works.\n\n3. The experiments demonstrate impressive generalization performance across various segmentation tasks.",
+  "human_weaknesses": "",
+  "human_review_text": "A perception paradigm is introduced name Matcher. It can segment anything by using in-context learning and two pretrained large vision models, which are DINO and SAM. There are three effective components within Macther: Correspondence Matrix Extraction (CME), Prompts Generation (PG), and Controllable Masks Generation (CMG). The whole pipeline is without training and showcases state-of-the-art  performance among other generalist models.",
+  "human_questions": "Can Matcher segment a background concept just like SegGPT, such as blue sky or pavement? How does Matcher perform on more complex MOSE dataset for VOS?",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

@@ -1,0 +1,42 @@
+**Review:**
+
+This paper introduces ARMOR_D, a novel approach to adversarial robustness based on optimal-transport-regularized divergences. The core idea is to construct a new class of divergences via infimal convolution between an information divergence and an optimal-transport cost, then use these divergences within a distributionally robust optimization (DRO) framework to maximize expected loss over a neighborhood of distributions. The method allows adversarial samples to be both transported (via OT) and re-weighted (via information divergence), offering a principled way to generate adversarial perturbations. The authors demonstrate strong empirical results on MNIST (98.29% robustified accuracy against FGSM, 98.18% against PGD^40) and malware detection tasks, claiming substantial improvements over prior adversarial training methods.
+
+**Strengths:**
+- Novel theoretical framework combining optimal transport and information divergences through infimal convolution, providing a principled approach to adversarial robustness that is conceptually distinct from standard adversarial training.
+- Impressive empirical results across two different domains (continuous image data and discrete malware detection), with reported error reductions of 19.7–37.2% on MNIST and 37% improvement on malware detection compared to prior methods.
+- The method's flexibility to handle both continuous and discrete data domains suggests broad applicability.
+- Clear motivation for using DRO with OT-regularized divergences as a tool for constructing adversarial samples.
+
+**Weaknesses:**
+- The abstract lacks sufficient technical detail about the infimal convolution construction and how it is optimized in practice. The connection between the theoretical framework and the actual training algorithm is unclear.
+- Limited experimental scope: only MNIST is shown for image recognition, which is a relatively simple benchmark. Evaluation on CIFAR-10, ImageNet, or other standard robustness benchmarks would strengthen claims of superiority.
+- No discussion of computational cost or scalability. OT computation can be expensive; the paper does not address whether ARMOR_D is practical for large-scale problems.
+- Missing ablation studies and comparisons with recent state-of-the-art adversarial training methods (e.g., TRADES, MART, AWP). The claim of outperforming "existing methods" needs more rigorous justification.
+- The paper does not discuss theoretical guarantees or convergence properties of the proposed method, limiting understanding of when and why it should work.
+
+**Questions:**
+1. How is the infimal convolution optimized during training? Is there a closed-form solution or does it require iterative computation?
+2. What is the computational overhead of ARMOR_D compared to standard adversarial training methods?
+3. Can you provide results on CIFAR-10 and other standard benchmarks to substantiate the claim of superiority over existing methods?
+4. How sensitive is the method to hyperparameter choices (e.g., the balance between OT cost and information divergence)?
+5. Does the method provide any theoretical robustness guarantees or certified defense properties?
+
+**Overall score:**
+6: marginally above the acceptance threshold
+
+The paper presents a novel and theoretically motivated approach to adversarial robustness with promising empirical results on the tested domains. However, the limited experimental scope (MNIST only for images), lack of computational analysis, and insufficient comparison with recent state-of-the-art methods prevent a stronger recommendation. The core contribution is solid, but the validation needs to be more comprehensive to support the strong claims made in the abstract.
+
+**Confidence:** 3 (moderate)
+
+**Soundness:** Good
+
+The theoretical framework appears sound, but without full technical details and ablation studies, it is difficult to assess the robustness of the approach. The empirical results are strong but limited in scope.
+
+**Presentation:** Fair
+
+The abstract is well-written and motivating, but the paper likely lacks sufficient algorithmic and implementation detail for reproducibility. The connection between theory and practice needs clarification.
+
+**Contribution:** Good
+
+The infimal convolution of OT and information divergences is a novel contribution, and applying it to adversarial robustness via DRO is a principled approach. However, the contribution's impact is limited by narrow experimental validation.

@@ -1,0 +1,36 @@
+**Review:**
+
+This paper proposes Discrete Walk-Jump Sampling, a method for training and sampling from discrete generative models applied to protein design. The core contribution is a three-step approach: (1) learning a smoothed energy function via contrastive divergence, (2) sampling from the smoothed data manifold using Langevin MCMC, and (3) projecting back to the discrete manifold via one-step denoising. The method combines benefits of energy-based and score-based models while requiring only a single noise level, avoiding the complexity of multi-scale noise schedules. The authors validate their approach on antibody protein generation, introduce a distributional conformity score as a benchmark, and report strong experimental results: 97–100% of generated samples are successfully expressed/purified, and 70% of functional designs show equal or improved binding affinity in wet-lab experiments.
+
+**Strengths:**
+- **Strong empirical validation**: The wet-lab results are compelling—successful expression/purification rates and binding affinity improvements on first attempt demonstrate practical utility beyond in silico metrics.
+- **Novel methodological contribution**: Discrete Walk-Jump Sampling elegantly bridges energy-based and score-based models with a unified framework requiring only one noise level, simplifying both training and sampling compared to prior approaches.
+- **Rigorous benchmarking**: Introduction of the distributional conformity score provides a principled metric for evaluating protein generative models, addressing a gap in the field.
+- **Technical novelty in MCMC**: The claim of "first demonstration of long-run fast-mixing MCMC chains" visiting diverse antibody classes in a single chain is noteworthy and suggests the method has good mixing properties.
+
+**Weaknesses:**
+- **Limited methodological clarity**: The abstract does not clearly explain how the one-step denoising projection works or why it preserves the quality of samples from the smoothed manifold. The connection between contrastive divergence training and the final sampling procedure needs better exposition.
+- **Incomplete experimental details**: The abstract lacks crucial information about baselines, ablations, and statistical significance. How does this compare quantitatively to existing discrete generative models or protein design methods? Are the wet-lab results statistically significant?
+- **Scope and generalization unclear**: Evaluation is restricted to antibody proteins. It is unclear whether the method generalizes to other discrete molecular structures or protein types, limiting the claimed contribution's breadth.
+- **Missing theoretical justification**: The paper does not provide theoretical analysis of why this particular combination of smoothing, MCMC, and denoising should work well, or under what conditions the approach is expected to succeed.
+
+**Questions:**
+- How does the one-step denoising projection maintain sample quality compared to iterative refinement? What is the theoretical or empirical justification for this choice?
+- What are the quantitative comparisons to existing discrete generative models (e.g., autoregressive, diffusion-based, or other energy-based approaches) on standard benchmarks?
+- How sensitive is the method to the choice of noise level and smoothing schedule? The claim of "requiring only a single noise level" needs clarification.
+- Can the method be applied to other discrete molecular design problems, or is it specifically tailored to antibodies?
+
+**Overall score:**
+7: Accept, good paper. The paper presents a novel and practical method with strong wet-lab validation on an important application. The Discrete Walk-Jump Sampling formalism is technically sound and the empirical results are compelling. However, the presentation could be clearer, and the scope is somewhat narrow (antibodies only). The work makes a solid contribution to both generative modeling and protein design, warranting acceptance despite these limitations.
+
+**Confidence:**
+4 (High confidence in the assessment based on the abstract, though full evaluation would require the complete paper and supplementary materials.)
+
+**Soundness:**
+Good. The method combines established techniques (contrastive divergence, Langevin MCMC, denoising) in a novel way. The wet-lab validation is a strong indicator of soundness, though theoretical justification is lacking.
+
+**Presentation:**
+Fair. The abstract is dense and some key technical details (e.g., the denoising step, noise schedule) are underspecified. The paper would benefit from clearer exposition of the method pipeline.
+
+**Contribution:**
+Good. The methodological contribution (Discrete Walk-Jump Sampling) is novel, the distributional conformity score is a useful benchmark, and the wet-lab results demonstrate practical impact. However, the scope is somewhat limited to antibodies.

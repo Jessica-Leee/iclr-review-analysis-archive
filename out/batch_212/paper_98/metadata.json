@@ -1,0 +1,18 @@
+{
+  "paper_id": "z2avrOUajn",
+  "review_id": "YaxEZaN8Bx",
+  "year": 2024,
+  "line": 382,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1.\tA novel subgraph latent diffusion model is proposed in this paper. \n2.\tA unified framework is proposed for both unconditional and conditional generation.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper proposes a subgraph latent diffusion model for 3D molecular generation. Its main contributions are: 1. overcoming the dependency between nodes through subgraphs; and 2. proposing a unified model for both unconditional and conditional generation.",
+  "human_questions": "Proposed in Weaknesses",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "2 fair",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

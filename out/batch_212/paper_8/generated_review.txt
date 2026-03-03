@@ -1,0 +1,37 @@
+**Review:**
+
+This paper introduces the concept of out-of-variable (OOV) generalization, which addresses an agent's ability to generalize to environments containing variables that were never jointly observed during training. The authors motivate this setting by drawing an analogy to how humans learn by observing subsets of variables across different contexts. The core technical contribution is a theoretical result showing that the residual distribution in one environment reveals the partial derivative of the true generating function with respect to unobserved causal parents, which is then leveraged to construct a method for OOV generalization in prediction tasks with overlapping yet distinct sets of causal predictors.
+
+**Strengths:**
+- The problem formulation is well-motivated and clearly articulated. The distinction between out-of-distribution and out-of-variable generalization is conceptually interesting and reflects a realistic learning scenario.
+- The theoretical insight linking residual distributions to partial derivatives of the generating function is novel and provides a principled foundation for the proposed approach.
+- The paper addresses a practical and underexplored setting where environments share causal structure but differ in which variables are jointly observed.
+
+**Weaknesses:**
+- The abstract provides limited detail on the actual method and experimental validation. It is unclear how the theoretical insight is operationalized into a concrete algorithm, what assumptions are required (e.g., linearity, causal sufficiency, noise structure), and how the method performs empirically.
+- No experimental results, datasets, or baselines are mentioned. Without empirical validation on synthetic or real data, it is difficult to assess whether the method achieves "non-trivial" OOV generalization performance in practice or how it compares to simpler alternatives.
+- The scope appears narrow: the abstract mentions "overlapping, yet distinct, sets of causal predictors" but does not clarify the class of causal models, identifiability conditions, or sample complexity requirements. The generality and applicability of the approach remain unclear.
+- The presentation is somewhat abstract. Key concepts such as how "marginal information" is re-used, what "partial derivative of the true generating function" means in a discrete or nonlinear setting, and how the method handles finite samples are not addressed in the abstract.
+
+**Questions:**
+- What are the precise assumptions on the causal model (e.g., acyclicity, linearity, noise distribution)?
+- How does the method perform on standard benchmarks or synthetic causal datasets compared to baselines?
+- Can the approach handle nonlinear relationships and discrete variables?
+- What is the sample complexity of the method, and how does it scale with the number of variables and environments?
+
+**Overall score:**
+5: marginally below the acceptance threshold
+
+The paper tackles an interesting and underexplored problem with a novel theoretical insight. However, the abstract lacks sufficient detail on the method, assumptions, and empirical validation. For a venue like ICLR, a complete submission would need to clearly present the algorithm, state assumptions explicitly, and provide comprehensive experiments demonstrating the practical utility of the approach. The current abstract reads more like an early-stage idea than a fully developed contribution ready for publication.
+
+**Confidence:**
+3 (Low—assessment is based on abstract alone; full paper may address these concerns)
+
+**Soundness:**
+2 (Fair—the theoretical claim is interesting but not fully justified in the abstract; assumptions and conditions are unclear)
+
+**Presentation:**
+2 (Fair—the abstract is conceptually clear but lacks technical detail and experimental grounding)
+
+**Contribution:**
+3 (Fair—the problem formulation is novel, but the methodological and empirical contributions are not sufficiently detailed or validated)

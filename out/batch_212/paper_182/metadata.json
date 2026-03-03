@@ -1,0 +1,18 @@
+{
+  "paper_id": "yKC6Jd0CsP",
+  "review_id": "H6F40NrclZ",
+  "year": 2024,
+  "line": 706,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "* The writing is clear and easy to follow.\n* The injection of noise makes sense since there exists the one-to-many mapping for the generator.\n* Many visualizations are provided to make a better understanding.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper introduces ELECTRA from NLP to the Vision domain.  To enhance the diversity of generated patches, the authors inject random noise into the generator. To train the discriminator, the authors employ both patch-level and image-level discrimination. Different from previous work like MAE, the proposed method uses the discriminator rather than the generator as the pre-training outcome. Experimental results verify the proposed method achieves comparable performance with MAE, and SimMIM.",
+  "human_questions": "* What are the advantages of introducing ELECTRA to the vision domain? Is there any unique superiority compared to the existing pre-training scheme like SimMIM?",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

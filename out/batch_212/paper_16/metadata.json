@@ -1,0 +1,18 @@
+{
+  "paper_id": "zqXTZ3B7fU",
+  "review_id": "gFAqsTjTIK",
+  "year": 2024,
+  "line": 62,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "- The use of topological analysis (TA) to expand SMOTE is interesting and original. It's probably one of the first works using TA for imbalance problems\n- The proposed extension can be also applied to other methods than original SMOTE e.g.  ADASYN, Safe-level SMOTE and Border-line SMOTE",
+  "human_weaknesses": "",
+  "human_review_text": "The paper presents a new extension of SMOTE algorithm for binary imbalanced data that instead of generating new instances as linear interpolations, samples from barycentric coordinated from the constructed simplicial complex. The approach is experimentally tested on 23 real datasets and 4 artificial ones. The results show that variants of the proposed method obtains the lowest average ranks on MCC and F1 measures.",
+  "human_questions": "- How the datasets were selected? The imbalanced-learn library contains 27 datasets but only 23 were selected for the experiments.\n- What was the running time of the proposed method and how it compares with other methods under study?\n- The authors use Mixup in their experiment which interpolates not only the feature values x but also target vectors y. Such interpolated target vectors are easy to use in NN but not necessarily in GBT or kNN used in the experiments. How it was applied? If no target vector interpolation was used, how the target value was established?",
+  "human_ratings": {
+    "rating": "3: reject, not good enough",
+    "confidence": "4: You are confident in your assessment, but not absolutely certain. It is unlikely, but not impossible, that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work.",
+    "soundness": "3 good",
+    "presentation": "2 fair",
+    "contribution": "2 fair"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "paper_id": "y6TIwYucUC",
+  "review_id": "szMs8oqXQr",
+  "year": 2024,
+  "line": 785,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. Combining diffusion models with GANs for enhanced diversity and a fast generation process presents an intriguing research topic.\n\n2. Employing Neural Ordinary Differential Equations (NODEs) to map embeddings, while conditioning the latent code input to the generator  on time, is an interesting approach.\n\n3. The experimental section demonstrates performance improvements over the baselines.\n\n4. The presentation is clear and easy to follow.",
+  "human_weaknesses": "",
+  "human_review_text": "This paper integrates the diffusion process into Generative Adversarial Networks (GANs) training, striving to achieve the fast image generation capabilities of GANs with the enhanced generation diversity proffered by diffusion models. The authors introduce the diffusion forward process into both the real images and the latent code of the generator, subsequently employing a neural ordinary differential equation (ODE) to facilitate the mapping from $h(0)$ to $h(u)$ for generator's input. With the diffused latent code, the generator is trained to produce images conditioned on time $u$, while the discriminator receives diffused real images. Empirical investigations conducted across three benchmark datasets\u2014CIFAR-10, CelebA-HQ, and LSUN-Church\u2014underscore the approach\u2019s efficacy, showcasing noticeable improvements. Furthermore, the authors demonstrate the generator\u2019s ability in generating images across varied $u$ values.",
+  "human_questions": "1. Is $u$ applied directly to the image, or is it integrated into an intermediate layer within the discriminator\u2019s architecture?\n\n2. Given that $h(u)$ can be derived from $i(u)$ in the current design, I'm curious to know if the generator has the ability to create images that are very similar to the real images, $i(u)$.",
+  "human_ratings": {
+    "rating": "5: marginally below the acceptance threshold",
+    "confidence": "5: You are absolutely certain about your assessment. You are very familiar with the related work and checked the math/other details carefully.",
+    "soundness": "2 fair",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

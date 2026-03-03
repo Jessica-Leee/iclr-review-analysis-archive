@@ -1,0 +1,18 @@
+{
+  "paper_id": "z80CwkWXmq",
+  "review_id": "nyvGeazc9W",
+  "year": 2024,
+  "line": 341,
+  "source": "data/raw/iclr/iclr_2024.jsonl",
+  "human_strengths": "1. A novel data representation of symbolic music that supports separate and temporally aligned tracks.\n2. The application of the diffusion model in the proposed data representation. Specifically, it gives the ability to achieve \"any-to-any\" generation throughout the infilling.",
+  "human_weaknesses": "",
+  "human_review_text": "The paper introduces GETScore, a novel data representation for modeling multi-track symbolic music. Building on this, the authors then construct a diffusion model tailored for generating symbolic music using the proposed data representation. The research demonstrates that utilizing this novel representation, in conjunction with the diffusion model, facilitates versatile generation capabilities, including the unique \"any-to-any\" part generation.",
+  "human_questions": "Considering the presence of both an embedding and a decoding module, I'm curious as to why the authors opted for diffusion in the data space as opposed to the latent space, a choice more akin to text-to-image models.",
+  "human_ratings": {
+    "rating": "6: marginally above the acceptance threshold",
+    "confidence": "3: You are fairly confident in your assessment. It is possible that you did not understand some parts of the submission or that you are unfamiliar with some pieces of related work. Math/other details were not carefully checked.",
+    "soundness": "2 fair",
+    "presentation": "3 good",
+    "contribution": "2 fair"
+  }
+}

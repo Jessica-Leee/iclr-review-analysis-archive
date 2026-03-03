@@ -1,0 +1,47 @@
+**Review:**
+
+This paper addresses a significant practical limitation of path gradient estimators for normalizing flows: their computational expense and inapplicability to maximum likelihood training at scale. The authors propose a fast path gradient estimator that generalizes across normalizing flow architectures and extends to maximum likelihood training, claiming superior performance on natural sciences applications. The core contribution is making path gradient estimation computationally tractable without sacrificing the variance reduction benefits that motivate their use.
+
+**Strengths:**
+
+1. **Addresses a real bottleneck**: The paper tackles a genuine limitation of prior path gradient work—computational cost and incompatibility with maximum likelihood training—which has hindered adoption. This is a practically motivated problem.
+
+2. **Generality across architectures**: The proposed estimator is claimed to work for "all normalizing flow architectures of practical relevance," suggesting broad applicability rather than a narrow fix.
+
+3. **Dual applicability**: Extending path gradient estimation to both sampling-based (unnormalized target) and maximum likelihood settings increases the method's utility.
+
+4. **Empirical validation on natural sciences**: Testing on domain-specific applications (rather than only synthetic benchmarks) suggests real-world relevance.
+
+**Weaknesses:**
+
+1. **Insufficient methodological detail in abstract**: The abstract does not explain *how* the computational expense is reduced or what the key algorithmic innovation is. Without seeing the full paper, it is unclear whether the speedup comes from approximation, algorithmic restructuring, or other means, and whether variance properties are preserved.
+
+2. **Vague performance claims**: The abstract states "superior performance" but provides no quantitative results, baselines, or metrics. It is unclear how much faster the method is, how variance compares to prior path gradient estimators, and how it compares to standard estimators.
+
+3. **Limited scope of evaluation description**: Only "several natural sciences applications" are mentioned without naming them, dataset sizes, or experimental details. This makes it difficult to assess the breadth and significance of the empirical validation.
+
+4. **Missing related work context**: The abstract does not clarify what prior path gradient work exists, what their specific limitations are, or how the proposed method differs technically. This context is essential for evaluating novelty.
+
+**Questions:**
+
+1. What is the computational complexity of the proposed fast path gradient estimator compared to standard and prior path gradient estimators? Is there a theoretical analysis?
+
+2. How does the variance of the new estimator compare to prior path gradient methods? Is the variance reduction preserved, or is there a trade-off?
+
+3. Can you provide concrete numbers (wall-clock time, gradient variance, final loss) for at least one natural sciences application?
+
+4. For maximum likelihood training, how does the method compare to standard score-matching or other scalable alternatives?
+
+**Overall score:**
+
+6: marginally above the acceptance threshold
+
+The paper addresses a genuine practical problem and claims a unified solution with broad applicability. However, the abstract lacks sufficient technical detail and empirical evidence to fully assess the contribution. The work appears solid in motivation and scope, but the presentation is too sparse to confidently evaluate the magnitude of the advance or the quality of the empirical validation. A full paper with detailed methodology, complexity analysis, and comprehensive experiments would be needed to confirm acceptance.
+
+**Confidence:** 2–3 (Low to moderate; limited by sparse abstract without results or technical exposition)
+
+**Soundness:** Fair (The motivation is sound, but without methodological detail or results, soundness cannot be fully assessed.)
+
+**Presentation:** Fair (The abstract is clear in motivation but lacks technical substance and empirical specifics needed for evaluation.)
+
+**Contribution:** Fair to Good (Addressing computational bottlenecks in path gradient estimation is valuable, but the novelty and magnitude of improvement are unclear from the abstract alone.)
