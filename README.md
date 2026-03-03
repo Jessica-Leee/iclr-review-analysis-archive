@@ -24,7 +24,13 @@ cp .env.example .env
 
 ## Running the pipeline on a single paper
 
-Using raw ICLR data (no need to prepare separate paper/reviewer files):
+Before you run the pipeline, you need the ICLR raw data JSONL files. You can generate them yourself from OpenReview (see **Data: OpenReview ICLR** below), for example:
+
+```bash
+python -m data.ingest.openreview_iclr --years 2024 --out-dir data/raw/iclr
+```
+
+Once you have `data/raw/iclr/iclr_2024.jsonl`, you can run the pipeline on a single paper:
 
 ```bash
 python run.py --from-iclr data/raw/iclr/iclr_2024.jsonl --line 0 --out-dir ./out
