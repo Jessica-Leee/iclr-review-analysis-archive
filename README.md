@@ -22,15 +22,25 @@ cp .env.example .env
 # then edit .env and paste your Claude key after ANTHROPIC_API_KEY=
 ```
 
-## Running the pipeline on a single paper
+## Data: OpenReview ICLR (get the raw data first)
 
-Before you run the pipeline, you need the ICLR raw data JSONL files. You can generate them yourself from OpenReview (see **Data: OpenReview ICLR** below), for example:
+Fetch ICLR submissions + reviews from OpenReview and write JSONL files to `data/raw/iclr/`:
 
 ```bash
 python -m data.ingest.openreview_iclr --years 2024 --out-dir data/raw/iclr
 ```
 
-Once you have `data/raw/iclr/iclr_2024.jsonl`, you can run the pipeline on a single paper:
+This writes `data/raw/iclr/iclr_{year}.jsonl`. When available, each record includes `review_text`, `ratings`, `strengths`, `weaknesses`, and `questions`.
+
+Optional dedupe + normalization (no repeated title/abstract):
+
+```bash
+python -m data.ingest.dedupe_iclr --input-dir data/raw/iclr --normalize
+```
+
+## Running the pipeline on a single paper
+
+Once you have `data/raw/iclr/iclr_2024.jsonl`, run the pipeline on a single (paper, review) row:
 
 ```bash
 python run.py --from-iclr data/raw/iclr/iclr_2024.jsonl --line 0 --out-dir ./out
@@ -76,22 +86,6 @@ python run_batch.py --out-dir out/batch_50 --build-from-existing
 ```
 
 In this repo, `out/batch_212/` contains a run on 212 ICLR 2024 papers and an `evaluation_report.md` that summarizes how close the generated reviews are to the real ones.
-
-## Data: OpenReview ICLR
-
-To fetch ICLR data from OpenReview:
-
-```bash
-python -m data.ingest.openreview_iclr --years 2024 --out-dir data/raw/iclr
-```
-
-This writes `data/raw/iclr/iclr_{year}.jsonl`. When available, each record includes `review_text`, `ratings`, `strengths`, `weaknesses`, and `questions`.
-
-To deduplicate and optionally split into separate paper/review files:
-
-```bash
-python -m data.ingest.dedupe_iclr --input-dir data/raw/iclr --normalize
-```
 
 ## Project layout
 
