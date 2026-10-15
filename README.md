@@ -1,5 +1,7 @@
 # ICLR reviewer pipeline
 
+**Historical repository.** The maintained version is [iclr-reviewer-pipeline-v2](https://github.com/Jessica-Leee/iclr-reviewer-pipeline-v2). This earlier copy is retained for reference and archived to keep ongoing work in one place.
+
 Generate ICLR-style review text with the Claude API and compare its vocabulary with a human review using TF-IDF cosine similarity. The repository includes OpenReview ingestion, prompt templates, structured review parsing, batch selection, and descriptive reports.
 
 For OpenReview inputs, the model receives the **title and abstract**, not the full paper or the human review. The generated output includes review sections and rating text; this repository does not contain a trained rating predictor or a regression analysis.
