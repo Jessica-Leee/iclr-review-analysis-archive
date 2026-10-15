@@ -49,8 +49,8 @@ def generate_review_claude(user_prompt: str, model: str | None = None) -> str:
 
 
 def generate_review(prompt: str, model: str | None = None) -> str:
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        return "[STUB] Set ANTHROPIC_API_KEY in .env"
+    if not os.environ.get("ANTHROPIC_API_KEY", "").strip():
+        raise SystemExit("Set ANTHROPIC_API_KEY in your environment or local .env before generating reviews.")
     return generate_review_claude(prompt, model=model)
 
 
@@ -67,14 +67,17 @@ def _tfidf_cosine_sim(text_a: str, text_b: str, max_features: int = 2000) -> flo
     """Cosine similarity between two texts using TF-IDF (English stop words). Returns 0 if either text is empty."""
     if not (text_a and text_b):
         return 0.0
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.metrics.pairwise import cosine_similarity
+    vec = TfidfVectorizer(max_features=max_features, stop_words="english")
     try:
-        from sklearn.feature_extraction.text import TfidfVectorizer
-        from sklearn.metrics.pairwise import cosine_similarity
-        vec = TfidfVectorizer(max_features=max_features, stop_words="english")
         mat = vec.fit_transform([text_a, text_b])
-        return float(cosine_similarity(mat[0:1], mat[1:2])[0, 0])
-    except Exception:
-        return -1.0
+    except ValueError as exc:
+        # Texts containing only stop words/punctuation have no comparable terms.
+        if "empty vocabulary" in str(exc):
+            return 0.0
+        raise
+    return float(cosine_similarity(mat[0:1], mat[1:2])[0, 0])
 
 
 def evaluate_review_metrics(
@@ -92,8 +95,6 @@ def evaluate_review_metrics(
     h_norm = _normalize_text(human)
     overall = _tfidf_cosine_sim(g_norm, h_norm)
     out = {"topical_overlap": round(overall, 4)}
-    if overall < 0:
-        out["topical_overlap"] = 0.0
 
     gen_strengths = (generated_structured or {}).get("strengths", "") or ""
     gen_weaknesses = (generated_structured or {}).get("weaknesses", "") or ""
@@ -145,10 +146,15 @@ def load_iclr_row(jsonl_path: Path, line_index: int = 0) -> tuple[str, str, str,
 def parse_structured_review(text: str) -> dict:
     """Extract **Section:** blocks from generated review for comparison with real reviews."""
     sections = ["Review", "Overall score", "Confidence", "Soundness", "Presentation", "Contribution", "Strengths", "Weaknesses", "Questions"]
-    out = {}
-    for s in sections:
-        m = re.search(r"\*\*" + re.escape(s) + r"\*\*:\s*(.*?)(?=\n\s*\*\*|\Z)", text, re.DOTALL | re.IGNORECASE)
-        out[s.lower().replace(" ", "_")] = m.group(1).strip() if m else ""
+    out = {section.lower().replace(" ", "_"): "" for section in sections}
+    names = "|".join(re.escape(section) for section in sections)
+    # The prompt uses **Section:**; accept the older **Section**: form too.
+    pattern = r"^\s*\*\*(" + names + r")(?::\*\*|\*\*:)\s*"
+    headers = list(re.finditer(pattern, text, re.MULTILINE | re.IGNORECASE))
+    for i, header in enumerate(headers):
+        end = headers[i + 1].start() if i + 1 < len(headers) else len(text)
+        key = header.group(1).lower().replace(" ", "_")
+        out[key] = text[header.end():end].strip()
     return out
 
 
@@ -185,6 +191,9 @@ def main():
     review = generate_review(prompt, model=args.model)
 
     args.out_dir.mkdir(parents=True, exist_ok=True)
+    # A successful new generation must not inherit another input's references.
+    for filename in ("metrics.json", "metadata.json"):
+        (args.out_dir / filename).unlink(missing_ok=True)
     (args.out_dir / "generated_review.txt").write_text(review, encoding="utf-8")
     if iclr_meta:
         (args.out_dir / "metadata.json").write_text(json.dumps(iclr_meta, indent=2), encoding="utf-8")

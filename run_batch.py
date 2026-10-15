@@ -93,10 +93,16 @@ def main():
     args.out_dir.mkdir(parents=True, exist_ok=True)
     root = Path(__file__).parent
     results = []
+    failed_runs = 0
 
     for i, (line_idx, paper_id, category) in enumerate(selected):
         paper_out = args.out_dir / f"paper_{i}"
         paper_out.mkdir(parents=True, exist_ok=True)
+        status_path = paper_out / "run_status.json"
+        run_status = {"status": "running", "paper_id": paper_id, "line": line_idx}
+        status_path.write_text(json.dumps(run_status, indent=2), encoding="utf-8")
+        # No metric from a previous use of this directory belongs to this run.
+        (paper_out / "metrics.json").unlink(missing_ok=True)
         cmd = [
             sys.executable,
             str(root / "run.py"),
@@ -106,11 +112,14 @@ def main():
         ]
         print(f"Running paper {i + 1}/{len(selected)} (line {line_idx}, {paper_id}, {category})...")
         ret = subprocess.run(cmd, cwd=str(root))
+        run_status["status"] = "completed" if ret.returncode == 0 else "failed"
+        status_path.write_text(json.dumps(run_status, indent=2), encoding="utf-8")
         if ret.returncode != 0:
+            failed_runs += 1
             print(f"  Warning: run.py exited {ret.returncode}", file=sys.stderr)
         metrics_path = paper_out / "metrics.json"
         metrics_dict = {}
-        if metrics_path.exists():
+        if ret.returncode == 0 and metrics_path.exists():
             metrics_dict = json.loads(metrics_path.read_text(encoding="utf-8"))
         results.append({
             "index": i,
@@ -143,7 +152,7 @@ def main():
     report_path = args.out_dir / "evaluation_report.md"
     _write_evaluation_report(results, summary, report_path)
     print(f"Wrote {report_path}")
-    return 0
+    return 1 if failed_runs else 0
 
 
 def _build_from_existing(out_dir: Path) -> tuple[list[dict], dict]:
@@ -151,8 +160,9 @@ def _build_from_existing(out_dir: Path) -> tuple[list[dict], dict]:
     import re
     results = []
     paper_dirs = sorted(
-        d for d in out_dir.iterdir()
-        if d.is_dir() and re.match(r"paper_\d+$", d.name)
+        (d for d in out_dir.iterdir()
+         if d.is_dir() and re.match(r"paper_\d+$", d.name)),
+        key=lambda d: int(d.name.split("_")[1]),
     )
     for d in paper_dirs:
         idx = int(d.name.split("_")[1])
@@ -160,7 +170,15 @@ def _build_from_existing(out_dir: Path) -> tuple[list[dict], dict]:
         metrics_path = d / "metrics.json"
         if not meta_path.exists():
             continue
+        status_path = d / "run_status.json"
+        status = json.loads(status_path.read_text(encoding="utf-8")) if status_path.exists() else None
+        # Legacy saved outputs have no marker. New failed/interrupted runs must
+        # not be resurrected from reference files left in a reused directory.
+        if status is not None and status.get("status") != "completed":
+            continue
         meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        if status is not None and status.get("paper_id") != meta.get("paper_id"):
+            continue
         metrics = {}
         if metrics_path.exists():
             metrics = json.loads(metrics_path.read_text(encoding="utf-8"))
@@ -172,6 +190,9 @@ def _build_from_existing(out_dir: Path) -> tuple[list[dict], dict]:
             "paper_id": meta.get("paper_id", ""),
             "category": cat,
             "topical_overlap": metrics.get("topical_overlap"),
+            "strengths_overlap": metrics.get("strengths_overlap"),
+            "weaknesses_overlap": metrics.get("weaknesses_overlap"),
+            "section_mean": metrics.get("section_mean"),
             "out_dir": str(d),
         })
     summary = {"num_papers": len(results), "by_category": {}, "results": results}
@@ -195,7 +216,8 @@ def _write_evaluation_report(results: list[dict], summary: dict, path: Path) -> 
         "# Evaluation Report: Topical Overlap (LLM-Generated vs Actual Reviews)",
         "",
         f"**Data source:** ICLR JSONL",
-        f"**Papers evaluated:** {len(results)}",
+        f"**Selected entries:** {len(results)}",
+        f"**Entries with valid overlap metrics:** {len(valid_overlaps)}",
         "",
         "## Overall",
         "",
@@ -205,7 +227,7 @@ def _write_evaluation_report(results: list[dict], summary: dict, path: Path) -> 
         f"| Min | {overall_min:.4f} |" if overall_min is not None else "| Min | — |",
         f"| Max | {overall_max:.4f} |" if overall_max is not None else "| Max | — |",
         "",
-        "## By Category (Human Review Verdict)",
+        "## By Category (Selected Human Review Rating)",
         "",
         "| Category | Count | Mean overlap | Min | Max |",
         "|----------|-------|--------------|-----|-----|",
@@ -239,11 +261,11 @@ def _write_evaluation_report(results: list[dict], summary: dict, path: Path) -> 
         "",
         "**Topical overlap** (0–1) measures how similar the LLM-generated review is to the human review in terms of *word content*. It is computed as TF-IDF cosine similarity: both texts are converted to word-frequency vectors (with common English words removed), then the cosine of the angle between the vectors is taken. Higher values mean the two reviews use more of the same topical vocabulary (methods, concepts, terms). It does *not* measure agreement on verdict (accept/reject) or writing quality—only lexical overlap.",
         "",
-        "**Overall** — Mean, min, and max topical overlap across all papers. A mean around 0.24 indicates moderate overlap; human reviewers often use different phrasing even when discussing the same paper.",
+        "**Overall** — Mean, min, and max topical overlap across all papers. These descriptive statistics have no calibrated threshold for review quality or semantic agreement.",
         "",
-        "**By category** — Human review verdict from the ICLR data (accept, marginally_above, marginally_below, reject). Comparing mean overlap by category shows whether the LLM aligns better with certain verdict types.",
+        "**By category** — Rating category of the first selected human review for each paper (accept, marginally_above, marginally_below, reject). These are individual reviewer ratings, not final paper acceptance decisions. Differences in lexical overlap do not establish agreement on ratings.",
         "",
-        "**Per-paper results** — Each row lists the paper index, OpenReview paper_id, human verdict category, and topical overlap for that pair. Use paper_id to look up the full generated and human reviews in the corresponding `paper_N/` folder.",
+        "**Per-paper results** — Each row lists the paper index, OpenReview paper_id, selected human rating category, and topical overlap for that pair. Use paper_id to look up the full generated and human reviews in the corresponding `paper_N/` folder.",
     ])
     path.write_text("\n".join(lines), encoding="utf-8")
 
